@@ -38,16 +38,7 @@ const generateQuizContentPrompt = ai.definePrompt({
   name: 'generateQuizContentPrompt',
   input: {schema: GenerateQuizContentInputSchema},
   output: {schema: GenerateQuizContentOutputSchema},
-  prompt: `You are an expert quiz generator for teachers. Generate a quiz on the following subject: {{{subject}}}. The difficulty level is {{{difficulty}}}. The quiz should have {{{numberOfQuestions}}} questions. Each question should have 4 possible answers, and one of them should be correct. Provide an explanation for why the correct answer is correct. Return the quiz in JSON format.\n\nOutput: {
-    quiz: [
-        {
-            question: string
-            answers: string[]
-            correctAnswerIndex: number
-            explanation: string
-        }
-    ]
-}`,
+  prompt: `You are an expert quiz generator for teachers. Generate a quiz on the following subject: {{{subject}}}. The difficulty level is {{{difficulty}}}. The quiz should have {{{numberOfQuestions}}} questions. Each question should have 4 possible answers, and one of them should be correct. Provide an explanation for why the correct answer is correct. Return the quiz in JSON format.`,
 });
 
 const generateQuizContentFlow = ai.defineFlow(

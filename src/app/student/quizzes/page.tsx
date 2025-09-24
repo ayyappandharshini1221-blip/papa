@@ -17,59 +17,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { allQuizzes } from '@/lib/quiz-data';
 import { ListFilter, Swords } from 'lucide-react';
 import Link from 'next/link';
-
-const allQuizzes = [
-  {
-    id: 'algebra-basics',
-    title: 'Algebra Basics',
-    subject: 'Math',
-    difficulty: 'easy',
-    questions: 10,
-    status: 'new',
-  },
-  {
-    id: 'cold-war',
-    title: 'The Cold War',
-    subject: 'History',
-    difficulty: 'medium',
-    questions: 15,
-    status: 'new',
-  },
-  {
-    id: 'cellular-biology',
-    title: 'Cellular Biology',
-    subject: 'Science',
-    difficulty: 'hard',
-    questions: 20,
-    status: 'new',
-  },
-  {
-    id: 'intro-to-python',
-    title: 'Intro to Python',
-    subject: 'Programming',
-    difficulty: 'easy',
-    questions: 12,
-    status: 'in-progress',
-  },
-  {
-    id: 'world-war-two',
-    title: 'World War II',
-    subject: 'History',
-    difficulty: 'hard',
-    questions: 25,
-    status: 'completed',
-  },
-  {
-    id: 'chemical-reactions',
-    title: 'Chemical Reactions',
-    subject: 'Science',
-    difficulty: 'medium',
-    questions: 18,
-    status: 'new',
-  },
-];
 
 export default function QuizzesPage() {
   return (
@@ -129,7 +79,7 @@ export default function QuizzesPage() {
                   {quiz.difficulty}
                 </Badge>
                 <Badge
-                  variant={
+                   variant={
                     quiz.status === 'new'
                       ? 'default'
                       : quiz.status === 'in-progress'

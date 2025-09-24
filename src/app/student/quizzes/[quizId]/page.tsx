@@ -1,37 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { notFound } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { CheckCircle2, XCircle } from 'lucide-react';
-
-// This is mock data. In a real app, you would fetch this from your backend/AI service.
-const quizData = {
-  title: 'Algebra Basics',
-  questions: [
-    {
-      question: 'What is the value of x in the equation 2x + 3 = 11?',
-      answers: ['3', '4', '5', '8'],
-      correctAnswerIndex: 1,
-      explanation: 'Subtract 3 from both sides to get 2x = 8, then divide by 2 to get x = 4.',
-    },
-    {
-      question: 'Simplify the expression: 3(x + 4) - 2x',
-      answers: ['x + 12', '5x + 4', 'x + 4', 'x - 12'],
-      correctAnswerIndex: 0,
-      explanation: 'Distribute the 3 to get 3x + 12 - 2x. Combine like terms (3x - 2x) to get x + 12.',
-    },
-    {
-      question: 'What is the slope of the line y = -2x + 5?',
-      answers: ['5', '2', '-2', '1/2'],
-      correctAnswerIndex: 2,
-      explanation: 'The equation is in slope-intercept form (y = mx + b), where m is the slope. So, the slope is -2.',
-    },
-  ],
-};
+import { allQuizzes, quizQuestions } from '@/lib/quiz-data';
 
 type UserAnswers = { [key: number]: number | null };
 
@@ -40,6 +17,14 @@ export default function QuizTakingPage({ params }: { params: { quizId: string } 
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
+
+  const quizInfo = allQuizzes.find(q => q.id === params.quizId);
+  const quizData = quizInfo ? { ...quizInfo, questions: quizQuestions[quizInfo.id] || [] } : null;
+
+  if (!quizData || !quizData.questions.length) {
+    // In a real app, you might want a more user-friendly "not found" page.
+    return notFound();
+  }
 
   const currentQuestion = quizData.questions[currentQuestionIndex];
   const progress = ((currentQuestionIndex + 1) / quizData.questions.length) * 100;

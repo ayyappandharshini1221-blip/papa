@@ -15,6 +15,7 @@ import {
   BookCopy,
   BarChart3,
   Settings,
+  Bot,
 } from 'lucide-react';
 import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
@@ -70,6 +71,14 @@ export default function TeacherLayout({
                 <Link href="/teacher/analytics">
                   <BarChart3 />
                   <span>Analytics</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+             <SidebarMenuItem>
+              <SidebarMenuButton href="/teacher/aichat" asChild tooltip="AI Chat">
+                <Link href="/teacher/aichat">
+                  <Bot />
+                  <span>AI Chat</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

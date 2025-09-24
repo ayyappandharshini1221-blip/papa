@@ -13,15 +13,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CreditCard, LogOut, Settings, User } from 'lucide-react';
 
 export function UserNav() {
+  const userAvatar = PlaceHolderImages.find(p => p.id === 'avatar-1');
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-9 w-9">
-            <AvatarImage src="https://picsum.photos/seed/avatar1/200/200" alt="@shadcn" data-ai-hint="person face" />
+            <AvatarImage src={userAvatar?.imageUrl} alt="@shadcn" data-ai-hint={userAvatar?.imageHint} />
             <AvatarFallback>U</AvatarFallback>
           </Avatar>
         </Button>

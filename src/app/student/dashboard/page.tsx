@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Award, Bot, Flame, Swords, Trophy, Zap } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const quizData = [
   { title: 'Algebra Basics', subject: 'Math', difficulty: 'easy', questions: 10 },
@@ -11,10 +12,10 @@ const quizData = [
 ];
 
 const leaderboardData = [
-  { rank: 1, name: 'Alex', xp: 4500, avatar: 'https://picsum.photos/seed/leader1/40/40' },
-  { rank: 2, name: 'You', xp: 4250, avatar: 'https://picsum.photos/seed/avatar1/40/40' },
-  { rank: 3, name: 'Maria', xp: 3800, avatar: 'https://picsum.photos/seed/leader2/40/40' },
-  { rank: 4, name: 'David', xp: 3550, avatar: 'https://picsum.photos/seed/leader3/40/40' },
+  { rank: 1, name: 'Alex', xp: 4500, avatarId: 'leader-1' },
+  { rank: 2, name: 'You', xp: 4250, avatarId: 'avatar-1' },
+  { rank: 3, name: 'Maria', xp: 3800, avatarId: 'leader-2' },
+  { rank: 4, name: 'David', xp: 3550, avatarId: 'leader-3' },
 ];
 
 export default function StudentDashboard() {
@@ -136,20 +137,23 @@ export default function StudentDashboard() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {leaderboardData.map((player) => (
-                <div key={player.rank} className={`flex items-center gap-4 rounded-md p-2 ${player.name === 'You' ? 'bg-primary/10' : ''}`}>
-                  <span className="text-lg font-bold text-muted-foreground">{player.rank}</span>
-                  <Avatar className="h-10 w-10 border-2 border-primary/50">
-                    <AvatarImage src={player.avatar} alt={player.name} data-ai-hint="person face" />
-                    <AvatarFallback>{player.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">{player.name}</p>
-                    <p className="text-xs text-muted-foreground">{player.xp} XP</p>
+              {leaderboardData.map((player) => {
+                const avatar = PlaceHolderImages.find(p => p.id === player.avatarId);
+                return (
+                  <div key={player.rank} className={`flex items-center gap-4 rounded-md p-2 ${player.name === 'You' ? 'bg-primary/10' : ''}`}>
+                    <span className="text-lg font-bold text-muted-foreground">{player.rank}</span>
+                    <Avatar className="h-10 w-10 border-2 border-primary/50">
+                      <AvatarImage src={avatar?.imageUrl} alt={player.name} data-ai-hint={avatar?.imageHint} />
+                      <AvatarFallback>{player.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium">{player.name}</p>
+                      <p className="text-xs text-muted-foreground">{player.xp} XP</p>
+                    </div>
+                    {player.rank === 1 && <Trophy className="h-5 w-5 text-yellow-500" />}
                   </div>
-                  {player.rank === 1 && <Trophy className="h-5 w-5 text-yellow-500" />}
-                </div>
-              ))}
+                )
+              })}
             </div>
           </CardContent>
         </Card>

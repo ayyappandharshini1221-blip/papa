@@ -10,14 +10,15 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ListFilter, Swords } from 'lucide-react';
+import Link from 'next/link';
 
 const allQuizzes = [
-  { title: 'Algebra Basics', subject: 'Math', difficulty: 'easy', questions: 10, status: 'new' },
-  { title: 'The Cold War', subject: 'History', difficulty: 'medium', questions: 15, status: 'new' },
-  { title: 'Cellular Biology', subject: 'Science', difficulty: 'hard', questions: 20, status: 'new' },
-  { title: 'Intro to Python', subject: 'Programming', difficulty: 'easy', questions: 12, status: 'in-progress' },
-  { title: 'World War II', subject: 'History', difficulty: 'hard', questions: 25, status: 'completed' },
-  { title: 'Chemical Reactions', subject: 'Science', difficulty: 'medium', questions: 18, status: 'new' },
+  { id: 'algebra-basics', title: 'Algebra Basics', subject: 'Math', difficulty: 'easy', questions: 10, status: 'new' },
+  { id: 'cold-war', title: 'The Cold War', subject: 'History', difficulty: 'medium', questions: 15, status: 'new' },
+  { id: 'cellular-biology', title: 'Cellular Biology', subject: 'Science', difficulty: 'hard', questions: 20, status: 'new' },
+  { id: 'intro-to-python', title: 'Intro to Python', subject: 'Programming', difficulty: 'easy', questions: 12, status: 'in-progress' },
+  { id: 'world-war-two', title: 'World War II', subject: 'History', difficulty: 'hard', questions: 25, status: 'completed' },
+  { id: 'chemical-reactions', title: 'Chemical Reactions', subject: 'Science', difficulty: 'medium', questions: 'new' },
 ];
 
 
@@ -54,7 +55,7 @@ export default function QuizzesPage() {
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {allQuizzes.map((quiz) => (
-          <Card key={quiz.title}>
+          <Card key={quiz.id}>
             <CardHeader>
                <div className="flex items-center justify-between">
                 <CardTitle className="text-xl">{quiz.title}</CardTitle>
@@ -74,13 +75,15 @@ export default function QuizzesPage() {
                 </Badge>
                 <Badge 
                     variant={quiz.status === 'new' ? 'default' : quiz.status === 'in-progress' ? 'accent' : 'secondary'}
-                    className="capitalize bg-accent"
+                    className="capitalize"
                 >
                     {quiz.status}
                 </Badge>
               </div>
-              <Button disabled={quiz.status === 'completed'}>
-                {quiz.status === 'in-progress' ? 'Continue Quiz' : quiz.status === 'completed' ? 'Completed' : 'Start Quiz'}
+              <Button asChild disabled={quiz.status === 'completed'}>
+                 <Link href={`/student/quizzes/${quiz.id}`}>
+                    {quiz.status === 'in-progress' ? 'Continue Quiz' : quiz.status === 'completed' ? 'Completed' : 'Start Quiz'}
+                </Link>
               </Button>
             </CardContent>
           </Card>

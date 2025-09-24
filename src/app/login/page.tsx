@@ -34,19 +34,20 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 const formSchema = z.object({
   email: z.string().email({ message: 'Invalid email address.' }),
   password: z.string().min(6, { message: 'Password must be at least 6 characters.' }),
+  googleRole: z.enum(['student', 'teacher']).optional(),
 });
 
 export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  const [googleRole, setGoogleRole] = useState<UserRole>('student');
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: '',
       password: '',
+      googleRole: 'student',
     },
   });
 
@@ -72,9 +73,19 @@ export default function LoginPage() {
   }
 
   async function handleGoogleSignIn() {
+    const role = form.getValues('googleRole') as UserRole;
+    if (!role) {
+      toast({
+        title: 'Role not selected',
+        description: 'Please select a role before signing in with Google.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    
     setIsLoading(true);
     try {
-      const user = await signInWithGoogle(googleRole);
+      const user = await signInWithGoogle(role);
       toast({ title: 'Login Successful' });
        if (user.role === 'teacher') {
         router.push('/teacher/dashboard');
@@ -142,27 +153,36 @@ export default function LoginPage() {
             <Separator className="my-6" />
 
             <div className="space-y-4">
-              <div className="space-y-2">
-                <p className="text-sm font-medium">For Google Sign-In, select your role:</p>
-                <RadioGroup
-                  value={googleRole}
-                  onValueChange={(value) => setGoogleRole(value as UserRole)}
-                  className="flex gap-4"
-                >
-                  <FormItem className="flex items-center space-x-2 space-y-0">
+               <FormField
+                control={form.control}
+                name="googleRole"
+                render={({ field }) => (
+                  <FormItem className="space-y-2">
+                    <p className="text-sm font-medium">For Google Sign-In, select your role:</p>
                     <FormControl>
-                      <RadioGroupItem value="student" id="r1" />
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                        className="flex gap-4"
+                      >
+                        <FormItem className="flex items-center space-x-2 space-y-0">
+                          <FormControl>
+                            <RadioGroupItem value="student" id="r1" />
+                          </FormControl>
+                          <FormLabel htmlFor="r1" className="font-normal">Student</FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-x-2 space-y-0">
+                          <FormControl>
+                            <RadioGroupItem value="teacher" id="r2" />
+                          </FormControl>
+                          <FormLabel htmlFor="r2" className="font-normal">Teacher</FormLabel>
+                        </FormItem>
+                      </RadioGroup>
                     </FormControl>
-                    <FormLabel htmlFor="r1" className="font-normal">Student</FormLabel>
+                     <FormMessage />
                   </FormItem>
-                  <FormItem className="flex items-center space-x-2 space-y-0">
-                    <FormControl>
-                      <RadioGroupItem value="teacher" id="r2" />
-                    </FormControl>
-                    <FormLabel htmlFor="r2" className="font-normal">Teacher</FormLabel>
-                  </FormItem>
-                </RadioGroup>
-              </div>
+                )}
+              />
               <Button
                 variant="outline"
                 className="w-full"

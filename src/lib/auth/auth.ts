@@ -10,7 +10,15 @@ import {
   onAuthStateChanged,
   User as FirebaseUser,
 } from 'firebase/auth';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
+import {
+  doc,
+  setDoc,
+  getDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+} from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase';
 import type { User, UserRole, Student } from '@/lib/types';
 
@@ -21,6 +29,14 @@ export const signUpWithEmail = async (
   role: UserRole
 ) => {
   try {
+    // Check if a user with this email already exists in Firestore
+    const usersRef = collection(db, 'users');
+    const q = query(usersRef, where('email', '==', email));
+    const querySnapshot = await getDocs(q);
+    if (!querySnapshot.empty) {
+      throw new Error('An account with this email already exists.');
+    }
+
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
@@ -63,11 +79,30 @@ export const signInWithEmail = async (email: string, password: string) => {
       password
     );
     const user = userCredential.user;
-    const userDoc = await getDoc(doc(db, 'users', user.uid));
+    const userDocRef = doc(db, 'users', user.uid);
+    const userDoc = await getDoc(userDocRef);
+
     if (userDoc.exists()) {
       return userDoc.data() as User;
     }
-    throw new Error('User data not found');
+    
+    // If user exists in Auth but not Firestore, create a record.
+    // This is a fallback and might not have the correct role if it wasn't set during a failed signup.
+    // Defaulting to 'student'.
+    console.warn(`User document not found for UID: ${user.uid}. Creating a new one.`);
+    const userProfile: Student = {
+      id: user.uid,
+      name: user.displayName || 'New User',
+      email: user.email!,
+      role: 'student',
+      xp: 0,
+      streak: 0,
+      badges: [],
+      classIds: [],
+    };
+    await setDoc(userDocRef, userProfile);
+    return userProfile;
+
   } catch (error: any) {
     console.error('Error signing in:', error);
     throw new Error(error.message);
@@ -84,7 +119,13 @@ export const signInWithGoogle = async (role: UserRole) => {
     const userDoc = await getDoc(userDocRef);
 
     if (userDoc.exists()) {
-      return userDoc.data() as User;
+      const existingUser = userDoc.data() as User;
+      // If role selection during Google sign-in differs from stored role, update it.
+      if (existingUser.role !== role) {
+        await setDoc(userDocRef, { role: role }, { merge: true });
+        existingUser.role = role;
+      }
+      return existingUser;
     } else {
       const userProfile: User | Student =
         role === 'student'
@@ -132,6 +173,9 @@ export const onAuthChange = (callback: (user: User | null) => void) => {
       if (userDoc.exists()) {
         callback(userDoc.data() as User);
       } else {
+        // This case handles users that exist in Auth but not in Firestore.
+        // You might want to create a default user record here or handle it as an error state.
+        console.warn(`User with UID ${firebaseUser.uid} authenticated but has no Firestore document.`);
         callback(null);
       }
     } else {

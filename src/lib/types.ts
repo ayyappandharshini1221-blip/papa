@@ -4,7 +4,7 @@ export interface User {
   id: string;
   name: string;
   email: string;
-  avatarUrl: string;
+  avatarUrl?: string;
   role: UserRole;
 }
 
@@ -16,7 +16,7 @@ export interface Student extends User {
   role: 'student';
   xp: number;
   streak: number;
-  badges: Badge[];
+  badges: string[]; // Badge IDs
   classIds: string[];
 }
 
@@ -35,7 +35,17 @@ export interface Quiz {
   difficulty: 'easy' | 'medium' | 'hard';
   assignedTo: string; // classId
   questionCount: number;
+  questions: Question[];
+  createdBy: string; // teacherId
 }
+
+export interface Question {
+  question: string;
+  answers: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 
 export interface Badge {
   id: string;

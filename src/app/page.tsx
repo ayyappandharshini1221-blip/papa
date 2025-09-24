@@ -8,10 +8,19 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Logo } from '@/components/icons';
+import { Button } from '@/components/ui/button';
 
-export default function RoleSelectionPage() {
+export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
+      <div className="absolute top-4 right-4 flex gap-2">
+        <Button variant="outline" asChild>
+          <Link href="/login">Login</Link>
+        </Button>
+        <Button asChild>
+          <Link href="/signup">Sign Up</Link>
+        </Button>
+      </div>
       <div className="mb-10 flex flex-col items-center text-center">
         <Logo className="mb-4 h-16 w-16 text-primary" />
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">

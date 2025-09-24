@@ -26,13 +26,24 @@ export default function AIChatPage() {
   const [input, setInput] = useState('');
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const { stream, data, loading, error } = useStream({
+  const { stream, data, loading, error, active } = useStream({
     flow: chat,
-    initialInput: {
-      history: messages.map(m => ({ role: m.role, content: m.content })),
-      prompt: '',
-    },
   });
+  
+  const [currentStream, setCurrentStream] = useState('');
+  useEffect(() => {
+    if (data?.text) {
+      setCurrentStream(prev => prev + data.text);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (!active && currentStream) {
+      setMessages(prev => [...prev, { role: 'model', content: currentStream }]);
+      setCurrentStream('');
+    }
+  }, [active, currentStream]);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +53,7 @@ export default function AIChatPage() {
     setMessages(newMessages);
     
     const chatInput: ChatInput = {
-      history: newMessages.slice(0, -1).map(m => ({ role: m.role, content: m.content })),
+      history: newMessages.map(m => ({ role: m.role, content: m.content })),
       prompt: input,
     };
     
@@ -51,38 +62,8 @@ export default function AIChatPage() {
   };
   
   useEffect(() => {
-    let accumulatedText = '';
-    if (data) {
-        setMessages(prev => {
-            const lastMessage = prev[prev.length - 1];
-
-            // If the last message is from the model, update it
-            if (lastMessage?.role === 'model') {
-                accumulatedText = lastMessage.content + data.text;
-                const updatedMessages = [...prev.slice(0, -1), { role: 'model', content: data.text}];
-                return updatedMessages;
-            }
-            
-            // Otherwise, add a new model message
-            return [...prev, { role: 'model', content: data.text }];
-        });
-    }
-  }, [data]);
-
-
-  useEffect(() => {
-    if (loading) {
-      const lastMessage = messages[messages.length - 1];
-      if (lastMessage?.role === 'user') {
-        setMessages(prev => [...prev, { role: 'model', content: '' }]);
-      }
-    }
-  }, [loading, messages]);
-
-
-  useEffect(() => {
     chatContainerRef.current?.scrollTo(0, chatContainerRef.current.scrollHeight);
-  }, [messages, data]);
+  }, [messages, currentStream]);
 
 
   return (
@@ -123,14 +104,14 @@ export default function AIChatPage() {
             )}
           </div>
         ))}
-         {loading && messages[messages.length - 1]?.role !== 'model' && (
+         {active && (
             <div className="flex items-start gap-4">
               <Avatar className="h-10 w-10 border-2 border-primary/50">
                 <Bot className="h-9 w-9" />
               </Avatar>
               <div className="flex-1 space-y-2">
-                <div className="p-4 rounded-lg bg-card max-w-lg">
-                  <Loader2 className="h-5 w-5 animate-spin" />
+                <div className="p-4 rounded-lg bg-card max-w-lg text-left">
+                  <p className="text-sm whitespace-pre-wrap">{currentStream || <Loader2 className="h-5 w-5 animate-spin" />}</p>
                 </div>
               </div>
             </div>
@@ -162,6 +143,7 @@ export default function AIChatPage() {
             <span className="sr-only">Send</span>
           </Button>
         </form>
+         {error && <p className="text-xs text-destructive mt-2">{error.message}</p>}
       </div>
     </div>
   );

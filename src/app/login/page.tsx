@@ -138,42 +138,41 @@ export default function LoginPage() {
                 {isLoading ? 'Signing In...' : 'Sign In'}
               </Button>
             </form>
-          </Form>
 
-          <Separator className="my-6" />
+            <Separator className="my-6" />
 
-          <div className="space-y-4">
-             <div className="space-y-2">
-              <p className="text-sm font-medium">For Google Sign-In, select your role:</p>
-              <RadioGroup
-                value={googleRole}
-                onValueChange={(value) => setGoogleRole(value as UserRole)}
-                className="flex gap-4"
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <p className="text-sm font-medium">For Google Sign-In, select your role:</p>
+                <RadioGroup
+                  value={googleRole}
+                  onValueChange={(value) => setGoogleRole(value as UserRole)}
+                  className="flex gap-4"
+                >
+                  <FormItem className="flex items-center space-x-2 space-y-0">
+                    <FormControl>
+                      <RadioGroupItem value="student" id="r1" />
+                    </FormControl>
+                    <FormLabel htmlFor="r1" className="font-normal">Student</FormLabel>
+                  </FormItem>
+                  <FormItem className="flex items-center space-x-2 space-y-0">
+                    <FormControl>
+                      <RadioGroupItem value="teacher" id="r2" />
+                    </FormControl>
+                    <FormLabel htmlFor="r2" className="font-normal">Teacher</FormLabel>
+                  </FormItem>
+                </RadioGroup>
+              </div>
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={handleGoogleSignIn}
+                disabled={isLoading}
               >
-                <FormItem className="flex items-center space-x-2 space-y-0">
-                  <FormControl>
-                    <RadioGroupItem value="student" id="r1" />
-                  </FormControl>
-                  <FormLabel htmlFor="r1" className="font-normal">Student</FormLabel>
-                </FormItem>
-                <FormItem className="flex items-center space-x-2 space-y-0">
-                  <FormControl>
-                    <RadioGroupItem value="teacher" id="r2" />
-                  </FormControl>
-                  <FormLabel htmlFor="r2" className="font-normal">Teacher</FormLabel>
-                </FormItem>
-              </RadioGroup>
+                {isLoading ? 'Redirecting...' : 'Sign in with Google'}
+              </Button>
             </div>
-            <Button
-              variant="outline"
-              className="w-full"
-              onClick={handleGoogleSignIn}
-              disabled={isLoading}
-            >
-              {isLoading ? 'Redirecting...' : 'Sign in with Google'}
-            </Button>
-          </div>
-
+          </Form>
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Don't have an account?{' '}
             <Link href="/signup" className="font-semibold text-primary hover:underline">

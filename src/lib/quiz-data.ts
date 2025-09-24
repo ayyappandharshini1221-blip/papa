@@ -28,7 +28,7 @@ export const allQuizzes = [
     title: 'Intro to Python',
     subject: 'Programming',
     difficulty: 'easy',
-    questions: 12,
+    questions: 3,
     status: 'in-progress',
   },
   {
@@ -85,6 +85,26 @@ export const quizQuestions: Record<string, any[]> = {
             correctAnswerIndex: 2,
             explanation: 'Mitochondria are responsible for generating most of the cell\'s supply of adenosine triphosphate (ATP), used as a source of chemical energy.'
         }
+    ],
+    'intro-to-python': [
+      {
+        question: 'What is the output of `print(2 ** 3)` in Python?',
+        answers: ['6', '8', '9', '12'],
+        correctAnswerIndex: 1,
+        explanation: 'The `**` operator in Python is used for exponentiation. `2 ** 3` means 2 to the power of 3, which is 8.',
+      },
+      {
+        question: 'Which of the following is used to define a function in Python?',
+        answers: ['func', 'def', 'function', 'define'],
+        correctAnswerIndex: 1,
+        explanation: 'The `def` keyword is used to define a function in Python.',
+      },
+      {
+        question: 'What data type is the result of `type("Hello, World!")`?',
+        answers: ['String', 'str', 'Text', 'Character'],
+        correctAnswerIndex: 1,
+        explanation: 'In Python, strings are of the type `str`. The `type()` function returns the type of an object.',
+      }
     ]
     // Other quiz questions can be added here
 }

@@ -61,11 +61,9 @@ export default function LeaderboardPage() {
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="all-time">
-            <TabsList className="grid w-full grid-cols-2 md:w-auto md:grid-cols-4">
+            <TabsList className="grid w-full grid-cols-2 md:w-auto">
               <TabsTrigger value="all-time">All Time</TabsTrigger>
               <TabsTrigger value="this-week">This Week</TabsTrigger>
-              <TabsTrigger value="math">Math</TabsTrigger>
-              <TabsTrigger value="science">Science</TabsTrigger>
             </TabsList>
             <TabsContent value="all-time">
               <Table>

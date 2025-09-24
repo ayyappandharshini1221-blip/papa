@@ -12,25 +12,29 @@ import { Button } from '@/components/ui/button';
 import type { Subject } from '@/app/student/quizzes/page';
 import { Swords, Shield, Brain } from 'lucide-react';
 
-type Difficulty = 'Easy' | 'Normal' | 'Hard';
+type Difficulty = 'easy' | 'medium' | 'hard';
 
 const difficultyOptions: {
   level: Difficulty;
+  label: string;
   xp: string;
   icon: React.ReactNode;
 }[] = [
   {
-    level: 'Easy',
+    level: 'easy',
+    label: 'Easy',
     xp: '+25 XP',
     icon: <Shield className="h-6 w-6 text-green-500" />,
   },
   {
-    level: 'Normal',
+    level: 'medium',
+    label: 'Normal',
     xp: '+50 XP',
     icon: <Swords className="h-6 w-6 text-yellow-500" />,
   },
   {
-    level: 'Hard',
+    level: 'hard',
+    label: 'Hard',
     xp: '+100 XP',
     icon: <Brain className="h-6 w-6 text-red-500" />,
   },
@@ -49,9 +53,7 @@ export function QuizStartDialog({
 
   const handleStartQuiz = (difficulty: Difficulty) => {
     onClose();
-    // A real implementation would use a unique ID from the backend.
-    const quizId = `${subject.name.toLowerCase()}-${difficulty.toLowerCase()}`;
-    router.push(`/student/quizzes/${quizId}`);
+    router.push(`/student/quizzes/take?subject=${encodeURIComponent(subject.name)}&difficulty=${difficulty}`);
   };
 
   return (
@@ -69,7 +71,7 @@ export function QuizStartDialog({
           </DialogDescription>
         </DialogHeader>
         <div className="mt-4 space-y-4">
-          {difficultyOptions.map(({ level, xp, icon }) => (
+          {difficultyOptions.map(({ level, label, xp, icon }) => (
             <Button
               key={level}
               variant="outline"
@@ -80,7 +82,7 @@ export function QuizStartDialog({
               <div className="flex items-center w-full">
                 <div className="mr-4">{icon}</div>
                 <div className="flex-1">
-                  <p className="text-lg font-semibold">{level}</p>
+                  <p className="text-lg font-semibold">{label}</p>
                   <p className="text-sm text-muted-foreground">
                     Recommended for a solid challenge.
                   </p>

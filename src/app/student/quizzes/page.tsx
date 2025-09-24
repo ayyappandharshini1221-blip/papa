@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -12,9 +11,7 @@ import {
   Atom,
   BrainCircuit,
   FlaskConical,
-  FunctionSquare,
   Sigma,
-  Bot,
 } from 'lucide-react';
 import { JavaIcon, PythonIcon } from '@/components/icons';
 import { QuizStartDialog } from '@/components/quiz/quiz-start-dialog';

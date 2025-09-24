@@ -5,12 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Award, Bot, Flame, Swords, Trophy, Zap } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-const quizData = [
-  { title: 'Algebra Basics', subject: 'Math', difficulty: 'easy', questions: 10 },
-  { title: 'The Cold War', subject: 'History', difficulty: 'medium', questions: 15 },
-  { title: 'Cellular Biology', subject: 'Science', difficulty: 'hard', questions: 20 },
-];
-
 const leaderboardData = [
   { rank: 1, name: 'Alex', xp: 4500, avatarId: 'leader-1' },
   { rank: 2, name: 'You', xp: 4250, avatarId: 'avatar-1' },
@@ -73,35 +67,6 @@ export default function StudentDashboard() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="flex flex-col gap-6 lg:col-span-2">
-          <Card>
-            <CardHeader>
-              <CardTitle>Active Quizzes</CardTitle>
-              <CardDescription>
-                Here are the quizzes waiting for you. Good luck!
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {quizData.map((quiz) => (
-                  <div key={quiz.title} className="flex items-center rounded-lg border p-4">
-                    <div className="mr-4 text-primary">
-                        <Swords className="h-8 w-8" />
-                    </div>
-                    <div className="flex-1 space-y-1">
-                      <p className="text-sm font-medium leading-none">{quiz.title}</p>
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                        <span>{quiz.subject}</span>
-                        <Badge variant={quiz.difficulty === 'easy' ? 'secondary' : quiz.difficulty === 'medium' ? 'outline' : 'destructive'} className="capitalize">{quiz.difficulty}</Badge>
-                        <span>{quiz.questions} Questions</span>
-                      </div>
-                    </div>
-                    <Button>Start Quiz</Button>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-          
            <Card>
               <CardHeader>
                 <div className="flex items-center gap-2">

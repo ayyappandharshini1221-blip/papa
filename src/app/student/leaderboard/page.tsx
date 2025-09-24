@@ -46,9 +46,6 @@ export default function LeaderboardPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Leaderboard</h1>
-          <p className="text-muted-foreground">
-            See where you stand among your peers in Algebra 101.
-          </p>
         </div>
       </div>
       <Card>

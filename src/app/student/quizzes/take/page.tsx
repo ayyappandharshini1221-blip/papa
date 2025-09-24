@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, use } from 'react';
-import { notFound, useSearchParams } from 'next/navigation';
+import React, { useState, useEffect } from 'react';
+import { notFound, useSearchParams, useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -13,6 +13,7 @@ import { generateQuizContent, GenerateQuizContentOutput } from '@/ai/flows/gener
 type UserAnswers = { [key: number]: number | null };
 
 export default function QuizTakingPage() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const subject = searchParams.get('subject');
   const difficulty = searchParams.get('difficulty') as 'easy' | 'medium' | 'hard' | null;
@@ -26,22 +27,34 @@ export default function QuizTakingPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   
-  useEffect(() => {
+  const fetchQuiz = () => {
     if (subject && difficulty) {
       setIsLoading(true);
       setError(null);
       generateQuizContent({ subject, difficulty, numberOfQuestions: 10 })
         .then(data => {
-          setQuizData(data);
+          if (!data || !data.quiz || data.quiz.length === 0) {
+            setError('The AI failed to generate a quiz for this topic. Please try a different one.');
+          } else {
+            setQuizData(data);
+          }
         })
         .catch(err => {
           console.error('Error generating quiz:', err);
-          setError('Failed to generate the quiz. Please try again.');
+          if (err.message && err.message.includes('429')) {
+             setError('The AI is a bit busy right now. Please wait a moment and try again.');
+          } else {
+            setError('Failed to generate the quiz. Please try again.');
+          }
         })
         .finally(() => {
           setIsLoading(false);
         });
     }
+  };
+
+  useEffect(() => {
+    fetchQuiz();
   }, [subject, difficulty]);
 
   if (!subject || !difficulty) {
@@ -62,8 +75,8 @@ export default function QuizTakingPage() {
       <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
         <XCircle className="h-12 w-12 text-destructive" />
         <p className="text-destructive font-semibold">Oops! Something went wrong.</p>
-        <p className="text-muted-foreground">{error}</p>
-        <Button onClick={() => window.location.reload()}>Try Again</Button>
+        <p className="text-muted-foreground max-w-md">{error}</p>
+        <Button onClick={fetchQuiz}>Try Again</Button>
       </div>
     );
   }

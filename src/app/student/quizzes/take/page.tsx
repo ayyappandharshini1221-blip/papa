@@ -27,7 +27,7 @@ export default function QuizTakingPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   
-  const fetchQuiz = () => {
+  const fetchQuiz = React.useCallback(() => {
     if (subject && difficulty) {
       setIsLoading(true);
       setError(null);
@@ -51,11 +51,11 @@ export default function QuizTakingPage() {
           setIsLoading(false);
         });
     }
-  };
+  }, [subject, difficulty]);
 
   useEffect(() => {
     fetchQuiz();
-  }, [subject, difficulty]);
+  }, [fetchQuiz]);
 
   if (!subject || !difficulty) {
     return notFound();

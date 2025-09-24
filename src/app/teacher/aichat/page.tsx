@@ -6,7 +6,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Bot, Send, Loader2 } from 'lucide-react';
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { chat, ChatInput } from '@/ai/flows/chat';
-import { useStream } from '@genkit-ai/next/react';
+import { useStream } from '@genkit-ai/react';
 import Textarea from 'react-textarea-autosize';
 
 interface Message {
@@ -53,7 +53,7 @@ export default function AIChatPage() {
     setMessages(newMessages);
     
     const chatInput: ChatInput = {
-      history: newMessages.map(m => ({ role: m.role, content: m.content })),
+      history: newMessages.slice(0, -1).map(m => ({ role: m.role, content: m.content })),
       prompt: input,
     };
     

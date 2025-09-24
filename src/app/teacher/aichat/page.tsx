@@ -6,7 +6,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Bot, Send, Loader2 } from 'lucide-react';
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { chat, ChatInput } from '@/ai/flows/chat';
-import { useStream } from 'genkit/react';
+import { useStream } from '@genkit-ai/next/react';
 import Textarea from 'react-textarea-autosize';
 
 interface Message {
@@ -24,70 +24,66 @@ export default function AIChatPage() {
     },
   ]);
   const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const handleStream = useCallback((stream: ReadableStream<any>) => {
-    const reader = stream.getReader();
-    let accumulatedResponse = '';
-
-    const read = () => {
-      reader.read().then(({ done, value }) => {
-        if (done) {
-          setIsLoading(false);
-          setMessages((prev) => [
-            ...prev,
-            { role: 'model', content: accumulatedResponse },
-          ]);
-          return;
-        }
-        accumulatedResponse += value.text;
-        setMessages((prev) => {
-          const newMessages = [...prev];
-          if (
-            newMessages.length > 0 &&
-            newMessages[newMessages.length - 1].role === 'model'
-          ) {
-            newMessages[newMessages.length - 1] = {
-              role: 'model',
-              content: accumulatedResponse,
-            };
-            return newMessages;
-          } else {
-            return [...prev, { role: 'model', content: accumulatedResponse }];
-          }
-        });
-
-        read();
-      });
-    };
-    read();
-  }, []);
-
-  const { stream } = useStream({
+  const { stream, data, loading, error } = useStream({
     flow: chat,
-    onStream: handleStream,
+    initialInput: {
+      history: messages.map(m => ({ role: m.role, content: m.content })),
+      prompt: '',
+    },
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || isLoading) return;
+    if (!input.trim() || loading) return;
 
     const newMessages: Message[] = [...messages, { role: 'user', content: input }];
     setMessages(newMessages);
-    setInput('');
-    setIsLoading(true);
-
+    
     const chatInput: ChatInput = {
-      history: messages.map(m => ({ role: m.role, content: m.content })),
+      history: newMessages.slice(0, -1).map(m => ({ role: m.role, content: m.content })),
       prompt: input,
     };
+    
+    setInput('');
     await stream(chatInput);
   };
+  
+  useEffect(() => {
+    let accumulatedText = '';
+    if (data) {
+        setMessages(prev => {
+            const lastMessage = prev[prev.length - 1];
+
+            // If the last message is from the model, update it
+            if (lastMessage?.role === 'model') {
+                accumulatedText = lastMessage.content + data.text;
+                const updatedMessages = [...prev.slice(0, -1), { role: 'model', content: data.text}];
+                return updatedMessages;
+            }
+            
+            // Otherwise, add a new model message
+            return [...prev, { role: 'model', content: data.text }];
+        });
+    }
+  }, [data]);
+
+
+  useEffect(() => {
+    if (loading) {
+      const lastMessage = messages[messages.length - 1];
+      if (lastMessage?.role === 'user') {
+        setMessages(prev => [...prev, { role: 'model', content: '' }]);
+      }
+    }
+  }, [loading, messages]);
+
 
   useEffect(() => {
     chatContainerRef.current?.scrollTo(0, chatContainerRef.current.scrollHeight);
-  }, [messages]);
+  }, [messages, data]);
+
 
   return (
     <div className="flex h-[calc(100vh-8rem)] flex-col">
@@ -112,7 +108,7 @@ export default function AIChatPage() {
                     : 'bg-card'
                 }`}
               >
-                <p className="text-sm">{m.content}</p>
+                <p className="text-sm whitespace-pre-wrap">{m.content}</p>
               </div>
             </div>
             {m.role === 'user' && (
@@ -127,7 +123,7 @@ export default function AIChatPage() {
             )}
           </div>
         ))}
-         {isLoading && messages[messages.length - 1].role === 'user' && (
+         {loading && messages[messages.length - 1]?.role !== 'model' && (
             <div className="flex items-start gap-4">
               <Avatar className="h-10 w-10 border-2 border-primary/50">
                 <Bot className="h-9 w-9" />
@@ -155,10 +151,10 @@ export default function AIChatPage() {
             className="flex-1"
             rows={1}
             maxRows={5}
-            disabled={isLoading}
+            disabled={loading}
           />
-          <Button type="submit" disabled={isLoading || !input.trim()}>
-            {isLoading ? (
+          <Button type="submit" disabled={loading || !input.trim()}>
+            {loading ? (
               <Loader2 className="h-5 w-5 animate-spin" />
             ) : (
               <Send className="h-5 w-5" />

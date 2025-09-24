@@ -14,7 +14,7 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import {Message, Role} from 'genkit/model';
-import {Stream} from 'genkit/streaming';
+import {defineStreamable} from '@genkit-ai/next/streaming/server';
 
 const ChatInputSchema = z.object({
   history: z.array(
@@ -27,9 +27,10 @@ const ChatInputSchema = z.object({
 });
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-export type ChatOutputChunk = {
-  text: string;
-};
+export const ChatOutputChunkSchema = z.object({
+  text: z.string(),
+});
+export type ChatOutputChunk = z.infer<typeof ChatOutputChunkSchema>;
 
 function toGenkitMessages(input: ChatInput): Message[] {
   const messages = input.history.map(
@@ -45,21 +46,26 @@ function toGenkitMessages(input: ChatInput): Message[] {
   return messages;
 }
 
-export async function chat(
-  input: ChatInput,
-  stream: Stream<ChatOutputChunk>
-) {
-  const llmResponse = await ai.generate({
-    stream: true,
-    prompt: {
-      messages: toGenkitMessages(input),
-    },
-    // The model can be overridden by passing `model` in the request.
-  });
+export const chat = defineStreamable(
+  {
+    name: 'chat',
+    input: {schema: ChatInputSchema},
+    output: {schema: ChatOutputChunkSchema},
+  },
+  async (input, stream) => {
+    const {stream: llmStream} = await ai.generate({
+      stream: true,
+      prompt: {
+        messages: toGenkitMessages(input),
+      },
+      // The model can be overridden by passing `model` in the request.
+    });
 
-  for await (const chunk of llmResponse.stream) {
-    if (chunk.content) {
-      stream.write({text: chunk.content[0].text!});
+    for await (const chunk of llmStream) {
+      const text = chunk.text;
+      if (text) {
+        stream.write({text});
+      }
     }
   }
-}
+);

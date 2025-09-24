@@ -16,6 +16,7 @@ import {
   Trophy,
   Target,
   Settings,
+  Award,
 } from 'lucide-react';
 import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
@@ -71,6 +72,18 @@ export default function StudentLayout({
                 <Link href="/student/progress">
                   <Target />
                   <span>My Progress</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                href="/student/badges"
+                asChild
+                tooltip="Badges"
+              >
+                <Link href="/student/badges">
+                  <Award />
+                  <span>Badges</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

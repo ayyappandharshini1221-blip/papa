@@ -31,23 +31,20 @@ const GenerateQuizContentOutputSchema = z.object({
 });
 export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutputSchema>;
 
-export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
-  const generate = cache(
-    async (input: GenerateQuizContentInput) => {
-      console.log(`Generating new quiz for ${input.subject} (${input.difficulty})`);
-      return generateQuizContentFlow(input);
-    },
-    ['quiz-content'],
-    {
-      // Revalidate the cache every hour
-      revalidate: 3600,
-      // Create a unique tag for this specific quiz combination
-      tags: [`quiz-${input.subject}-${input.difficulty}`],
-    }
-  );
-  return generate(input);
-}
+const cachedGenerateQuizContent = cache(
+  async (input: GenerateQuizContentInput) => {
+    console.log(`Generating new quiz for ${input.subject} (${input.difficulty})`);
+    return generateQuizContentFlow(input);
+  },
+  ['quiz-content'],
+  {
+    revalidate: 3600, // Revalidate cache every hour
+  }
+);
 
+export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
+  return cachedGenerateQuizContent(input);
+}
 
 const generateQuizContentPrompt = ai.definePrompt({
   name: 'generateQuizContentPrompt',

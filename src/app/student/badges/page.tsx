@@ -10,13 +10,27 @@ import {
 import { Progress } from '@/components/ui/progress';
 import {
   Award,
+  BookOpen,
   Brain,
+  Calculator,
+  Code,
+  Crown,
+  Feather,
+  FlaskConical,
   Flame,
+  Globe,
+  History,
+  Library,
+  Lightbulb,
   Lock,
+  Mountain,
+  Rocket,
+  Sparkles,
   Star,
   Swords,
   Target,
   Trophy,
+  Wind,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -81,6 +95,173 @@ const allBadges = [
     progress: '85%',
     xp: 300,
   },
+  {
+    id: 'quick-learner',
+    title: 'Quick Learner',
+    description: 'Complete a quiz in under 5 minutes.',
+    icon: <Rocket className="h-10 w-10" />,
+    unlocked: true,
+    xp: 125,
+  },
+  {
+    id: 'knowledge-explorer',
+    title: 'Knowledge Explorer',
+    description: 'Try a quiz in 5 different subjects.',
+    icon: <Globe className="h-10 w-10" />,
+    unlocked: false,
+    progress: '2/5',
+    xp: 175,
+  },
+  {
+    id: 'streak-champion',
+    title: 'Streak Champion',
+    description: 'Maintain a 7-day streak.',
+    icon: <Crown className="h-10 w-10" />,
+    unlocked: false,
+    progress: '3/7',
+    xp: 250,
+  },
+  {
+    id: 'historian',
+    title: 'Historian',
+    description: 'Complete 5 history quizzes.',
+    icon: <History className="h-10 w-10" />,
+    unlocked: false,
+    progress: '0/5',
+    xp: 150,
+  },
+  {
+    id: 'scientist',
+    title: 'Scientist',
+    description: 'Ace 3 chemistry quizzes.',
+    icon: <FlaskConical className="h-10 w-10" />,
+    unlocked: false,
+    progress: '1/3',
+    xp: 150,
+  },
+  {
+    id: 'coder',
+    title: 'Coder',
+    description: 'Complete your first Tech quiz.',
+    icon: <Code className="h-10 w-10" />,
+    unlocked: true,
+    xp: 50,
+  },
+  {
+    id: 'persistent-achiever',
+    title: 'Persistent Achiever',
+    description: 'Complete 25 quizzes.',
+    icon: <Mountain className="h-10 w-10" />,
+    unlocked: false,
+    progress: '4/25',
+    xp: 500,
+  },
+  {
+    id: 'genius',
+    title: 'Genius',
+    description: 'Get a 100% score on a hard quiz.',
+    icon: <Lightbulb className="h-10 w-10" />,
+    unlocked: false,
+    progress: '0/1',
+    xp: 400,
+  },
+  {
+    id: 'bookworm',
+    title: 'Bookworm',
+    description: 'Complete 5 literature quizzes.',
+    icon: <BookOpen className="h-10 w-10" />,
+    unlocked: false,
+    progress: '2/5',
+    xp: 150,
+  },
+  {
+    id: 'calculator',
+    title: 'Calculator',
+    description: 'Score over 90% in 5 math quizzes.',
+    icon: <Calculator className="h-10 w-10" />,
+    unlocked: false,
+    progress: '3/5',
+    xp: 225,
+  },
+  {
+    id: 'polyglot',
+    title: 'Polyglot',
+    description: 'Complete quizzes in 3 programming languages.',
+    icon: <Library className="h-10 w-10" />,
+    unlocked: false,
+    progress: '1/3',
+    xp: 200,
+  },
+  {
+    id: 'weekend-warrior',
+    title: 'Weekend Warrior',
+    description: 'Complete a quiz on a Saturday or Sunday.',
+    icon: <Sparkles className="h-10 w-10" />,
+    unlocked: true,
+    xp: 25,
+  },
+  {
+    id: 'breeze',
+    title: 'Breeze',
+    description: 'Complete 10 easy quizzes.',
+    icon: <Wind className="h-10 w-10" />,
+    unlocked: false,
+    progress: '8/10',
+    xp: 100,
+  },
+  {
+    id: 'writer',
+    title: 'Writer',
+    description: 'Complete your first literature quiz.',
+    icon: <Feather className="h-10 w-10" />,
+    unlocked: true,
+    xp: 50,
+  },
+  {
+    id: 'over-9000',
+    title: 'Over 9000!',
+    description: 'Earn over 9000 XP points in total.',
+    icon: <Award className="h-10 w-10" />,
+    unlocked: false,
+    progress: '4250/9001',
+    xp: 1000,
+  },
+  {
+    id: 'grandmaster',
+    title: 'Grandmaster',
+    description: 'Complete 100 quizzes.',
+    icon: <Trophy className="h-10 w-10" />,
+    unlocked: false,
+    progress: '4/100',
+    xp: 1500,
+  },
+  {
+    id: 'unstoppable',
+    title: 'Unstoppable',
+    description: 'Maintain a 30-day streak.',
+    icon: <Flame className="h-10 w-10" />,
+    unlocked: false,
+    progress: '3/30',
+    xp: 1000,
+  },
+  {
+    id: 'subject-expert',
+    title: 'Subject Expert',
+    description: 'Complete all difficulty levels for one subject.',
+    icon: <Brain className="h-10 w-10" />,
+    unlocked: false,
+    progress: '0/1',
+    xp: 500,
+  },
+  {
+    id: 'perfect-streak',
+    title: 'Perfect Streak',
+    description: 'Get 100% on 3 quizzes in a row.',
+    icon: <Target className="h-10 w-10" />,
+    unlocked: false,
+    progress: '1/3',
+    xp: 350,
+  },
 ];
 
 export default function BadgesPage() {
@@ -115,7 +296,7 @@ export default function BadgesPage() {
         <h2 className="text-2xl font-semibold tracking-tight mb-4">
           Earned Badges
         </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {unlockedBadges.map((badge) => (
             <Card
               key={badge.id}
@@ -142,7 +323,7 @@ export default function BadgesPage() {
         <h2 className="text-2xl font-semibold tracking-tight mb-4">
           Locked Badges
         </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {lockedBadges.map((badge) => (
             <Card
               key={badge.id}

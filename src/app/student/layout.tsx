@@ -56,7 +56,7 @@ export default function StudentLayout({
                 asChild
                 tooltip="My Quizzes"
               >
-                <Link href="#">
+                <Link href="/student/quizzes">
                   <Swords />
                   <span>My Quizzes</span>
                 </Link>
@@ -68,7 +68,7 @@ export default function StudentLayout({
                 asChild
                 tooltip="My Progress"
               >
-                <Link href="#">
+                <Link href="/student/progress">
                   <Target />
                   <span>My Progress</span>
                 </Link>
@@ -80,7 +80,7 @@ export default function StudentLayout({
                 asChild
                 tooltip="Leaderboard"
               >
-                <Link href="#">
+                <Link href="/student/leaderboard">
                   <Trophy />
                   <span>Leaderboard</span>
                 </Link>
@@ -92,7 +92,7 @@ export default function StudentLayout({
                 asChild
                 tooltip="Settings"
               >
-                <Link href="#">
+                <Link href="/student/settings">
                   <Settings />
                   <span>Settings</span>
                 </Link>

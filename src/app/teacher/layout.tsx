@@ -55,7 +55,7 @@ export default function TeacherLayout({
                 asChild
                 tooltip="Classes"
               >
-                <Link href="#">
+                <Link href="/teacher/classes">
                   <BookCopy />
                   <span>Classes</span>
                 </Link>
@@ -67,7 +67,7 @@ export default function TeacherLayout({
                 asChild
                 tooltip="Analytics"
               >
-                <Link href="#">
+                <Link href="/teacher/analytics">
                   <BarChart3 />
                   <span>Analytics</span>
                 </Link>
@@ -79,7 +79,7 @@ export default function TeacherLayout({
                 asChild
                 tooltip="Settings"
               >
-                <Link href="#">
+                <Link href="/teacher/settings">
                   <Settings />
                   <span>Settings</span>
                 </Link>

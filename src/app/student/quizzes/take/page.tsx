@@ -41,8 +41,8 @@ export default function QuizTakingPage() {
         })
         .catch(err => {
           console.error('Error generating quiz:', err);
-          if (err.message && err.message.includes('429')) {
-             setError('The AI is a bit busy right now. Please wait a moment and try again.');
+          if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests'))) {
+             setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
           } else {
             setError('Failed to generate the quiz. Please try again.');
           }

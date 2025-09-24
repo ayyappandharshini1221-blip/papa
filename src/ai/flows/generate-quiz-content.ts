@@ -23,8 +23,8 @@ const GenerateQuizContentOutputSchema = z.object({
   quiz: z.array(
     z.object({
       question: z.string().describe('The quiz question.'),
-      answers: z.array(z.string()).describe('The possible answers to the question.'),
-      correctAnswerIndex: z.number().min(0).describe('The index of the correct answer in the answers array.'),
+      answers: z.array(z.string()).length(4).describe('A list of 4 possible answers to the question.'),
+      correctAnswerIndex: z.number().min(0).max(3).describe('The index of the correct answer in the answers array.'),
       explanation: z.string().describe('An explanation of why the correct answer is correct.'),
     })
   ).describe('The generated quiz content.'),
@@ -32,15 +32,16 @@ const GenerateQuizContentOutputSchema = z.object({
 export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutputSchema>;
 
 const cachedGenerateQuizContent = cache(
-  async (input: GenerateQuizContentInput) => {
+  async (input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> => {
     console.log(`Generating new quiz for ${input.subject} (${input.difficulty})`);
-    return generateQuizContentFlow(input);
+    return await generateQuizContentFlow(input);
   },
   ['quiz-content'],
   {
     revalidate: 3600, // Revalidate cache every hour
   }
 );
+
 
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
   return cachedGenerateQuizContent(input);
@@ -50,7 +51,14 @@ const generateQuizContentPrompt = ai.definePrompt({
   name: 'generateQuizContentPrompt',
   input: {schema: GenerateQuizContentInputSchema},
   output: {schema: GenerateQuizContentOutputSchema},
-  prompt: `You are an expert quiz generator for teachers. Generate a quiz on the following subject: {{{subject}}}. The difficulty level is {{{difficulty}}}. The quiz should have {{{numberOfQuestions}}} questions. Each question should have 4 possible answers, and one of them should be correct. Provide an explanation for why the correct answer is correct. Return the quiz in JSON format.`,
+  prompt: `You are an expert quiz generator for teachers. Generate a quiz on the following subject: {{{subject}}}. The difficulty level should be {{{difficulty}}}.
+
+The quiz must contain exactly {{{numberOfQuestions}}} questions.
+Each question must have exactly 4 possible answers.
+For each question, you must provide the index of the correct answer (from 0 to 3).
+For each question, you must provide a brief explanation for why the answer is correct.
+
+Return the quiz in the exact JSON format specified.`,
 });
 
 const generateQuizContentFlow = ai.defineFlow(

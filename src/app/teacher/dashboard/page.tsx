@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart as BarChartIcon, BarChart3, BookOpen, Bot, PlusCircle, Users, Zap, Activity } from 'lucide-react';

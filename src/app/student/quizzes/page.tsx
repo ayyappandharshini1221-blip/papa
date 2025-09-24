@@ -1,7 +1,6 @@
 'use client';
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -10,114 +9,105 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { allQuizzes } from '@/lib/quiz-data';
-import { ListFilter, Swords } from 'lucide-react';
-import Link from 'next/link';
+  Atom,
+  BrainCircuit,
+  FlaskConical,
+  FunctionSquare,
+  Sigma,
+  Bot,
+} from 'lucide-react';
+import { JavaIcon, PythonIcon } from '@/components/icons';
+import { QuizStartDialog } from '@/components/quiz/quiz-start-dialog';
+
+export type Subject = {
+  name: string;
+  description: string;
+  icon: React.ReactNode;
+};
+
+const subjects: Subject[] = [
+  {
+    name: 'Maths',
+    description: 'Tackle problems in algebra, calculus, and more.',
+    icon: <Sigma className="h-10 w-10" />,
+  },
+  {
+    name: 'Chemistry',
+    description: 'Explore reactions, elements, and molecules.',
+    icon: <FlaskConical className="h-10 w-10" />,
+  },
+  {
+    name: 'Biology',
+    description: 'Learn about life, from cells to ecosystems.',
+    icon: <Atom className="h-10 w-10" />,
+  },
+  {
+    name: 'Tech',
+    description: 'Dive into the world of technology and computers.',
+    icon: <BrainCircuit className="h-10 w-10" />,
+  },
+  {
+    name: 'Python',
+    description: 'Code with one of the most popular languages.',
+    icon: <PythonIcon className="h-10 w-10" />,
+  },
+  {
+    name: 'Java',
+    description: 'Build robust applications with this classic language.',
+    icon: <JavaIcon className="h-10 w-10" />,
+  },
+];
 
 export default function QuizzesPage() {
-  const quizzes = []; // Empty array to remove all quizzes
+  const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
+
+  const handleSubjectSelect = (subject: Subject) => {
+    setSelectedSubject(subject);
+  };
+
+  const handleDialogClose = () => {
+    setSelectedSubject(null);
+  };
 
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">My Quizzes</h1>
+          <h1 className="text-3xl font-bold tracking-tight">
+            Start a New Quiz
+          </h1>
           <p className="text-muted-foreground">
-            View, filter, and start your assigned quizzes.
+            Select a subject to begin your challenge.
           </p>
-        </div>
-        <div className="flex items-center gap-2">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="h-8 gap-1">
-                <ListFilter className="h-3.5 w-3.5" />
-                <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                  Filter
-                </span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>Filter by</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Subject</DropdownMenuItem>
-              <DropdownMenuItem>Difficulty</DropdownMenuItem>
-              <DropdownMenuItem>Status</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
       </div>
 
-      {quizzes.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {quizzes.map((quiz) => (
-            <Card key={quiz.id}>
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-xl">{quiz.title}</CardTitle>
-                  <Swords className="h-6 w-6 text-primary" />
-                </div>
-                <CardDescription>
-                  {quiz.subject} - {quiz.questions} questions
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-col justify-between">
-                <div className="mb-4 flex items-center gap-2">
-                  <Badge
-                    variant={
-                      quiz.difficulty === 'easy'
-                        ? 'secondary'
-                        : quiz.difficulty === 'medium'
-                        ? 'outline'
-                        : 'destructive'
-                    }
-                    className="capitalize"
-                  >
-                    {quiz.difficulty}
-                  </Badge>
-                  <Badge
-                    variant={
-                      quiz.status === 'new'
-                        ? 'default'
-                        : quiz.status === 'in-progress'
-                        ? 'accent'
-                        : 'secondary'
-                    }
-                    className="capitalize"
-                  >
-                    {quiz.status}
-                  </Badge>
-                </div>
-                <Button asChild disabled={quiz.status === 'completed'}>
-                  <Link href={`/student/quizzes/${quiz.id}`}>
-                    {quiz.status === 'in-progress'
-                      ? 'Continue Quiz'
-                      : quiz.status === 'completed'
-                      ? 'Completed'
-                      : 'Start Quiz'}
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      ) : (
-        <div className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm">
-          <div className="flex flex-col items-center gap-1 text-center">
-            <h3 className="text-2xl font-bold tracking-tight">
-              No quizzes available
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              You have no quizzes assigned to you at the moment.
-            </p>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {subjects.map((subject) => (
+          <Card
+            key={subject.name}
+            className="group cursor-pointer transform transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+            onClick={() => handleSubjectSelect(subject)}
+          >
+            <CardHeader className="flex flex-row items-center gap-4">
+              <div className="rounded-lg bg-primary/10 p-4 text-primary">
+                {subject.icon}
+              </div>
+              <div>
+                <CardTitle className="text-xl">{subject.name}</CardTitle>
+                <CardDescription>{subject.description}</CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+        ))}
+      </div>
+
+      {selectedSubject && (
+        <QuizStartDialog
+          subject={selectedSubject}
+          open={!!selectedSubject}
+          onClose={handleDialogClose}
+        />
       )}
     </div>
   );

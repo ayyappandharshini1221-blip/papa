@@ -15,7 +15,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Trophy, Flame } from 'lucide-react';
@@ -48,83 +47,75 @@ export default function LeaderboardPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Leaderboard</h1>
           <p className="text-muted-foreground">
-            See where you stand among your peers.
+            See where you stand among your peers in Algebra 101.
           </p>
         </div>
       </div>
       <Card>
         <CardHeader>
-          <CardTitle>Class Rankings</CardTitle>
+          <CardTitle>Overall Rankings</CardTitle>
           <CardDescription>
-            Top students in Algebra 101 this week.
+            Top students based on all-time XP.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Tabs defaultValue="all-time">
-            <TabsList className="grid w-full grid-cols-2 md:w-auto">
-              <TabsTrigger value="all-time">All Time</TabsTrigger>
-              <TabsTrigger value="this-week">This Week</TabsTrigger>
-            </TabsList>
-            <TabsContent value="all-time">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[80px]">Rank</TableHead>
-                    <TableHead>Student</TableHead>
-                    <TableHead className="text-right">XP</TableHead>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-[80px]">Rank</TableHead>
+                <TableHead>Student</TableHead>
+                <TableHead className="text-right">XP</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {leaderboardData.map((player) => {
+                const avatar = PlaceHolderImages.find(
+                  (p) => p.id === player.avatarId
+                );
+                return (
+                  <TableRow
+                    key={player.rank}
+                    className={
+                      player.name === 'You'
+                        ? 'bg-primary/10 hover:bg-primary/20'
+                        : ''
+                    }
+                  >
+                    <TableCell className="font-bold text-lg">
+                      <div className="flex items-center gap-2">
+                        <span>{player.rank}</span>
+                        {getTrophy(player.rank)}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-3">
+                        <Avatar className="h-10 w-10 border-2 border-primary/50">
+                          <AvatarImage
+                            src={avatar?.imageUrl}
+                            alt={player.name}
+                            data-ai-hint={avatar?.imageHint}
+                          />
+                          <AvatarFallback>
+                            {player.name.charAt(0)}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-medium">{player.name}</p>
+                          <div className="flex items-center text-xs text-muted-foreground">
+                            <Flame className="h-3 w-3 mr-1 text-red-500" />{' '}
+                            {player.streak} day streak
+                          </div>
+                        </div>
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <Badge variant="secondary">{player.xp} XP</Badge>
+                    </TableCell>
                   </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {leaderboardData.map((player) => {
-                    const avatar = PlaceHolderImages.find(
-                      (p) => p.id === player.avatarId
-                    );
-                    return (
-                      <TableRow
-                        key={player.rank}
-                        className={
-                          player.name === 'You'
-                            ? 'bg-primary/10 hover:bg-primary/20'
-                            : ''
-                        }
-                      >
-                        <TableCell className="font-bold text-lg">
-                          <div className="flex items-center gap-2">
-                            <span>{player.rank}</span>
-                            {getTrophy(player.rank)}
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex items-center gap-3">
-                            <Avatar className="h-10 w-10 border-2 border-primary/50">
-                              <AvatarImage
-                                src={avatar?.imageUrl}
-                                alt={player.name}
-                                data-ai-hint={avatar?.imageHint}
-                              />
-                              <AvatarFallback>
-                                {player.name.charAt(0)}
-                              </AvatarFallback>
-                            </Avatar>
-                            <div>
-                              <p className="font-medium">{player.name}</p>
-                              <div className="flex items-center text-xs text-muted-foreground">
-                                <Flame className="h-3 w-3 mr-1 text-red-500" />{' '}
-                                {player.streak} day streak
-                              </div>
-                            </div>
-                          </div>
-                        </TableCell>
-                        <TableCell className="text-right">
-                          <Badge variant="secondary">{player.xp} XP</Badge>
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
-            </TabsContent>
-          </Tabs>
+                );
+              })}
+            </TableBody>
+          </Table>
         </CardContent>
       </Card>
     </div>

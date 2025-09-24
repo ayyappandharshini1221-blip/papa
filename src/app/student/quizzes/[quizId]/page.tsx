@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -12,7 +12,8 @@ import { allQuizzes, quizQuestions } from '@/lib/quiz-data';
 
 type UserAnswers = { [key: number]: number | null };
 
-export default function QuizTakingPage({ params }: { params: { quizId: string } }) {
+export default function QuizTakingPage() {
+  const params = useParams<{ quizId: string }>();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [isSubmitted, setIsSubmitted] = useState(false);

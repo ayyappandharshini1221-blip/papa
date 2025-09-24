@@ -10,6 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { unstable_cache as cache } from 'next/cache';
 
 const GenerateQuizContentInputSchema = z.object({
   subject: z.string().describe('The subject of the quiz.'),
@@ -31,8 +32,22 @@ const GenerateQuizContentOutputSchema = z.object({
 export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutputSchema>;
 
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
-  return generateQuizContentFlow(input);
+  const generate = cache(
+    async (input: GenerateQuizContentInput) => {
+      console.log(`Generating new quiz for ${input.subject} (${input.difficulty})`);
+      return generateQuizContentFlow(input);
+    },
+    ['quiz-content'],
+    {
+      // Revalidate the cache every hour
+      revalidate: 3600,
+      // Create a unique tag for this specific quiz combination
+      tags: [`quiz-${input.subject}-${input.difficulty}`],
+    }
+  );
+  return generate(input);
 }
+
 
 const generateQuizContentPrompt = ai.definePrompt({
   name: 'generateQuizContentPrompt',

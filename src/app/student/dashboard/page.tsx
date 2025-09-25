@@ -37,6 +37,8 @@ import { db } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { onAuthChange } from '@/lib/auth/auth';
 import type { User } from '@/lib/types';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 
 const leaderboardData = [
@@ -76,6 +78,7 @@ export default function StudentDashboard() {
 
       if (querySnapshot.empty) {
         toast({ title: 'Invalid invite code.', description: 'Please check the code and try again.', variant: 'destructive' });
+        setIsJoining(false);
         return;
       }
 
@@ -84,20 +87,32 @@ export default function StudentDashboard() {
       
       const studentDocRef = doc(db, 'users', user.id);
       
-      // Add classId to student's classIds array
-      await updateDoc(studentDocRef, {
+      updateDoc(studentDocRef, {
         classIds: arrayUnion(classId)
+      }).catch(serverError => {
+        const permissionError = new FirestorePermissionError({
+          path: studentDocRef.path,
+          operation: 'update',
+          requestResourceData: { classIds: arrayUnion(classId) },
+        });
+        errorEmitter.emit('permission-error', permissionError);
       });
       
-      // Add studentId to class's studentIds array
-      await updateDoc(doc(db, 'classes', classId), {
+      const classDocRef = doc(db, 'classes', classId);
+      updateDoc(classDocRef, {
           studentIds: arrayUnion(user.id)
+      }).catch(serverError => {
+        const permissionError = new FirestorePermissionError({
+          path: classDocRef.path,
+          operation: 'update',
+          requestResourceData: { studentIds: arrayUnion(user.id) },
+        });
+        errorEmitter.emit('permission-error', permissionError);
       });
 
       toast({ title: 'Successfully joined class!' });
       setOpenJoinClass(false);
       setInviteCode('');
-      // Here you might want to refresh the list of classes for the student
     } catch (error) {
       console.error("Error joining class: ", error);
       toast({ title: 'Failed to join class.', description: (error as Error).message, variant: 'destructive' });

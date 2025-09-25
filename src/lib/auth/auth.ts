@@ -31,7 +31,6 @@ export const signUpWithEmail = async (
   role: UserRole
 ) => {
   try {
-    // Check if a user with this email already exists in Firestore
     const usersRef = collection(db, 'users');
     const q = query(usersRef, where('email', '==', email));
     const querySnapshot = await getDocs(q);
@@ -66,13 +65,13 @@ export const signUpWithEmail = async (
           };
 
     const userDocRef = doc(db, 'users', user.uid);
-    setDoc(userDocRef, userProfile).catch(async (serverError) => {
-        const permissionError = new FirestorePermissionError({
-            path: userDocRef.path,
-            operation: 'create',
-            requestResourceData: userProfile,
-        });
-        errorEmitter.emit('permission-error', permissionError);
+    setDoc(userDocRef, userProfile).catch((serverError) => {
+      const permissionError = new FirestorePermissionError({
+        path: userDocRef.path,
+        operation: 'create',
+        requestResourceData: userProfile,
+      });
+      errorEmitter.emit('permission-error', permissionError);
     });
 
     return userProfile;
@@ -97,9 +96,6 @@ export const signInWithEmail = async (email: string, password: string) => {
       return userDoc.data() as User;
     }
     
-    // If user exists in Auth but not Firestore, create a record.
-    // This is a fallback and might not have the correct role if it wasn't set during a failed signup.
-    // Defaulting to 'student'.
     console.warn(`User document not found for UID: ${user.uid}. Creating a new one.`);
     const userProfile: Student = {
       id: user.uid,
@@ -111,7 +107,7 @@ export const signInWithEmail = async (email: string, password: string) => {
       badges: [],
       classIds: [],
     };
-    setDoc(userDocRef, userProfile).catch(async (serverError) => {
+    setDoc(userDocRef, userProfile).catch((serverError) => {
         const permissionError = new FirestorePermissionError({
             path: userDocRef.path,
             operation: 'create',
@@ -139,9 +135,8 @@ export const signInWithGoogle = async (role: UserRole) => {
 
     if (userDoc.exists()) {
       const existingUser = userDoc.data() as User;
-      // If role selection during Google sign-in differs from stored role, update it.
       if (existingUser.role !== role) {
-         setDoc(userDocRef, { role: role }, { merge: true }).catch(async (serverError) => {
+         setDoc(userDocRef, { role: role }, { merge: true }).catch((serverError) => {
             const permissionError = new FirestorePermissionError({
                 path: userDocRef.path,
                 operation: 'update',
@@ -174,7 +169,7 @@ export const signInWithGoogle = async (role: UserRole) => {
               avatarUrl: user.photoURL || undefined,
             };
 
-      setDoc(userDocRef, userProfile).catch(async (serverError) => {
+      setDoc(userDocRef, userProfile).catch((serverError) => {
         const permissionError = new FirestorePermissionError({
             path: userDocRef.path,
             operation: 'create',
@@ -206,8 +201,6 @@ export const onAuthChange = (callback: (user: User | null) => void) => {
       if (userDoc.exists()) {
         callback(userDoc.data() as User);
       } else {
-        // This case handles users that exist in Auth but not in Firestore.
-        // You might want to create a default user record here or handle it as an error state.
         console.warn(`User with UID ${firebaseUser.uid} authenticated but has no Firestore document.`);
         callback(null);
       }

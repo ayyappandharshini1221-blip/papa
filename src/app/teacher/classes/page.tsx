@@ -36,6 +36,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 // Mock data, in a real app this would come from a database
 const initialClasses = [
@@ -90,20 +92,29 @@ export default function ClassesPage() {
             teacherId: "dummy-teacher-id" // Replace with actual teacher ID
         };
         
-        const docRef = await addDoc(collection(db, "classes"), newClassData);
-
-        // This is a local update for the UI, in a real app you'd likely refetch or use a real-time listener
-        const newClassForUI = {
-            id: docRef.id,
-            name: newClassName,
-            studentCount: 0,
-            inviteCode: inviteCode,
-            students: [],
-        };
-
-        setClasses([newClassForUI, ...classes]);
-        toast({ title: 'Class created successfully!' });
-
+        const classesCollection = collection(db, "classes");
+        
+        addDoc(classesCollection, newClassData)
+          .then(docRef => {
+            const newClassForUI = {
+                id: docRef.id,
+                name: newClassName,
+                studentCount: 0,
+                inviteCode: inviteCode,
+                students: [],
+            };
+            setClasses([newClassForUI, ...classes]);
+            toast({ title: 'Class created successfully!' });
+          })
+          .catch((serverError) => {
+            const permissionError = new FirestorePermissionError({
+              path: classesCollection.path,
+              operation: 'create',
+              requestResourceData: newClassData,
+            });
+            errorEmitter.emit('permission-error', permissionError);
+          });
+          
     } catch (error) {
         console.error("Error creating class:", error);
         toast({ title: 'Error creating class', description: (error as Error).message, variant: 'destructive' });

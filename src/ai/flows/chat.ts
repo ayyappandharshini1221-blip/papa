@@ -5,23 +5,21 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'zod';
-import {Message, defineFlow, defineSchema} from 'genkit';
+import {Message, defineFlow} from 'genkit';
 
-export const ChatInputSchema = defineSchema(
-  z.object({
-    history: z.array(
-      z.object({
-        role: z.enum(['user', 'model']),
-        content: z.array(z.object({text: z.string()})),
-      })
-    ),
-    prompt: z.string(),
-  })
-);
+export const ChatInputSchema = z.object({
+  history: z.array(
+    z.object({
+      role: z.enum(['user', 'model']),
+      content: z.array(z.object({text: z.string()})),
+    })
+  ),
+  prompt: z.string(),
+});
 
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-export const ChatOutputChunkSchema = defineSchema(z.object({text: z.string()}));
+export const ChatOutputChunkSchema = z.object({text: z.string()});
 export type ChatOutputChunk = z.infer<typeof ChatOutputChunkSchema>;
 
 // Convert client history + prompt into Genkit-compatible messages

@@ -1,7 +1,9 @@
-import { initializeApp, getApps, getApp } from 'firebase/app';
+'use client';
+
+import { initializeApp, getApps, getApp, type FirebaseApp } from 'firebase/app';
 import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
-import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager, type Firestore } from 'firebase/firestore';
+import { getAuth, type Auth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,15 +15,23 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+let app: FirebaseApp;
+let db: Firestore;
+let auth: Auth;
 
-const db = initializeFirestore(app, {
-  localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
-  experimentalForceLongPolling: true,
-});
-
-const auth = getAuth(app);
+// Initialize Firebase only on the client side
+if (typeof window !== 'undefined' && !getApps().length) {
+    app = initializeApp(firebaseConfig);
+    db = initializeFirestore(app, {
+      localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
+      experimentalForceLongPolling: true,
+    });
+    auth = getAuth(app);
+} else if (getApps().length) {
+    app = getApp();
+    db = getFirestore(app);
+    auth = getAuth(app);
+}
 
 /*
 if (typeof window !== 'undefined') {
@@ -36,4 +46,5 @@ if (typeof window !== 'undefined') {
 }
 */
 
+// @ts-ignore
 export { app, db, auth };

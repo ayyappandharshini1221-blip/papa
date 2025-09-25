@@ -31,13 +31,6 @@ export const signUpWithEmail = async (
   role: UserRole
 ) => {
   try {
-    const usersRef = collection(db, 'users');
-    const q = query(usersRef, where('email', '==', email));
-    const querySnapshot = await getDocs(q);
-    if (!querySnapshot.empty) {
-      throw new Error('An account with this email already exists.');
-    }
-
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
@@ -65,7 +58,7 @@ export const signUpWithEmail = async (
           };
 
     const userDocRef = doc(db, 'users', user.uid);
-    setDoc(userDocRef, userProfile).catch((serverError) => {
+    await setDoc(userDocRef, userProfile).catch((serverError) => {
       const permissionError = new FirestorePermissionError({
         path: userDocRef.path,
         operation: 'create',
@@ -77,6 +70,10 @@ export const signUpWithEmail = async (
     return userProfile;
   } catch (error: any) {
     console.error('Error signing up:', error);
+    // Use a more user-friendly message for common errors
+    if (error.code === 'auth/email-already-in-use') {
+      throw new Error('An account with this email already exists.');
+    }
     throw new Error(error.message);
   }
 };
@@ -107,7 +104,7 @@ export const signInWithEmail = async (email: string, password: string) => {
       badges: [],
       classIds: [],
     };
-    setDoc(userDocRef, userProfile).catch((serverError) => {
+    await setDoc(userDocRef, userProfile).catch((serverError) => {
         const permissionError = new FirestorePermissionError({
             path: userDocRef.path,
             operation: 'create',
@@ -136,7 +133,7 @@ export const signInWithGoogle = async (role: UserRole) => {
     if (userDoc.exists()) {
       const existingUser = userDoc.data() as User;
       if (existingUser.role !== role) {
-         setDoc(userDocRef, { role: role }, { merge: true }).catch((serverError) => {
+         await setDoc(userDocRef, { role: role }, { merge: true }).catch((serverError) => {
             const permissionError = new FirestorePermissionError({
                 path: userDocRef.path,
                 operation: 'update',
@@ -169,7 +166,7 @@ export const signInWithGoogle = async (role: UserRole) => {
               avatarUrl: user.photoURL || undefined,
             };
 
-      setDoc(userDocRef, userProfile).catch((serverError) => {
+      await setDoc(userDocRef, userProfile).catch((serverError) => {
         const permissionError = new FirestorePermissionError({
             path: userDocRef.path,
             operation: 'create',

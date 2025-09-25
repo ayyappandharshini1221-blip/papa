@@ -1,14 +1,14 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useActions, useStreamableValue } from 'ai/rsc';
 import { Send, User, Bot, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { streamChat } from '@/ai/flows/chat';
+import { streamChat, ChatInput } from '@/ai/flows/chat';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Card, CardContent, CardFooter } from '../ui/card';
 
 type Message = {
   role: 'user' | 'model';
@@ -16,69 +16,57 @@ type Message = {
 };
 
 export function ChatInterface({ initialMessages }: { initialMessages: Message[] }) {
-  const { streamChat: streamChatAction } = useActions();
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [input, setInput] = useState('');
-  const [data, error, pending] = useStreamableValue<string>(
-    '',
-  );
+  const [pending, setPending] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const userAvatar = PlaceHolderImages.find(p => p.id === 'avatar-1');
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, data]);
-  
-  useEffect(() => {
-    if (data) {
-      const lastMessage = messages[messages.length - 1];
-      if (lastMessage?.role === 'model') {
-        // Append to the last message if it's from the model
-        const updatedMessages = [...messages];
-        const lastContent = lastMessage.content[lastMessage.content.length-1].text;
-        updatedMessages[messages.length - 1] = {
-          ...lastMessage,
-          content: [{ text: lastContent + data }],
-        };
-        setMessages(updatedMessages);
-      } else {
-        // Create a new message if the last one was from the user
-        setMessages([
-          ...messages,
-          { role: 'model', content: [{ text: data }]},
-        ]);
-      }
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
+  }, [messages]);
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() && !pending) return;
+    if (!input.trim() || pending) return;
 
-    const newMessages: Message[] = [
-      ...messages,
-      { role: 'user', content: [{ text: input }] },
-    ];
+    const userMessage: Message = { role: 'user', content: [{ text: input }] };
+    const newMessages: Message[] = [...messages, userMessage];
     setMessages(newMessages);
+    const prompt = input;
     setInput('');
-    
-    const history = newMessages.slice(0, -1).map(msg => ({
-      ...msg,
-      // Ensure content is an array as expected by the flow
-      content: Array.isArray(msg.content) ? msg.content : [{ text: msg.content as any }],
-    }));
+    setPending(true);
 
-    const stream = await streamChatAction({
-      history,
-      prompt: input,
-    });
-    
-    // Reset data for the new stream
-    const [newData, newError, newPending] = useStreamableValue<string>('', {
-      initialValue: '',
-      stream,
-    });
+    try {
+       const chatInput: ChatInput = {
+        history: messages,
+        prompt: prompt,
+      };
+
+      const stream = await streamChat(chatInput);
+
+      let fullResponse = '';
+      setMessages(prev => [...prev, { role: 'model', content: [{ text: '' }] }]);
+
+      for await (const chunk of stream) {
+        if (chunk?.text) {
+          fullResponse += chunk.text;
+          setMessages(prev => {
+            const updated = [...prev];
+            updated[updated.length - 1] = {
+              role: 'model',
+              content: [{ text: fullResponse }],
+            };
+            return updated;
+          });
+        }
+      }
+    } catch (error) {
+      console.error('Error streaming chat:', error);
+       setMessages(prev => [...prev, { role: 'model', content: [{ text: 'Sorry, I encountered an error.' }] }]);
+    } finally {
+      setPending(false);
+    }
   };
 
   return (
@@ -105,7 +93,9 @@ export function ChatInterface({ initialMessages }: { initialMessages: Message[] 
                   : 'bg-muted'
               )}
             >
-              <p className="text-sm whitespace-pre-wrap">{m.content[0].text}</p>
+              {m.content.map((c, j) => (
+                <p key={j} className="text-sm whitespace-pre-wrap">{c.text}</p>
+              ))}
             </div>
              {m.role === 'user' && (
               <Avatar className="h-9 w-9">
@@ -115,7 +105,7 @@ export function ChatInterface({ initialMessages }: { initialMessages: Message[] 
             )}
           </div>
         ))}
-         {pending && messages[messages.length-1].role === 'user' && (
+         {pending && (
           <div className="flex gap-3 justify-start">
              <Avatar className="h-9 w-9">
                 <AvatarFallback><Bot /></AvatarFallback>

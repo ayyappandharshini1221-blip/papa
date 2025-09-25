@@ -33,6 +33,9 @@ import { Label } from '@/components/ui/label';
 import { PlusCircle, Users, Clipboard, ClipboardCheck } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+import { useToast } from '@/hooks/use-toast';
 
 // Mock data, in a real app this would come from a database
 const initialClasses = [
@@ -69,26 +72,46 @@ export default function ClassesPage() {
   const [isCreating, setIsCreating] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
+  const { toast } = useToast();
 
-  const handleCreateClass = () => {
+  const handleCreateClass = async () => {
     if (!newClassName.trim()) return;
     setIsCreating(true);
-    // Simulate API call
-    setTimeout(() => {
-      const newClass = {
-        id: newClassName.toLowerCase().replace(/\s+/g, '-'),
-        name: newClassName,
-        studentCount: 0,
-        inviteCode: `${newClassName.slice(0, 4).toUpperCase()}-${Math.random()
-          .toString(36)
-          .substr(2, 3)}`,
-        students: [],
-      };
-      setClasses([newClass, ...classes]);
-      setIsCreating(false);
-      setNewClassName('');
-      setOpenDialog(false);
-    }, 1000);
+    
+    const inviteCode = `${newClassName.slice(0, 4).toUpperCase()}-${Math.random()
+        .toString(36)
+        .substr(2, 3)}`;
+
+    try {
+        const newClassData = {
+            name: newClassName,
+            studentIds: [],
+            inviteCode: inviteCode,
+            teacherId: "dummy-teacher-id" // Replace with actual teacher ID
+        };
+        
+        const docRef = await addDoc(collection(db, "classes"), newClassData);
+
+        // This is a local update for the UI, in a real app you'd likely refetch or use a real-time listener
+        const newClassForUI = {
+            id: docRef.id,
+            name: newClassName,
+            studentCount: 0,
+            inviteCode: inviteCode,
+            students: [],
+        };
+
+        setClasses([newClassForUI, ...classes]);
+        toast({ title: 'Class created successfully!' });
+
+    } catch (error) {
+        console.error("Error creating class:", error);
+        toast({ title: 'Error creating class', description: (error as Error).message, variant: 'destructive' });
+    } finally {
+        setIsCreating(false);
+        setNewClassName('');
+        setOpenDialog(false);
+    }
   };
 
   const handleCopyCode = (code: string) => {

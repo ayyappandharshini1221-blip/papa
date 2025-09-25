@@ -32,6 +32,12 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { arrayUnion, doc, getDoc, updateDoc, query, collection, where, getDocs } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+import { useToast } from '@/hooks/use-toast';
+import { onAuthChange } from '@/lib/auth/auth';
+import type { User } from '@/lib/types';
+
 
 const leaderboardData = [
   { rank: 1, name: 'Alex', xp: 4500, avatarId: 'leader-1' },
@@ -42,6 +48,63 @@ const leaderboardData = [
 
 export default function StudentDashboard() {
   const [openJoinClass, setOpenJoinClass] = useState(false);
+  const [inviteCode, setInviteCode] = useState('');
+  const [isJoining, setIsJoining] = useState(false);
+  const { toast } = useToast();
+  const [user, setUser] = useState<User | null>(null);
+
+  useState(() => {
+    const unsubscribe = onAuthChange(setUser);
+    return () => unsubscribe();
+  }, []);
+
+  const handleJoinClass = async () => {
+    if (!inviteCode.trim()) {
+      toast({ title: 'Please enter an invite code.', variant: 'destructive' });
+      return;
+    }
+    if (!user) {
+      toast({ title: 'You must be logged in to join a class.', variant: 'destructive' });
+      return;
+    }
+    setIsJoining(true);
+
+    try {
+      const classesRef = collection(db, "classes");
+      const q = query(classesRef, where("inviteCode", "==", inviteCode.trim()));
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.empty) {
+        toast({ title: 'Invalid invite code.', description: 'Please check the code and try again.', variant: 'destructive' });
+        return;
+      }
+
+      const classDoc = querySnapshot.docs[0];
+      const classId = classDoc.id;
+      
+      const studentDocRef = doc(db, 'users', user.id);
+      
+      // Add classId to student's classIds array
+      await updateDoc(studentDocRef, {
+        classIds: arrayUnion(classId)
+      });
+      
+      // Add studentId to class's studentIds array
+      await updateDoc(doc(db, 'classes', classId), {
+          studentIds: arrayUnion(user.id)
+      });
+
+      toast({ title: 'Successfully joined class!' });
+      setOpenJoinClass(false);
+      setInviteCode('');
+      // Here you might want to refresh the list of classes for the student
+    } catch (error) {
+      console.error("Error joining class: ", error);
+      toast({ title: 'Failed to join class.', description: (error as Error).message, variant: 'destructive' });
+    } finally {
+      setIsJoining(false);
+    }
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -126,12 +189,14 @@ export default function StudentDashboard() {
                         id="invite-code"
                         className="col-span-3"
                         placeholder="e.g., ALG101-XYZ"
+                        value={inviteCode}
+                        onChange={(e) => setInviteCode(e.target.value)}
                       />
                     </div>
                   </div>
                   <DialogFooter>
-                    <Button onClick={() => setOpenJoinClass(false)}>
-                      Join Class
+                    <Button onClick={handleJoinClass} disabled={isJoining}>
+                      {isJoining ? 'Joining...' : 'Join Class'}
                     </Button>
                   </DialogFooter>
                 </DialogContent>

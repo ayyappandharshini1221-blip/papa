@@ -21,6 +21,8 @@ import {
 } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase';
 import type { User, UserRole, Student } from '@/lib/types';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 export const signUpWithEmail = async (
   email: string,
@@ -63,7 +65,16 @@ export const signUpWithEmail = async (
             role,
           };
 
-    await setDoc(doc(db, 'users', user.uid), userProfile);
+    const userDocRef = doc(db, 'users', user.uid);
+    setDoc(userDocRef, userProfile).catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: userDocRef.path,
+            operation: 'create',
+            requestResourceData: userProfile,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+    });
+
     return userProfile;
   } catch (error: any) {
     console.error('Error signing up:', error);
@@ -100,10 +111,18 @@ export const signInWithEmail = async (email: string, password: string) => {
       badges: [],
       classIds: [],
     };
-    await setDoc(userDocRef, userProfile);
+    setDoc(userDocRef, userProfile).catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: userDocRef.path,
+            operation: 'create',
+            requestResourceData: userProfile,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+    });
     return userProfile;
 
-  } catch (error: any) {
+  } catch (error: any)
+   {
     console.error('Error signing in:', error);
     throw new Error(error.message);
   }
@@ -122,7 +141,14 @@ export const signInWithGoogle = async (role: UserRole) => {
       const existingUser = userDoc.data() as User;
       // If role selection during Google sign-in differs from stored role, update it.
       if (existingUser.role !== role) {
-        await setDoc(userDocRef, { role: role }, { merge: true });
+         setDoc(userDocRef, { role: role }, { merge: true }).catch(async (serverError) => {
+            const permissionError = new FirestorePermissionError({
+                path: userDocRef.path,
+                operation: 'update',
+                requestResourceData: { role },
+            });
+            errorEmitter.emit('permission-error', permissionError);
+        });
         existingUser.role = role;
       }
       return existingUser;
@@ -148,7 +174,14 @@ export const signInWithGoogle = async (role: UserRole) => {
               avatarUrl: user.photoURL || undefined,
             };
 
-      await setDoc(userDocRef, userProfile);
+      setDoc(userDocRef, userProfile).catch(async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: userDocRef.path,
+            operation: 'create',
+            requestResourceData: userProfile,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+      });
       return userProfile;
     }
   } catch (error: any) {

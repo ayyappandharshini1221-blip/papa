@@ -27,7 +27,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { Award, Flame, Loader2, User, Zap } from 'lucide-react';
+import { Award, Flame, Loader2, Users, Zap } from 'lucide-react';
 
 import { useTeacherData } from '@/hooks/use-teacher-data';
 import { Student } from '@/lib/types';

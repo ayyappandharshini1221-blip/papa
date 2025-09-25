@@ -52,9 +52,7 @@ const chatFlow = ai.defineFlow(
   async function* (input) {
     const {stream: llmStream} = await ai.generate({
       stream: true,
-      prompt: {
-        messages: toGenkitMessages(input),
-      },
+      prompt: toGenkitMessages(input),
       // The model can be overridden by passing `model` in the request.
     });
 

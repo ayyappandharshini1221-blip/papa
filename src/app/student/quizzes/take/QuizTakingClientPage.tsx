@@ -1,23 +1,39 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { notFound, useSearchParams, useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
-import { CheckCircle2, XCircle, Loader2 } from 'lucide-react';
+import { CheckCircle2, XCircle, Loader2, Award, Zap } from 'lucide-react';
 import { generateQuizContent, GenerateQuizContentOutput } from '@/ai/flows/generate-quiz-content';
+import { useStudentData } from '@/hooks/use-student-data';
+import { doc, updateDoc, increment, arrayUnion } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+import { useToast } from '@/hooks/use-toast';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
+import { allBadges } from '@/app/student/badges/page';
 
 type UserAnswers = { [key: number]: number | null };
+
+const difficultyXpMap = {
+  easy: 25,
+  medium: 50,
+  hard: 100,
+};
 
 export default function QuizTakingClientPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { toast } = useToast();
+  const { student } = useStudentData();
+
   const subject = searchParams.get('subject');
   const difficulty = searchParams.get('difficulty') as 'easy' | 'medium' | 'hard' | null;
-  
+
   const [quizData, setQuizData] = useState<GenerateQuizContentOutput | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -26,8 +42,8 @@ export default function QuizTakingClientPage() {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
-  
-  const fetchQuiz = React.useCallback(() => {
+
+  const fetchQuiz = useCallback(() => {
     if (subject && difficulty) {
       setIsLoading(true);
       setError(null);
@@ -41,7 +57,7 @@ export default function QuizTakingClientPage() {
         })
         .catch(err => {
           console.error('Error generating quiz:', err);
-          if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests'))) {
+           if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests'))) {
              setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
           } else {
             setError('Failed to generate the quiz. Please try again.');
@@ -57,10 +73,117 @@ export default function QuizTakingClientPage() {
     fetchQuiz();
   }, [fetchQuiz]);
 
+  const handleAnswerSelect = (answerIndex: number) => {
+    setUserAnswers({
+      ...userAnswers,
+      [currentQuestionIndex]: answerIndex,
+    });
+  };
+
+  const handleNext = () => {
+    if (quizData && currentQuestionIndex < quizData.quiz.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
+
+  const handleBack = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  const handleSubmit = async () => {
+    if (!quizData || !student || !difficulty) return;
+
+    let correctAnswers = 0;
+    quizData.quiz.forEach((q, index) => {
+      if (userAnswers[index] === q.correctAnswerIndex) {
+        correctAnswers++;
+      }
+    });
+
+    const finalScore = (correctAnswers / quizData.quiz.length) * 100;
+    setScore(finalScore);
+    setIsSubmitted(true);
+
+    const xpGained = difficultyXpMap[difficulty];
+    
+    // In a real app, you would have more robust logic for streak calculation
+    // For now, we'll just increment it.
+    const newStreak = (student.streak || 0) + 1;
+
+    try {
+      const studentDocRef = doc(db, 'users', student.id);
+      const updates: { [key: string]: any } = {
+        xp: increment(xpGained),
+        streak: newStreak
+      };
+
+      // Badge check logic
+      const newlyEarnedBadges: string[] = [];
+      if(finalScore === 100 && !student.badges.includes('perfectionist')) {
+        newlyEarnedBadges.push('perfectionist');
+      }
+      if(subject?.toLowerCase() === 'python' && !student.badges.includes('python-pioneer')) {
+        newlyEarnedBadges.push('python-pioneer');
+      }
+      if(newStreak >= 3 && !student.badges.includes('streak-starter')) {
+          newlyEarnedBadges.push('streak-starter');
+      }
+
+      if(newlyEarnedBadges.length > 0) {
+        updates.badges = arrayUnion(...newlyEarnedBadges);
+      }
+
+      await updateDoc(studentDocRef, updates)
+        .catch(serverError => {
+            const permissionError = new FirestorePermissionError({
+              path: studentDocRef.path,
+              operation: 'update',
+              requestResourceData: updates,
+            });
+            errorEmitter.emit('permission-error', permissionError);
+        });
+      
+      toast({
+          title: (
+            <div className="flex items-center">
+              <Zap className="mr-2 h-5 w-5 text-yellow-500" />
+              <span className="font-bold">+{xpGained} XP Gained!</span>
+            </div>
+          ),
+          description: `You scored ${finalScore.toFixed(0)}% and your streak is now ${newStreak} days!`,
+      });
+
+      newlyEarnedBadges.forEach(badgeId => {
+          const badgeInfo = allBadges.find(b => b.id === badgeId);
+          if (badgeInfo) {
+              toast({
+                title: (
+                    <div className="flex items-center">
+                        <Award className="mr-2 h-5 w-5 text-accent" />
+                        <span className="font-bold">Badge Unlocked!</span>
+                    </div>
+                ),
+                description: `You've earned the "${badgeInfo.title}" badge!`,
+              })
+          }
+      })
+
+    } catch (err) {
+      console.error("Error updating student data: ", err);
+      toast({
+        title: 'Update Failed',
+        description: 'Could not save your progress, but your score is recorded here.',
+        variant: 'destructive',
+      });
+    }
+  };
+  
   if (!subject || !difficulty) {
     return notFound();
   }
-  
+
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center h-full gap-4">
@@ -92,35 +215,6 @@ export default function QuizTakingClientPage() {
   const currentQuestion = quizData.quiz[currentQuestionIndex];
   const progress = ((currentQuestionIndex + 1) / quizData.quiz.length) * 100;
 
-  const handleAnswerSelect = (answerIndex: number) => {
-    setUserAnswers({
-      ...userAnswers,
-      [currentQuestionIndex]: answerIndex,
-    });
-  };
-
-  const handleNext = () => {
-    if (currentQuestionIndex < quizData.quiz.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
-  };
-
-  const handleBack = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
-    }
-  };
-
-  const handleSubmit = () => {
-    let calculatedScore = 0;
-    quizData.quiz.forEach((q, index) => {
-      if (userAnswers[index] === q.correctAnswerIndex) {
-        calculatedScore++;
-      }
-    });
-    setScore((calculatedScore / quizData.quiz.length) * 100);
-    setIsSubmitted(true);
-  };
 
   if (isSubmitted) {
     return (

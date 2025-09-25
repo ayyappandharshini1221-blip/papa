@@ -29,7 +29,7 @@ export type ChatInput = z.infer<typeof ChatInputSchema>;
 // as validation will be handled on the client.
 
 function toGenkitMessages(input: ChatInput): Message[] {
-  const messages = input.history.map(
+  const messages: Message[] = input.history.map(
     (msg): Message => ({
       role: msg.role as Role,
       content: [{text: msg.content}],

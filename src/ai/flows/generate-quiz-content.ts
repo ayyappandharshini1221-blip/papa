@@ -36,7 +36,7 @@ const cachedGenerateQuizContent = cache(
     console.log(`Generating new quiz for ${input.subject} (${input.difficulty})`);
     return await generateQuizContentFlow(input);
   },
-  ['quiz-content'],
+  ['quiz-content'], // This base key is kept, but we'll add dynamic parts.
   {
     revalidate: 3600, // Revalidate cache every hour
   }
@@ -44,7 +44,19 @@ const cachedGenerateQuizContent = cache(
 
 
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
-  return cachedGenerateQuizContent(input);
+  // We create a dynamic cache function by wrapping the cached function call.
+  // The key array passed to cache is used for invalidation, but for revalidation, 
+  // the arguments to the cached function are what determine uniqueness.
+  const getQuizWithDynamicCache = cache(
+    async (cacheInput: GenerateQuizContentInput) => {
+      console.log(`Generating new quiz for ${cacheInput.subject} (${cacheInput.difficulty})`);
+      return await generateQuizContentFlow(cacheInput);
+    },
+    [`quiz-content-${input.subject}-${input.difficulty}`],
+    { revalidate: 3600 }
+  );
+
+  return getQuizWithDynamicCache(input);
 }
 
 const generateQuizContentPrompt = ai.definePrompt({

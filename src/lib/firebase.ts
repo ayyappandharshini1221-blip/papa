@@ -1,5 +1,5 @@
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp, getApps, getApp, initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app';
+import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -14,7 +14,19 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
+
+const db = initializeFirestore(app, {
+  localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
+  experimentalForceLongPolling: true,
+});
+
 const auth = getAuth(app);
+
+if (typeof window !== 'undefined') {
+  initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!),
+    isTokenAutoRefreshEnabled: true
+  });
+}
 
 export { app, db, auth };

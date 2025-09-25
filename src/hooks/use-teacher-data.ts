@@ -32,11 +32,14 @@ export function useTeacherData() {
         const teacherDoc = await getDoc(teacherDocRef);
         if (teacherDoc.exists()) {
           setTeacher(teacherDoc.data() as Teacher);
+        } else {
+            setLoading(false);
+            setTeacher(null);
         }
       } else {
         setTeacher(null);
+        setLoading(false);
       }
-      setLoading(false);
     });
 
     return () => unsubscribeAuth();
@@ -44,13 +47,12 @@ export function useTeacherData() {
 
   useEffect(() => {
     if (!teacher) {
-      if (!loading) { // prevent clearing on initial load
+      if (!loading) { 
         setClasses([]);
       }
       return;
     };
 
-    setLoading(true);
     const classesQuery = query(
       collection(db, 'classes'),
       where('teacherId', '==', teacher.id)
@@ -61,18 +63,24 @@ export function useTeacherData() {
         (doc) => ({ id: doc.id, ...doc.data() } as Class)
       );
       setClasses(fetchedClasses);
-      setLoading(false);
+      // We will set loading to false in the student fetching useEffect
     });
 
     return () => unsubscribeClasses();
-  }, [teacher, loading]);
+  }, [teacher]);
 
 
   useEffect(() => {
-    if (classes.length === 0) {
+    // This effect now controls the final loading state
+    if (classes.length === 0 && teacher) { // teacher check ensures this doesn't run on initial load before teacher is set
       setStudents({});
+      setLoading(false);
       return;
     }
+    if (classes.length === 0) {
+      return;
+    }
+
 
     const studentIdsPerClass: { [classId: string]: string[] } = {};
     const allStudentIds = new Set<string>();
@@ -83,6 +91,7 @@ export function useTeacherData() {
 
     if (allStudentIds.size === 0) {
         setStudents({});
+        setLoading(false);
         return;
     }
 
@@ -97,14 +106,14 @@ export function useTeacherData() {
             batches.push(studentIdsArray.slice(i, i + 30));
         }
 
-        for (const batch of batches) {
-            if (batch.length === 0) continue;
+        await Promise.all(batches.map(async (batch) => {
+            if (batch.length === 0) return;
             const studentsQuery = query(collection(db, 'users'), where('__name__', 'in', batch));
             const querySnapshot = await getDocs(studentsQuery);
             querySnapshot.forEach(doc => {
                 studentsData[doc.id] = { id: doc.id, ...doc.data() } as Student;
             });
-        }
+        }));
         
         const newStudentsByClass: StudentsByClass = {};
         for(const classId in studentIdsPerClass) {
@@ -113,11 +122,12 @@ export function useTeacherData() {
                 .filter(Boolean); // Filter out undefined students
         }
         setStudents(newStudentsByClass);
+        setLoading(false); // Set loading to false after all data is fetched
     };
 
     fetchStudents();
 
-  }, [classes]);
+  }, [classes, teacher]);
 
 
   return { teacher, classes, students, loading };

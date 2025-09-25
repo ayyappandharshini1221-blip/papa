@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Bot, Send, Loader2 } from 'lucide-react';
 import React, { useState, useRef, useEffect } from 'react';
-import { chat, ChatInput, ChatOutputChunk } from '@/ai/flows/chat';
+import { streamChat, ChatInput } from '@/ai/flows/chat';
 import Textarea from 'react-textarea-autosize';
 
 interface Message {
@@ -43,7 +43,7 @@ export default function AIChatPage() {
     setInput('');
     
     try {
-      const stream = await chat(chatInput);
+      const stream = await streamChat(chatInput);
       let accumulatedText = '';
       for await (const chunk of stream) {
         accumulatedText += chunk.text;

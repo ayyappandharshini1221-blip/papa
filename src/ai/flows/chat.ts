@@ -6,7 +6,7 @@
  * This file defines a Genkit flow that takes a series of messages (chat history)
  * and the user's latest prompt, then returns a streaming response from an AI model.
  *
- * - chat - A function that handles the conversational chat process.
+ * - streamChat - A server action that handles the conversational chat process.
  * - ChatInput - The input type for the chat function, containing the chat history.
  * - ChatOutputChunk - The type for each streamed chunk of the AI's response.
  */
@@ -45,9 +45,9 @@ function toGenkitMessages(input: ChatInput): Message[] {
   return messages;
 }
 
-export const chat = ai.defineFlow(
+const chatFlow = ai.defineFlow(
   {
-    name: 'chat',
+    name: 'chatFlow',
     inputSchema: ChatInputSchema,
     outputSchema: ChatOutputChunkSchema,
     stream: true,
@@ -69,3 +69,7 @@ export const chat = ai.defineFlow(
     }
   }
 );
+
+export async function streamChat(input: ChatInput) {
+  return await chatFlow(input);
+}

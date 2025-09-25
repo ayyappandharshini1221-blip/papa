@@ -31,9 +31,10 @@ import {
   Target,
   Trophy,
   Wind,
+  Loader2,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
+import { useStudentData } from '@/hooks/use-student-data';
 
 const allBadges = [
   {
@@ -41,7 +42,6 @@ const allBadges = [
     title: 'Math Whiz',
     description: 'Master the basics of Algebra.',
     icon: <Trophy className="h-10 w-10" />,
-    unlocked: true,
     xp: 100,
   },
   {
@@ -49,7 +49,6 @@ const allBadges = [
     title: 'Python Pioneer',
     description: 'Complete your first Python quiz.',
     icon: <Brain className="h-10 w-10" />,
-    unlocked: true,
     xp: 50,
   },
   {
@@ -57,7 +56,6 @@ const allBadges = [
     title: 'Streak Starter',
     description: 'Maintain a 3-day streak.',
     icon: <Flame className="h-10 w-10" />,
-    unlocked: true,
     xp: 75,
   },
   {
@@ -65,7 +63,6 @@ const allBadges = [
     title: 'Perfectionist',
     description: 'Get a 100% score on any quiz.',
     icon: <Target className="h-10 w-10" />,
-    unlocked: true,
     xp: 150,
   },
   {
@@ -73,7 +70,6 @@ const allBadges = [
     title: 'Quiz Master',
     description: 'Complete 10 quizzes.',
     icon: <Award className="h-10 w-10" />,
-    unlocked: false,
     progress: '4/10',
     xp: 200,
   },
@@ -82,7 +78,6 @@ const allBadges = [
     title: 'Hardcore Learner',
     description: 'Complete 5 hard quizzes.',
     icon: <Swords className="h-10 w-10" />,
-    unlocked: false,
     progress: '1/5',
     xp: 250,
   },
@@ -91,7 +86,6 @@ const allBadges = [
     title: 'Star Student',
     description: 'Achieve a 90% average score.',
     icon: <Star className="h-10 w-10" />,
-    unlocked: false,
     progress: '85%',
     xp: 300,
   },
@@ -100,7 +94,6 @@ const allBadges = [
     title: 'Quick Learner',
     description: 'Complete a quiz in under 5 minutes.',
     icon: <Rocket className="h-10 w-10" />,
-    unlocked: true,
     xp: 125,
   },
   {
@@ -108,7 +101,6 @@ const allBadges = [
     title: 'Knowledge Explorer',
     description: 'Try a quiz in 5 different subjects.',
     icon: <Globe className="h-10 w-10" />,
-    unlocked: false,
     progress: '2/5',
     xp: 175,
   },
@@ -117,7 +109,6 @@ const allBadges = [
     title: 'Streak Champion',
     description: 'Maintain a 7-day streak.',
     icon: <Crown className="h-10 w-10" />,
-    unlocked: false,
     progress: '3/7',
     xp: 250,
   },
@@ -126,7 +117,6 @@ const allBadges = [
     title: 'Historian',
     description: 'Complete 5 history quizzes.',
     icon: <History className="h-10 w-10" />,
-    unlocked: false,
     progress: '0/5',
     xp: 150,
   },
@@ -135,7 +125,6 @@ const allBadges = [
     title: 'Scientist',
     description: 'Ace 3 chemistry quizzes.',
     icon: <FlaskConical className="h-10 w-10" />,
-    unlocked: false,
     progress: '1/3',
     xp: 150,
   },
@@ -144,7 +133,6 @@ const allBadges = [
     title: 'Coder',
     description: 'Complete your first Tech quiz.',
     icon: <Code className="h-10 w-10" />,
-    unlocked: true,
     xp: 50,
   },
   {
@@ -152,7 +140,6 @@ const allBadges = [
     title: 'Persistent Achiever',
     description: 'Complete 25 quizzes.',
     icon: <Mountain className="h-10 w-10" />,
-    unlocked: false,
     progress: '4/25',
     xp: 500,
   },
@@ -161,7 +148,6 @@ const allBadges = [
     title: 'Genius',
     description: 'Get a 100% score on a hard quiz.',
     icon: <Lightbulb className="h-10 w-10" />,
-    unlocked: false,
     progress: '0/1',
     xp: 400,
   },
@@ -170,7 +156,6 @@ const allBadges = [
     title: 'Bookworm',
     description: 'Complete 5 literature quizzes.',
     icon: <BookOpen className="h-10 w-10" />,
-    unlocked: false,
     progress: '2/5',
     xp: 150,
   },
@@ -179,7 +164,6 @@ const allBadges = [
     title: 'Calculator',
     description: 'Score over 90% in 5 math quizzes.',
     icon: <Calculator className="h-10 w-10" />,
-    unlocked: false,
     progress: '3/5',
     xp: 225,
   },
@@ -188,7 +172,6 @@ const allBadges = [
     title: 'Polyglot',
     description: 'Complete quizzes in 3 programming languages.',
     icon: <Library className="h-10 w-10" />,
-    unlocked: false,
     progress: '1/3',
     xp: 200,
   },
@@ -197,7 +180,6 @@ const allBadges = [
     title: 'Weekend Warrior',
     description: 'Complete a quiz on a Saturday or Sunday.',
     icon: <Sparkles className="h-10 w-10" />,
-    unlocked: true,
     xp: 25,
   },
   {
@@ -205,7 +187,6 @@ const allBadges = [
     title: 'Breeze',
     description: 'Complete 10 easy quizzes.',
     icon: <Wind className="h-10 w-10" />,
-    unlocked: false,
     progress: '8/10',
     xp: 100,
   },
@@ -214,7 +195,6 @@ const allBadges = [
     title: 'Writer',
     description: 'Complete your first literature quiz.',
     icon: <Feather className="h-10 w-10" />,
-    unlocked: true,
     xp: 50,
   },
   {
@@ -222,7 +202,6 @@ const allBadges = [
     title: 'Over 9000!',
     description: 'Earn over 9000 XP points in total.',
     icon: <Award className="h-10 w-10" />,
-    unlocked: false,
     progress: '4250/9001',
     xp: 1000,
   },
@@ -231,7 +210,6 @@ const allBadges = [
     title: 'Grandmaster',
     description: 'Complete 100 quizzes.',
     icon: <Trophy className="h-10 w-10" />,
-    unlocked: false,
     progress: '4/100',
     xp: 1500,
   },
@@ -240,7 +218,6 @@ const allBadges = [
     title: 'Unstoppable',
     description: 'Maintain a 30-day streak.',
     icon: <Flame className="h-10 w-10" />,
-    unlocked: false,
     progress: '3/30',
     xp: 1000,
   },
@@ -249,7 +226,6 @@ const allBadges = [
     title: 'Subject Expert',
     description: 'Complete all difficulty levels for one subject.',
     icon: <Brain className="h-10 w-10" />,
-    unlocked: false,
     progress: '0/1',
     xp: 500,
   },
@@ -258,15 +234,26 @@ const allBadges = [
     title: 'Perfect Streak',
     description: 'Get 100% on 3 quizzes in a row.',
     icon: <Target className="h-10 w-10" />,
-    unlocked: false,
     progress: '1/3',
     xp: 350,
   },
 ];
 
 export default function BadgesPage() {
-  const unlockedBadges = allBadges.filter((b) => b.unlocked);
-  const lockedBadges = allBadges.filter((b) => !b.unlocked);
+  const { student, loading } = useStudentData();
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Loader2 className="h-12 w-12 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  const studentBadges = student?.badges || [];
+
+  const unlockedBadges = allBadges.filter((b) => studentBadges.includes(b.id));
+  const lockedBadges = allBadges.filter((b) => !studentBadges.includes(b.id));
   const progressValue = (unlockedBadges.length / allBadges.length) * 100;
 
   return (
@@ -340,9 +327,9 @@ export default function BadgesPage() {
                 <p className="text-sm text-muted-foreground mt-1">
                   {badge.description}
                 </p>
-                 <div className="mt-4 font-semibold text-primary text-sm">
+                 {badge.progress && <div className="mt-4 font-semibold text-primary text-sm">
                     {badge.progress} Complete
-                </div>
+                </div>}
               </CardContent>
             </Card>
           ))}

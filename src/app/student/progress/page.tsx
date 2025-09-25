@@ -1,7 +1,6 @@
 'use client';
 
-import { Award, BarChart3, Bot, Brain, Flame, Repeat, Shield, Swords, Target, Trophy, Zap } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Award, Bot, Flame, Loader2, Repeat, Swords, Target, Trophy, Zap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,10 +11,10 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useStudentData } from '@/hooks/use-student-data';
+import { useLeaderboard } from '@/hooks/use-leaderboard';
 
-const subjectProgress = [
+const subjectProgressData = [
   {
     subject: 'Maths',
     icon: <Trophy className="h-6 w-6" />,
@@ -27,7 +26,7 @@ const subjectProgress = [
   },
    {
     subject: 'Python',
-    icon: <Brain className="h-6 w-6" />,
+    icon: <Trophy className="h-6 w-6" />,
     difficulties: [
       { level: 'Easy', attempted: 4, score: 100, progress: 100 },
       { level: 'Normal', attempted: 2, score: 85, progress: 50 },
@@ -36,17 +35,17 @@ const subjectProgress = [
   },
 ];
 
-const badges = [
-    { id: 'math-whiz', title: 'Math Whiz', description: 'Master the basics of Algebra.', icon: <Trophy className="h-8 w-8"/>, unlocked: true },
-    { id: 'python-pioneer', title: 'Python Pioneer', description: 'Complete your first Python quiz.', icon: <Brain className="h-8 w-8"/>, unlocked: true },
-    { id: 'streak-starter', title: 'Streak Starter', description: 'Maintain a 3-day streak.', icon: <Flame className="h-8 w-8"/>, unlocked: true },
-    { id: 'perfect-score', title: 'Perfectionist', description: 'Get a 100% score on any quiz.', icon: <Target className="h-8 w-8"/>, unlocked: true },
-    { id: 'quiz-master', title: 'Quiz Master', description: 'Complete 10 quizzes.', icon: <Award className="h-8 w-8"/>, unlocked: false },
-    { id: 'hardcore-learner', title: 'Hardcore Learner', description: 'Complete 5 hard quizzes.', icon: <Swords className="h-8 w-8"/>, unlocked: false },
+const badgeData = [
+    { id: 'math-whiz', title: 'Math Whiz', description: 'Master the basics of Algebra.', icon: <Trophy className="h-8 w-8"/> },
+    { id: 'python-pioneer', title: 'Python Pioneer', description: 'Complete your first Python quiz.', icon: <Trophy className="h-8 w-8"/> },
+    { id: 'streak-starter', title: 'Streak Starter', description: 'Maintain a 3-day streak.', icon: <Flame className="h-8 w-8"/> },
+    { id: 'perfectionist', title: 'Perfectionist', description: 'Get a 100% score on any quiz.', icon: <Target className="h-8 w-8"/> },
+    { id: 'quiz-master', title: 'Quiz Master', description: 'Complete 10 quizzes.', icon: <Award className="h-8 w-8"/> },
+    { id: 'hardcore-learner', title: 'Hardcore Learner', description: 'Complete 5 hard quizzes.', icon: <Swords className="h-8 w-8"/> },
 ];
 
 const recentActivities = [
-    { id: 1, type: 'quiz', title: 'Completed "Python Basics" quiz', score: '100%', time: '2h ago', icon: <Brain className="h-5 w-5 text-green-500" />},
+    { id: 1, type: 'quiz', title: 'Completed "Python Basics" quiz', score: '100%', time: '2h ago', icon: <Trophy className="h-5 w-5 text-green-500" />},
     { id: 2, type: 'badge', title: 'Unlocked "Perfectionist" Badge', time: '2h ago', icon: <Target className="h-5 w-5 text-yellow-500" />},
     { id: 3, type: 'quiz', title: 'Completed "Algebra Basics" quiz', score: '90%', time: '1d ago', icon: <Trophy className="h-5 w-5 text-green-500" />},
     { id: 4, type: 'streak', title: 'Reached a 3-day streak!', time: '1d ago', icon: <Flame className="h-5 w-5 text-red-500" />},
@@ -54,7 +53,18 @@ const recentActivities = [
 
 
 export default function ProgressPage() {
-    const userAvatar = PlaceHolderImages.find(p => p.id === 'avatar-1');
+  const { student, loading: studentLoading } = useStudentData();
+  const { leaderboardData, loading: leaderboardLoading } = useLeaderboard(student?.classIds?.[0]);
+
+  if (studentLoading || leaderboardLoading) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Loader2 className="h-12 w-12 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  const yourRank = leaderboardData.find(entry => entry.studentId === student?.id)?.rank;
 
   return (
     <div className="flex flex-col gap-6">
@@ -74,7 +84,7 @@ export default function ProgressPage() {
             <Zap className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-primary">4,250</div>
+            <div className="text-2xl font-bold text-primary">{student?.xp ?? 0}</div>
             <p className="text-xs text-muted-foreground">Level 5</p>
           </CardContent>
         </Card>
@@ -84,7 +94,7 @@ export default function ProgressPage() {
             <Flame className="h-4 w-4 text-accent" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-accent">12 days</div>
+            <div className="text-2xl font-bold text-accent">{student?.streak ?? 0} days</div>
             <p className="text-xs text-muted-foreground">Keep the fire burning!</p>
           </CardContent>
         </Card>
@@ -94,7 +104,7 @@ export default function ProgressPage() {
             <Award className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">4 / 6</div>
+            <div className="text-2xl font-bold">{student?.badges?.length ?? 0} / {badgeData.length}</div>
             <p className="text-xs text-muted-foreground">Almost there!</p>
           </CardContent>
         </Card>
@@ -104,7 +114,7 @@ export default function ProgressPage() {
             <Trophy className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">#2</div>
+            <div className="text-2xl font-bold">{yourRank ? `#${yourRank}`: '-'}</div>
             <p className="text-xs text-muted-foreground">Top 10% in your class</p>
           </CardContent>
         </Card>
@@ -118,7 +128,7 @@ export default function ProgressPage() {
                     <CardDescription>Your performance across different subjects and difficulties.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                    {subjectProgress.map(subject => (
+                    {subjectProgressData.map(subject => (
                         <div key={subject.subject}>
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="rounded-full bg-primary/10 p-2 text-primary">{subject.icon}</div>
@@ -145,9 +155,9 @@ export default function ProgressPage() {
                     <CardDescription>Celebrate your achievements and unlock new ones.</CardDescription>
                 </CardHeader>
                 <CardContent className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-                    {badges.map(badge => (
-                        <div key={badge.id} className={`flex flex-col items-center text-center p-4 rounded-lg gap-2 ${badge.unlocked ? 'bg-accent/10 border-accent/20 border' : 'bg-secondary/50 opacity-60'}`}>
-                             <div className={`rounded-full p-3 ${badge.unlocked ? 'bg-accent/20 text-accent' : 'bg-muted-foreground/20 text-muted-foreground'}`}>
+                    {badgeData.map(badge => (
+                        <div key={badge.id} className={`flex flex-col items-center text-center p-4 rounded-lg gap-2 ${student?.badges?.includes(badge.id) ? 'bg-accent/10 border-accent/20 border' : 'bg-secondary/50 opacity-60'}`}>
+                             <div className={`rounded-full p-3 ${student?.badges?.includes(badge.id) ? 'bg-accent/20 text-accent' : 'bg-muted-foreground/20 text-muted-foreground'}`}>
                                 {badge.icon}
                             </div>
                             <p className="font-semibold text-sm">{badge.title}</p>
@@ -199,7 +209,7 @@ export default function ProgressPage() {
                 </CardHeader>
                 <CardContent>
                     <div className="space-y-4">
-                        {recentActivities.map((activity, index) => (
+                        {recentActivities.map((activity) => (
                             <div key={activity.id} className="flex items-start gap-4">
                                 <div className="rounded-full bg-background p-2 mt-1">
                                     {activity.icon}
@@ -220,5 +230,3 @@ export default function ProgressPage() {
     </div>
   );
 }
-
-    

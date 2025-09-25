@@ -52,12 +52,16 @@ export interface Badge {
   title: string;
   description: string;
   icon: string;
+  xp: number;
+  progress?: string;
 }
 
 export interface LeaderboardEntry {
   studentId: string;
   studentName: string;
-  studentAvatarUrl: string;
+  studentAvatarUrl?: string;
   xp: number;
   rank: number;
+  streak: number;
+  avatarId?: string;
 }

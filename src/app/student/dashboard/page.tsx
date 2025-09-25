@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -15,10 +15,9 @@ import {
   Award,
   Bot,
   Flame,
-  Swords,
+  PlusCircle,
   Trophy,
   Zap,
-  PlusCircle,
 } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import {
@@ -32,21 +31,15 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { arrayUnion, doc, getDoc, updateDoc, query, collection, where, getDocs } from 'firebase/firestore';
+import { arrayUnion, doc, getDoc, updateDoc, query, collection, where, getDocs, DocumentData } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
-import { onAuthChange } from '@/lib/auth/auth';
-import type { User } from '@/lib/types';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
-
-
-const leaderboardData = [
-  { rank: 1, name: 'Alex', xp: 4500, avatarId: 'leader-1' },
-  { rank: 2, name: 'You', xp: 4250, avatarId: 'avatar-1' },
-  { rank: 3, name: 'Maria', xp: 3800, avatarId: 'leader-2' },
-  { rank: 4, name: 'David', xp: 3550, avatarId: 'leader-3' },
-];
+import { useStudentData } from '@/hooks/use-student-data';
+import { useLeaderboard } from '@/hooks/use-leaderboard';
+import { onAuthChange } from '@/lib/auth/auth';
+import type { User } from '@/lib/types';
 
 export default function StudentDashboard() {
   const [openJoinClass, setOpenJoinClass] = useState(false);
@@ -54,8 +47,10 @@ export default function StudentDashboard() {
   const [isJoining, setIsJoining] = useState(false);
   const { toast } = useToast();
   const [user, setUser] = useState<User | null>(null);
+  const { student, classes, loading: studentLoading } = useStudentData();
+  const { leaderboardData, loading: leaderboardLoading } = useLeaderboard(student?.classIds?.[0]);
 
-  useState(() => {
+  useEffect(() => {
     const unsubscribe = onAuthChange(setUser);
     return () => unsubscribe();
   }, []);
@@ -121,12 +116,14 @@ export default function StudentDashboard() {
     }
   };
 
+  const yourRank = leaderboardData.find(entry => entry.studentId === student?.id)?.rank;
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight">Student Dashboard</h1>
         <p className="text-muted-foreground">
-          Welcome back! Let's continue your learning journey.
+          Welcome back, {student?.name}! Let's continue your learning journey.
         </p>
       </div>
 
@@ -137,7 +134,7 @@ export default function StudentDashboard() {
             <Zap className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-primary">4,250</div>
+            <div className="text-2xl font-bold text-primary">{student?.xp ?? 0}</div>
             <p className="text-xs text-muted-foreground">+200 this week</p>
           </CardContent>
         </Card>
@@ -147,7 +144,7 @@ export default function StudentDashboard() {
             <Flame className="h-4 w-4 text-accent" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-accent">12 days</div>
+            <div className="text-2xl font-bold text-accent">{student?.streak ?? 0} days</div>
             <p className="text-xs text-muted-foreground">Keep it going!</p>
           </CardContent>
         </Card>
@@ -157,7 +154,7 @@ export default function StudentDashboard() {
             <Award className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">8</div>
+            <div className="text-2xl font-bold">{student?.badges?.length ?? 0}</div>
             <p className="text-xs text-muted-foreground">New: "Math Whiz"</p>
           </CardContent>
         </Card>
@@ -169,8 +166,8 @@ export default function StudentDashboard() {
             <Trophy className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">#2</div>
-            <p className="text-xs text-muted-foreground">In Algebra 101</p>
+            <div className="text-2xl font-bold">{yourRank ? `#${yourRank}` : '-'}</div>
+            <p className="text-xs text-muted-foreground">{classes.length > 0 ? `In ${classes[0].name}` : 'No class joined'}</p>
           </CardContent>
         </Card>
       </div>
@@ -218,12 +215,22 @@ export default function StudentDashboard() {
               </Dialog>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2">
-                <p className="font-semibold">Algebra 101</p>
-                <p className="text-sm text-muted-foreground">
-                  You are enrolled in this class.
-                </p>
-              </div>
+              {studentLoading ? <p>Loading classes...</p> : (
+                <div className="space-y-4">
+                  {classes.length > 0 ? (
+                    classes.map(c => (
+                      <div key={c.id} className="p-2 border rounded-md">
+                        <p className="font-semibold">{c.name}</p>
+                        <p className="text-sm text-muted-foreground">
+                          You are enrolled in this class.
+                        </p>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-sm text-muted-foreground text-center">You haven't joined any classes yet.</p>
+                  )}
+                </div>
+              )}
             </CardContent>
           </Card>
 
@@ -264,45 +271,47 @@ export default function StudentDashboard() {
         <Card>
           <CardHeader>
             <CardTitle>Class Leaderboard</CardTitle>
-            <CardDescription>Algebra 101 - Top Performers</CardDescription>
+            <CardDescription>{classes.length > 0 ? `${classes[0].name} - Top Performers` : 'Join a class to see the leaderboard'}</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              {leaderboardData.map((player) => {
-                const avatar = PlaceHolderImages.find(
-                  (p) => p.id === player.avatarId
-                );
-                return (
-                  <div
-                    key={player.rank}
-                    className={`flex items-center gap-4 rounded-md p-2 ${
-                      player.name === 'You' ? 'bg-primary/10' : ''
-                    }`}
-                  >
-                    <span className="text-lg font-bold text-muted-foreground">
-                      {player.rank}
-                    </span>
-                    <Avatar className="h-10 w-10 border-2 border-primary/50">
-                      <AvatarImage
-                        src={avatar?.imageUrl}
-                        alt={player.name}
-                        data-ai-hint={avatar?.imageHint}
-                      />
-                      <AvatarFallback>{player.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium">{player.name}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {player.xp} XP
-                      </p>
+            {leaderboardLoading ? <p>Loading leaderboard...</p> : (
+              <div className="space-y-4">
+                {leaderboardData.map((player) => {
+                  const avatar = PlaceHolderImages.find(
+                    (p) => p.id === player.avatarId
+                  );
+                  return (
+                    <div
+                      key={player.rank}
+                      className={`flex items-center gap-4 rounded-md p-2 ${
+                        player.studentName === student?.name ? 'bg-primary/10' : ''
+                      }`}
+                    >
+                      <span className="text-lg font-bold text-muted-foreground">
+                        {player.rank}
+                      </span>
+                      <Avatar className="h-10 w-10 border-2 border-primary/50">
+                        <AvatarImage
+                          src={avatar?.imageUrl}
+                          alt={player.studentName}
+                          data-ai-hint={avatar?.imageHint}
+                        />
+                        <AvatarFallback>{player.studentName.charAt(0)}</AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium">{player.studentName}{player.studentId === student?.id && ' (You)'}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {player.xp} XP
+                        </p>
+                      </div>
+                      {player.rank === 1 && (
+                        <Trophy className="h-5 w-5 text-yellow-500" />
+                      )}
                     </div>
-                    {player.rank === 1 && (
-                      <Trophy className="h-5 w-5 text-yellow-500" />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>

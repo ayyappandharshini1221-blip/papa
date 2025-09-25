@@ -74,14 +74,6 @@ export default function TeacherLayout({
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
-             <SidebarMenuItem>
-              <SidebarMenuButton href="/teacher/aichat" asChild tooltip="AI Chat">
-                <Link href="/teacher/aichat">
-                  <Bot />
-                  <span>AI Chat</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton
                 href="/teacher/settings"

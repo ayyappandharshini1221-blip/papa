@@ -101,14 +101,6 @@ export default function StudentLayout({
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton href="/student/aichat" asChild tooltip="AI Chat">
-                <Link href="/student/aichat">
-                  <Bot />
-                  <span>AI Chat</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
               <SidebarMenuButton
                 href="/student/settings"
                 asChild

@@ -14,14 +14,27 @@ export function useLeaderboard(classId?: string) {
       setLoading(true);
       try {
         let studentQuery;
+        // The error is caused by compound queries that require a composite index.
+        // Let's simplify the queries to avoid this.
         if (classId) {
-          studentQuery = query(collection(db, 'users'), where('role', '==', 'student'), where('classIds', 'array-contains', classId), orderBy('xp', 'desc'), limit(10));
+          // First, get all students in the class
+          studentQuery = query(collection(db, 'users'), where('classIds', 'array-contains', classId));
         } else {
+          // Get all students, ordered by XP
           studentQuery = query(collection(db, 'users'), where('role', '==', 'student'), orderBy('xp', 'desc'), limit(10));
         }
         
         const querySnapshot = await getDocs(studentQuery);
-        const students = querySnapshot.docs.map(doc => doc.data() as Student);
+
+        let students: Student[] = querySnapshot.docs.map(doc => doc.data() as Student);
+
+        // If we filtered by classId, we now need to sort and limit in the client
+        if (classId) {
+          students = students
+            .filter(s => s.role === 'student')
+            .sort((a, b) => b.xp - a.xp)
+            .slice(0, 10);
+        }
         
         const data: LeaderboardEntry[] = students.map((student, index) => ({
           rank: index + 1,

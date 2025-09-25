@@ -37,7 +37,7 @@ import { useMemo, useState, useEffect } from 'react';
 export default function TeacherDashboard() {
   const { teacher, classes, students, loading } = useTeacherData();
 
-  // State for simulated dynamic data
+  // State for dynamic data, initialized to 0
   const [avgScore, setAvgScore] = useState(0);
   const [quizzesToday, setQuizzesToday] = useState(0);
 
@@ -64,19 +64,8 @@ export default function TeacherDashboard() {
 
   }, [students]);
 
-  useEffect(() => {
-    // This simulates data that would normally come from a real-time database query
-    const interval = setInterval(() => {
-      setAvgScore(Math.floor(Math.random() * (92 - 75 + 1)) + 75);
-      setQuizzesToday(prev => prev + Math.floor(Math.random() * 3));
-    }, 5000); // Update every 5 seconds
-
-    // Set initial values
-    setAvgScore(Math.floor(Math.random() * (92 - 75 + 1)) + 75);
-    setQuizzesToday(Math.floor(Math.random() * 50) + 10);
-
-    return () => clearInterval(interval);
-  }, []);
+  // When we implement quiz result tracking, we will update avgScore and quizzesToday here.
+  // For now, they will remain at 0.
 
   if (loading) {
     return (

@@ -1,4 +1,5 @@
-import { initializeApp, getApps, getApp, initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 

@@ -12,7 +12,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import {Message, Role} from 'genkit/model';
+import {Message} from 'genkit/model';
 
 const ChatInputSchema = z.object({
   history: z.array(
@@ -25,39 +25,37 @@ const ChatInputSchema = z.object({
 });
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-// The output chunk schema is no longer needed on the server,
-// as validation will be handled on the client.
-
+// This function converts the client-side chat history into the format Genkit expects.
 function toGenkitMessages(input: ChatInput): Message[] {
-  const messages: Message[] = input.history.map(
-    (msg): Message => ({
-      role: msg.role as Role,
-      content: [{text: msg.content}],
-    })
-  );
-  messages.push({
+  const historyMessages: Message[] = input.history.map((msg) => ({
+    role: msg.role,
+    content: [{text: msg.content}],
+  }));
+
+  const userMessage: Message = {
     role: 'user',
     content: [{text: input.prompt}],
-  });
-  return messages;
+  };
+
+  return [...historyMessages, userMessage];
 }
 
 const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
     inputSchema: ChatInputSchema,
-    // outputSchema is removed to prevent server-side validation errors on empty chunks.
     stream: true,
   },
   async function* (input) {
+    const messages = toGenkitMessages(input);
+
     const {stream: llmStream} = await ai.generate({
       stream: true,
-      prompt: toGenkitMessages(input),
-      // The model can be overridden by passing `model` in the request.
+      prompt: messages, // Pass the correctly formatted array of messages.
     });
 
+    // Yield all chunks directly. The client will handle filtering empty chunks.
     for await (const chunk of llmStream) {
-      // Yield all chunks directly. The client will handle filtering.
       yield chunk;
     }
   }

@@ -1,60 +1,104 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BarChart as BarChartIcon, BarChart3, BookOpen, Bot, PlusCircle, Users, Zap, Activity } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  BarChart as BarChartIcon,
+  BarChart3,
+  BookOpen,
+  Bot,
+  PlusCircle,
+  Users,
+  Zap,
+  Activity,
+  Loader2,
+} from 'lucide-react';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
 import Link from 'next/link';
-
-const classData = [
-  { name: 'Algebra 101', students: 32, progress: 75 },
-  { name: 'US History', students: 28, progress: 60 },
-  { name: 'Biology Prep', students: 22, progress: 85 },
-];
-
-const analyticsData = [
-  { name: 'Algebra', 'Avg. Score': 82 },
-  { name: 'History', 'Avg. Score': 76 },
-  { name: 'Biology', 'Avg. Score': 88 },
-  { name: 'Literature', 'Avg. Score': 72 },
-];
+import { useTeacherData } from '@/hooks/use-teacher-data';
+import { Student } from '@/lib/types';
+import { useMemo } from 'react';
 
 export default function TeacherDashboard() {
+  const { teacher, classes, students, loading } = useTeacherData();
+
+  const totalStudents = useMemo(() => {
+    const studentIds = new Set();
+    classes.forEach(c => c.studentIds.forEach(id => studentIds.add(id)));
+    return studentIds.size;
+  }, [classes]);
+
+  const analyticsData = useMemo(() => {
+    const subjects: { [key: string]: { totalScore: number; count: number } } = {};
+    // This is a placeholder for quiz results which are not yet in the data model.
+    // We will simulate some data for now.
+    const allStudents: Student[] = Object.values(students).flat();
+    if (allStudents.length === 0) return [];
+    
+    // Mocked subjects for demonstration
+    const mockSubjects = ['Maths', 'Python', 'Chemistry', 'Biology'];
+    
+    return mockSubjects.map(subject => ({
+      name: subject,
+      'Avg. Score': Math.floor(Math.random() * (95 - 60 + 1)) + 60, // Random score between 60 and 95
+    }));
+
+  }, [students]);
+
+  if (loading) {
+    return (
+      <div className="flex h-full items-center justify-center">
+        <Loader2 className="h-12 w-12 animate-spin text-primary" />
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold tracking-tight">Teacher Dashboard</h1>
+        <h1 className="text-3xl font-bold tracking-tight">
+          Teacher Dashboard
+        </h1>
         <p className="text-muted-foreground">
-          Here's an overview of your classes and student performance.
+          Welcome back, {teacher?.name}! Here's an overview of your classes.
         </p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">
-              Total Students
-            </CardTitle>
+            <CardTitle className="text-sm font-medium">Total Students</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">128</div>
-            <p className="text-xs text-muted-foreground">
-              +5 since last week
-            </p>
+            <div className="text-2xl font-bold">{totalStudents}</div>
+            <p className="text-xs text-muted-foreground">Across all classes</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">
-              Active Classes
-            </CardTitle>
+            <CardTitle className="text-sm font-medium">Active Classes</CardTitle>
             <BookOpen className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">3</div>
+            <div className="text-2xl font-bold">{classes.length}</div>
             <p className="text-xs text-muted-foreground">
-              Algebra 101 is most active
+              {classes.length > 0 ? `${classes[0].name} is most active` : 'No classes yet'}
             </p>
           </CardContent>
         </Card>
@@ -94,7 +138,7 @@ export default function TeacherDashboard() {
               </CardDescription>
             </div>
             <Button asChild size="sm" className="ml-auto gap-1">
-              <Link href="#">
+              <Link href="/teacher/classes">
                 <PlusCircle className="h-4 w-4" />
                 New Class
               </Link>
@@ -102,17 +146,22 @@ export default function TeacherDashboard() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {classData.map((c) => (
-                <div key={c.name} className="flex items-center">
+              {classes.map((c) => (
+                <div key={c.id} className="flex items-center">
                   <div className="ml-4 flex-1 space-y-1">
                     <p className="text-sm font-medium leading-none">{c.name}</p>
-                    <p className="text-sm text-muted-foreground">{c.students} students</p>
+                    <p className="text-sm text-muted-foreground">
+                      {c.studentIds.length} student{c.studentIds.length !== 1 ? 's' : ''}
+                    </p>
                   </div>
-                  <Button variant="outline" size="sm">
-                    Manage
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/teacher/classes">Manage</Link>
                   </Button>
                 </div>
               ))}
+               {classes.length === 0 && (
+                <p className="text-center text-sm text-muted-foreground">You haven't created any classes yet.</p>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -135,8 +184,11 @@ export default function TeacherDashboard() {
               <div className="flex-1 space-y-1">
                 <p className="font-medium">Remediation Opportunity</p>
                 <p className="text-muted-foreground">
-                  Students in <span className="font-semibold">US History</span> are struggling with the Civil War era.
-                  <Button variant="link" size="sm" className="h-auto p-0 pl-1">Assign a remediation quiz?</Button>
+                  Students in <span className="font-semibold">US History</span>{' '}
+                  are struggling with the Civil War era.
+                  <Button variant="link" size="sm" className="h-auto p-0 pl-1">
+                    Assign a remediation quiz?
+                  </Button>
                 </p>
               </div>
             </div>
@@ -147,8 +199,12 @@ export default function TeacherDashboard() {
               <div className="flex-1 space-y-1">
                 <p className="font-medium">New Learning Path</p>
                 <p className="text-muted-foreground">
-                  Create a learning path for <span className="font-semibold">Algebra 101</span> focusing on quadratic equations.
-                   <Button variant="link" size="sm" className="h-auto p-0 pl-1">Generate path.</Button>
+                  Create a learning path for{' '}
+                  <span className="font-semibold">Algebra 101</span> focusing
+                  on quadratic equations.
+                  <Button variant="link" size="sm" className="h-auto p-0 pl-1">
+                    Generate path.
+                  </Button>
                 </p>
               </div>
             </div>
@@ -156,10 +212,12 @@ export default function TeacherDashboard() {
         </Card>
       </div>
 
-       <Card>
+      <Card>
         <CardHeader>
           <CardTitle>Class Performance Overview</CardTitle>
-          <CardDescription>Average quiz scores by subject across all classes.</CardDescription>
+          <CardDescription>
+            Average quiz scores by subject across all classes.
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={300}>

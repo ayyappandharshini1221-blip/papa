@@ -5,7 +5,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'zod';
-import {Message, defineFlow} from 'genkit';
+import { Message } from 'genkit';
 
 export const ChatInputSchema = z.object({
   history: z.array(
@@ -38,7 +38,7 @@ function toGenkitMessages(input: ChatInput): Message[] {
 }
 
 // Define the streaming chat flow
-export const chatFlow = defineFlow(
+export const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
     inputSchema: ChatInputSchema,

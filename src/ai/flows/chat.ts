@@ -25,9 +25,8 @@ const ChatInputSchema = z.object({
 });
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-const ChatOutputChunkSchema = z.object({
-  text: z.string(),
-});
+// The output chunk schema is no longer needed on the server,
+// as validation will be handled on the client.
 
 function toGenkitMessages(input: ChatInput): Message[] {
   const messages = input.history.map(
@@ -47,7 +46,7 @@ const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
     inputSchema: ChatInputSchema,
-    outputSchema: ChatOutputChunkSchema,
+    // outputSchema is removed to prevent server-side validation errors on empty chunks.
     stream: true,
   },
   async function* (input) {
@@ -60,10 +59,8 @@ const chatFlow = ai.defineFlow(
     });
 
     for await (const chunk of llmStream) {
-      const text = chunk.text;
-      if (typeof text === 'string' && text.length > 0) {
-        yield { text };
-      }
+      // Yield all chunks directly. The client will handle filtering.
+      yield chunk;
     }
   }
 );

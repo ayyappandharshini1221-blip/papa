@@ -13,29 +13,26 @@ export function useLeaderboard(classId?: string) {
     const fetchLeaderboard = async () => {
       setLoading(true);
       try {
-        let studentQuery;
-        // The error is caused by compound queries that require a composite index.
-        // Let's simplify the queries to avoid this.
-        if (classId) {
-          // First, get all students in the class
-          studentQuery = query(collection(db, 'users'), where('classIds', 'array-contains', classId));
-        } else {
-          // Get all students, ordered by XP
-          studentQuery = query(collection(db, 'users'), where('role', '==', 'student'), orderBy('xp', 'desc'), limit(10));
-        }
-        
+        let students: Student[] = [];
+
+        // Fetch all users who are students
+        const studentQuery = query(collection(db, 'users'), where('role', '==', 'student'));
         const querySnapshot = await getDocs(studentQuery);
-
-        let students: Student[] = querySnapshot.docs.map(doc => doc.data() as Student);
-
-        // If we filtered by classId, we now need to sort and limit in the client
-        if (classId) {
-          students = students
-            .filter(s => s.role === 'student')
-            .sort((a, b) => b.xp - a.xp)
-            .slice(0, 10);
-        }
+        students = querySnapshot.docs.map(doc => doc.data() as Student);
         
+        // If a classId is provided, filter the students on the client side
+        if (classId) {
+          students = students.filter(s => s.classIds?.includes(classId));
+        }
+
+        // Sort by XP in descending order
+        students.sort((a, b) => b.xp - a.xp);
+        
+        // Limit to top 10 if no class is specified
+        if (!classId) {
+            students = students.slice(0, 10);
+        }
+
         const data: LeaderboardEntry[] = students.map((student, index) => ({
           rank: index + 1,
           studentId: student.id,

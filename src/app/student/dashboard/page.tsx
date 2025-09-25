@@ -31,7 +31,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { arrayUnion, doc, getDoc, updateDoc, query, collection, where, getDocs, DocumentData } from 'firebase/firestore';
+import { arrayUnion, doc, getDoc, updateDoc, query, collection, where, getDocs, DocumentData, or } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { errorEmitter } from '@/firebase/error-emitter';
@@ -56,8 +56,9 @@ export default function StudentDashboard() {
   }, []);
 
   const handleJoinClass = async () => {
-    if (!inviteCode.trim()) {
-      toast({ title: 'Please enter an invite code.', variant: 'destructive' });
+    const codeOrName = inviteCode.trim();
+    if (!codeOrName) {
+      toast({ title: 'Please enter a class name or invite code.', variant: 'destructive' });
       return;
     }
     if (!user) {
@@ -68,15 +69,17 @@ export default function StudentDashboard() {
 
     try {
       const classesRef = collection(db, "classes");
-      const q = query(classesRef, where("inviteCode", "==", inviteCode.trim()));
+      const q = query(classesRef, or(where("inviteCode", "==", codeOrName), where("name", "==", codeOrName)));
       const querySnapshot = await getDocs(q);
 
       if (querySnapshot.empty) {
-        toast({ title: 'Invalid invite code.', description: 'Please check the code and try again.', variant: 'destructive' });
+        toast({ title: 'Invalid class name or invite code.', description: 'Please check it and try again.', variant: 'destructive' });
         setIsJoining(false);
         return;
       }
 
+      // In a real-world scenario with many classes of the same name, you might need to let the user choose.
+      // For now, we'll just join the first one found.
       const classDoc = querySnapshot.docs[0];
       const classId = classDoc.id;
       
@@ -105,7 +108,7 @@ export default function StudentDashboard() {
         errorEmitter.emit('permission-error', permissionError);
       });
 
-      toast({ title: 'Successfully joined class!' });
+      toast({ title: `Successfully joined ${classDoc.data().name}!` });
       setOpenJoinClass(false);
       setInviteCode('');
     } catch (error) {
@@ -188,19 +191,18 @@ export default function StudentDashboard() {
                   <DialogHeader>
                     <DialogTitle>Join a new class</DialogTitle>
                     <DialogDescription>
-                      Enter the invite code from your teacher to join their
-                      class.
+                      Enter the invite code or the exact class name from your teacher to join.
                     </DialogDescription>
                   </DialogHeader>
                   <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
                       <Label htmlFor="invite-code" className="text-right">
-                        Invite Code
+                        Code or Name
                       </Label>
                       <Input
                         id="invite-code"
                         className="col-span-3"
-                        placeholder="e.g., ALG101-XYZ"
+                        placeholder="e.g., ALG101-XYZ or Algebra 101"
                         value={inviteCode}
                         onChange={(e) => setInviteCode(e.target.value)}
                       />

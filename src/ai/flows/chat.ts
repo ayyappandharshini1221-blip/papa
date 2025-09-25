@@ -8,7 +8,6 @@
  *
  * - streamChat - A server action that handles the conversational chat process.
  * - ChatInput - The input type for the chat function, containing the chat history.
- * - ChatOutputChunk - The type for each streamed chunk of the AI's response.
  */
 
 import {ai} from '@/ai/genkit';
@@ -26,10 +25,9 @@ const ChatInputSchema = z.object({
 });
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-export const ChatOutputChunkSchema = z.object({
+const ChatOutputChunkSchema = z.object({
   text: z.string(),
 });
-export type ChatOutputChunk = z.infer<typeof ChatOutputChunkSchema>;
 
 function toGenkitMessages(input: ChatInput): Message[] {
   const messages = input.history.map(

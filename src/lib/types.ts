@@ -22,7 +22,7 @@ export interface Student extends User {
 
 export interface Class {
   id: string;
-  name:string;
+  name: string;
   teacherId: string;
   studentIds: string[];
   inviteCode: string;

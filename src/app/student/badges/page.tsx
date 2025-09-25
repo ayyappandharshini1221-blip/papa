@@ -36,7 +36,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { useStudentData } from '@/hooks/use-student-data';
 
-const allBadges = [
+export const allBadges = [
   {
     id: 'math-whiz',
     title: 'Math Whiz',

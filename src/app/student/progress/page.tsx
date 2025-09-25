@@ -1,7 +1,6 @@
 'use client';
 
 import { Award, Bot, Flame, Loader2, Repeat, Swords, Target, Trophy, Zap } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -13,6 +12,8 @@ import {
 import { Progress } from '@/components/ui/progress';
 import { useStudentData } from '@/hooks/use-student-data';
 import { useLeaderboard } from '@/hooks/use-leaderboard';
+import { allBadges } from '@/app/student/badges/page';
+import { Brain, Calculator, Code, Crown, Feather, FlaskConical, Globe, History, Library, Lightbulb, Mountain, Rocket, Sparkles, Star, Wind } from 'lucide-react';
 
 const subjectProgressData = [
   {
@@ -33,15 +34,6 @@ const subjectProgressData = [
       { level: 'Hard', attempted: 0, score: 0, progress: 0 },
     ],
   },
-];
-
-const badgeData = [
-    { id: 'math-whiz', title: 'Math Whiz', description: 'Master the basics of Algebra.', icon: <Trophy className="h-8 w-8"/> },
-    { id: 'python-pioneer', title: 'Python Pioneer', description: 'Complete your first Python quiz.', icon: <Trophy className="h-8 w-8"/> },
-    { id: 'streak-starter', title: 'Streak Starter', description: 'Maintain a 3-day streak.', icon: <Flame className="h-8 w-8"/> },
-    { id: 'perfectionist', title: 'Perfectionist', description: 'Get a 100% score on any quiz.', icon: <Target className="h-8 w-8"/> },
-    { id: 'quiz-master', title: 'Quiz Master', description: 'Complete 10 quizzes.', icon: <Award className="h-8 w-8"/> },
-    { id: 'hardcore-learner', title: 'Hardcore Learner', description: 'Complete 5 hard quizzes.', icon: <Swords className="h-8 w-8"/> },
 ];
 
 const recentActivities = [
@@ -65,6 +57,7 @@ export default function ProgressPage() {
   }
 
   const yourRank = leaderboardData.find(entry => entry.studentId === student?.id)?.rank;
+  const studentBadges = student?.badges || [];
 
   return (
     <div className="flex flex-col gap-6">
@@ -104,7 +97,7 @@ export default function ProgressPage() {
             <Award className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{student?.badges?.length ?? 0} / {badgeData.length}</div>
+            <div className="text-2xl font-bold">{student?.badges?.length ?? 0} / {allBadges.length}</div>
             <p className="text-xs text-muted-foreground">Almost there!</p>
           </CardContent>
         </Card>
@@ -155,10 +148,10 @@ export default function ProgressPage() {
                     <CardDescription>Celebrate your achievements and unlock new ones.</CardDescription>
                 </CardHeader>
                 <CardContent className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-                    {badgeData.map(badge => (
-                        <div key={badge.id} className={`flex flex-col items-center text-center p-4 rounded-lg gap-2 ${student?.badges?.includes(badge.id) ? 'bg-accent/10 border-accent/20 border' : 'bg-secondary/50 opacity-60'}`}>
-                             <div className={`rounded-full p-3 ${student?.badges?.includes(badge.id) ? 'bg-accent/20 text-accent' : 'bg-muted-foreground/20 text-muted-foreground'}`}>
-                                {badge.icon}
+                    {allBadges.slice(0, 8).map(badge => (
+                        <div key={badge.id} className={`flex flex-col items-center text-center p-4 rounded-lg gap-2 ${studentBadges.includes(badge.id) ? 'bg-accent/10 border-accent/20 border' : 'bg-secondary/50 opacity-60'}`}>
+                             <div className={`rounded-full p-3 ${studentBadges.includes(badge.id) ? 'bg-accent/20 text-accent' : 'bg-muted-foreground/20 text-muted-foreground'}`}>
+                                {React.cloneElement(badge.icon, { className: "h-8 w-8"})}
                             </div>
                             <p className="font-semibold text-sm">{badge.title}</p>
                             <p className="text-xs text-muted-foreground">{badge.description}</p>

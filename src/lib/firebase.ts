@@ -23,11 +23,17 @@ const db = initializeFirestore(app, {
 
 const auth = getAuth(app);
 
+/*
 if (typeof window !== 'undefined') {
-  initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!),
-    isTokenAutoRefreshEnabled: true
-  });
+  if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+    initializeAppCheck(app, {
+      provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY),
+      isTokenAutoRefreshEnabled: true
+    });
+  } else {
+    console.warn('Firebase App Check is not initialized because NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not set.');
+  }
 }
+*/
 
 export { app, db, auth };

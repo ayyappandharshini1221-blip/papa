@@ -14,7 +14,7 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import {Message, Role} from 'genkit/model';
-import {defineStreamable} from '@genkit-ai/next/streaming/server';
+import { defineFlow } from 'genkit/flow';
 
 const ChatInputSchema = z.object({
   history: z.array(
@@ -46,13 +46,14 @@ function toGenkitMessages(input: ChatInput): Message[] {
   return messages;
 }
 
-export const chat = defineStreamable(
+export const chat = defineFlow(
   {
     name: 'chat',
-    input: {schema: ChatInputSchema},
-    output: {schema: ChatOutputChunkSchema},
+    inputSchema: ChatInputSchema,
+    outputSchema: ChatOutputChunkSchema,
+    stream: true,
   },
-  async (input, stream) => {
+  async function* (input) {
     const {stream: llmStream} = await ai.generate({
       stream: true,
       prompt: {
@@ -64,7 +65,7 @@ export const chat = defineStreamable(
     for await (const chunk of llmStream) {
       const text = chunk.text;
       if (text) {
-        stream.write({text});
+        yield { text };
       }
     }
   }

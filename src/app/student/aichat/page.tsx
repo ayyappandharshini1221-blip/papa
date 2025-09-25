@@ -4,9 +4,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Bot, Send, Loader2 } from 'lucide-react';
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { chat, ChatInput } from '@/ai/flows/chat';
-import { useStream } from '@genkit-ai/react';
+import React, { useState, useRef, useEffect } from 'react';
+import { chat, ChatInput, ChatOutputChunk } from '@/ai/flows/chat';
 import Textarea from 'react-textarea-autosize';
 
 interface Message {
@@ -24,33 +23,17 @@ export default function AIChatPage() {
     },
   ]);
   const [input, setInput] = useState('');
-  const chatContainerRef = useRef<HTMLDivElement>(null);
-
-  const { stream, data, loading, error, active } = useStream({
-    flow: chat,
-  });
-  
+  const [active, setActive] = useState(false);
   const [currentStream, setCurrentStream] = useState('');
-  useEffect(() => {
-    if (data?.text) {
-      setCurrentStream(prev => prev + data.text);
-    }
-  }, [data]);
-
-  useEffect(() => {
-    if (!active && currentStream) {
-      setMessages(prev => [...prev, { role: 'model', content: currentStream }]);
-      setCurrentStream('');
-    }
-  }, [active, currentStream]);
-
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || loading) return;
+    if (!input.trim() || active) return;
 
     const newMessages: Message[] = [...messages, { role: 'user', content: input }];
     setMessages(newMessages);
+    setActive(true);
     
     const chatInput: ChatInput = {
       history: newMessages.slice(0, -1).map(m => ({ role: m.role, content: m.content })),
@@ -58,7 +41,22 @@ export default function AIChatPage() {
     };
     
     setInput('');
-    await stream(chatInput);
+    
+    try {
+      const stream = await chat(chatInput);
+      let accumulatedText = '';
+      for await (const chunk of stream) {
+        accumulatedText += chunk.text;
+        setCurrentStream(accumulatedText);
+      }
+      setMessages(prev => [...prev, { role: 'model', content: accumulatedText }]);
+    } catch (error) {
+      console.error('Error during chat:', error);
+      setMessages(prev => [...prev, { role: 'model', content: 'Sorry, I encountered an error.' }]);
+    } finally {
+      setCurrentStream('');
+      setActive(false);
+    }
   };
   
   useEffect(() => {
@@ -132,10 +130,10 @@ export default function AIChatPage() {
             className="flex-1"
             rows={1}
             maxRows={5}
-            disabled={loading}
+            disabled={active}
           />
-          <Button type="submit" disabled={loading || !input.trim()}>
-            {loading ? (
+          <Button type="submit" disabled={active || !input.trim()}>
+            {active ? (
               <Loader2 className="h-5 w-5 animate-spin" />
             ) : (
               <Send className="h-5 w-5" />
@@ -143,7 +141,6 @@ export default function AIChatPage() {
             <span className="sr-only">Send</span>
           </Button>
         </form>
-         {error && <p className="text-xs text-destructive mt-2">{error.message}</p>}
       </div>
     </div>
   );

@@ -32,10 +32,14 @@ import {
 import Link from 'next/link';
 import { useTeacherData } from '@/hooks/use-teacher-data';
 import { Student } from '@/lib/types';
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 export default function TeacherDashboard() {
   const { teacher, classes, students, loading } = useTeacherData();
+
+  // State for simulated dynamic data
+  const [avgScore, setAvgScore] = useState(0);
+  const [quizzesToday, setQuizzesToday] = useState(0);
 
   const totalStudents = useMemo(() => {
     const studentIds = new Set();
@@ -59,6 +63,20 @@ export default function TeacherDashboard() {
     }));
 
   }, [students]);
+
+  useEffect(() => {
+    // This simulates data that would normally come from a real-time database query
+    const interval = setInterval(() => {
+      setAvgScore(Math.floor(Math.random() * (92 - 75 + 1)) + 75);
+      setQuizzesToday(prev => prev + Math.floor(Math.random() * 3));
+    }, 5000); // Update every 5 seconds
+
+    // Set initial values
+    setAvgScore(Math.floor(Math.random() * (92 - 75 + 1)) + 75);
+    setQuizzesToday(Math.floor(Math.random() * 50) + 10);
+
+    return () => clearInterval(interval);
+  }, []);
 
   if (loading) {
     return (
@@ -108,9 +126,9 @@ export default function TeacherDashboard() {
             <Zap className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">81%</div>
+            <div className="text-2xl font-bold">{avgScore}%</div>
             <p className="text-xs text-muted-foreground">
-              +2.1% from last month
+              Across all subjects
             </p>
           </CardContent>
         </Card>
@@ -120,7 +138,7 @@ export default function TeacherDashboard() {
             <Activity className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">+57</div>
+            <div className="text-2xl font-bold">+{quizzesToday}</div>
             <p className="text-xs text-muted-foreground">
               quizzes completed today
             </p>

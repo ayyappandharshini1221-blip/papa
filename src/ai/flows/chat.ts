@@ -51,12 +51,13 @@ const chatFlow = ai.defineFlow(
 
     const {stream: llmStream} = await ai.generate({
       stream: true,
-      prompt: messages, // Pass the correctly formatted array of messages.
+      prompt: messages,
     });
 
-    // Yield all chunks directly. The client will handle filtering empty chunks.
     for await (const chunk of llmStream) {
-      yield chunk;
+      if (chunk.text) {
+        yield chunk;
+      }
     }
   }
 );

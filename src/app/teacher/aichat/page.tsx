@@ -46,7 +46,6 @@ export default function AIChatPage() {
       const stream = await streamChat(chatInput);
       let accumulatedText = '';
       for await (const chunk of stream) {
-        // Client-side check to ensure chunk and chunk.text exist
         if (chunk && typeof chunk.text === 'string') {
             accumulatedText += chunk.text;
             setCurrentStream(accumulatedText);

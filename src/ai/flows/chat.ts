@@ -7,7 +7,7 @@ import {ai} from '@/ai/genkit';
 import {z} from 'zod';
 import { Message } from 'genkit';
 
-export const ChatInputSchema = z.object({
+const ChatInputSchema = z.object({
   history: z.array(
     z.object({
       role: z.enum(['user', 'model']),
@@ -19,7 +19,7 @@ export const ChatInputSchema = z.object({
 
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-export const ChatOutputChunkSchema = z.object({text: z.string()});
+const ChatOutputChunkSchema = z.object({text: z.string()});
 export type ChatOutputChunk = z.infer<typeof ChatOutputChunkSchema>;
 
 // Convert client history + prompt into Genkit-compatible messages
@@ -38,7 +38,7 @@ function toGenkitMessages(input: ChatInput): Message[] {
 }
 
 // Define the streaming chat flow
-export const chatFlow = ai.defineFlow(
+const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
     inputSchema: ChatInputSchema,

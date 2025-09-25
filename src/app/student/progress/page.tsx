@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import { Award, Bot, Flame, Loader2, Repeat, Swords, Target, Trophy, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {

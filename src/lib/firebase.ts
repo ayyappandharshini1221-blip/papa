@@ -12,16 +12,17 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// This function ensures that we initialize the app only once.
-const getFirebaseApp = (): FirebaseApp => {
-  if (getApps().length > 0) {
-    return getApp();
-  }
-  return initializeApp(firebaseConfig);
-};
+let app: FirebaseApp;
+let auth: Auth;
+let db: Firestore;
 
-const app = getFirebaseApp();
-const db = getFirestore(app);
-const auth = getAuth(app);
+if (getApps().length === 0) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApp();
+}
+
+auth = getAuth(app);
+db = getFirestore(app);
 
 export { app, db, auth };

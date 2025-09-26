@@ -1,8 +1,7 @@
 'use client';
 
 import { initializeApp, getApps, getApp, type FirebaseApp } from 'firebase/app';
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
-import { getFirestore, initializeFirestore, persistentLocalCache, persistentMultipleTabManager, type Firestore } from 'firebase/firestore';
+import { getFirestore, type Firestore } from 'firebase/firestore';
 import { getAuth, type Auth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -16,34 +15,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-
-
-// Safely initialize Firestore with persistence
-if (typeof window !== 'undefined') {
-    try {
-        initializeFirestore(app, {
-            localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
-        });
-    } catch (e) {
-        console.error("Firestore persistence could not be enabled.", e);
-    }
-}
-
-
-/*
-if (typeof window !== 'undefined') {
-  if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
-    initializeAppCheck(app, {
-      provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY),
-      isTokenAutoRefreshEnabled: true
-    });
-  } else {
-    console.warn('Firebase App Check is not initialized because NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not set.');
-  }
-}
-*/
+const app: FirebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const db: Firestore = getFirestore(app);
+const auth: Auth = getAuth(app);
 
 export { app, db, auth };

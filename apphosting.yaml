@@ -9,19 +9,19 @@ runConfig:
   # These are not visible to the client.
   env:
     - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-      value: "AIzaSyAf1tPZFm2b0jzUwdwByUS4e0vWOtsoEoo"
+      secret: FIREBASE_API_KEY
     - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-      value: "studio-7886280868-b2037.firebaseapp.com"
+      secret: FIREBASE_AUTH_DOMAIN
     - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
-      value: "studio-7886280868-b2037"
+      secret: FIREBASE_PROJECT_ID
     - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-      value: "studio-7886280868-b2037.appspot.com"
+      secret: FIREBASE_STORAGE_BUCKET
     - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
-      value: "919053648956"
+      secret: FIREBASE_MESSAGING_SENDER_ID
     - variable: NEXT_PUBLIC_FIREBASE_APP_ID
-      value: "1:919053648956:web:c2d5d7c2bc5cc9ff1a2f39"
+      secret: FIREBASE_APP_ID
     - variable: NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
-      value: ""
+      secret: FIREBASE_MEASUREMENT_ID
 
 # The service that your App Hosting backend runs.
 # Can be any valid Cloud Run service ID.
@@ -29,3 +29,8 @@ serviceId: edusmart-ai
 # The VPC connector that your App Hosting backend connects to.
 # Can be any valid VPC connector ID.
 vpcConnector: edusmart-ai-connector
+
+# Direct all traffic to the Next.js server
+rewrites:
+  - source: /.*
+    serviceId: edusmart-ai

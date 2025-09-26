@@ -1,3 +1,4 @@
+
 import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
 import { getFirestore, Firestore } from 'firebase/firestore';
 import { getAuth, Auth } from 'firebase/auth';
@@ -12,17 +13,10 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-let app: FirebaseApp;
-let auth: Auth;
-let db: Firestore;
+// Initialize Firebase for SSR
+const app: FirebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const db: Firestore = getFirestore(app);
+const auth: Auth = getAuth(app);
 
-if (getApps().length === 0) {
-  app = initializeApp(firebaseConfig);
-} else {
-  app = getApp();
-}
-
-auth = getAuth(app);
-db = getFirestore(app);
 
 export { app, db, auth };

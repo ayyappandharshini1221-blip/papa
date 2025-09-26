@@ -15,7 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { doc, updateDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 
@@ -34,6 +34,7 @@ export default function SettingsPage() {
   }
 
   const handleSaveChanges = async () => {
+    const db = getDb();
     if (!student) {
       toast({ title: 'Error', description: 'Student data not found.', variant: 'destructive' });
       return;

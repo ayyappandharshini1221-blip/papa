@@ -18,8 +18,9 @@ import {
   query,
   where,
   getDocs,
+  getFirestore,
 } from 'firebase/firestore';
-import { auth, db } from '@/lib/firebase';
+import { getDb, getAuthInstance } from '@/lib/firebase';
 import type { User, UserRole, Student } from '@/lib/types';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -31,6 +32,8 @@ export const signUpWithEmail = async (
   role: UserRole
 ) => {
   try {
+    const auth = getAuthInstance();
+    const db = getDb();
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
@@ -80,6 +83,8 @@ export const signUpWithEmail = async (
 
 export const signInWithEmail = async (email: string, password: string) => {
   try {
+    const auth = getAuthInstance();
+    const db = getDb();
     const userCredential = await signInWithEmailAndPassword(
       auth,
       email,
@@ -123,6 +128,8 @@ export const signInWithEmail = async (email: string, password: string) => {
 
 export const signInWithGoogle = async (role: UserRole) => {
   try {
+    const auth = getAuthInstance();
+    const db = getDb();
     const provider = new GoogleAuthProvider();
     const userCredential = await signInWithPopup(auth, provider);
     const user = userCredential.user;
@@ -184,6 +191,7 @@ export const signInWithGoogle = async (role: UserRole) => {
 
 export const signOut = async () => {
   try {
+    const auth = getAuthInstance();
     await firebaseSignOut(auth);
   } catch (error: any) {
     console.error('Error signing out:', error);
@@ -192,6 +200,8 @@ export const signOut = async () => {
 };
 
 export const onAuthChange = (callback: (user: User | null) => void) => {
+  const auth = getAuthInstance();
+  const db = getDb();
   return onAuthStateChanged(auth, async (firebaseUser: FirebaseUser | null) => {
     if (firebaseUser) {
       const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));

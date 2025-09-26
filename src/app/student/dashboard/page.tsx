@@ -32,7 +32,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { arrayUnion, doc, getDoc, updateDoc, query, collection, where, getDocs, DocumentData, or } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -56,6 +56,7 @@ export default function StudentDashboard() {
   }, []);
 
   const handleJoinClass = async () => {
+    const db = getDb();
     const codeOrName = inviteCode.trim();
     if (!codeOrName) {
       toast({ title: 'Please enter a class name or invite code.', variant: 'destructive' });

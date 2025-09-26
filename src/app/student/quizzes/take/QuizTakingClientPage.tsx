@@ -11,7 +11,7 @@ import { CheckCircle2, XCircle, Loader2, Award, Zap } from 'lucide-react';
 import { generateQuizContent, GenerateQuizContentOutput } from '@/ai/flows/generate-quiz-content';
 import { useStudentData } from '@/hooks/use-student-data';
 import { doc, updateDoc, increment, arrayUnion } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -93,6 +93,7 @@ export default function QuizTakingClientPage() {
   };
 
   const handleSubmit = async () => {
+    const db = getDb();
     if (!quizData || !student || !difficulty) return;
 
     let correctAnswers = 0;

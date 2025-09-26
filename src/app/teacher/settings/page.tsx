@@ -14,7 +14,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import { onAuthChange } from '@/lib/auth/auth';
 import type { User } from '@/lib/types';
 import { errorEmitter } from '@/firebase/error-emitter';
@@ -29,6 +29,7 @@ export default function SettingsPage() {
 
   useEffect(() => {
     const unsubscribe = onAuthChange(async (authUser) => {
+      const db = getDb();
       if (authUser) {
         const userDocRef = doc(db, 'users', authUser.id);
         const userDoc = await getDoc(userDocRef);
@@ -52,6 +53,7 @@ export default function SettingsPage() {
   }
   
   const handleSaveChanges = async () => {
+    const db = getDb();
     if (!user) {
       toast({ title: 'Error', description: 'User data not found.', variant: 'destructive' });
       return;

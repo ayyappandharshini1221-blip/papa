@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import type { LeaderboardEntry, Student } from '@/lib/types';
 
 export function useLeaderboard(classId?: string) {
@@ -11,6 +11,7 @@ export function useLeaderboard(classId?: string) {
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
+      const db = getDb();
       setLoading(true);
       try {
         let students: Student[] = [];

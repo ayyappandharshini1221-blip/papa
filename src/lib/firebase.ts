@@ -13,10 +13,15 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase for SSR
-const app: FirebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
-const db: Firestore = getFirestore(app);
-const auth: Auth = getAuth(app);
+function getFirebaseInstances() {
+    const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+    return { app, db, auth };
+}
 
-
-export { app, db, auth };
+// We are exporting functions that return the instances.
+// This defers the initialization until the function is called for the first time.
+export const getDb = () => getFirebaseInstances().db;
+export const getAuthInstance = () => getFirebaseInstances().auth;
+export const getAppInstance = () => getFirebaseInstances().app;

@@ -31,6 +31,8 @@ import { signInWithEmail, signInWithGoogle } from '@/lib/auth/auth';
 import { UserRole } from '@/lib/types';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
+export const dynamic = 'force-dynamic';
+
 const formSchema = z.object({
   email: z.string().email({ message: 'Invalid email address.' }),
   password: z.string().min(6, { message: 'Password must be at least 6 characters.' }),

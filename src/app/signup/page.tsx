@@ -37,6 +37,8 @@ import { Separator } from '@/components/ui/separator';
 import { signUpWithEmail, signInWithGoogle } from '@/lib/auth/auth';
 import { UserRole } from '@/lib/types';
 
+export const dynamic = 'force-dynamic';
+
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Invalid email address.' }),

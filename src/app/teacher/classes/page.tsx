@@ -39,7 +39,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -54,6 +54,7 @@ export default function ClassesPage() {
   const { toast } = useToast();
 
   const handleCreateClass = async () => {
+    const db = getDb();
     if (!newClassName.trim() || !teacher) return;
     setIsCreating(true);
 

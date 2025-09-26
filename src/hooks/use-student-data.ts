@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { doc, getDoc, onSnapshot, collection, query, where, getDocs, DocumentData } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import { onAuthChange } from '@/lib/auth/auth';
 import type { Student, Class } from '@/lib/types';
 
@@ -13,6 +13,7 @@ export function useStudentData() {
 
   useEffect(() => {
     const unsubscribe = onAuthChange(async (user) => {
+      const db = getDb();
       if (user && user.role === 'student') {
         const studentDocRef = doc(db, 'users', user.id);
         const unsubStudent = onSnapshot(studentDocRef, (doc) => {
@@ -32,6 +33,7 @@ export function useStudentData() {
 
   useEffect(() => {
     const fetchClasses = async () => {
+      const db = getDb();
       if (student && student.classIds && student.classIds.length > 0) {
         try {
           const classesQuery = query(collection(db, 'classes'), where('__name__', 'in', student.classIds));

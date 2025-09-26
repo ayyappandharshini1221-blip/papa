@@ -11,7 +11,7 @@ import {
   getDocs,
   DocumentData,
 } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
+import { getDb } from '@/lib/firebase';
 import { onAuthChange } from '@/lib/auth/auth';
 import type { Teacher, Class, Student } from '@/lib/types';
 
@@ -27,6 +27,7 @@ export function useTeacherData() {
 
   useEffect(() => {
     const unsubscribeAuth = onAuthChange(async (user) => {
+      const db = getDb();
       if (user && user.role === 'teacher') {
         const teacherDocRef = doc(db, 'users', user.id);
         const teacherDoc = await getDoc(teacherDocRef);
@@ -46,6 +47,7 @@ export function useTeacherData() {
   }, []);
 
   useEffect(() => {
+    const db = getDb();
     if (!teacher) {
       if (!loading) { 
         setClasses([]);
@@ -67,10 +69,11 @@ export function useTeacherData() {
     });
 
     return () => unsubscribeClasses();
-  }, [teacher]);
+  }, [teacher, loading]);
 
 
   useEffect(() => {
+    const db = getDb();
     // This effect now controls the final loading state
     if (classes.length === 0 && teacher) { // teacher check ensures this doesn't run on initial load before teacher is set
       setStudents({});

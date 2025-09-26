@@ -17,13 +17,17 @@ let auth: Auth;
 let db: Firestore;
 
 if (typeof window !== 'undefined' && !getApps().length) {
-  app = initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
+  try {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+  } catch (e) {
+    console.error('Failed to initialize Firebase', e);
+  }
 } else if (getApps().length) {
-  app = getApp();
-  auth = getAuth(app);
-  db = getFirestore(app);
+    app = getApp();
+    auth = getAuth(app);
+    db = getFirestore(app);
 }
 
 // @ts-ignore

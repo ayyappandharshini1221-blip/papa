@@ -22,14 +22,19 @@ import { CreditCard, LogOut, Settings, User as UserIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import type { User } from '@/lib/types';
+import { Skeleton } from '../ui/skeleton';
 
 export function UserNav() {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { toast } = useToast();
 
   useEffect(() => {
-    const unsubscribe = onAuthChange(setUser);
+    const unsubscribe = onAuthChange((user) => {
+        setUser(user);
+        setLoading(false);
+    });
     return () => unsubscribe();
   }, []);
 
@@ -47,26 +52,34 @@ export function UserNav() {
     }
   };
   
-  const settingsPath = user?.role === 'teacher' ? '/teacher/settings' : '/student/settings';
+  if (loading) {
+    return <Skeleton className="h-9 w-9 rounded-full" />;
+  }
 
-  const userAvatarUrl = user?.avatarUrl || PlaceHolderImages.find(p => p.id === 'avatar-1')?.imageUrl;
+  if (!user) {
+    return null;
+  }
+
+  const settingsPath = user.role === 'teacher' ? '/teacher/settings' : '/student/settings';
+
+  const userAvatarUrl = user.avatarUrl || PlaceHolderImages.find(p => p.id === 'avatar-1')?.imageUrl;
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-9 w-9">
-            <AvatarImage src={userAvatarUrl} alt={user?.name || 'User'} />
-            <AvatarFallback>{user?.name?.charAt(0) || 'U'}</AvatarFallback>
+            <AvatarImage src={userAvatarUrl} alt={user.name || 'User'} />
+            <AvatarFallback>{user.name?.charAt(0) || 'U'}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">{user?.name || 'User'}</p>
+            <p className="text-sm font-medium leading-none">{user.name || 'User'}</p>
             <p className="text-xs leading-none text-muted-foreground">
-              {user?.email || 'user@example.com'}
+              {user.email || 'user@example.com'}
             </p>
           </div>
         </DropdownMenuLabel>

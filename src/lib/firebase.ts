@@ -15,23 +15,23 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-let app: FirebaseApp;
-let db: Firestore;
-let auth: Auth;
+// Initialize Firebase
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
 
-// Initialize Firebase only on the client side
-if (typeof window !== 'undefined' && !getApps().length) {
-    app = initializeApp(firebaseConfig);
-    db = initializeFirestore(app, {
-      localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
-      experimentalForceLongPolling: true,
-    });
-    auth = getAuth(app);
-} else if (getApps().length) {
-    app = getApp();
-    db = getFirestore(app);
-    auth = getAuth(app);
+
+// Safely initialize Firestore with persistence
+if (typeof window !== 'undefined') {
+    try {
+        initializeFirestore(app, {
+            localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
+        });
+    } catch (e) {
+        console.error("Firestore persistence could not be enabled.", e);
+    }
 }
+
 
 /*
 if (typeof window !== 'undefined') {
@@ -46,5 +46,4 @@ if (typeof window !== 'undefined') {
 }
 */
 
-// @ts-ignore
 export { app, db, auth };

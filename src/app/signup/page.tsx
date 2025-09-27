@@ -115,7 +115,7 @@ export default function SignupPage() {
         <Logo className="h-8 w-8 text-primary" />
         <span className="text-xl font-bold">EduSmart AI</span>
       </Link>
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md shadow-2xl shadow-primary/10 rounded-3xl">
         <CardHeader>
           <CardTitle>Create an Account</CardTitle>
           <CardDescription>

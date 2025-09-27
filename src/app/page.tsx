@@ -33,7 +33,7 @@ export default function HomePage() {
       </div>
       <div className="grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
         <Link href="/teacher/dashboard" className="group">
-          <Card className="h-full transform transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-primary/30">
+          <Card className="h-full transform rounded-3xl border-2 border-transparent transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.4)]">
             <CardHeader className="items-center text-center">
               <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
                 <UserCog className="h-12 w-12" />
@@ -52,7 +52,7 @@ export default function HomePage() {
           </Card>
         </Link>
         <Link href="/student/dashboard" className="group">
-          <Card className="h-full transform transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-accent/30">
+          <Card className="h-full transform rounded-3xl border-2 border-transparent transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-[0_10px_40px_-10px_hsl(var(--accent)/0.4)]">
             <CardHeader className="items-center text-center">
               <div className="mb-4 rounded-full bg-accent/10 p-4 text-accent">
                 <GraduationCap className="h-12 w-12" />

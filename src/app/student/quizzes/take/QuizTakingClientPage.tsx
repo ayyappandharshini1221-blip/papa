@@ -324,6 +324,7 @@ export default function QuizTakingClientPage() {
       <CardContent>
         <h2 className="text-lg font-semibold mb-4">{currentQuestion.question}</h2>
         <RadioGroup
+          key={currentQuestionIndex}
           value={userAnswers[currentQuestionIndex]?.toString()}
           onValueChange={(value) => handleAnswerSelect(parseInt(value, 10))}
           className="space-y-2"

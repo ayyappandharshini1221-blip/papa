@@ -126,69 +126,6 @@ export const signInWithEmail = async (email: string, password: string) => {
   }
 };
 
-export const signInWithGoogle = async (role: UserRole) => {
-  try {
-    const auth = getAuthInstance();
-    const db = getDb();
-    const provider = new GoogleAuthProvider();
-    const userCredential = await signInWithPopup(auth, provider);
-    const user = userCredential.user;
-
-    const userDocRef = doc(db, 'users', user.uid);
-    const userDoc = await getDoc(userDocRef);
-
-    if (userDoc.exists()) {
-      const existingUser = userDoc.data() as User;
-      if (existingUser.role !== role) {
-         await setDoc(userDocRef, { role: role }, { merge: true }).catch((serverError) => {
-            const permissionError = new FirestorePermissionError({
-                path: userDocRef.path,
-                operation: 'update',
-                requestResourceData: { role },
-            });
-            errorEmitter.emit('permission-error', permissionError);
-        });
-        existingUser.role = role;
-      }
-      return existingUser;
-    } else {
-      const userProfile: User | Student =
-        role === 'student'
-          ? {
-              id: user.uid,
-              name: user.displayName || 'Anonymous',
-              email: user.email!,
-              role,
-              avatarUrl: user.photoURL || undefined,
-              xp: 0,
-              streak: 0,
-              badges: [],
-              classIds: [],
-            }
-          : {
-              id: user.uid,
-              name: user.displayName || 'Anonymous',
-              email: user.email!,
-              role,
-              avatarUrl: user.photoURL || undefined,
-            };
-
-      await setDoc(userDocRef, userProfile).catch((serverError) => {
-        const permissionError = new FirestorePermissionError({
-            path: userDocRef.path,
-            operation: 'create',
-            requestResourceData: userProfile,
-        });
-        errorEmitter.emit('permission-error', permissionError);
-      });
-      return userProfile;
-    }
-  } catch (error: any) {
-    console.error('Error signing in with Google:', error);
-    throw new Error(error.message);
-  }
-};
-
 export const signOut = async () => {
   try {
     const auth = getAuthInstance();

@@ -33,8 +33,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Logo } from '@/components/icons';
-import { Separator } from '@/components/ui/separator';
-import { signUpWithEmail, signInWithGoogle } from '@/lib/auth/auth';
+import { signUpWithEmail } from '@/lib/auth/auth';
 import { UserRole } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -91,27 +90,6 @@ function SignupForm() {
     } catch (error: any) {
       toast({
         title: 'Sign Up Failed',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
-  async function handleGoogleSignIn(role: UserRole) {
-    setIsLoading(true);
-    try {
-      const user = await signInWithGoogle(role);
-      toast({ title: 'Account Created Successfully!' });
-      if (user.role === 'teacher') {
-        router.push('/teacher/dashboard');
-      } else {
-        router.push('/student/dashboard');
-      }
-    } catch (error: any) {
-      toast({
-        title: 'Google Sign-In Failed',
         description: error.message,
         variant: 'destructive',
       });
@@ -201,30 +179,6 @@ function SignupForm() {
               </Button>
             </form>
           </Form>
-
-          <Separator className="my-6" />
-
-          <div className="space-y-2">
-            <p className="text-center text-sm text-muted-foreground">
-              Or sign up as a:
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <Button
-                variant="outline"
-                onClick={() => handleGoogleSignIn('student')}
-                disabled={isLoading}
-              >
-                Student with Google
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleGoogleSignIn('teacher')}
-                disabled={isLoading}
-              >
-                Teacher with Google
-              </Button>
-            </div>
-          </div>
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Already have an account?{' '}

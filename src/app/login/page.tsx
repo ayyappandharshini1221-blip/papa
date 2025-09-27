@@ -26,17 +26,14 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Logo } from '@/components/icons';
-import { Separator } from '@/components/ui/separator';
-import { signInWithEmail, signInWithGoogle } from '@/lib/auth/auth';
+import { signInWithEmail } from '@/lib/auth/auth';
 import { UserRole } from '@/lib/types';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 export const dynamic = 'force-dynamic';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Invalid email address.' }),
   password: z.string().min(6, { message: 'Password must be at least 6 characters.' }),
-  googleRole: z.enum(['student', 'teacher']).optional(),
 });
 
 export default function LoginPage() {
@@ -49,7 +46,6 @@ export default function LoginPage() {
     defaultValues: {
       email: '',
       password: '',
-      googleRole: 'student',
     },
   });
 
@@ -66,37 +62,6 @@ export default function LoginPage() {
     } catch (error: any) {
       toast({
         title: 'Login Failed',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
-  async function handleGoogleSignIn() {
-    const role = form.getValues('googleRole') as UserRole;
-    if (!role) {
-      toast({
-        title: 'Role not selected',
-        description: 'Please select a role before signing in with Google.',
-        variant: 'destructive',
-      });
-      return;
-    }
-    
-    setIsLoading(true);
-    try {
-      const user = await signInWithGoogle(role);
-      toast({ title: 'Login Successful' });
-       if (user.role === 'teacher') {
-        router.push('/teacher/dashboard');
-      } else {
-        router.push('/student/dashboard');
-      }
-    } catch (error: any) {
-      toast({
-        title: 'Google Sign-In Failed',
         description: error.message,
         variant: 'destructive',
       });
@@ -151,49 +116,6 @@ export default function LoginPage() {
                 {isLoading ? 'Signing In...' : 'Sign In'}
               </Button>
             </form>
-
-            <Separator className="my-6" />
-
-            <div className="space-y-4">
-               <FormField
-                control={form.control}
-                name="googleRole"
-                render={({ field }) => (
-                  <FormItem className="space-y-2">
-                    <p className="text-sm font-medium">For Google Sign-In, select your role:</p>
-                    <FormControl>
-                      <RadioGroup
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                        className="flex gap-4"
-                      >
-                        <FormItem className="flex items-center space-x-2 space-y-0">
-                          <FormControl>
-                            <RadioGroupItem value="student" id="r1" />
-                          </FormControl>
-                          <FormLabel htmlFor="r1" className="font-normal">Student</FormLabel>
-                        </FormItem>
-                        <FormItem className="flex items-center space-x-2 space-y-0">
-                          <FormControl>
-                            <RadioGroupItem value="teacher" id="r2" />
-                          </FormControl>
-                          <FormLabel htmlFor="r2" className="font-normal">Teacher</FormLabel>
-                        </FormItem>
-                      </RadioGroup>
-                    </FormControl>
-                     <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button
-                variant="outline"
-                className="w-full"
-                onClick={handleGoogleSignIn}
-                disabled={isLoading}
-              >
-                {isLoading ? 'Redirecting...' : 'Sign in with Google'}
-              </Button>
-            </div>
           </Form>
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Don't have an account?{' '}

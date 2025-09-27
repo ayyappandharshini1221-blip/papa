@@ -16,8 +16,10 @@ type Message = {
   content: { text: string }[];
 };
 
-export function ChatInterface({ initialMessages }: { initialMessages: Message[] }) {
-  const [messages, setMessages] = useState<Message[]>(initialMessages);
+export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
+  const [messages, setMessages] = useState<Message[]>([
+    { role: 'model', content: [{ text: welcomeMessage }] }
+  ]);
   const [input, setInput] = useState('');
   const [pending, setPending] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -40,8 +42,7 @@ export function ChatInterface({ initialMessages }: { initialMessages: Message[] 
 
     try {
       const chatInput: ChatInput = {
-        history: messages,
-        prompt: prompt,
+        text: prompt,
       };
 
       const stream = await streamChat(chatInput);

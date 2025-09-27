@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview Streaming chat flow for Genkit in Next.js.
@@ -8,14 +7,9 @@ import {ai} from '@/ai/genkit';
 import {z} from 'zod';
 import { Message } from 'genkit';
 
+// Simplified input schema
 const ChatInputSchema = z.object({
-  history: z.array(
-    z.object({
-      role: z.enum(['user', 'model']),
-      content: z.array(z.object({text: z.string()})),
-    })
-  ),
-  prompt: z.string(),
+  text: z.string(),
 });
 
 export type ChatInput = z.infer<typeof ChatInputSchema>;
@@ -23,20 +17,6 @@ export type ChatInput = z.infer<typeof ChatInputSchema>;
 const ChatOutputChunkSchema = z.object({text: z.string()});
 export type ChatOutputChunk = z.infer<typeof ChatOutputChunkSchema>;
 
-// Convert client history + prompt into Genkit-compatible messages
-function toGenkitMessages(input: ChatInput): Message[] {
-  const historyMessages: Message[] = input.history.map((msg) => ({
-    role: msg.role,
-    content: msg.content,
-  }));
-
-  const userMessage: Message = {
-    role: 'user',
-    content: [{text: input.prompt}],
-  };
-
-  return [...historyMessages, userMessage];
-}
 
 // Define the streaming chat flow
 const chatFlow = ai.defineFlow(
@@ -47,12 +27,10 @@ const chatFlow = ai.defineFlow(
     stream: true,
   },
   async function* (input) {
-    const messages = toGenkitMessages(input);
-
     const {stream: llmStream} = await ai.generate({
       stream: true,
       prompt: {
-        messages,
+        text: input.text,
         system: 'You are a helpful AI assistant for the EduSmart AI platform. Keep your answers concise and friendly.'
       },
     });

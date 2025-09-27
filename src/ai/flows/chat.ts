@@ -5,13 +5,11 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'zod';
-import { Message } from 'genkit';
 
 // Simplified input schema
 const ChatInputSchema = z.object({
   text: z.string(),
 });
-
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
 const ChatOutputChunkSchema = z.object({text: z.string()});

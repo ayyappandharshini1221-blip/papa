@@ -40,6 +40,7 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
     setPending(true);
 
     try {
+      // THIS IS THE FIX: Ensure the input object has the 'text' property.
       const chatInput: ChatInput = {
         text: prompt,
       };
@@ -54,10 +55,10 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
           fullResponse += chunk.text;
           setMessages(prev => {
             const updated = [...prev];
-            updated[updated.length - 1] = {
-              role: 'model',
-              content: [{ text: fullResponse }],
-            };
+            const lastMessage = updated[updated.length - 1];
+            if (lastMessage && lastMessage.role === 'model') {
+                lastMessage.content = [{ text: fullResponse }];
+            }
             return updated;
           });
         }

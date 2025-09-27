@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -16,9 +17,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { signOut, onAuthChange } from '@/lib/auth/auth';
-import { CreditCard, LogOut, Settings, User as UserIcon } from 'lucide-react';
+import { LogOut, Settings, User as UserIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import type { User } from '@/lib/types';
@@ -62,14 +62,11 @@ export function UserNav() {
 
   const settingsPath = user.role === 'teacher' ? '/teacher/settings' : '/student/settings';
 
-  const userAvatarUrl = user.avatarUrl || PlaceHolderImages.find(p => p.id === 'avatar-1')?.imageUrl;
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-9 w-9">
-            <AvatarImage src={userAvatarUrl} alt={user.name || 'User'} />
             <AvatarFallback>{user.name?.charAt(0) || 'U'}</AvatarFallback>
           </Avatar>
         </Button>
@@ -88,10 +85,6 @@ export function UserNav() {
           <DropdownMenuItem onClick={() => router.push(settingsPath)}>
             <UserIcon className="mr-2 h-4 w-4" />
             <span>Profile</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard className="mr-2 h-4 w-4" />
-            <span>Billing</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => router.push(settingsPath)}>
             <Settings className="mr-2 h-4 w-4" />

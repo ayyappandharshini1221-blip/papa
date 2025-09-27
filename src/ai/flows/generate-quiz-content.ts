@@ -78,6 +78,13 @@ const generateQuizContentFlow = ai.defineFlow(
     name: 'generateQuizContentFlow',
     inputSchema: GenerateQuizContentInputSchema,
     outputSchema: GenerateQuizContentOutputSchema,
+    retry: {
+      maxAttempts: 3,
+      backoff: {
+        initialDelay: 2000,
+        multiplier: 2,
+      },
+    },
   },
   async input => {
     const {output} = await generateQuizContentPrompt(input);

@@ -34,8 +34,7 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
     if (!input.trim() || pending) return;
 
     const userMessage: Message = { role: 'user', content: [{ text: input }] };
-    const newMessages: Message[] = [...messages, userMessage];
-    setMessages(newMessages);
+    setMessages(prev => [...prev, userMessage]);
     const prompt = input;
     setInput('');
     setPending(true);
@@ -47,8 +46,8 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
 
       const stream = await streamChat(chatInput);
 
-      let fullResponse = '';
       setMessages(prev => [...prev, { role: 'model', content: [{ text: '' }] }]);
+      let fullResponse = '';
 
       for await (const chunk of stream) {
         if (chunk?.text) {

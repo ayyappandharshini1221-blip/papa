@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -80,7 +81,7 @@ export default function QuizTakingClientPage() {
         })
         .catch(err => {
           console.error('Error generating quiz:', err);
-           if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests'))) {
+           if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests') || err.message.includes('503'))) {
              setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
           } else {
             setError('Failed to generate the quiz. Please try again.');

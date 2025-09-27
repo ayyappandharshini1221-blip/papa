@@ -31,29 +31,23 @@ const GenerateQuizContentOutputSchema = z.object({
 });
 export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutputSchema>;
 
-const cachedGenerateQuizContent = cache(
-  async (input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> => {
-    console.log(`Generating new quiz for ${input.subject} (${input.difficulty})`);
-    return await generateQuizContentFlow(input);
-  },
-  ['quiz-content'], // This base key is kept, but we'll add dynamic parts.
-  {
-    revalidate: 3600, // Revalidate cache every hour
-  }
-);
-
 
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
-  // We create a dynamic cache function by wrapping the cached function call.
-  // The key array passed to cache is used for invalidation, but for revalidation, 
-  // the arguments to the cached function are what determine uniqueness.
+  // We create a dynamic cache function. The arguments to the cached function are what 
+  // determine uniqueness for caching. This ensures that a quiz for 'Maths' (easy) is
+  // cached separately from 'Maths' (hard).
   const getQuizWithDynamicCache = cache(
     async (cacheInput: GenerateQuizContentInput) => {
       console.log(`Generating new quiz for ${cacheInput.subject} (${cacheInput.difficulty})`);
       return await generateQuizContentFlow(cacheInput);
     },
-    [`quiz-content-${input.subject}-${input.difficulty}`],
-    { revalidate: 3600 }
+    // The base key for invalidation.
+    ['quiz-content'], 
+    { 
+      // Revalidate cache every hour. If a request comes in after this time,
+      // Next.js will serve the stale data while re-generating in the background.
+      revalidate: 3600 
+    }
   );
 
   return getQuizWithDynamicCache(input);

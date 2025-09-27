@@ -32,24 +32,19 @@ import {
   Trophy,
   Wind,
   Loader2,
+  Atom,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useStudentData } from '@/hooks/use-student-data';
+import { JavaIcon, PythonIcon } from '@/components/icons';
 
 export const allBadges = [
   {
-    id: 'math-whiz',
-    title: 'Math Whiz',
-    description: 'Master the basics of Algebra.',
-    icon: <Trophy className="h-10 w-10" />,
-    xp: 100,
-  },
-  {
-    id: 'python-pioneer',
-    title: 'Python Pioneer',
-    description: 'Complete your first Python quiz.',
-    icon: <Brain className="h-10 w-10" />,
-    xp: 50,
+    id: 'first-quiz',
+    title: 'First Step',
+    description: 'Complete your very first quiz.',
+    icon: <Star className="h-10 w-10" />,
+    xp: 25,
   },
   {
     id: 'streak-starter',
@@ -64,6 +59,27 @@ export const allBadges = [
     description: 'Get a 100% score on any quiz.',
     icon: <Target className="h-10 w-10" />,
     xp: 150,
+  },
+  {
+    id: 'math-whiz',
+    title: 'Math Whiz',
+    description: 'Master the basics of Algebra.',
+    icon: <Calculator className="h-10 w-10" />,
+    xp: 100,
+  },
+  {
+    id: 'python-pioneer',
+    title: 'Python Pioneer',
+    description: 'Complete your first Python quiz.',
+    icon: <PythonIcon className="h-10 w-10" />,
+    xp: 50,
+  },
+  {
+    id: 'java-journeyman',
+    title: 'Java Journeyman',
+    description: 'Complete your first Java quiz.',
+    icon: <JavaIcon className="h-10 w-10" />,
+    xp: 50,
   },
   {
     id: 'quiz-master',
@@ -110,7 +126,7 @@ export const allBadges = [
     description: 'Maintain a 7-day streak.',
     icon: <Crown className="h-10 w-10" />,
     progress: '3/7',
-    xp: 250,
+    xp: 300,
   },
   {
     id: 'historian',
@@ -129,8 +145,15 @@ export const allBadges = [
     xp: 150,
   },
   {
-    id: 'coder',
-    title: 'Coder',
+    id: 'biologist',
+    title: 'Biologist',
+    description: 'Complete your first biology quiz.',
+    icon: <Atom className="h-10 w-10" />,
+    xp: 50,
+  },
+  {
+    id: 'techie',
+    title: 'Techie',
     description: 'Complete your first Tech quiz.',
     icon: <Code className="h-10 w-10" />,
     xp: 50,
@@ -160,27 +183,19 @@ export const allBadges = [
     xp: 150,
   },
   {
-    id: 'calculator',
-    title: 'Calculator',
-    description: 'Score over 90% in 5 math quizzes.',
-    icon: <Calculator className="h-10 w-10" />,
-    progress: '3/5',
-    xp: 225,
-  },
-  {
     id: 'polyglot',
     title: 'Polyglot',
     description: 'Complete quizzes in 3 programming languages.',
     icon: <Library className="h-10 w-10" />,
     progress: '1/3',
-    xp: 200,
+    xp: 250,
   },
   {
     id: 'weekend-warrior',
     title: 'Weekend Warrior',
     description: 'Complete a quiz on a Saturday or Sunday.',
     icon: <Sparkles className="h-10 w-10" />,
-    xp: 25,
+    xp: 50,
   },
   {
     id: 'breeze',
@@ -201,7 +216,7 @@ export const allBadges = [
     id: 'over-9000',
     title: 'Over 9000!',
     description: 'Earn over 9000 XP points in total.',
-    icon: <Award className="h-10 w-10" />,
+    icon: <Brain className="h-10 w-10" />,
     progress: '4250/9001',
     xp: 1000,
   },
@@ -217,7 +232,7 @@ export const allBadges = [
     id: 'unstoppable',
     title: 'Unstoppable',
     description: 'Maintain a 30-day streak.',
-    icon: <Flame className="h-10 w-10" />,
+    icon: <Crown className="h-10 w-10" />,
     progress: '3/30',
     xp: 1000,
   },

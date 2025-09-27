@@ -134,7 +134,7 @@ export default function QuizTakingClientPage() {
       setShowConfetti(true);
     }
 
-    const xpGained = difficultyXpMap[difficulty];
+    let xpGained = difficultyXpMap[difficulty];
     
     // In a real app, you would have more robust logic for streak calculation
     // For now, we'll just increment it.
@@ -143,25 +143,50 @@ export default function QuizTakingClientPage() {
     try {
       const studentDocRef = doc(db, 'users', student.id);
       const updates: { [key: string]: any } = {
-        xp: increment(xpGained),
         streak: newStreak
       };
 
       // Badge check logic
       const newlyEarnedBadges: string[] = [];
-      if(finalScore === 100 && !student.badges.includes('perfectionist')) {
+      const studentBadges = student.badges || [];
+
+      // First Quiz
+      if(!studentBadges.includes('first-quiz')) {
+        newlyEarnedBadges.push('first-quiz');
+      }
+
+      if(finalScore === 100 && !studentBadges.includes('perfectionist')) {
         newlyEarnedBadges.push('perfectionist');
       }
-      if(subject?.toLowerCase() === 'python' && !student.badges.includes('python-pioneer')) {
+      if(subject?.toLowerCase() === 'python' && !studentBadges.includes('python-pioneer')) {
         newlyEarnedBadges.push('python-pioneer');
       }
-      if(newStreak >= 3 && !student.badges.includes('streak-starter')) {
+      if(subject?.toLowerCase() === 'java' && !studentBadges.includes('java-journeyman')) {
+        newlyEarnedBadges.push('java-journeyman');
+      }
+      if(subject?.toLowerCase() === 'biology' && !studentBadges.includes('biologist')) {
+        newlyEarnedBadges.push('biologist');
+      }
+       if(subject?.toLowerCase() === 'tech' && !studentBadges.includes('techie')) {
+        newlyEarnedBadges.push('techie');
+      }
+      if(newStreak >= 3 && !studentBadges.includes('streak-starter')) {
           newlyEarnedBadges.push('streak-starter');
       }
 
+      let badgeXp = 0;
       if(newlyEarnedBadges.length > 0) {
         updates.badges = arrayUnion(...newlyEarnedBadges);
+        newlyEarnedBadges.forEach(badgeId => {
+            const badgeInfo = allBadges.find(b => b.id === badgeId);
+            if(badgeInfo) {
+                badgeXp += badgeInfo.xp;
+            }
+        });
       }
+      
+      updates.xp = increment(xpGained + badgeXp);
+      const totalXpGained = xpGained + badgeXp;
 
       await updateDoc(studentDocRef, updates)
         .catch(serverError => {
@@ -177,7 +202,7 @@ export default function QuizTakingClientPage() {
           title: (
             <div className="flex items-center">
               <Zap className="mr-2 h-5 w-5 text-yellow-500" />
-              <span className="font-bold">+{xpGained} XP Gained!</span>
+              <span className="font-bold">+{totalXpGained} XP Gained!</span>
             </div>
           ),
           description: `You scored ${finalScore.toFixed(0)}% and your streak is now ${newStreak} days!`,
@@ -190,10 +215,10 @@ export default function QuizTakingClientPage() {
                 title: (
                     <div className="flex items-center">
                         <Award className="mr-2 h-5 w-5 text-accent" />
-                        <span className="font-bold">Badge Unlocked!</span>
+                        <span className="font-bold">Badge Unlocked: {badgeInfo.title}!</span>
                     </div>
                 ),
-                description: `You've earned the "${badgeInfo.title}" badge!`,
+                description: `+${badgeInfo.xp} XP for this achievement!`,
               })
           }
       })

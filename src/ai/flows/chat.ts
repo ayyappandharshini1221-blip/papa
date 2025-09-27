@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview Streaming chat flow for Genkit in Next.js.
@@ -50,7 +51,10 @@ const chatFlow = ai.defineFlow(
 
     const {stream: llmStream} = await ai.generate({
       stream: true,
-      prompt: messages,
+      prompt: {
+        messages,
+        system: 'You are a helpful AI assistant for the EduSmart AI platform. Keep your answers concise and friendly.'
+      },
     });
 
     for await (const chunk of llmStream) {

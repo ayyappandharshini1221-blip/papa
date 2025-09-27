@@ -39,7 +39,7 @@ export function ChatInterface({ initialMessages }: { initialMessages: Message[] 
     setPending(true);
 
     try {
-       const chatInput: ChatInput = {
+      const chatInput: ChatInput = {
         history: messages,
         prompt: prompt,
       };
@@ -97,6 +97,10 @@ export function ChatInterface({ initialMessages }: { initialMessages: Message[] 
               {m.content.map((c, j) => (
                 <p key={j} className="text-sm whitespace-pre-wrap">{c.text}</p>
               ))}
+              {/* This handles the case where the model is streaming and content is empty initially */}
+              {m.content.length === 0 || (m.content.length === 1 && m.content[0].text === '') && m.role === 'model' && (
+                <Loader2 className="h-5 w-5 text-primary animate-spin" />
+              )}
             </div>
              {m.role === 'user' && (
               <Avatar className="h-9 w-9">
@@ -106,7 +110,7 @@ export function ChatInterface({ initialMessages }: { initialMessages: Message[] 
             )}
           </div>
         ))}
-         {pending && (
+         {pending && messages[messages.length - 1]?.role !== 'model' && (
           <div className="flex gap-3 justify-start">
              <Avatar className="h-9 w-9">
                 <AvatarFallback><Bot /></AvatarFallback>

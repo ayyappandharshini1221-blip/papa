@@ -11,19 +11,22 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
     --primary: 221 83% 53%; /* A friendly blue */
+    --primary-darker: 221 83% 43%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
+    --secondary-darker: 210 40% 86.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 34 92% 63%; /* A warm orange */
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 84.2% 60.2%;
+    --destructive-darker: 0 84.2% 50.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 221 83% 53%;
-    --radius: 1.5rem; /* Increased for a bubbly feel */
+    --radius: 1rem; /* Bubbly feel */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -47,14 +50,17 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
     --primary: 217 91% 60%;
+    --primary-darker: 217 91% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
+    --secondary-darker: 217.2 32.6% 7.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 34 92% 63%;
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 62.8% 30.6%;
+    --destructive-darker: 0 62.8% 20.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;

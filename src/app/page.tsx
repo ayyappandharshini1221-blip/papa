@@ -32,7 +32,7 @@ export default function HomePage() {
         </p>
       </div>
       <div className="grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-        <Link href="/teacher/dashboard" className="group">
+        <Link href="/signup?role=teacher" className="group">
           <Card className="h-full transform rounded-3xl border-2 border-transparent transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.4)] active:translate-y-0 active:shadow-[0_5px_20px_-10px_hsl(var(--primary)/0.4)]">
             <CardHeader className="items-center text-center">
               <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
@@ -46,12 +46,12 @@ export default function HomePage() {
             </CardHeader>
             <CardContent>
               <div className="mt-4 text-center font-semibold text-primary group-hover:underline">
-                Go to Teacher Dashboard &rarr;
+                Sign Up as a Teacher &rarr;
               </div>
             </CardContent>
           </Card>
         </Link>
-        <Link href="/student/dashboard" className="group">
+        <Link href="/signup?role=student" className="group">
           <Card className="h-full transform rounded-3xl border-2 border-transparent transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-[0_10px_40px_-10px_hsl(var(--accent)/0.4)] active:translate-y-0 active:shadow-[0_5px_20px_-10px_hsl(var(--accent)/0.4)]">
             <CardHeader className="items-center text-center">
               <div className="mb-4 rounded-full bg-accent/10 p-4 text-accent">
@@ -65,7 +65,7 @@ export default function HomePage() {
             </CardHeader>
             <CardContent>
               <div className="mt-4 text-center font-semibold text-accent group-hover:underline">
-                Go to Student Dashboard &rarr;
+                Sign Up as a Student &rarr;
               </div>
             </CardContent>
           </Card>

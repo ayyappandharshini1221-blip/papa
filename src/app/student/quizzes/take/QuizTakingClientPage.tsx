@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { notFound, useSearchParams, useRouter } from 'next/navigation';
+import Confetti from 'react-confetti';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
-import { CheckCircle2, XCircle, Loader2, Award, Zap } from 'lucide-react';
+import { CheckCircle2, XCircle, Loader2, Award, Zap, Trophy } from 'lucide-react';
 import { generateQuizContent, GenerateQuizContentOutput } from '@/ai/flows/generate-quiz-content';
 import { useStudentData } from '@/hooks/use-student-data';
 import { doc, updateDoc, increment, arrayUnion } from 'firebase/firestore';
@@ -25,11 +26,31 @@ const difficultyXpMap = {
   hard: 100,
 };
 
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
+}
+
 export default function QuizTakingClientPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { toast } = useToast();
   const { student } = useStudentData();
+  const { width, height } = useWindowSize();
 
   const subject = searchParams.get('subject');
   const difficulty = searchParams.get('difficulty') as 'easy' | 'medium' | 'hard' | null;
@@ -42,6 +63,8 @@ export default function QuizTakingClientPage() {
   const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
+
 
   const fetchQuiz = useCallback(() => {
     if (subject && difficulty) {
@@ -106,6 +129,9 @@ export default function QuizTakingClientPage() {
     const finalScore = (correctAnswers / quizData.quiz.length) * 100;
     setScore(finalScore);
     setIsSubmitted(true);
+    if(finalScore >= 80) {
+      setShowConfetti(true);
+    }
 
     const xpGained = difficultyXpMap[difficulty];
     
@@ -219,36 +245,46 @@ export default function QuizTakingClientPage() {
 
   if (isSubmitted) {
     return (
-      <Card className="w-full max-w-2xl mx-auto">
-        <CardHeader>
-          <CardTitle>Quiz Results: {subject}</CardTitle>
-          <CardDescription>
-            You scored {score.toFixed(0)}%!
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {quizData.quiz.map((q, index) => (
-            <div key={index} className={`p-4 rounded-lg ${userAnswers[index] === q.correctAnswerIndex ? 'bg-green-100/50' : 'bg-red-100/50'}`}>
-              <p className="font-semibold">{index + 1}. {q.question}</p>
-              <div className="mt-2 text-sm">
-                <p className={`flex items-center gap-2 ${userAnswers[index] === q.correctAnswerIndex ? 'text-green-600' : 'text-red-600'}`}>
-                  {userAnswers[index] === q.correctAnswerIndex ? <CheckCircle2 size={16} /> : <XCircle size={16} />}
-                  Your answer: {q.answers[userAnswers[index] ?? -1] ?? "Not answered"}
-                </p>
-                {userAnswers[index] !== q.correctAnswerIndex && (
-                  <p className="flex items-center gap-2 mt-1 text-green-600">
-                    <CheckCircle2 size={16} /> Correct answer: {q.answers[q.correctAnswerIndex]}
-                  </p>
+        <>
+        {showConfetti && <Confetti width={width} height={height} recycle={false} onConfettiComplete={() => setShowConfetti(false)} />}
+        <Card className="w-full max-w-2xl mx-auto">
+            <CardHeader className="text-center items-center">
+                {score >= 80 ? (
+                    <>
+                        <Trophy className="w-16 h-16 text-yellow-400 drop-shadow-lg" />
+                        <CardTitle className="text-3xl mt-2">Excellent Work!</CardTitle>
+                    </>
+                ) : (
+                    <CardTitle>Quiz Results: {subject}</CardTitle>
                 )}
-              </div>
-              <p className="mt-2 text-xs text-muted-foreground p-2 bg-background rounded-md">{q.explanation}</p>
-            </div>
-          ))}
-        </CardContent>
-        <CardFooter>
-            <Button onClick={() => router.push('/student/quizzes')}>Take Another Quiz</Button>
-        </CardFooter>
-      </Card>
+                <CardDescription>
+                    You scored {score.toFixed(0)}%!
+                </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+            {quizData.quiz.map((q, index) => (
+                <div key={index} className={`p-4 rounded-lg ${userAnswers[index] === q.correctAnswerIndex ? 'bg-green-100/50' : 'bg-red-100/50'}`}>
+                <p className="font-semibold">{index + 1}. {q.question}</p>
+                <div className="mt-2 text-sm">
+                    <p className={`flex items-center gap-2 ${userAnswers[index] === q.correctAnswerIndex ? 'text-green-600' : 'text-red-600'}`}>
+                    {userAnswers[index] === q.correctAnswerIndex ? <CheckCircle2 size={16} /> : <XCircle size={16} />}
+                    Your answer: {q.answers[userAnswers[index] ?? -1] ?? "Not answered"}
+                    </p>
+                    {userAnswers[index] !== q.correctAnswerIndex && (
+                    <p className="flex items-center gap-2 mt-1 text-green-600">
+                        <CheckCircle2 size={16} /> Correct answer: {q.answers[q.correctAnswerIndex]}
+                    </p>
+                    )}
+                </div>
+                <p className="mt-2 text-xs text-muted-foreground p-2 bg-background rounded-md">{q.explanation}</p>
+                </div>
+            ))}
+            </CardContent>
+            <CardFooter>
+                <Button onClick={() => router.push('/student/quizzes')}>Take Another Quiz</Button>
+            </CardFooter>
+        </Card>
+      </>
     );
   }
 

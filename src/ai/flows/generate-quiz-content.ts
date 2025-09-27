@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -44,9 +45,9 @@ export async function generateQuizContent(input: GenerateQuizContentInput): Prom
     // The base key for invalidation.
     ['quiz-content'], 
     { 
-      // Revalidate cache every hour. If a request comes in after this time,
+      // Revalidate cache every 24 hours. If a request comes in after this time,
       // Next.js will serve the stale data while re-generating in the background.
-      revalidate: 3600 
+      revalidate: 86400 
     }
   );
 
@@ -85,3 +86,4 @@ const generateQuizContentFlow = ai.defineFlow(
     return output!;
   }
 );
+

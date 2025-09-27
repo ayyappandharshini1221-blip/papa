@@ -111,7 +111,7 @@ export default function QuizTakingPage() {
           className="space-y-2"
         >
           {currentQuestion.answers.map((answer, index) => (
-             <Label key={index} htmlFor={`q${currentQuestionIndex}-a${index}`} className="flex items-center space-x-2 p-3 rounded-md border border-transparent hover:border-primary/50 hover:bg-primary/5 has-[>[data-state=checked]]:border-primary has-[>[data-state=checked]]:bg-primary/10 cursor-pointer">
+             <Label key={`${currentQuestionIndex}-${index}`} htmlFor={`q${currentQuestionIndex}-a${index}`} className="flex items-center space-x-2 p-3 rounded-md border border-transparent hover:border-primary/50 hover:bg-primary/5 has-[>[data-state=checked]]:border-primary has-[>[data-state=checked]]:bg-primary/10 cursor-pointer">
               <RadioGroupItem value={index.toString()} id={`q${currentQuestionIndex}-a${index}`} />
               <span className="flex-1">
                 {answer}
@@ -125,11 +125,11 @@ export default function QuizTakingPage() {
           Back
         </Button>
         {currentQuestionIndex === quizData.questions.length - 1 ? (
-          <Button onClick={handleSubmit}>
+          <Button onClick={handleSubmit} disabled={userAnswers[currentQuestionIndex] === undefined}>
             Submit Quiz
           </Button>
         ) : (
-          <Button onClick={handleNext}>
+          <Button onClick={handleNext} disabled={userAnswers[currentQuestionIndex] === undefined}>
             Next
           </Button>
         )}

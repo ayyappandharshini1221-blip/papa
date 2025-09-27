@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
-import { CheckCircle2, XCircle, Loader2, Award, Zap, Trophy } from 'lucide-react';
+import { CheckCircle2, XCircle, Loader2, Award, Zap, Trophy, Atom, Brain, Calculator, Code, Crown, Feather, FlaskConical, Globe, History, Library, Lightbulb, Mountain, Rocket, Sparkles, Star, Swords, Target, Wind } from 'lucide-react';
 import { generateQuizContent, GenerateQuizContentOutput } from '@/ai/flows/generate-quiz-content';
 import { useStudentData } from '@/hooks/use-student-data';
 import { doc, updateDoc, increment, arrayUnion } from 'firebase/firestore';
@@ -18,7 +18,7 @@ import { useToast } from '@/hooks/use-toast';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { allBadges } from '@/app/student/badges/page';
-
+import { PythonIcon, JavaIcon } from '@/components/icons';
 type UserAnswers = { [key: number]: number | null };
 
 const difficultyXpMap = {
@@ -173,7 +173,10 @@ export default function QuizTakingClientPage() {
       if(newStreak >= 3 && !studentBadges.includes('streak-starter')) {
           newlyEarnedBadges.push('streak-starter');
       }
-
+      if(subject?.toLowerCase() === 'maths' && !studentBadges.includes('math-whiz')) {
+        newlyEarnedBadges.push('math-whiz');
+      }
+      
       let badgeXp = 0;
       if(newlyEarnedBadges.length > 0) {
         updates.badges = arrayUnion(...newlyEarnedBadges);
@@ -330,7 +333,7 @@ export default function QuizTakingClientPage() {
           className="space-y-2"
         >
           {currentQuestion.answers.map((answer, index) => (
-             <Label key={index} htmlFor={`q${currentQuestionIndex}-a${index}`} className="flex items-center space-x-2 p-3 rounded-md border border-transparent hover:border-primary/50 hover:bg-primary/5 has-[>[data-state=checked]]:border-primary has-[>[data-state=checked]]:bg-primary/10 cursor-pointer">
+             <Label key={`${currentQuestionIndex}-${index}`} htmlFor={`q${currentQuestionIndex}-a${index}`} className="flex items-center space-x-2 p-3 rounded-md border border-transparent hover:border-primary/50 hover:bg-primary/5 has-[>[data-state=checked]]:border-primary has-[>[data-state=checked]]:bg-primary/10 cursor-pointer">
               <RadioGroupItem value={index.toString()} id={`q${currentQuestionIndex}-a${index}`} />
                <span className="flex-1">
                 {answer}

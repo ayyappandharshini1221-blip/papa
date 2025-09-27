@@ -54,8 +54,10 @@ const chatFlow = ai.defineFlow(
     });
 
     for await (const chunk of llmStream) {
-      if (chunk.text) {
-        yield { text: chunk.text };
+      const text = chunk.text;
+      // Ensure we only yield chunks that have a non-empty text property.
+      if (typeof text === 'string' && text.length > 0) {
+        yield { text };
       }
     }
   }

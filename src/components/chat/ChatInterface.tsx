@@ -35,6 +35,8 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
 
     const userMessage: Message = { role: 'user', content: [{ text: input }] };
     setMessages(prev => [...prev, userMessage]);
+    
+    // This is the variable that will be sent to the AI flow.
     const prompt = input;
     setInput('');
     setPending(true);
@@ -98,8 +100,7 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
               {m.content.map((c, j) => (
                 <p key={j} className="text-sm whitespace-pre-wrap">{c.text}</p>
               ))}
-              {/* This handles the case where the model is streaming and content is empty initially */}
-              {m.content.length === 0 || (m.content.length === 1 && m.content[0].text === '') && m.role === 'model' && (
+              {m.role === 'model' && messages.length -1 === i && pending && (
                 <Loader2 className="h-5 w-5 text-primary animate-spin" />
               )}
             </div>
@@ -111,7 +112,7 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
             )}
           </div>
         ))}
-         {pending && messages[messages.length - 1]?.role !== 'model' && (
+         {pending && messages[messages.length - 1]?.role === 'user' && (
           <div className="flex gap-3 justify-start">
              <Avatar className="h-9 w-9">
                 <AvatarFallback><Bot /></AvatarFallback>

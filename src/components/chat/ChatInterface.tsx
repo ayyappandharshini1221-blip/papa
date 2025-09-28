@@ -41,14 +41,9 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
     setPending(true);
 
     try {
-      // This is the object that will be sent to the backend flow.
-      // It must match the ChatInput schema.
-      const chatInput: ChatInput = {
+      const stream = await streamChat({
         text: trimmedInput,
-      };
-
-      // Call the streamChat server action with the correctly formatted input.
-      const stream = await streamChat(chatInput);
+      });
 
       setMessages(prev => [...prev, { role: 'model', content: [{ text: '' }] }]);
       let fullResponse = '';

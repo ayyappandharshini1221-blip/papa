@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
-import { CheckCircle2, XCircle, Loader2, Award, Zap, Trophy, Atom, Brain, Calculator, Code, Crown, Feather, FlaskConical, Globe, History, Library, Lightbulb, Mountain, Rocket, Sparkles, Star, Swords, Target, Wind } from 'lucide-react';
+import { CheckCircle2, XCircle, Loader2, Award, Zap } from 'lucide-react';
 import { generateQuizContent, GenerateQuizContentOutput } from '@/ai/flows/generate-quiz-content';
 import { useStudentData } from '@/hooks/use-student-data';
 import { doc, updateDoc, increment, arrayUnion } from 'firebase/firestore';
@@ -18,7 +18,6 @@ import { useToast } from '@/hooks/use-toast';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { allBadges } from '@/app/student/badges/page';
-import { PythonIcon, JavaIcon } from '@/components/icons';
 import { useWindowSize } from '@/hooks/use-window-size';
 type UserAnswers = { [key: number]: number | null };
 
@@ -262,7 +261,7 @@ export default function QuizTakingClientPage() {
             <CardHeader className="text-center items-center">
                 {score >= 80 ? (
                     <>
-                        <div className="text-6xl animate-bounce">👍</div>
+                         <div className="animate-bounce text-8xl">👍</div>
                         <CardTitle className="text-3xl mt-2">Excellent Work!</CardTitle>
                     </>
                 ) : (

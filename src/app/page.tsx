@@ -42,29 +42,6 @@ export default function HomePage() {
           </p>
         </div>
         <div className="grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-2 mx-auto">
-          <Link href="/signup?role=teacher" className="group">
-            <Card className="h-full transform rounded-3xl border-2 border-transparent bg-card/80 backdrop-blur-md transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.4)] active:translate-y-0 active:shadow-[0_5px_20px_-10px_hsl(var(--primary)/0.4)]">
-              <CardHeader className="items-center text-center">
-                <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
-                  <UserCog className="h-12 w-12" />
-                </div>
-                <CardTitle className="text-2xl font-bold">
-                  I'm a Teacher
-                </CardTitle>
-                <CardDescription>
-                  Create classes, generate AI-powered quizzes, and track your
-                  students' progress with powerful analytics.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button asChild className="mt-4" tabIndex={-1}>
-                  <div className="font-semibold text-primary-foreground">
-                    Sign Up as a Teacher &rarr;
-                  </div>
-                </Button>
-              </CardContent>
-            </Card>
-          </Link>
           <Link href="/signup?role=student" className="group">
             <Card className="h-full transform rounded-3xl border-2 border-transparent bg-card/80 backdrop-blur-md transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_hsl(var(--accent)/0.4)] active:translate-y-0 active:shadow-[0_5px_20px_-10px_hsl(var(--accent)/0.4)]">
               <CardHeader className="items-center text-center">
@@ -88,6 +65,29 @@ export default function HomePage() {
                 >
                   <div className="font-semibold text-secondary-foreground">
                     Sign Up as a Student &rarr;
+                  </div>
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
+          <Link href="/signup?role=teacher" className="group">
+            <Card className="h-full transform rounded-3xl border-2 border-transparent bg-card/80 backdrop-blur-md transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.4)] active:translate-y-0 active:shadow-[0_5px_20px_-10px_hsl(var(--primary)/0.4)]">
+              <CardHeader className="items-center text-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
+                  <UserCog className="h-12 w-12" />
+                </div>
+                <CardTitle className="text-2xl font-bold">
+                  I'm a Teacher
+                </CardTitle>
+                <CardDescription>
+                  Create classes, generate AI-powered quizzes, and track your
+                  students' progress with powerful analytics.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button asChild className="mt-4" tabIndex={-1}>
+                  <div className="font-semibold text-primary-foreground">
+                    Sign Up as a Teacher &rarr;
                   </div>
                 </Button>
               </CardContent>

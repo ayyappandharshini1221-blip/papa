@@ -93,7 +93,7 @@ export default function QuizTakingClientPage() {
 
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
   };
 
@@ -282,20 +282,20 @@ export default function QuizTakingClientPage() {
             </CardHeader>
             <CardContent className="space-y-6">
             {quizData.quiz.map((q, index) => (
-                <div key={index} className={`p-4 rounded-lg ${userAnswers[index] === q.correctAnswerIndex ? 'bg-green-100/50' : 'bg-red-100/50'}`}>
+                <div key={index} className={`p-4 rounded-lg ${userAnswers[index] === q.correctAnswerIndex ? 'bg-green-100/50 dark:bg-green-900/20' : 'bg-red-100/50 dark:bg-red-900/20'}`}>
                 <p className="font-semibold">{index + 1}. {q.question}</p>
                 <div className="mt-2 text-sm">
-                    <p className={`flex items-center gap-2 ${userAnswers[index] === q.correctAnswerIndex ? 'text-green-600' : 'text-red-600'}`}>
+                    <p className={`flex items-center gap-2 ${userAnswers[index] === q.correctAnswerIndex ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                     {userAnswers[index] === q.correctAnswerIndex ? <CheckCircle2 size={16} /> : <XCircle size={16} />}
                     Your answer: {q.answers[userAnswers[index] ?? -1] ?? "Not answered"}
                     </p>
                     {userAnswers[index] !== q.correctAnswerIndex && (
-                    <p className="flex items-center gap-2 mt-1 text-green-600">
+                    <p className="flex items-center gap-2 mt-1 text-green-600 dark:text-green-400">
                         <CheckCircle2 size={16} /> Correct answer: {q.answers[q.correctAnswerIndex]}
                     </p>
                     )}
                 </div>
-                <p className="mt-2 text-xs text-muted-foreground p-2 bg-background rounded-md">{q.explanation}</p>
+                <p className="mt-2 text-xs text-muted-foreground p-2 bg-background/50 rounded-md">{q.explanation}</p>
                 </div>
             ))}
             </CardContent>

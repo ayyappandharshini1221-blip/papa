@@ -5,7 +5,6 @@ import { useState, useRef, useEffect } from 'react';
 import { Send, User, Bot, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { streamChat, ChatInput } from '@/ai/flows/chat';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -16,7 +15,9 @@ type Message = {
   content: { text: string }[];
 };
 
-export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
+type ChatStreamer = (input: { text: string }) => Promise<AsyncGenerator<{ text: string }>>;
+
+export function ChatInterface({ welcomeMessage, chatStreamer }: { welcomeMessage: string, chatStreamer: ChatStreamer }) {
   const [messages, setMessages] = useState<Message[]>([
     { role: 'model', content: [{ text: welcomeMessage }] }
   ]);
@@ -41,7 +42,7 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
     setPending(true);
 
     try {
-      const stream = await streamChat({
+      const stream = await chatStreamer({
         text: trimmedInput,
       });
 

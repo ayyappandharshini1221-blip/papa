@@ -40,6 +40,7 @@ export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  const [showHug, setShowHug] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -54,29 +55,36 @@ export default function LoginPage() {
     try {
       const user = await signInWithEmail(values.email, values.password);
       toast({ title: 'Login Successful' });
-      if (user.role === 'teacher') {
-        router.push('/teacher/dashboard');
-      } else {
-        router.push('/student/dashboard');
-      }
+      setShowHug(true);
+      setTimeout(() => {
+        if (user.role === 'teacher') {
+          router.push('/teacher/dashboard');
+        } else {
+          router.push('/student/dashboard');
+        }
+      }, 1500);
     } catch (error: any) {
       toast({
         title: 'Login Failed',
         description: error.message,
         variant: 'destructive',
       });
-    } finally {
       setIsLoading(false);
     }
   }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
+      {showHug && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/50 backdrop-blur-sm">
+          <div className="animate-bounce text-8xl">🤗</div>
+        </div>
+      )}
       <Link href="/" className="mb-6 flex items-center gap-2">
         <Logo className="h-8 w-8 text-primary" />
         <span className="text-xl font-bold">EduSmart AI</span>
       </Link>
-      <Card className="w-full max-w-md shadow-2xl shadow-primary/10 rounded-3xl">
+      <Card className="w-full max-w-md rounded-3xl shadow-2xl shadow-primary/10">
         <CardHeader>
           <CardTitle>Welcome Back!</CardTitle>
           <CardDescription>

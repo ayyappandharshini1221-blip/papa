@@ -42,7 +42,6 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
     setPending(true);
 
     try {
-      // THIS IS THE FIX: Ensure the input object has the 'text' property.
       const chatInput: ChatInput = {
         text: prompt,
       };

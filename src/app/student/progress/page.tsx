@@ -15,9 +15,8 @@ import { Progress } from '@/components/ui/progress';
 import { useStudentData } from '@/hooks/use-student-data';
 import { useLeaderboard } from '@/hooks/use-leaderboard';
 import { allBadges } from '@/app/student/badges/page';
-import { Brain, Calculator, Code, Crown, Feather, Globe, History, Library, Lightbulb, Mountain, Rocket, Sparkles, Star, Wind } from 'lucide-react';
-import { QuizAttempt } from '@/lib/types';
 import { PythonIcon, JavaIcon } from '@/components/icons';
+import { QuizAttempt } from '@/lib/types';
 
 const subjectIcons: { [key: string]: React.ReactNode } = {
   Maths: <Sigma className="h-6 w-6" />,
@@ -46,7 +45,7 @@ export default function ProgressPage() {
 
     const progressMap: {
       [subject: string]: {
-        [difficulty: string]: { scores: number[]; count: number };
+        [difficulty in 'easy' | 'medium' | 'hard']: { scores: number[]; count: number };
       };
     } = {};
 
@@ -58,39 +57,38 @@ export default function ProgressPage() {
           hard: { scores: [], count: 0 },
         };
       }
-      progressMap[attempt.subject][attempt.difficulty].scores.push(attempt.score);
-      progressMap[attempt.subject][attempt.difficulty].count++;
+      if (progressMap[attempt.subject][attempt.difficulty]) {
+        progressMap[attempt.subject][attempt.difficulty].scores.push(attempt.score);
+        progressMap[attempt.subject][attempt.difficulty].count++;
+      }
     });
 
     return Object.keys(progressMap).map(subject => {
-      const difficulties = Object.keys(progressMap[subject])
+      const difficulties = (['easy', 'medium', 'hard'] as const)
         .map(level => {
-          const { scores, count } = progressMap[subject][level as 'easy' | 'medium' | 'hard'];
+          const { scores, count } = progressMap[subject][level];
           if (count === 0) {
-            return { level, attempted: 0, score: 0, progress: 0 };
+            // Don't show difficulties the user hasn't attempted for a subject
+            return null;
           }
           const averageScore = scores.reduce((a, b) => a + b, 0) / scores.length;
-          // Simple progress: average score for now. Could be more complex.
-          const progress = averageScore;
           return {
             level: level.charAt(0).toUpperCase() + level.slice(1),
             attempted: count,
             score: Math.round(averageScore),
-            progress: Math.round(progress),
+            progress: Math.round(averageScore),
           };
         })
-        // Ensure a consistent order
-        .sort((a, b) => {
-          const order = { Easy: 0, Medium: 1, Normal: 1, Hard: 2 };
-          return order[a.level as keyof typeof order] - order[b.level as keyof typeof order];
-        });
+        .filter(Boolean) as { level: string; attempted: number; score: number; progress: number }[];
+        
+      if (difficulties.length === 0) return null;
 
       return {
         subject,
         icon: subjectIcons[subject] || subjectIcons.Default,
         difficulties,
       };
-    });
+    }).filter(Boolean);
   }, [student?.quizHistory]);
 
   if (studentLoading || leaderboardLoading) {
@@ -166,7 +164,7 @@ export default function ProgressPage() {
                     <CardDescription>Your performance across different subjects and difficulties.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                    {subjectProgressData.length > 0 ? subjectProgressData.map(subject => (
+                    {subjectProgressData.length > 0 ? subjectProgressData.map(subject => subject && (
                         <div key={subject.subject}>
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="rounded-full bg-primary/10 p-2 text-primary">{subject.icon}</div>
@@ -175,10 +173,10 @@ export default function ProgressPage() {
                             <div className="space-y-4">
                             {subject.difficulties.map(d => (
                                 <div key={d.level} className="flex items-center gap-4">
-                                    <span className="w-12 text-sm font-medium">{d.level}</span>
+                                    <span className="w-16 text-sm font-medium">{d.level}</span>
                                     <Progress value={d.progress} className="flex-1" />
-                                    <span className="w-28 text-right text-sm text-muted-foreground">{d.attempted} quizzes</span>
-                                    <span className="w-20 text-right text-sm font-semibold">{d.score > 0 ? `${d.score}% avg` : '-'}</span>
+                                    <span className="w-28 text-right text-sm text-muted-foreground">{d.attempted} {d.attempted > 1 ? 'quizzes' : 'quiz'}</span>
+                                    <span className="w-24 text-right text-sm font-semibold">{d.score > 0 ? `${d.score}% avg` : '-'}</span>
                                 </div>
                             ))}
                             </div>
@@ -198,7 +196,7 @@ export default function ProgressPage() {
                     {allBadges.slice(0, 8).map(badge => (
                         <div key={badge.id} className={`flex flex-col items-center text-center p-4 rounded-lg gap-2 ${studentBadges.includes(badge.id) ? 'bg-accent/10 border-accent/20 border' : 'bg-secondary/50 opacity-60'}`}>
                              <div className={`rounded-full p-3 ${studentBadges.includes(badge.id) ? 'bg-accent/20 text-accent' : 'bg-muted-foreground/20 text-muted-foreground'}`}>
-                                {React.cloneElement(badge.icon, { className: "h-8 w-8"})}
+                                {React.cloneElement(badge.icon as React.ReactElement, { className: "h-8 w-8"})}
                             </div>
                             <p className="font-semibold text-sm">{badge.title}</p>
                             <p className="text-xs text-muted-foreground">{badge.description}</p>
@@ -224,7 +222,7 @@ export default function ProgressPage() {
                   <div className="flex-1 space-y-1">
                     <p className="font-medium">Unlock "Quiz Master"</p>
                     <p className="text-muted-foreground">
-                      You've completed 4 quizzes. Complete 6 more to unlock this badge!
+                      You've completed {student?.quizHistory?.length || 0} quizzes. Complete {10 - (student?.quizHistory?.length || 0)} more to unlock this badge!
                       <Button variant="link" size="sm" className="h-auto p-0 pl-1">Start a Quiz</Button>
                     </p>
                   </div>

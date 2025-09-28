@@ -59,7 +59,7 @@ export interface Badge {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: React.ReactNode;
   xp: number;
   progress?: string;
 }
@@ -73,3 +73,5 @@ export interface LeaderboardEntry {
   streak: number;
   avatarId?: string;
 }
+
+    

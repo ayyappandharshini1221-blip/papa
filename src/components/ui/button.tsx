@@ -5,11 +5,11 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-150 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98] active:shadow-inner [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-150 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98] active:shadow-inner [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow-[0_4px_0_0_hsl(var(--primary-darker,0_0%_0%))] hover:bg-primary/90 hover:shadow-[0_4px_0_0_hsl(var(--primary-darker,0_0%_0%)/0.9)] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--primary-darker,0_0%_0%))] hover:brightness-110",
+        default: "bg-primary text-primary-foreground shadow-[0_4px_0_0_hsl(var(--primary-darker,0_0%_0%))] hover:bg-primary/90 hover:shadow-[0_4px_0_0_hsl(var(--primary-darker,0_0%_0%)/0.9)] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--primary-darker,0_0%_0%))] hover:brightness-110 before:content-['🍬'] before:absolute before:-top-2 before:-left-1 before:text-lg before:transition-transform before:duration-300 hover:before:rotate-[-45deg] after:content-['🍫'] after:absolute after:-bottom-2 after:-right-1 after:text-lg after:transition-transform after:duration-300 hover:after:rotate-[45deg]",
         destructive:
           "bg-destructive text-destructive-foreground shadow-[0_4px_0_0_hsl(var(--destructive-darker,0_0%_0%))] hover:bg-destructive/90 hover:shadow-[0_4px_0_0_hsl(var(--destructive-darker,0_0%_0%)/0.9)] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--destructive-darker,0_0%_0%))] hover:brightness-110",
         outline:

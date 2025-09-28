@@ -1,61 +1,67 @@
 rules_version = '2';
+
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Users can only read and write their own data.
-    // Teachers can read basic info of students in their classes.
-    // Students can read basic info of other students for leaderboards.
-    match /users/{userId} {
-      allow read: if request.auth != null && 
-        (
-          // Allow users to read their own document
-          request.auth.uid == userId ||
-          // Allow teachers to read data of students in their classes
-          (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
-           get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'teacher' &&
-           exists(/databases/$(database)/documents/classes/$(resource.data.classIds[0])) &&
-           get(/databases/$(database)/documents/classes/$(resource.data.classIds[0])).data.teacherId == request.auth.uid
-          ) ||
-          // Allow any authenticated user to read limited fields for leaderboards/profiles
-          (get(/databases/$(database)/documents/users/$(userId)).data.role == 'student')
-        );
-        
-      allow create: if request.auth.uid == userId;
-
-      allow update: if request.auth.uid == userId &&
-        // Prevent users from changing their own role
-        request.resource.data.role == resource.data.role;
-        
-      allow delete: if request.auth.uid == userId;
+  
+    // Helper functions
+    function isAuth() {
+      return request.auth != null;
+    }
+    
+    function isStudent() {
+      return isAuth() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'student';
+    }
+    
+    function isTeacher() {
+      return isAuth() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'teacher';
     }
 
-    // Classes can be created by teachers.
-    // Only the teacher of a class can update it.
-    // Enrolled students can read class data.
-    match /classes/{classId} {
-      allow read: if request.auth != null &&
-        (
-          // Teacher of the class
-          get(/databases/$(database)/documents/classes/$(classId)).data.teacherId == request.auth.uid ||
-          // Student is in the class
-          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.classIds.hasAny([classId])
-        );
+    function isOwner(userId) {
+      return isAuth() && request.auth.uid == userId;
+    }
 
-      allow create: if request.auth != null &&
-        // User is a teacher and is the teacher of this new class
-        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'teacher' &&
-        request.resource.data.teacherId == request.auth.uid;
-        
-      allow update: if request.auth != null &&
-        (
-          // Only the teacher of the class can modify it
-          get(/databases/$(database)/documents/classes/$(classId)).data.teacherId == request.auth.uid ||
-          // Students can join a class (update studentIds)
-          (request.auth.uid in request.resource.data.studentIds && !(request.auth.uid in resource.data.studentIds))
-        );
-        
-      allow delete: if request.auth != null && 
-        // Only the teacher of the class can delete it
-        get(/databases/$(database)/documents/classes/$(classId)).data.teacherId == request.auth.uid;
+    // USERS collection
+    match /users/{userId} {
+      // Anyone can create a user profile (sign up)
+      allow create: if isAuth();
+
+      // Users can read their own profile.
+      // Teachers can read the profiles of students in their classes.
+      allow read: if isOwner(userId) || 
+                  (isTeacher() && 
+                    get(/databases/$(database)/documents/users/$(userId)).data.role == 'student' &&
+                    // Check if a class exists where the teacher is the teacher and the student is enrolled.
+                    exists(/databases/$(database)/documents/classes/{classId} where 
+                      get(/databases/$(database)/documents/classes/{classId}).data.teacherId == request.auth.uid && 
+                      userId in get(/databases/$(database)/documents/classes/{classId}).data.studentIds));
+
+      // Users can only update their own profile.
+      // Students can update their name, xp, streak, badges, and join classes.
+      // Teachers can update their name.
+      // Role cannot be changed.
+      allow update: if isOwner(userId) && request.resource.data.role == resource.data.role;
+      
+      // Users can only delete their own account
+      allow delete: if isOwner(userId);
+    }
+    
+    // CLASSES collection
+    match /classes/{classId} {
+      // Only teachers can create new classes
+      allow create: if isTeacher() && request.resource.data.teacherId == request.auth.uid;
+      
+      // Allow read if the user is the teacher of the class or a student in it.
+      allow read: if isAuth() && (
+                    resource.data.teacherId == request.auth.uid || 
+                    request.auth.uid in resource.data.studentIds
+                  );
+      
+      // Only the teacher of a class can update it (e.g. change name)
+      // Students cannot modify class documents directly. Student enrollment is handled via user document update.
+      allow update: if isTeacher() && resource.data.teacherId == request.auth.uid;
+      
+      // Only the teacher can delete a class
+      allow delete: if isTeacher() && resource.data.teacherId == request.auth.uid;
     }
   }
 }

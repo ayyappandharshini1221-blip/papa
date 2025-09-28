@@ -11,7 +11,6 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import { unstable_cache as cache } from 'next/cache';
 
 const GenerateQuizContentInputSchema = z.object({
   subject: z.string().describe('The subject of the quiz.'),
@@ -34,24 +33,8 @@ export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutput
 
 
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
-  // We create a dynamic cache function. The arguments to the cached function are what 
-  // determine uniqueness for caching. This ensures that a quiz for 'Maths' (easy) is
-  // cached separately from 'Maths' (hard).
-  const getQuizWithDynamicCache = cache(
-    async (cacheInput: GenerateQuizContentInput) => {
-      console.log(`Generating new quiz for ${cacheInput.subject} (${cacheInput.difficulty})`);
-      return await generateQuizContentFlow(cacheInput);
-    },
-    // The base key for invalidation.
-    ['quiz-content'], 
-    { 
-      // Revalidate cache every 24 hours. If a request comes in after this time,
-      // Next.js will serve the stale data while re-generating in the background.
-      revalidate: 86400 
-    }
-  );
-
-  return getQuizWithDynamicCache(input);
+  // Directly call the flow to ensure a new quiz is generated every time.
+  return await generateQuizContentFlow(input);
 }
 
 const generateQuizContentPrompt = ai.definePrompt({
@@ -86,4 +69,3 @@ const generateQuizContentFlow = ai.defineFlow(
     return output!;
   }
 );
-

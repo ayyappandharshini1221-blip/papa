@@ -37,6 +37,9 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { useStudentData } from '@/hooks/use-student-data';
 import { JavaIcon, PythonIcon } from '@/components/icons';
+import Confetti from 'react-confetti';
+import { useWindowSize } from '@/hooks/use-window-size';
+import { useState, useEffect } from 'react';
 
 export const allBadges = [
   {
@@ -256,6 +259,14 @@ export const allBadges = [
 
 export default function BadgesPage() {
   const { student, loading } = useStudentData();
+  const { width, height } = useWindowSize();
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  useEffect(() => {
+    // Trigger confetti when the component mounts
+    setShowConfetti(true);
+  }, []);
+
 
   if (loading) {
     return (
@@ -273,6 +284,16 @@ export default function BadgesPage() {
 
   return (
     <div className="flex flex-col gap-8">
+       {showConfetti && (
+        <Confetti
+          width={width}
+          height={height}
+          recycle={false}
+          numberOfPieces={500}
+          tweenDuration={3000}
+          onConfettiComplete={() => setShowConfetti(false)}
+        />
+      )}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Badges Collection</h1>
         <p className="text-muted-foreground">

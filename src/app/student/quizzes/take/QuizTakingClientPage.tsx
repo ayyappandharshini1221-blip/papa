@@ -19,6 +19,7 @@ import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { allBadges } from '@/app/student/badges/page';
 import { PythonIcon, JavaIcon } from '@/components/icons';
+import { useWindowSize } from '@/hooks/use-window-size';
 type UserAnswers = { [key: number]: number | null };
 
 const difficultyXpMap = {
@@ -26,25 +27,6 @@ const difficultyXpMap = {
   medium: 50,
   hard: 100,
 };
-
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
-  });
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return windowSize;
-}
 
 export default function QuizTakingClientPage() {
   const router = useRouter();
@@ -333,7 +315,7 @@ export default function QuizTakingClientPage() {
           className="space-y-2"
         >
           {currentQuestion.answers.map((answer, index) => (
-             <Label key={`${currentQuestionIndex}-${index}`} htmlFor={`q${currentQuestionIndex}-a${index}`} className="flex items-center space-x-2 p-3 rounded-md border border-transparent hover:border-primary/50 hover:bg-primary/5 has-[>[data-state=checked]]:border-primary has-[>[data-state=checked]]:bg-primary/10 cursor-pointer">
+             <Label key={`${quizData.quiz.length}-${currentQuestionIndex}-${index}`} htmlFor={`q${currentQuestionIndex}-a${index}`} className="flex items-center space-x-2 p-3 rounded-md border border-transparent hover:border-primary/50 hover:bg-primary/5 has-[>[data-state=checked]]:border-primary has-[>[data-state=checked]]:bg-primary/10 cursor-pointer">
               <RadioGroupItem value={index.toString()} id={`q${currentQuestionIndex}-a${index}`} />
                <span className="flex-1">
                 {answer}

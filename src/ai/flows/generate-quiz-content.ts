@@ -57,9 +57,9 @@ const generateQuizContentFlow = ai.defineFlow(
     inputSchema: GenerateQuizContentInputSchema,
     outputSchema: GenerateQuizContentOutputSchema,
     retry: {
-      maxAttempts: 3,
+      maxAttempts: 5,
       backoff: {
-        initialDelay: 2000,
+        initialDelay: 3000,
         multiplier: 2,
       },
     },

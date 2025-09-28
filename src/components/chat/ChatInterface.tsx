@@ -31,19 +31,18 @@ export function ChatInterface({ welcomeMessage }: { welcomeMessage: string }) {
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || pending) return;
+    const trimmedInput = input.trim();
+    if (!trimmedInput || pending) return;
 
-    const userMessage: Message = { role: 'user', content: [{ text: input }] };
+    const userMessage: Message = { role: 'user', content: [{ text: trimmedInput }] };
     setMessages(prev => [...prev, userMessage]);
     
-    // This is the variable that will be sent to the AI flow.
-    const prompt = input;
     setInput('');
     setPending(true);
 
     try {
       const chatInput: ChatInput = {
-        text: prompt,
+        text: trimmedInput,
       };
 
       const stream = await streamChat(chatInput);

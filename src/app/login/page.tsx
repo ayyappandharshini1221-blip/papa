@@ -64,9 +64,15 @@ export default function LoginPage() {
         }
       }, 1500);
     } catch (error: any) {
+      let description = 'An unexpected error occurred. Please try again.';
+      if (error.code === 'auth/invalid-credential') {
+        description = 'Invalid credentials. Please check your email and password.';
+      } else {
+        description = error.message;
+      }
       toast({
         title: 'Login Failed',
-        description: error.message,
+        description: description,
         variant: 'destructive',
       });
       setIsLoading(false);

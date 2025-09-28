@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/card';
 import { Logo } from '@/components/icons';
 import { Button } from '@/components/ui/button';
-import Candy from '@/components/ui/candy';
 
 export default function HomePage() {
   return (
@@ -20,7 +19,6 @@ export default function HomePage() {
           "url('https://images.unsplash.com/photo-1599609914251-686a77b3518c?q=80&w=2070&auto=format&fit=crop')",
       }}
     >
-      <Candy />
       <div className="absolute inset-0 bg-background/50 backdrop-blur-sm"></div>
       <div className="relative z-10 w-full">
         <div className="absolute top-0 right-4 flex gap-2">

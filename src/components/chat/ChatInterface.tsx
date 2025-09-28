@@ -131,11 +131,7 @@ export function ChatInterface({ welcomeMessage, chatStreamer }: { welcomeMessage
             onKeyDown={(e) => {
               if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
-                const form = e.currentTarget.form;
-                if (form) {
-                    const event = new Event('submit', { bubbles: true, cancelable: true });
-                    form.dispatchEvent(event);
-                }
+                handleSendMessage(e as any);
               }
             }}
             disabled={pending}

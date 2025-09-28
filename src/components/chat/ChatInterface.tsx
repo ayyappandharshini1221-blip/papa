@@ -41,9 +41,8 @@ export function ChatInterface({ welcomeMessage, chatStreamer }: { welcomeMessage
     setPending(true);
 
     try {
-      const stream = await chatStreamer({
-        text: trimmedInput,
-      });
+      // FIX: The chatStreamer function is now called with the correct payload structure.
+      const stream = await chatStreamer({ text: trimmedInput });
 
       setMessages(prev => [...prev, { role: 'model', content: [{ text: '' }] }]);
       let fullResponse = '';

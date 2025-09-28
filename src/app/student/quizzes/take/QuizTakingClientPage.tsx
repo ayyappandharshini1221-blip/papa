@@ -93,13 +93,13 @@ export default function QuizTakingClientPage() {
 
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
   const handleSubmit = async () => {
     const db = getDb();
-    if (!quizData || !student || !difficulty) return;
+    if (!quizData || !student || !difficulty || !subject) return;
 
     let correctAnswers = 0;
     quizData.quiz.forEach((q, index) => {
@@ -170,6 +170,15 @@ export default function QuizTakingClientPage() {
       }
       
       updates.xp = increment(xpGained + badgeXp);
+
+      const newQuizAttempt = {
+        subject: subject,
+        difficulty: difficulty,
+        score: finalScore,
+        timestamp: Date.now(),
+      };
+      updates.quizHistory = arrayUnion(newQuizAttempt);
+
       const totalXpGained = xpGained + badgeXp;
 
       await updateDoc(studentDocRef, updates)

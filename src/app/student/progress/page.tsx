@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Award, Bot, Flame, Loader2, Repeat, Swords, Target, Trophy, Zap } from 'lucide-react';
+import { Award, Bot, Flame, Loader2, Repeat, Swords, Target, Trophy, Zap, Atom, BrainCircuit, FlaskConical, Sigma } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -14,28 +14,19 @@ import { Progress } from '@/components/ui/progress';
 import { useStudentData } from '@/hooks/use-student-data';
 import { useLeaderboard } from '@/hooks/use-leaderboard';
 import { allBadges } from '@/app/student/badges/page';
-import { Brain, Calculator, Code, Crown, Feather, FlaskConical, Globe, History, Library, Lightbulb, Mountain, Rocket, Sparkles, Star, Wind } from 'lucide-react';
+import { Brain, Calculator, Code, Crown, Feather, Globe, History, Library, Lightbulb, Mountain, Rocket, Sparkles, Star, Wind } from 'lucide-react';
+import { QuizAttempt } from '@/lib/types';
+import { PythonIcon, JavaIcon } from '@/components/icons';
 
-const subjectProgressData = [
-  {
-    subject: 'Maths',
-    icon: <Trophy className="h-6 w-6" />,
-    difficulties: [
-      { level: 'Easy', attempted: 5, score: 92, progress: 90 },
-      { level: 'Normal', attempted: 3, score: 78, progress: 60 },
-      { level: 'Hard', attempted: 1, score: 65, progress: 20 },
-    ],
-  },
-   {
-    subject: 'Python',
-    icon: <Trophy className="h-6 w-6" />,
-    difficulties: [
-      { level: 'Easy', attempted: 4, score: 100, progress: 100 },
-      { level: 'Normal', attempted: 2, score: 85, progress: 50 },
-      { level: 'Hard', attempted: 0, score: 0, progress: 0 },
-    ],
-  },
-];
+const subjectIcons: { [key: string]: React.ReactNode } = {
+  Maths: <Sigma className="h-6 w-6" />,
+  Python: <PythonIcon className="h-6 w-6" />,
+  Java: <JavaIcon className="h-6 w-6" />,
+  Chemistry: <FlaskConical className="h-6 w-6" />,
+  Biology: <Atom className="h-6 w-6" />,
+  Tech: <BrainCircuit className="h-6 w-6" />,
+  Default: <Trophy className="h-6 w-6" />,
+};
 
 const recentActivities = [
     { id: 1, type: 'quiz', title: 'Completed "Python Basics" quiz', score: '100%', time: '2h ago', icon: <Trophy className="h-5 w-5 text-green-500" />},
@@ -48,6 +39,58 @@ const recentActivities = [
 export default function ProgressPage() {
   const { student, loading: studentLoading } = useStudentData();
   const { leaderboardData, loading: leaderboardLoading } = useLeaderboard(student?.classIds?.[0]);
+
+  const subjectProgressData = React.useMemo(() => {
+    if (!student?.quizHistory) return [];
+
+    const progressMap: {
+      [subject: string]: {
+        [difficulty: string]: { scores: number[]; count: number };
+      };
+    } = {};
+
+    student.quizHistory.forEach(attempt => {
+      if (!progressMap[attempt.subject]) {
+        progressMap[attempt.subject] = {
+          easy: { scores: [], count: 0 },
+          medium: { scores: [], count: 0 },
+          hard: { scores: [], count: 0 },
+        };
+      }
+      progressMap[attempt.subject][attempt.difficulty].scores.push(attempt.score);
+      progressMap[attempt.subject][attempt.difficulty].count++;
+    });
+
+    return Object.keys(progressMap).map(subject => {
+      const difficulties = Object.keys(progressMap[subject])
+        .map(level => {
+          const { scores, count } = progressMap[subject][level as 'easy' | 'medium' | 'hard'];
+          if (count === 0) {
+            return { level, attempted: 0, score: 0, progress: 0 };
+          }
+          const averageScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+          // Simple progress: average score for now. Could be more complex.
+          const progress = averageScore;
+          return {
+            level: level.charAt(0).toUpperCase() + level.slice(1),
+            attempted: count,
+            score: Math.round(averageScore),
+            progress: Math.round(progress),
+          };
+        })
+        // Ensure a consistent order
+        .sort((a, b) => {
+          const order = { Easy: 0, Medium: 1, Normal: 1, Hard: 2 };
+          return order[a.level as keyof typeof order] - order[b.level as keyof typeof order];
+        });
+
+      return {
+        subject,
+        icon: subjectIcons[subject] || subjectIcons.Default,
+        difficulties,
+      };
+    });
+  }, [student?.quizHistory]);
 
   if (studentLoading || leaderboardLoading) {
     return (
@@ -122,7 +165,7 @@ export default function ProgressPage() {
                     <CardDescription>Your performance across different subjects and difficulties.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                    {subjectProgressData.map(subject => (
+                    {subjectProgressData.length > 0 ? subjectProgressData.map(subject => (
                         <div key={subject.subject}>
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="rounded-full bg-primary/10 p-2 text-primary">{subject.icon}</div>
@@ -139,7 +182,9 @@ export default function ProgressPage() {
                             ))}
                             </div>
                         </div>
-                    ))}
+                    )) : (
+                       <p className="text-center text-muted-foreground">No quiz history yet. Take a quiz to see your progress!</p>
+                    )}
                 </CardContent>
             </Card>
 

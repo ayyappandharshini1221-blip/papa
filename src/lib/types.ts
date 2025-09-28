@@ -12,12 +12,20 @@ export interface Teacher extends User {
   role: 'teacher';
 }
 
+export interface QuizAttempt {
+  subject: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  score: number; // Percentage score
+  timestamp: number;
+}
+
 export interface Student extends User {
   role: 'student';
   xp: number;
   streak: number;
   badges: string[]; // Badge IDs
   classIds: string[];
+  quizHistory?: QuizAttempt[];
 }
 
 export interface Class {

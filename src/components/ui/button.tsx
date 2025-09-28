@@ -9,13 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow-[0_4px_0_0_hsl(var(--primary-darker,0_0%_0%))] hover:bg-primary/90 hover:shadow-[0_4px_0_0_hsl(var(--primary-darker,0_0%_0%)/0.9)] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--primary-darker,0_0%_0%))] hover:brightness-110 before:content-['🍬'] before:absolute before:-top-2 before:-left-1 before:text-lg before:transition-transform before:duration-300 hover:before:rotate-[-45deg] after:content-['🍫'] after:absolute after:-bottom-2 after:-right-1 after:text-lg after:transition-transform after:duration-300 hover:after:rotate-[45deg]",
+        default:
+          "bg-primary text-primary-foreground shadow-[0_5px_0_0_hsl(var(--primary-darker,0_0%_0%))] hover:shadow-[0_8px_20px_-10px_hsl(var(--primary))] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--primary-darker,0_0%_0%))]",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-[0_4px_0_0_hsl(var(--destructive-darker,0_0%_0%))] hover:bg-destructive/90 hover:shadow-[0_4px_0_0_hsl(var(--destructive-darker,0_0%_0%)/0.9)] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--destructive-darker,0_0%_0%))] hover:brightness-110",
+          "bg-destructive text-destructive-foreground shadow-[0_5px_0_0_hsl(var(--destructive-darker,0_0%_0%))] hover:shadow-[0_8px_20px_-10px_hsl(var(--destructive))] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--destructive-darker,0_0%_0%))]",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground active:translate-y-0.5",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-[0_4px_0_0_hsl(var(--secondary-darker,0_0%_0%))] hover:bg-secondary/80 hover:shadow-[0_4px_0_0_hsl(var(--secondary-darker,0_0%_0%)/0.8)] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--secondary-darker,0_0%_0%))] hover:brightness-110",
+          "bg-secondary text-secondary-foreground shadow-[0_5px_0_0_hsl(var(--secondary-darker,0_0%_0%))] hover:shadow-[0_8px_20px_-10px_hsl(var(--secondary))] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--secondary-darker,0_0%_0%))]",
         ghost: "hover:bg-accent hover:text-accent-foreground active:translate-y-0.5",
         link: "text-primary underline-offset-4 hover:underline active:translate-y-0.5",
       },

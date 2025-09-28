@@ -280,7 +280,7 @@ export default function QuizTakingClientPage() {
             <CardHeader className="text-center items-center">
                 {score >= 80 ? (
                     <>
-                        <Trophy className="w-16 h-16 text-yellow-400 drop-shadow-lg" />
+                        <Trophy className="w-16 h-16 text-yellow-400 drop-shadow-lg animate-bounce" />
                         <CardTitle className="text-3xl mt-2">Excellent Work!</CardTitle>
                     </>
                 ) : (
@@ -327,7 +327,7 @@ export default function QuizTakingClientPage() {
       <CardContent>
         <h2 className="text-lg font-semibold mb-4">{currentQuestion.question}</h2>
         <RadioGroup
-          key={currentQuestionIndex}
+          key={`${currentQuestionIndex}`}
           value={userAnswers[currentQuestionIndex]?.toString()}
           onValueChange={(value) => handleAnswerSelect(parseInt(value, 10))}
           className="space-y-2"

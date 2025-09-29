@@ -19,6 +19,7 @@ import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { allBadges } from '@/app/student/badges/page';
 import { useWindowSize } from '@/hooks/use-window-size';
+import { QuizAttempt } from '@/lib/types';
 type UserAnswers = { [key: number]: number | null };
 
 const difficultyXpMap = {
@@ -171,7 +172,7 @@ export default function QuizTakingClientPage() {
       
       updates.xp = increment(xpGained + badgeXp);
 
-      const newQuizAttempt = {
+      const newQuizAttempt: QuizAttempt = {
         subject: subject,
         difficulty: difficulty,
         score: finalScore,

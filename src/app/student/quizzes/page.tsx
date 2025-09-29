@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { JavaIcon, PythonIcon } from '@/components/icons';
 import { QuizStartDialog } from '@/components/quiz/quiz-start-dialog';
+import { Button } from '@/components/ui/button';
 
 export type Subject = {
   name: string;

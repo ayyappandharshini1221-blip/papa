@@ -14,7 +14,7 @@ import {
   Sigma,
   BookOpen,
 } from 'lucide-react';
-import { JavaIcon, PythonIcon } from '@/components/icons';
+import { CppIcon, JavaIcon, JavaScriptIcon, PythonIcon } from '@/components/icons';
 import { QuizStartDialog } from '@/components/quiz/quiz-start-dialog';
 import { Button } from '@/components/ui/button';
 
@@ -62,6 +62,16 @@ const programmingLanguages: Subject[] = [
         name: 'Java',
         description: 'Build robust applications with this classic language.',
         icon: <JavaIcon className="h-10 w-10" />,
+    },
+    {
+        name: 'JavaScript',
+        description: 'The language of the web.',
+        icon: <JavaScriptIcon className="h-10 w-10" />,
+    },
+    {
+        name: 'C++',
+        description: 'Powerful language for systems programming.',
+        icon: <CppIcon className="h-10 w-10" />,
     }
 ]
 

@@ -63,3 +63,40 @@ export function JavaIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function JavaScriptIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="0.1"
+      {...props}
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M16.5 15.5h-2v1h-2v-1H11v-1h1.5v-1.5h2v1.5H16v-3h-1.5V9h-2v1.5H11V12h5.5v3.5zM9.5 12H8V9h3.5v1.5h-2v1.5h2V15H8v-3z" />
+    </svg>
+  );
+}
+
+export function CppIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      strokeWidth="2"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 12h2" />
+      <path d="M19 11v2" />
+      <path d="M11 12h2" />
+      <path d="M12 11v2" />
+      <path d="M10 16.5c0 .828 .672 1.5 1.5 1.5h1a1.5 1.5 0 0 0 1.5 -1.5v-3.5a1.5 1.5 0 0 0 -1.5 -1.5h-1a1.5 1.5 0 0 0 -1.5 1.5v3.5z" />
+      <path d="M3 16.5c0 .828 .672 1.5 1.5 1.5h1a1.5 1.5 0 0 0 1.5 -1.5v-3.5a1.5 1.5 0 0 0 -1.5 -1.5h-1a1.5 1.5 0 0 0 -1.5 1.5v3.5z" />
+    </svg>
+  );
+}

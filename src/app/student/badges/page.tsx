@@ -36,7 +36,7 @@ import {
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useStudentData } from '@/hooks/use-student-data';
-import { JavaIcon, PythonIcon } from '@/components/icons';
+import { CppIcon, JavaIcon, JavaScriptIcon, PythonIcon } from '@/components/icons';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@/hooks/use-window-size';
 import { useState, useEffect } from 'react';
@@ -82,6 +82,20 @@ export const allBadges = [
     title: 'Java Journeyman',
     description: 'Complete your first Java quiz.',
     icon: <JavaIcon className="h-10 w-10" />,
+    xp: 50,
+  },
+   {
+    id: 'javascript-journeyman',
+    title: 'JavaScript Journeyman',
+    description: 'Complete your first JavaScript quiz.',
+    icon: <JavaScriptIcon className="h-10 w-10" />,
+    xp: 50,
+  },
+  {
+    id: 'cpp-captain',
+    title: 'C++ Captain',
+    description: 'Complete your first C++ quiz.',
+    icon: <CppIcon className="h-10 w-10" />,
     xp: 50,
   },
   {

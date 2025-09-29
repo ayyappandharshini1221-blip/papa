@@ -94,7 +94,7 @@ export default function QuizTakingClientPage() {
 
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
@@ -145,6 +145,12 @@ export default function QuizTakingClientPage() {
       }
       if(subject?.toLowerCase() === 'java' && !studentBadges.includes('java-journeyman')) {
         newlyEarnedBadges.push('java-journeyman');
+      }
+        if(subject?.toLowerCase() === 'javascript' && !studentBadges.includes('javascript-journeyman')) {
+        newlyEarnedBadges.push('javascript-journeyman');
+      }
+      if(subject?.toLowerCase() === 'c++' && !studentBadges.includes('cpp-captain')) {
+        newlyEarnedBadges.push('cpp-captain');
       }
       if(subject?.toLowerCase() === 'biology' && !studentBadges.includes('biologist')) {
         newlyEarnedBadges.push('biologist');

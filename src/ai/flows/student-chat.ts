@@ -26,7 +26,6 @@ const studentChatFlow = ai.defineFlow(
   },
   async function* (input) {
     const {stream: llmStream} = await ai.generate({
-      model: 'googleai/gemini-2.5-flash',
       stream: true,
       prompt: {
         text: input.text,

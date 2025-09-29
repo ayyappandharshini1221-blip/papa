@@ -12,6 +12,7 @@ import {
   BrainCircuit,
   FlaskConical,
   Sigma,
+  BookOpen,
 } from 'lucide-react';
 import { JavaIcon, PythonIcon } from '@/components/icons';
 import { QuizStartDialog } from '@/components/quiz/quiz-start-dialog';
@@ -39,32 +40,90 @@ const subjects: Subject[] = [
     icon: <Atom className="h-10 w-10" />,
   },
   {
-    name: 'Tech',
-    description: 'Dive into the world of technology and computers.',
+    name: 'Programming',
+    description: 'Code with popular languages like Java and Python.',
     icon: <BrainCircuit className="h-10 w-10" />,
   },
-  {
-    name: 'Python',
-    description: 'Code with one of the most popular languages.',
-    icon: <PythonIcon className="h-10 w-10" />,
-  },
-  {
-    name: 'Java',
-    description: 'Build robust applications with this classic language.',
-    icon: <JavaIcon className="h-10 w-10" />,
+   {
+    name: 'Literature',
+    description: 'Analyze classic and contemporary literary works.',
+    icon: <BookOpen className="h-10 w-10" />,
   },
 ];
 
+const programmingLanguages: Subject[] = [
+    {
+        name: 'Python',
+        description: 'Code with one of the most popular languages.',
+        icon: <PythonIcon className="h-10 w-10" />,
+    },
+    {
+        name: 'Java',
+        description: 'Build robust applications with this classic language.',
+        icon: <JavaIcon className="h-10 w-10" />,
+    }
+]
+
+
 export default function QuizzesPage() {
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
+  const [showLanguageSelection, setShowLanguageSelection] = useState(false);
 
   const handleSubjectSelect = (subject: Subject) => {
-    setSelectedSubject(subject);
+    if (subject.name === 'Programming') {
+        setShowLanguageSelection(true);
+    } else {
+        setSelectedSubject(subject);
+    }
   };
+  
+  const handleLanguageSelect = (language: Subject) => {
+    setSelectedSubject(language);
+    setShowLanguageSelection(false);
+  }
 
   const handleDialogClose = () => {
     setSelectedSubject(null);
+    setShowLanguageSelection(false);
   };
+
+  if(showLanguageSelection) {
+    return (
+        <div className="flex flex-col gap-6">
+            <div>
+                <h1 className="text-3xl font-bold tracking-tight">
+                    Select a Programming Language
+                </h1>
+                <p className="text-muted-foreground">
+                    Choose which language you want to be quizzed on.
+                </p>
+             </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {programmingLanguages.map((lang) => (
+                <Card
+                    key={lang.name}
+                    className="group cursor-pointer transform transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+                    onClick={() => handleLanguageSelect(lang)}
+                >
+                    <CardHeader className="flex flex-row items-center gap-4">
+                    <div className="rounded-lg bg-primary/10 p-4 text-primary">
+                        {lang.icon}
+                    </div>
+                    <div>
+                        <CardTitle className="text-xl">{lang.name}</CardTitle>
+                        <CardDescription>{lang.description}</CardDescription>
+                    </div>
+                    </CardHeader>
+                </Card>
+                ))}
+            </div>
+             <Button variant="outline" onClick={() => setShowLanguageSelection(false)} className="self-start">
+                Back to subjects
+            </Button>
+        </div>
+    )
+  }
+
 
   return (
     <div className="flex flex-col gap-6">

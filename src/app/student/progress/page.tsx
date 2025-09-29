@@ -2,7 +2,7 @@
 'use client';
 
 import * as React from 'react';
-import { Award, Bot, Flame, Loader2, Repeat, Swords, Target, Trophy, Zap, Atom, BrainCircuit, FlaskConical, Sigma } from 'lucide-react';
+import { Award, Bot, Flame, Loader2, Repeat, Swords, Target, Trophy, Zap, Atom, BrainCircuit, FlaskConical, Sigma, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -25,6 +25,7 @@ const subjectIcons: { [key: string]: React.ReactNode } = {
   Chemistry: <FlaskConical className="h-6 w-6" />,
   Biology: <Atom className="h-6 w-6" />,
   Tech: <BrainCircuit className="h-6 w-6" />,
+  Literature: <BookOpen className="h-6 w-6" />,
   Default: <Trophy className="h-6 w-6" />,
 };
 

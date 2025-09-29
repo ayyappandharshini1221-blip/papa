@@ -54,6 +54,7 @@ function SignupForm() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showEmoji, setShowEmoji] = useState<string | null>(null);
   const roleFromQuery = searchParams.get('role');
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -85,23 +86,34 @@ function SignupForm() {
       );
       toast({ title: 'Account Created Successfully!' });
       if (user.role === 'teacher') {
-        router.push('/teacher/dashboard');
+        setShowEmoji('🧑‍🏫');
       } else {
-        router.push('/student/dashboard');
+        setShowEmoji('🧑‍🎓');
       }
+      setTimeout(() => {
+        if (user.role === 'teacher') {
+            router.push('/teacher/dashboard');
+        } else {
+            router.push('/student/dashboard');
+        }
+      }, 1500)
     } catch (error: any) {
       toast({
         title: 'Sign Up Failed',
         description: error.message,
         variant: 'destructive',
       });
-    } finally {
-      setIsLoading(false);
+       setIsLoading(false);
     }
   }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
+       {showEmoji && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/50 backdrop-blur-sm">
+          <div className="animate-bounce text-8xl">{showEmoji}</div>
+        </div>
+      )}
       <Link href="/" className="mb-6 flex items-center gap-2">
         <Logo className="h-8 w-8 text-primary" />
         <span className="text-xl font-bold">EduSmart AI</span>

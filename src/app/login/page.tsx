@@ -41,7 +41,7 @@ export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  const [showHug, setShowHug] = useState(false);
+  const [showEmoji, setShowEmoji] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -57,7 +57,11 @@ export default function LoginPage() {
     try {
       const user = await signInWithEmail(values.email, values.password);
       toast({ title: 'Login Successful' });
-      setShowHug(true);
+      if (user.role === 'teacher') {
+        setShowEmoji('🧑‍🏫');
+      } else {
+        setShowEmoji('🧑‍🎓');
+      }
       setTimeout(() => {
         if (user.role === 'teacher') {
           router.push('/teacher/dashboard');
@@ -83,9 +87,9 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
-      {showHug && (
+      {showEmoji && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/50 backdrop-blur-sm">
-          <div className="animate-bounce text-8xl">🤗</div>
+          <div className="animate-bounce text-8xl">{showEmoji}</div>
         </div>
       )}
       <Link href="/" className="mb-6 flex items-center gap-2">

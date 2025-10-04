@@ -57,6 +57,8 @@ import type { User } from '@/lib/types';
 import Candy from '@/components/ui/candy';
 import { Progress } from '@/components/ui/progress';
 import Link from 'next/link';
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 export default function StudentDashboard() {
   const [openJoinClass, setOpenJoinClass] = useState(false);
@@ -69,6 +71,7 @@ export default function StudentDashboard() {
     student?.classIds?.[0]
   );
   const [showCandy, setShowCandy] = useState(true);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const unsubscribe = onAuthChange(setUser);
@@ -168,16 +171,18 @@ export default function StudentDashboard() {
   const xpForCurrentLevel = (level - 1) * 500;
   const xpForNextLevel = level * 500;
   const xpProgress = ((xp - xpForCurrentLevel) / 500) * 100;
+  
+  const t = (key: string) => getTranslation(language, key);
 
   return (
     <div className="flex flex-col gap-6">
       {showCandy && <Candy />}
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight">
-          Let's Go, {student?.name}! 🚀
+          {t('studentDashboardTitle').replace('{name}', student?.name || '')} 🚀
         </h1>
         <p className="text-muted-foreground">
-          Time to crush some quizzes and climb the ranks.
+          {t('studentDashboardSubtitle')}
         </p>
       </div>
 
@@ -420,3 +425,5 @@ export default function StudentDashboard() {
     </div>
   );
 }
+
+    

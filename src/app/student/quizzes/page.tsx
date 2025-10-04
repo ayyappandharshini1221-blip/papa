@@ -54,9 +54,14 @@ const subjects: Subject[] = [
 
 const programmingSubjects: Subject[] = [
     {
-        name: 'Python',
-        description: 'Code with one of the most popular languages.',
-        icon: <PythonIcon className="h-10 w-10" />,
+        name: 'C',
+        description: 'The foundational language for many systems.',
+        icon: <CIcon className="h-10 w-10" />,
+    },
+    {
+        name: 'C++',
+        description: 'Powerful language for systems programming.',
+        icon: <CppIcon className="h-10 w-10" />,
     },
     {
         name: 'Java',
@@ -69,15 +74,10 @@ const programmingSubjects: Subject[] = [
         icon: <JavaScriptIcon className="h-10 w-10" />,
     },
     {
-        name: 'C++',
-        description: 'Powerful language for systems programming.',
-        icon: <CppIcon className="h-10 w-10" />,
+        name: 'Python',
+        description: 'Code with one of the most popular languages.',
+        icon: <PythonIcon className="h-10 w-10" />,
     },
-    {
-        name: 'C',
-        description: 'The foundational language for many systems.',
-        icon: <CIcon className="h-10 w-10" />,
-    }
 ]
 
 const literatureSubjects: Subject[] = [

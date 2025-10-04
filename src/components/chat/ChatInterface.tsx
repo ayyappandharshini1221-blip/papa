@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -8,6 +9,8 @@ import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent, CardFooter } from '../ui/card';
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 type Message = {
   role: 'user' | 'model';
@@ -24,10 +27,16 @@ export function ChatInterface({ welcomeMessage, chatStreamer }: { welcomeMessage
   const [pending, setPending] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const userAvatar = PlaceHolderImages.find(p => p.id === 'avatar-1');
+  const { language } = useLanguage();
+  const t = (key: string) => getTranslation(language, key);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+  
+  useEffect(() => {
+    setMessages([{ role: 'model', content: [{ text: welcomeMessage }] }]);
+  }, [welcomeMessage]);
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -123,7 +132,7 @@ export function ChatInterface({ welcomeMessage, chatStreamer }: { welcomeMessage
           <Textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message..."
+            placeholder={t('typeYourMessage')}
             className="flex-1 resize-none"
             onKeyDown={(e) => {
               if (e.key === 'Enter' && !e.shiftKey) {

@@ -1,3 +1,4 @@
+
 'use client';
 
 import {
@@ -21,11 +22,14 @@ import { Trophy, Flame, Loader2 } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useLeaderboard } from '@/hooks/use-leaderboard';
 import { useStudentData } from '@/hooks/use-student-data';
-
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 export default function LeaderboardPage() {
   const { leaderboardData, loading } = useLeaderboard();
   const { student } = useStudentData();
+  const { language } = useLanguage();
+  const t = (key: string, params: { [key: string]: string | number } = {}) => getTranslation(language, key).replace(/{(\w+)}/g, (_, G) => params[G]?.toString() || G);
 
   const getTrophy = (rank: number) => {
     if (rank === 1) return <Trophy className="h-5 w-5 text-yellow-500" />;
@@ -46,23 +50,23 @@ export default function LeaderboardPage() {
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Leaderboard</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{t('leaderboard')}</h1>
         </div>
       </div>
       <Card>
         <CardHeader>
-          <CardTitle>Overall Rankings</CardTitle>
+          <CardTitle>{t('overallRankings')}</CardTitle>
           <CardDescription>
-            Top students based on all-time XP.
+            {t('topStudentsAllTime')}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[80px]">Rank</TableHead>
-                <TableHead>Student</TableHead>
-                <TableHead>Streak</TableHead>
+                <TableHead className="w-[80px]">{t('rank')}</TableHead>
+                <TableHead>{t('student')}</TableHead>
+                <TableHead>{t('streak')}</TableHead>
                 <TableHead className="text-right">XP</TableHead>
               </TableRow>
             </TableHeader>
@@ -99,14 +103,14 @@ export default function LeaderboardPage() {
                           </AvatarFallback>
                         </Avatar>
                         <div>
-                          <p className="font-medium">{player.studentName} {player.studentId === student?.id && ' (You)'}</p>
+                          <p className="font-medium">{player.studentName} {player.studentId === student?.id && t('you')}</p>
                         </div>
                       </div>
                     </TableCell>
                      <TableCell>
                         <div className="flex items-center text-sm text-muted-foreground">
                             <Flame className="h-4 w-4 mr-1 text-red-500" />{' '}
-                            {player.streak} day streak
+                            {t('dayStreak', {streak: player.streak})}
                         </div>
                      </TableCell>
                     <TableCell className="text-right">

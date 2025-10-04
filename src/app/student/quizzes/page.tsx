@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -17,6 +18,8 @@ import {
 import { CIcon, CppIcon, JavaIcon, JavaScriptIcon, PythonIcon } from '@/components/icons';
 import { QuizStartDialog } from '@/components/quiz/quiz-start-dialog';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 export type Subject = {
   name: string;
@@ -98,6 +101,8 @@ export default function QuizzesPage() {
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
   const [showProgrammingSelection, setShowProgrammingSelection] = useState(false);
   const [showLiteratureSelection, setShowLiteratureSelection] = useState(false);
+  const { language } = useLanguage();
+  const t = (key: string) => getTranslation(language, key);
 
   const handleSubjectSelect = (subject: Subject) => {
     if (subject.name === 'Programming') {
@@ -132,10 +137,10 @@ export default function QuizzesPage() {
         <div className="flex flex-col gap-6">
             <div>
                 <h1 className="text-3xl font-bold tracking-tight">
-                    Select a Programming Language
+                    {t('selectProgrammingLanguage')}
                 </h1>
                 <p className="text-muted-foreground">
-                    Choose which language you want to be quizzed on.
+                    {t('whichLanguageQuiz')}
                 </p>
              </div>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -158,7 +163,7 @@ export default function QuizzesPage() {
                 ))}
             </div>
              <Button variant="outline" onClick={handleBack} className="self-start">
-                Back to subjects
+                {t('backToSubjects')}
             </Button>
         </div>
     )
@@ -169,10 +174,10 @@ export default function QuizzesPage() {
         <div className="flex flex-col gap-6">
             <div>
                 <h1 className="text-3xl font-bold tracking-tight">
-                    Select a Language
+                    {t('selectLanguage')}
                 </h1>
                 <p className="text-muted-foreground">
-                    Choose which language you want to be quizzed on.
+                    {t('whichLanguageQuiz')}
                 </p>
              </div>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -195,7 +200,7 @@ export default function QuizzesPage() {
                 ))}
             </div>
              <Button variant="outline" onClick={handleBack} className="self-start">
-                Back to subjects
+                {t('backToSubjects')}
             </Button>
         </div>
     )
@@ -207,10 +212,10 @@ export default function QuizzesPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">
-            Start a New Quiz
+            {t('startNewQuiz')}
           </h1>
           <p className="text-muted-foreground">
-            Select a subject to begin your challenge.
+            {t('selectSubjectChallenge')}
           </p>
         </div>
       </div>

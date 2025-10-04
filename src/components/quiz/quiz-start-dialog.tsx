@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -12,34 +13,9 @@ import { Button } from '@/components/ui/button';
 import type { Subject } from '@/app/student/quizzes/page';
 import { Swords, Shield, Brain } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 type Difficulty = 'easy' | 'medium' | 'hard';
-
-const difficultyOptions: {
-  level: Difficulty;
-  label: string;
-  xp: string;
-  icon: React.ReactNode;
-}[] = [
-  {
-    level: 'easy',
-    label: 'Easy',
-    xp: '+25 XP',
-    icon: <Shield className="h-6 w-6 text-green-500" />,
-  },
-  {
-    level: 'medium',
-    label: 'Normal',
-    xp: '+50 XP',
-    icon: <Swords className="h-6 w-6 text-yellow-500" />,
-  },
-  {
-    level: 'hard',
-    label: 'Hard',
-    xp: '+100 XP',
-    icon: <Brain className="h-6 w-6 text-red-500" />,
-  },
-];
 
 export function QuizStartDialog({
   subject,
@@ -52,6 +28,33 @@ export function QuizStartDialog({
 }) {
   const router = useRouter();
   const { language } = useLanguage();
+  const t = (key: string) => getTranslation(language, key);
+
+  const difficultyOptions: {
+    level: Difficulty;
+    label: string;
+    xp: string;
+    icon: React.ReactNode;
+  }[] = [
+    {
+      level: 'easy',
+      label: t('easy'),
+      xp: '+25 XP',
+      icon: <Shield className="h-6 w-6 text-green-500" />,
+    },
+    {
+      level: 'medium',
+      label: t('normal'),
+      xp: '+50 XP',
+      icon: <Swords className="h-6 w-6 text-yellow-500" />,
+    },
+    {
+      level: 'hard',
+      label: t('hard'),
+      xp: '+100 XP',
+      icon: <Brain className="h-6 w-6 text-red-500" />,
+    },
+  ];
 
   const handleStartQuiz = (difficulty: Difficulty) => {
     onClose();
@@ -69,7 +72,7 @@ export function QuizStartDialog({
             {subject.name}
           </DialogTitle>
           <DialogDescription className="pt-2 text-base">
-            Choose your challenge level. Higher difficulty means more XP!
+            {t('chooseChallengeLevel')}
           </DialogDescription>
         </DialogHeader>
         <div className="mt-4 space-y-4">
@@ -86,7 +89,7 @@ export function QuizStartDialog({
                 <div className="flex-1">
                   <p className="text-lg font-semibold">{label}</p>
                   <p className="text-sm text-muted-foreground">
-                    Recommended for a solid challenge.
+                    {t('recommendedSolid')}
                   </p>
                 </div>
                 <div className="ml-4 font-bold text-primary">{xp}</div>

@@ -17,6 +17,8 @@ import { useLeaderboard } from '@/hooks/use-leaderboard';
 import { allBadges } from '@/app/student/badges/page';
 import { PythonIcon, JavaIcon } from '@/components/icons';
 import { QuizAttempt } from '@/lib/types';
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 const subjectIcons: { [key: string]: React.ReactNode } = {
   Maths: <Sigma className="h-6 w-6" />,
@@ -41,6 +43,8 @@ const recentActivities = [
 export default function ProgressPage() {
   const { student, loading: studentLoading } = useStudentData();
   const { leaderboardData, loading: leaderboardLoading } = useLeaderboard(student?.classIds?.[0]);
+  const { language } = useLanguage();
+  const t = (key: string, params: { [key: string]: string | number } = {}) => getTranslation(language, key).replace(/{(\w+)}/g, (_, G) => params[G]?.toString() || G);
 
   const subjectProgressData = React.useMemo(() => {
     if (!student?.quizHistory) return [];
@@ -75,7 +79,7 @@ export default function ProgressPage() {
           }
           const averageScore = scores.reduce((a, b) => a + b, 0) / scores.length;
           return {
-            level: level.charAt(0).toUpperCase() + level.slice(1),
+            level: t(level),
             attempted: count,
             score: Math.round(averageScore),
             progress: Math.round(averageScore),
@@ -91,7 +95,7 @@ export default function ProgressPage() {
         difficulties,
       };
     }).filter(Boolean);
-  }, [student?.quizHistory]);
+  }, [student?.quizHistory, t]);
 
   if (studentLoading || leaderboardLoading) {
     return (
@@ -108,9 +112,9 @@ export default function ProgressPage() {
     <div className="flex flex-col gap-6">
        <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">My Progress</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{t('myProgressTitle')}</h1>
           <p className="text-muted-foreground">
-            Track your learning journey and achievements.
+            {t('myProgressDescription')}
           </p>
         </div>
       </div>
@@ -118,42 +122,42 @@ export default function ProgressPage() {
        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card className="bg-gradient-to-tr from-primary/10 to-transparent">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total XP</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('totalXP')}</CardTitle>
             <Zap className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-primary">{student?.xp ?? 0}</div>
-            <p className="text-xs text-muted-foreground">Level 5</p>
+            <p className="text-xs text-muted-foreground">{t('levelLabel', {level: 5})}</p>
           </CardContent>
         </Card>
         <Card className="bg-gradient-to-tr from-accent/10 to-transparent">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Current Streak</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('currentStreak')}</CardTitle>
             <Flame className="h-4 w-4 text-accent" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-accent">{student?.streak ?? 0} days</div>
-            <p className="text-xs text-muted-foreground">Keep the fire burning!</p>
+            <div className="text-2xl font-bold text-accent">{student?.streak ?? 0} {t('days')}</div>
+            <p className="text-xs text-muted-foreground">{t('keepTheFireBurning')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Badges Unlocked</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('badgesUnlocked')}</CardTitle>
             <Award className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{student?.badges?.length ?? 0} / {allBadges.length}</div>
-            <p className="text-xs text-muted-foreground">Almost there!</p>
+            <p className="text-xs text-muted-foreground">{t('almostThere')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Leaderboard Rank</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('leaderboardRank')}</CardTitle>
             <Trophy className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{yourRank ? `#${yourRank}`: '-'}</div>
-            <p className="text-xs text-muted-foreground">Top 10% in your class</p>
+            <p className="text-xs text-muted-foreground">{t('topPercentile', {percent: 10})}</p>
           </CardContent>
         </Card>
       </div>
@@ -162,8 +166,8 @@ export default function ProgressPage() {
         <div className="flex flex-col gap-6 lg:col-span-2">
             <Card>
                 <CardHeader>
-                    <CardTitle>Subject Progress</CardTitle>
-                    <CardDescription>Your performance across different subjects and difficulties.</CardDescription>
+                    <CardTitle>{t('subjectProgress')}</CardTitle>
+                    <CardDescription>{t('subjectProgressDescription')}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                     {subjectProgressData.length > 0 ? subjectProgressData.map(subject => subject && (
@@ -177,22 +181,22 @@ export default function ProgressPage() {
                                 <div key={d.level} className="flex items-center gap-4">
                                     <span className="w-16 text-sm font-medium">{d.level}</span>
                                     <Progress value={d.progress} className="flex-1" />
-                                    <span className="w-28 text-right text-sm text-muted-foreground">{d.attempted} {d.attempted > 1 ? 'quizzes' : 'quiz'}</span>
-                                    <span className="w-24 text-right text-sm font-semibold">{d.score > 0 ? `${d.score}% avg` : '-'}</span>
+                                    <span className="w-28 text-right text-sm text-muted-foreground">{d.attempted} {d.attempted > 1 ? t('quizzes') : t('quiz')}</span>
+                                    <span className="w-24 text-right text-sm font-semibold">{d.score > 0 ? `${d.score}% ${t('avg')}` : '-'}</span>
                                 </div>
                             ))}
                             </div>
                         </div>
                     )) : (
-                       <p className="text-center text-muted-foreground">No quiz history yet. Take a quiz to see your progress!</p>
+                       <p className="text-center text-muted-foreground">{t('noQuizHistory')}</p>
                     )}
                 </CardContent>
             </Card>
 
             <Card>
                 <CardHeader>
-                    <CardTitle>Badges Collection</CardTitle>
-                    <CardDescription>Celebrate your achievements and unlock new ones.</CardDescription>
+                    <CardTitle>{t('badgesCollectionTitle')}</CardTitle>
+                    <CardDescription>{t('badgesCollectionDescription')}</CardDescription>
                 </CardHeader>
                 <CardContent className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                     {allBadges.slice(0, 8).map(badge => (
@@ -213,7 +217,7 @@ export default function ProgressPage() {
               <CardHeader>
                 <div className="flex items-center gap-2">
                     <Bot className="h-6 w-6 text-primary" />
-                    <CardTitle>AI Recommendations</CardTitle>
+                    <CardTitle>{t('aiRecommendations')}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="grid gap-4">
@@ -222,10 +226,10 @@ export default function ProgressPage() {
                     <Zap className="h-4 w-4 text-primary" />
                   </div>
                   <div className="flex-1 space-y-1">
-                    <p className="font-medium">Unlock "Quiz Master"</p>
+                    <p className="font-medium">{t('unlockBadge', {badgeName: "Quiz Master"})}</p>
                     <p className="text-muted-foreground">
-                      You've completed {student?.quizHistory?.length || 0} quizzes. Complete {10 - (student?.quizHistory?.length || 0)} more to unlock this badge!
-                      <Button variant="link" size="sm" className="h-auto p-0 pl-1">Start a Quiz</Button>
+                      {t('unlockBadgeDescription', {completed: student?.quizHistory?.length || 0, remaining: 10 - (student?.quizHistory?.length || 0)})}
+                      <Button variant="link" size="sm" className="h-auto p-0 pl-1">{t('startAQuiz')}</Button>
                     </p>
                   </div>
                 </div>
@@ -234,10 +238,10 @@ export default function ProgressPage() {
                     <Repeat className="h-4 w-4 text-primary" />
                   </div>
                   <div className="flex-1 space-y-1">
-                    <p className="font-medium">Remediation: Hard Maths</p>
+                    <p className="font-medium">{t('remediation', {subject: 'Hard Maths'})}</p>
                     <p className="text-muted-foreground">
-                      Your score in hard math quizzes is a bit low. Try a remediation quiz to strengthen your skills.
-                       <Button variant="link" size="sm" className="h-auto p-0 pl-1">Start Remediation</Button>
+                      {t('remediationDescription', {difficulty: 'hard', subject: 'math'})}
+                       <Button variant="link" size="sm" className="h-auto p-0 pl-1">{t('startRemediation')}</Button>
                     </p>
                   </div>
                 </div>
@@ -245,7 +249,7 @@ export default function ProgressPage() {
             </Card>
             <Card>
                 <CardHeader>
-                    <CardTitle>Recent Activity</CardTitle>
+                    <CardTitle>{t('recentActivity')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <div className="space-y-4">
@@ -270,5 +274,3 @@ export default function ProgressPage() {
     </div>
   );
 }
-
-    

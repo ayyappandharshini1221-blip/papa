@@ -20,6 +20,9 @@ import { FirestorePermissionError } from '@/firebase/errors';
 import { allBadges } from '@/app/student/badges/page';
 import { useWindowSize } from '@/hooks/use-window-size';
 import { QuizAttempt } from '@/lib/types';
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
+
 type UserAnswers = { [key: number]: number | null };
 
 const difficultyXpMap = {
@@ -34,10 +37,12 @@ export default function QuizTakingClientPage() {
   const { toast } = useToast();
   const { student } = useStudentData();
   const { width, height } = useWindowSize();
+  const { language } = useLanguage();
+  const t = (key: string, params: { [key: string]: string | number } = {}) => getTranslation(language, key).replace(/{(\w+)}/g, (_, G) => params[G]?.toString() || G);
 
   const subject = searchParams.get('subject');
   const difficulty = searchParams.get('difficulty') as 'easy' | 'medium' | 'hard' | null;
-  const language = searchParams.get('lang');
+  const langParam = searchParams.get('lang');
 
   const [quizData, setQuizData] = useState<GenerateQuizContentOutput | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -54,10 +59,10 @@ export default function QuizTakingClientPage() {
     if (subject && difficulty) {
       setIsLoading(true);
       setError(null);
-      generateQuizContent({ subject, difficulty, numberOfQuestions: 10, language: language ?? undefined })
+      generateQuizContent({ subject, difficulty, numberOfQuestions: 10, language: langParam ?? undefined })
         .then(data => {
           if (!data || !data.quiz || data.quiz.length === 0) {
-            setError('The AI failed to generate a quiz for this topic. Please try a different one.');
+            setError(t('quizGenerationError'));
           } else {
             setQuizData(data);
           }
@@ -65,16 +70,16 @@ export default function QuizTakingClientPage() {
         .catch(err => {
           console.error('Error generating quiz:', err);
            if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests') || err.message.includes('503'))) {
-             setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
+             setError(t('quizGenerationBusy'));
           } else {
-            setError('Failed to generate the quiz. Please try again.');
+            setError(t('failedToGenerateQuiz'));
           }
         })
         .finally(() => {
           setIsLoading(false);
         });
     }
-  }, [subject, difficulty, language]);
+  }, [subject, difficulty, langParam, t]);
 
   const handleAnswerSelect = (answerIndex: number) => {
     setUserAnswers({
@@ -208,10 +213,10 @@ export default function QuizTakingClientPage() {
           title: (
             <div className="flex items-center">
               <Zap className="mr-2 h-5 w-5 text-yellow-500" />
-              <span className="font-bold">+{totalXpGained} XP Gained!</span>
+              <span className="font-bold">{t('xpGained', {totalXpGained})}</span>
             </div>
           ),
-          description: `You scored ${finalScore.toFixed(0)}% and your streak is now ${newStreak} days!`,
+          description: t('scoreAndStreak', {score: finalScore.toFixed(0), streak: newStreak }),
       });
 
       newlyEarnedBadges.forEach(badgeId => {
@@ -221,10 +226,10 @@ export default function QuizTakingClientPage() {
                 title: (
                     <div className="flex items-center">
                         <Award className="mr-2 h-5 w-5 text-accent" />
-                        <span className="font-bold">Badge Unlocked: {badgeInfo.title}!</span>
+                        <span className="font-bold">{t('badgeUnlocked', {badgeTitle: badgeInfo.title})}</span>
                     </div>
                 ),
-                description: `+${badgeInfo.xp} for this achievement!`,
+                description: t('badgeXp', {xp: badgeInfo.xp}),
               })
           }
       })
@@ -247,7 +252,7 @@ export default function QuizTakingClientPage() {
     return (
       <div className="flex flex-col items-center justify-center h-full gap-4 overflow-hidden">
         <TrainFront className="h-16 w-16 text-primary animate-move-train" />
-        <p className="text-muted-foreground">Generating your {subject} quiz...</p>
+        <p className="text-muted-foreground">{t('generatingQuiz', {subject})}</p>
       </div>
     );
   }
@@ -257,10 +262,10 @@ export default function QuizTakingClientPage() {
       if (subject && difficulty) {
         setIsLoading(true);
         setError(null);
-        generateQuizContent({ subject, difficulty, numberOfQuestions: 10, language: language ?? undefined })
+        generateQuizContent({ subject, difficulty, numberOfQuestions: 10, language: langParam ?? undefined })
           .then(data => {
             if (!data || !data.quiz || data.quiz.length === 0) {
-              setError('The AI failed to generate a quiz for this topic. Please try a different one.');
+              setError(t('quizGenerationError'));
             } else {
               setQuizData(data);
             }
@@ -268,9 +273,9 @@ export default function QuizTakingClientPage() {
           .catch(err => {
             console.error('Error generating quiz:', err);
              if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests') || err.message.includes('503'))) {
-               setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
+               setError(t('quizGenerationBusy'));
             } else {
-              setError('Failed to generate the quiz. Please try again.');
+              setError(t('failedToGenerateQuiz'));
             }
           })
           .finally(() => {
@@ -281,9 +286,9 @@ export default function QuizTakingClientPage() {
     return (
       <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
         <XCircle className="h-12 w-12 text-destructive" />
-        <p className="text-destructive font-semibold">Oops! Something went wrong.</p>
+        <p className="text-destructive font-semibold">{t('oopsError')}</p>
         <p className="text-muted-foreground max-w-md">{error}</p>
-        <Button onClick={fetchQuizAgain}>Try Again</Button>
+        <Button onClick={fetchQuizAgain}>{t('tryAgain')}</Button>
       </div>
     );
   }
@@ -291,7 +296,7 @@ export default function QuizTakingClientPage() {
   if (!quizData || !quizData.quiz.length) {
     return (
       <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
-        <p className="text-muted-foreground">Could not load quiz content.</p>
+        <p className="text-muted-foreground">{t('couldNotLoadQuiz')}</p>
       </div>
     );
   }
@@ -309,13 +314,13 @@ export default function QuizTakingClientPage() {
                 {score >= 80 ? (
                     <>
                          <div className="animate-bounce text-8xl">👍</div>
-                        <CardTitle className="text-3xl mt-2">Excellent Work!</CardTitle>
+                        <CardTitle className="text-3xl mt-2">{t('excellentWork')}</CardTitle>
                     </>
                 ) : (
-                    <CardTitle>Quiz Results: {subject}</CardTitle>
+                    <CardTitle>{t('quizResults', {subject})}</CardTitle>
                 )}
                 <CardDescription>
-                    You scored {score.toFixed(0)}%!
+                    {t('youScored', {score: score.toFixed(0)})}
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -325,11 +330,11 @@ export default function QuizTakingClientPage() {
                 <div className="mt-2 text-sm">
                     <p className={`flex items-center gap-2 ${userAnswers[index] === q.correctAnswerIndex ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                     {userAnswers[index] === q.correctAnswerIndex ? <CheckCircle2 size={16} /> : <XCircle size={16} />}
-                    Your answer: {q.answers[userAnswers[index] ?? -1] ?? "Not answered"}
+                    {t('yourAnswer', {answer: q.answers[userAnswers[index] ?? -1] ?? t('notAnswered')})}
                     </p>
                     {userAnswers[index] !== q.correctAnswerIndex && (
                     <p className="flex items-center gap-2 mt-1 text-green-600 dark:text-green-400">
-                        <CheckCircle2 size={16} /> Correct answer: {q.answers[q.correctAnswerIndex]}
+                        <CheckCircle2 size={16} /> {t('correctAnswer', {answer: q.answers[q.correctAnswerIndex]})}
                     </p>
                     )}
                 </div>
@@ -338,7 +343,7 @@ export default function QuizTakingClientPage() {
             ))}
             </CardContent>
             <CardFooter>
-                <Button onClick={() => router.push('/student/quizzes')}>Take Another Quiz</Button>
+                <Button onClick={() => router.push('/student/quizzes')}>{t('takeAnotherQuiz')}</Button>
             </CardFooter>
         </Card>
       </>
@@ -348,8 +353,8 @@ export default function QuizTakingClientPage() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle className="capitalize">{subject} Quiz</CardTitle>
-        <CardDescription>Question {currentQuestionIndex + 1} of {quizData.quiz.length}</CardDescription>
+        <CardTitle className="capitalize">{t('quizTitle', {subject})}</CardTitle>
+        <CardDescription>{t('questionProgress', {current: currentQuestionIndex + 1, total: quizData.quiz.length})}</CardDescription>
         <Progress value={progress} className="mt-2" />
       </CardHeader>
       <CardContent>
@@ -372,20 +377,18 @@ export default function QuizTakingClientPage() {
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button variant="outline" onClick={handleBack} disabled={currentQuestionIndex === 0}>
-          Back
+          {t('back')}
         </Button>
         {currentQuestionIndex === quizData.quiz.length - 1 ? (
           <Button onClick={handleSubmit} disabled={userAnswers[currentQuestionIndex] === undefined}>
-            Submit Quiz
+            {t('submitQuiz')}
           </Button>
         ) : (
           <Button onClick={handleNext} disabled={userAnswers[currentQuestionIndex] === undefined}>
-            Next
+            {t('next')}
           </Button>
         )}
       </CardFooter>
     </Card>
   );
 }
-
-    

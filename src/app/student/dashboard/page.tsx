@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -72,6 +73,8 @@ export default function StudentDashboard() {
   );
   const [showCandy, setShowCandy] = useState(true);
   const { language } = useLanguage();
+  const t = (key: string, params: { [key: string]: string | number } = {}) => getTranslation(language, key).replace(/{(\w+)}/g, (_, G) => params[G]?.toString() || G);
+
 
   useEffect(() => {
     const unsubscribe = onAuthChange(setUser);
@@ -172,14 +175,13 @@ export default function StudentDashboard() {
   const xpForNextLevel = level * 500;
   const xpProgress = ((xp - xpForCurrentLevel) / 500) * 100;
   
-  const t = (key: string) => getTranslation(language, key);
 
   return (
     <div className="flex flex-col gap-6">
       {showCandy && <Candy />}
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold tracking-tight">
-          {t('studentDashboardTitle').replace('{name}', student?.name || '')} 🚀
+          {t('studentDashboardTitle', {name: student?.name || ''})} 🚀
         </h1>
         <p className="text-muted-foreground">
           {t('studentDashboardSubtitle')}
@@ -191,7 +193,7 @@ export default function StudentDashboard() {
           <Zap className="absolute -right-4 -top-4 h-24 w-24 text-white/10" />
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              Level {level} Explorer
+              {t('level')} {level} {t('explorer')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -201,36 +203,36 @@ export default function StudentDashboard() {
               className="mt-2 h-2 bg-white/20 [&>div]:bg-white"
             />
             <p className="mt-1 text-xs opacity-80">
-              {xpForNextLevel - xp} XP to next level
+              {xpForNextLevel - xp} {t('xpToNextLevel')}
             </p>
           </CardContent>
         </Card>
         <Card className="relative overflow-hidden bg-gradient-to-br from-accent to-accent/70 text-accent-foreground shadow-lg">
           <Flame className="absolute -right-4 -top-4 h-24 w-24 text-white/10" />
           <CardHeader>
-            <CardTitle className="text-sm font-medium">Streak</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('streak')}</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">{student?.streak ?? 0} days</div>
-            <p className="text-xs opacity-80">Keep the fire burning!</p>
+            <div className="text-3xl font-bold">{student?.streak ?? 0} {t('days')}</div>
+            <p className="text-xs opacity-80">{t('keepTheFireBurning')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Badges</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('badges')}</CardTitle>
             <Award className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {student?.badges?.length ?? 0}
             </div>
-            <p className="text-xs text-muted-foreground">New: "Math Whiz"</p>
+            <p className="text-xs text-muted-foreground">{t('newBadge', {badgeName: 'Math Whiz'})}</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
-              Leaderboard Rank
+              {t('leaderboardRank')}
             </CardTitle>
             <Trophy className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -240,8 +242,8 @@ export default function StudentDashboard() {
             </div>
             <p className="text-xs text-muted-foreground">
               {classes.length > 0
-                ? `In ${classes[0].name}`
-                : 'No class joined'}
+                ? t('inClass', {className: classes[0].name})
+                : t('noClassJoined')}
             </p>
           </CardContent>
         </Card>
@@ -251,31 +253,30 @@ export default function StudentDashboard() {
         <div className="flex flex-col gap-6 lg:col-span-2">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle>My Classes</CardTitle>
+              <CardTitle>{t('myClasses')}</CardTitle>
               <Dialog open={openJoinClass} onOpenChange={setOpenJoinClass}>
                 <DialogTrigger asChild>
                   <Button size="sm">
                     <PlusCircle className="mr-2 h-4 w-4" />
-                    Join a Class
+                    {t('joinAClass')}
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle>Join a new class</DialogTitle>
+                    <DialogTitle>{t('joinClassDialogTitle')}</DialogTitle>
                     <DialogDescription>
-                      Enter the invite code or the exact class name from your
-                      teacher to join.
+                      {t('joinClassDialogDescription')}
                     </DialogDescription>
                   </DialogHeader>
                   <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
                       <Label htmlFor="invite-code" className="text-right">
-                        Code or Name
+                        {t('codeOrName')}
                       </Label>
                       <Input
                         id="invite-code"
                         className="col-span-3"
-                        placeholder="e.g., ALG101-XYZ or Algebra 101"
+                        placeholder={t('joinClassDialogPlaceholder')}
                         value={inviteCode}
                         onChange={(e) => setInviteCode(e.target.value)}
                       />
@@ -283,7 +284,7 @@ export default function StudentDashboard() {
                   </div>
                   <DialogFooter>
                     <Button onClick={handleJoinClass} disabled={isJoining}>
-                      {isJoining ? 'Joining...' : 'Join Class'}
+                      {isJoining ? t('joining') : t('joinClass')}
                     </Button>
                   </DialogFooter>
                 </DialogContent>
@@ -291,7 +292,7 @@ export default function StudentDashboard() {
             </CardHeader>
             <CardContent>
               {studentLoading ? (
-                <p>Loading classes...</p>
+                <p>{t('loadingClasses')}</p>
               ) : (
                 <div className="space-y-4">
                   {classes.length > 0 ? (
@@ -304,7 +305,7 @@ export default function StudentDashboard() {
                           <div className="ml-4 flex-1">
                             <p className="font-semibold">{c.name}</p>
                             <p className="text-sm text-muted-foreground">
-                              View Quizzes
+                              {t('viewQuizzes')}
                             </p>
                           </div>
                           <ChevronRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
@@ -313,9 +314,9 @@ export default function StudentDashboard() {
                     ))
                   ) : (
                     <div className="py-8 text-center">
-                      <p className="font-semibold">No classes yet!</p>
+                      <p className="font-semibold">{t('noClassesYet')}</p>
                       <p className="text-sm text-muted-foreground">
-                        Click "Join a Class" to get started.
+                        {t('clickJoinAClass')}
                       </p>
                     </div>
                   )}
@@ -330,10 +331,10 @@ export default function StudentDashboard() {
                 <div className="rounded-lg bg-accent/10 p-3 text-accent">
                   <Map className="h-6 w-6" />
                 </div>
-                <CardTitle>Your Daily Quest</CardTitle>
+                <CardTitle>{t('yourDailyQuest')}</CardTitle>
               </div>
               <CardDescription>
-                AI-suggested topics to help you improve and earn bonus XP.
+                {t('dailyQuestDescription')}
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
@@ -342,14 +343,14 @@ export default function StudentDashboard() {
                   <Zap className="h-5 w-5 text-primary" />
                 </div>
                 <div className="flex-1 space-y-1">
-                  <p className="font-medium">Focus Area: Algebra</p>
+                  <p className="font-medium">{t('focusArea', {subject: 'Algebra'})}</p>
                   <p className="text-sm text-muted-foreground">
-                    Master "Linear Equations" to earn a treasure chest of XP!
+                    {t('focusAreaDescription', {topic: 'Linear Equations'})}
                   </p>
                 </div>
                 <Button asChild variant="secondary" size="sm">
                   <Link href="/student/quizzes">
-                    Start Quest
+                    {t('startQuest')}
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
@@ -360,16 +361,16 @@ export default function StudentDashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Class Leaderboard</CardTitle>
+            <CardTitle>{t('classLeaderboard')}</CardTitle>
             <CardDescription>
               {classes.length > 0
-                ? `${classes[0].name} - Top Performers`
-                : 'Join a class to see the leaderboard'}
+                ? t('topPerformers', {className: classes[0].name})
+                : t('joinClassToSeeLeaderboard')}
             </CardDescription>
           </CardHeader>
           <CardContent>
             {leaderboardLoading ? (
-              <p>Loading leaderboard...</p>
+              <p>{t('loadingLeaderboard')}</p>
             ) : (
               <div className="space-y-2">
                 {leaderboardData.map((player, index) => {
@@ -405,7 +406,7 @@ export default function StudentDashboard() {
                       <div className="flex-1">
                         <p className="text-sm font-medium">
                           {player.studentName}
-                          {player.studentId === student?.id && ' (You)'}
+                          {player.studentId === student?.id && t('you')}
                         </p>
                         <p className="text-xs text-muted-foreground">
                           {player.xp} XP
@@ -425,5 +426,3 @@ export default function StudentDashboard() {
     </div>
   );
 }
-
-    

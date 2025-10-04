@@ -1,3 +1,6 @@
+
+'use client';
+
 import {
   SidebarProvider,
   Sidebar,
@@ -23,12 +26,17 @@ import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
 import { ThemeToggle } from '@/components/dashboard/ThemeToggle';
 import { LanguageToggle } from '@/components/dashboard/LanguageToggle';
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 export default function StudentLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { language } = useLanguage();
+  const t = (key: string) => getTranslation(language, key);
+
   return (
     <SidebarProvider>
       <Sidebar>
@@ -46,11 +54,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/dashboard"
                 asChild
-                tooltip="Dashboard"
+                tooltip={t('dashboard')}
               >
                 <Link href="/student/dashboard">
                   <LayoutDashboard />
-                  <span>Dashboard</span>
+                  <span>{t('dashboard')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -58,11 +66,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/quizzes"
                 asChild
-                tooltip="My Quizzes"
+                tooltip={t('myQuizzes')}
               >
                 <Link href="/student/quizzes">
                   <Swords />
-                  <span>My Quizzes</span>
+                  <span>{t('myQuizzes')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -70,11 +78,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/progress"
                 asChild
-                tooltip="My Progress"
+                tooltip={t('myProgress')}
               >
                 <Link href="/student/progress">
                   <Target />
-                  <span>My Progress</span>
+                  <span>{t('myProgress')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -82,11 +90,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/badges"
                 asChild
-                tooltip="Badges"
+                tooltip={t('badges')}
               >
                 <Link href="/student/badges">
                   <Award />
-                  <span>Badges</span>
+                  <span>{t('badges')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -94,11 +102,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/leaderboard"
                 asChild
-                tooltip="Leaderboard"
+                tooltip={t('leaderboard')}
               >
                 <Link href="/student/leaderboard">
                   <Trophy />
-                  <span>Leaderboard</span>
+                  <span>{t('leaderboard')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -106,11 +114,11 @@ export default function StudentLayout({
                 <SidebarMenuButton
                     href="/student/aichat"
                     asChild
-                    tooltip="AI Chat"
+                    tooltip={t('aiChat')}
                 >
                     <Link href="/student/aichat">
                         <Bot />
-                        <span>AI Chat</span>
+                        <span>{t('aiChat')}</span>
                     </Link>
                 </SidebarMenuButton>
             </SidebarMenuItem>
@@ -118,11 +126,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/settings"
                 asChild
-                tooltip="Settings"
+                tooltip={t('settings')}
               >
                 <Link href="/student/settings">
                   <Settings />
-                  <span>Settings</span>
+                  <span>{t('settings')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

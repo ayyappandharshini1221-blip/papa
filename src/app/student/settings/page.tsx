@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -18,12 +19,16 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { getDb } from '@/lib/firebase';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 export default function SettingsPage() {
   const { student, loading } = useStudentData();
   const [name, setName] = useState(student?.name || '');
   const [isSaving, setIsSaving] = useState(false);
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const t = (key: string) => getTranslation(language, key);
 
   if (loading) {
     return (
@@ -36,11 +41,11 @@ export default function SettingsPage() {
   const handleSaveChanges = async () => {
     const db = getDb();
     if (!student) {
-      toast({ title: 'Error', description: 'Student data not found.', variant: 'destructive' });
+      toast({ title: t('error'), description: t('studentNotFound'), variant: 'destructive' });
       return;
     }
     if (!name.trim()) {
-        toast({ title: 'Error', description: 'Name cannot be empty.', variant: 'destructive' });
+        toast({ title: t('error'), description: t('nameNotEmpty'), variant: 'destructive' });
         return;
     }
 
@@ -58,9 +63,9 @@ export default function SettingsPage() {
             });
             errorEmitter.emit('permission-error', permissionError);
         });
-      toast({ title: 'Success', description: 'Your profile has been updated.' });
+      toast({ title: t('success'), description: t('profileUpdated') });
     } catch (error: any) {
-      toast({ title: 'Error', description: error.message, variant: 'destructive' });
+      toast({ title: t('error'), description: error.message, variant: 'destructive' });
     } finally {
       setIsSaving(false);
     }
@@ -69,27 +74,27 @@ export default function SettingsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
-        <p className="text-muted-foreground">Manage your account settings and profile.</p>
+        <h1 className="text-3xl font-bold tracking-tight">{t('settingsTitle')}</h1>
+        <p className="text-muted-foreground">{t('settingsDescription')}</p>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>Profile</CardTitle>
-          <CardDescription>Update your personal information here.</CardDescription>
+          <CardTitle>{t('profile')}</CardTitle>
+          <CardDescription>{t('profileDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name">{t('name')}</Label>
             <Input id="name" defaultValue={student?.name} onChange={(e) => setName(e.target.value)} />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{t('email')}</Label>
             <Input id="email" value={student?.email || ''} disabled />
           </div>
           <Button onClick={handleSaveChanges} disabled={isSaving}>
             {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-            Save Changes
+            {isSaving ? t('saving') : t('saveChanges')}
           </Button>
         </CardContent>
       </Card>

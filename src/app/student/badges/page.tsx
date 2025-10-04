@@ -1,3 +1,4 @@
+
 'use client';
 
 import {
@@ -40,6 +41,8 @@ import { CppIcon, JavaIcon, JavaScriptIcon, PythonIcon, CIcon } from '@/componen
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@/hooks/use-window-size';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/context/language-context';
+import { getTranslation } from '@/lib/translations';
 
 export const allBadges = [
   {
@@ -289,6 +292,8 @@ export default function BadgesPage() {
   const { student, loading } = useStudentData();
   const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
+  const { language } = useLanguage();
+  const t = (key: string) => getTranslation(language, key);
 
   useEffect(() => {
     // Trigger confetti when the component mounts
@@ -323,21 +328,21 @@ export default function BadgesPage() {
         />
       )}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Badges Collection</h1>
+        <h1 className="text-3xl font-bold tracking-tight">{t('badgesCollection')}</h1>
         <p className="text-muted-foreground">
-          Celebrate your achievements and unlock new ones!
+          {t('badgesDescription')}
         </p>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>Your Progress</CardTitle>
+          <CardTitle>{t('yourProgress')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-center gap-4">
             <Progress value={progressValue} className="h-3 flex-1" />
             <p className="font-semibold">
-              {unlockedBadges.length} / {allBadges.length} Unlocked
+              {unlockedBadges.length} / {allBadges.length} {t('unlocked')}
             </p>
           </div>
         </CardContent>
@@ -345,7 +350,7 @@ export default function BadgesPage() {
 
       <div>
         <h2 className="text-2xl font-semibold tracking-tight mb-4">
-          Earned Badges
+          {t('earnedBadges')}
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {unlockedBadges.map((badge) => (
@@ -372,7 +377,7 @@ export default function BadgesPage() {
 
       <div>
         <h2 className="text-2xl font-semibold tracking-tight mb-4">
-          Locked Badges
+          {t('lockedBadges')}
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {lockedBadges.map((badge) => (
@@ -392,7 +397,7 @@ export default function BadgesPage() {
                   {badge.description}
                 </p>
                  {badge.progress && <div className="mt-4 font-semibold text-primary text-sm">
-                    {badge.progress} Complete
+                    {badge.progress} {t('complete')}
                 </div>}
               </CardContent>
             </Card>

@@ -68,11 +68,10 @@ function SignupForm() {
   });
 
   useEffect(() => {
-    const role = searchParams.get('role');
-    if (role === 'student' || role === 'teacher') {
-      form.setValue('role', role, { shouldValidate: true });
+    if (roleFromQuery === 'student' || roleFromQuery === 'teacher') {
+      form.setValue('role', roleFromQuery, { shouldValidate: true });
     }
-  }, [searchParams, form]);
+  }, [roleFromQuery, form]);
 
 
   async function onSubmit(values: z.infer<typeof formSchema>) {

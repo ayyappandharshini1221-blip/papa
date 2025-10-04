@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { notFound, useSearchParams, useRouter } from 'next/navigation';
 import Confetti from 'react-confetti';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
@@ -49,33 +49,33 @@ export default function QuizTakingClientPage() {
   const [showConfetti, setShowConfetti] = useState(false);
 
 
-  const fetchQuiz = () => {
-    if (subject && difficulty) {
-      setIsLoading(true);
-      setError(null);
-      generateQuizContent({ subject, difficulty, numberOfQuestions: 10 })
-        .then(data => {
-          if (!data || !data.quiz || data.quiz.length === 0) {
-            setError('The AI failed to generate a quiz for this topic. Please try a different one.');
-          } else {
-            setQuizData(data);
-          }
-        })
-        .catch(err => {
-          console.error('Error generating quiz:', err);
-           if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests') || err.message.includes('503'))) {
-             setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
-          } else {
-            setError('Failed to generate the quiz. Please try again.');
-          }
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
-    }
-  };
-
   useEffect(() => {
+    const fetchQuiz = () => {
+      if (subject && difficulty) {
+        setIsLoading(true);
+        setError(null);
+        generateQuizContent({ subject, difficulty, numberOfQuestions: 10 })
+          .then(data => {
+            if (!data || !data.quiz || data.quiz.length === 0) {
+              setError('The AI failed to generate a quiz for this topic. Please try a different one.');
+            } else {
+              setQuizData(data);
+            }
+          })
+          .catch(err => {
+            console.error('Error generating quiz:', err);
+             if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests') || err.message.includes('503'))) {
+               setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
+            } else {
+              setError('Failed to generate the quiz. Please try again.');
+            }
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      }
+    };
+
     fetchQuiz();
   }, [subject, difficulty]);
 
@@ -247,12 +247,37 @@ export default function QuizTakingClientPage() {
   }
 
   if (error) {
+    const fetchQuizAgain = () => {
+      if (subject && difficulty) {
+        setIsLoading(true);
+        setError(null);
+        generateQuizContent({ subject, difficulty, numberOfQuestions: 10 })
+          .then(data => {
+            if (!data || !data.quiz || data.quiz.length === 0) {
+              setError('The AI failed to generate a quiz for this topic. Please try a different one.');
+            } else {
+              setQuizData(data);
+            }
+          })
+          .catch(err => {
+            console.error('Error generating quiz:', err);
+             if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests') || err.message.includes('503'))) {
+               setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
+            } else {
+              setError('Failed to generate the quiz. Please try again.');
+            }
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      }
+    };
     return (
       <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
         <XCircle className="h-12 w-12 text-destructive" />
         <p className="text-destructive font-semibold">Oops! Something went wrong.</p>
         <p className="text-muted-foreground max-w-md">{error}</p>
-        <Button onClick={fetchQuiz}>Try Again</Button>
+        <Button onClick={fetchQuizAgain}>Try Again</Button>
       </div>
     );
   }
@@ -356,3 +381,5 @@ export default function QuizTakingClientPage() {
     </Card>
   );
 }
+
+    

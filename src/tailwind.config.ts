@@ -104,7 +104,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'move-train': 'move-train 2s linear infinite alternate',
+        'move-train': 'move-train 2s linear infinite',
       },
     },
   },

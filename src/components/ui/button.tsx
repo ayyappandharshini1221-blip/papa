@@ -19,6 +19,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-[0_5px_0_0_hsl(var(--secondary-darker,0_0%_0%))] hover:shadow-[0_8px_20px_-10px_hsl(var(--secondary))] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--secondary-darker,0_0%_0%))] bg-gradient-to-b from-secondary to-[hsl(var(--secondary-darker))] before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20",
         ghost: "hover:bg-accent hover:text-accent-foreground active:translate-y-0.5",
         link: "text-primary underline-offset-4 hover:underline active:translate-y-0.5",
+        gold:
+          "bg-gold text-primary-foreground shadow-[0_5px_0_0_hsl(var(--gold-darker,0_0%_0%))] hover:shadow-[0_8px_20px_-10px_hsl(var(--gold))] active:translate-y-1 active:shadow-[0_0px_0_0_hsl(var(--gold-darker,0_0%_0%))] bg-gradient-to-b from-gold to-[hsl(var(--gold-darker))] before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:to-white/20",
       },
       size: {
         default: "h-10 px-4 py-2",

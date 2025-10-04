@@ -41,6 +41,7 @@
     --sidebar-border: 228 35% 25%;
     --sidebar-ring: 263 92% 67%;
     --gold: 45 86% 51%;
+    --gold-darker: 45 86% 41%;
   }
 
   .dark {
@@ -80,6 +81,7 @@
     --sidebar-border: 228 35% 25%;
     --sidebar-ring: 263 92% 67%;
     --gold: 45 86% 51%;
+    --gold-darker: 45 86% 41%;
   }
 }
 

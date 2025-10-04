@@ -344,17 +344,17 @@ export default function BadgesPage() {
           {unlockedBadges.map((badge) => (
             <Card
               key={badge.id}
-              className="group transform-gpu transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/40"
+              className="group transform-gpu transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg hover:shadow-gold/40"
             >
               <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-                <div className="mb-4 rounded-full bg-accent/10 p-4 text-accent drop-shadow-[0_0_8px_hsl(var(--accent))]">
+                <div className="mb-4 rounded-full bg-gold/10 p-4 text-gold drop-shadow-[0_0_8px_hsl(var(--gold))]">
                   {badge.icon}
                 </div>
                 <p className="font-bold text-lg">{badge.title}</p>
                 <p className="text-sm text-muted-foreground mt-1">
                   {badge.description}
                 </p>
-                <Badge variant="secondary" className="mt-4 bg-accent/20 text-accent">
+                <Badge variant="secondary" className="mt-4 bg-gold/20 text-gold">
                   +{badge.xp} XP
                 </Badge>
               </CardContent>

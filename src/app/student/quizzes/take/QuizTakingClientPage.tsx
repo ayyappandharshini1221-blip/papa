@@ -94,7 +94,7 @@ export default function QuizTakingClientPage() {
 
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
   };
 
@@ -356,5 +356,3 @@ export default function QuizTakingClientPage() {
     </Card>
   );
 }
-
-    

@@ -15,7 +15,7 @@ import {z} from 'genkit';
 const GenerateQuizContentInputSchema = z.object({
   subject: z.string().describe('The subject of the quiz.'),
   difficulty: z.enum(['easy', 'medium', 'hard']).describe('The difficulty level of the quiz.'),
-  numberOfQuestions: z.number().min(1).max(10).default(5).describe('The number of questions to generate for the quiz.'),
+  numberOfQuestions: z.number().min(1).max(10).default(10).describe('The number of questions to generate for the quiz.'),
 });
 export type GenerateQuizContentInput = z.infer<typeof GenerateQuizContentInputSchema>;
 

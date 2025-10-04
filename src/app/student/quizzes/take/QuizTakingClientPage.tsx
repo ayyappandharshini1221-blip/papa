@@ -49,7 +49,7 @@ export default function QuizTakingClientPage() {
   const [showConfetti, setShowConfetti] = useState(false);
 
 
-  const fetchQuiz = useCallback(() => {
+  const fetchQuiz = () => {
     if (subject && difficulty) {
       setIsLoading(true);
       setError(null);
@@ -73,11 +73,11 @@ export default function QuizTakingClientPage() {
           setIsLoading(false);
         });
     }
-  }, [subject, difficulty]);
+  };
 
   useEffect(() => {
     fetchQuiz();
-  }, [fetchQuiz]);
+  }, [subject, difficulty]);
 
   const handleAnswerSelect = (answerIndex: number) => {
     setUserAnswers({

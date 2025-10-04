@@ -22,6 +22,7 @@ import {
 import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
 import { LanguageToggle } from '@/components/dashboard/LanguageToggle';
+import { ThemeToggle } from '@/components/dashboard/ThemeToggle';
 
 export default function StudentLayout({
   children,
@@ -134,6 +135,7 @@ export default function StudentLayout({
           <div className="w-full flex-1">
             {/* Can add breadcrumbs here */}
           </div>
+          <ThemeToggle />
           <LanguageToggle />
           <UserNav />
         </header>

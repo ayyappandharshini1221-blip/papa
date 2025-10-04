@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
+import { LanguageToggle } from '@/components/dashboard/LanguageToggle';
 
 export default function StudentLayout({
   children,
@@ -133,6 +134,7 @@ export default function StudentLayout({
           <div className="w-full flex-1">
             {/* Can add breadcrumbs here */}
           </div>
+          <LanguageToggle />
           <UserNav />
         </header>
         <main className="flex-1 p-4 sm:p-6">{children}</main>

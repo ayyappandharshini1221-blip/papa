@@ -50,33 +50,29 @@ export default function QuizTakingClientPage() {
 
 
   useEffect(() => {
-    const fetchQuiz = () => {
-      if (subject && difficulty) {
-        setIsLoading(true);
-        setError(null);
-        generateQuizContent({ subject, difficulty, numberOfQuestions: 10 })
-          .then(data => {
-            if (!data || !data.quiz || data.quiz.length === 0) {
-              setError('The AI failed to generate a quiz for this topic. Please try a different one.');
-            } else {
-              setQuizData(data);
-            }
-          })
-          .catch(err => {
-            console.error('Error generating quiz:', err);
-             if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests') || err.message.includes('503'))) {
-               setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
-            } else {
-              setError('Failed to generate the quiz. Please try again.');
-            }
-          })
-          .finally(() => {
-            setIsLoading(false);
-          });
-      }
-    };
-
-    fetchQuiz();
+    if (subject && difficulty) {
+      setIsLoading(true);
+      setError(null);
+      generateQuizContent({ subject, difficulty, numberOfQuestions: 10 })
+        .then(data => {
+          if (!data || !data.quiz || data.quiz.length === 0) {
+            setError('The AI failed to generate a quiz for this topic. Please try a different one.');
+          } else {
+            setQuizData(data);
+          }
+        })
+        .catch(err => {
+          console.error('Error generating quiz:', err);
+           if (err.message && (err.message.includes('429') || err.message.includes('Too Many Requests') || err.message.includes('503'))) {
+             setError('The AI is a bit busy right now due to high traffic. Please wait a moment and try again.');
+          } else {
+            setError('Failed to generate the quiz. Please try again.');
+          }
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
   }, [subject, difficulty]);
 
   const handleAnswerSelect = (answerIndex: number) => {

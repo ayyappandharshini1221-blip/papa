@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -98,13 +99,13 @@ export default {
         },
         'move-train': {
           '0%': { transform: 'translateX(-150px)' },
-          '100%': { transform: 'translateX(150px)' },
+          '100%': { transform: 'translateX(100vw)' },
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'move-train': 'move-train 2s linear infinite',
+        'move-train': 'move-train 3s linear infinite',
       },
     },
   },

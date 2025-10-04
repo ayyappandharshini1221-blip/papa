@@ -11,6 +11,7 @@ import {
 import { Button } from '@/components/ui/button';
 import type { Subject } from '@/app/student/quizzes/page';
 import { Swords, Shield, Brain } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 type Difficulty = 'easy' | 'medium' | 'hard';
 
@@ -50,10 +51,11 @@ export function QuizStartDialog({
   onClose: () => void;
 }) {
   const router = useRouter();
+  const { language } = useLanguage();
 
   const handleStartQuiz = (difficulty: Difficulty) => {
     onClose();
-    router.push(`/student/quizzes/take?subject=${encodeURIComponent(subject.name)}&difficulty=${difficulty}`);
+    router.push(`/student/quizzes/take?subject=${encodeURIComponent(subject.name)}&difficulty=${difficulty}&lang=${language}`);
   };
 
   return (

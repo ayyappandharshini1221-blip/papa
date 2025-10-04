@@ -9,11 +9,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useLanguage } from '@/context/language-context';
 
 export function LanguageToggle() {
-  // NOTE: This is a UI placeholder.
-  // The actual i18n logic needs to be implemented.
-  const [language, setLanguage] = React.useState('en');
+  const { setLanguage } = useLanguage();
 
   return (
     <DropdownMenu>

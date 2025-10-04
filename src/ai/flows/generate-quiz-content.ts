@@ -16,6 +16,7 @@ const GenerateQuizContentInputSchema = z.object({
   subject: z.string().describe('The subject of the quiz.'),
   difficulty: z.enum(['easy', 'medium', 'hard']).describe('The difficulty level of the quiz.'),
   numberOfQuestions: z.number().min(1).max(10).default(10).describe('The number of questions to generate for the quiz.'),
+  language: z.string().optional().describe('The language for the quiz. If "ta", a bilingual Tamil-English quiz is generated.'),
 });
 export type GenerateQuizContentInput = z.infer<typeof GenerateQuizContentInputSchema>;
 
@@ -82,7 +83,7 @@ const generateQuizContentFlow = ai.defineFlow(
     },
   },
   async input => {
-    if (input.subject.toLowerCase() === 'tamil') {
+    if ((input.subject.toLowerCase() === 'tamil') || (input.language === 'ta')) {
         const { output } = await generateBilingualTamilQuizPrompt(input);
         return output!;
     }

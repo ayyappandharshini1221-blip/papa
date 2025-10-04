@@ -37,6 +37,7 @@ export default function QuizTakingClientPage() {
 
   const subject = searchParams.get('subject');
   const difficulty = searchParams.get('difficulty') as 'easy' | 'medium' | 'hard' | null;
+  const language = searchParams.get('lang');
 
   const [quizData, setQuizData] = useState<GenerateQuizContentOutput | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -53,7 +54,7 @@ export default function QuizTakingClientPage() {
     if (subject && difficulty) {
       setIsLoading(true);
       setError(null);
-      generateQuizContent({ subject, difficulty, numberOfQuestions: 10 })
+      generateQuizContent({ subject, difficulty, numberOfQuestions: 10, language: language ?? undefined })
         .then(data => {
           if (!data || !data.quiz || data.quiz.length === 0) {
             setError('The AI failed to generate a quiz for this topic. Please try a different one.');
@@ -73,7 +74,7 @@ export default function QuizTakingClientPage() {
           setIsLoading(false);
         });
     }
-  }, [subject, difficulty]);
+  }, [subject, difficulty, language]);
 
   const handleAnswerSelect = (answerIndex: number) => {
     setUserAnswers({
@@ -256,7 +257,7 @@ export default function QuizTakingClientPage() {
       if (subject && difficulty) {
         setIsLoading(true);
         setError(null);
-        generateQuizContent({ subject, difficulty, numberOfQuestions: 10 })
+        generateQuizContent({ subject, difficulty, numberOfQuestions: 10, language: language ?? undefined })
           .then(data => {
             if (!data || !data.quiz || data.quiz.length === 0) {
               setError('The AI failed to generate a quiz for this topic. Please try a different one.');

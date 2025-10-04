@@ -96,10 +96,15 @@ export default {
             height: '0',
           },
         },
+        'move-train': {
+          '0%': { transform: 'translateX(-150px)' },
+          '100%': { transform: 'translateX(150px)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'move-train': 'move-train 2s linear infinite alternate',
       },
     },
   },

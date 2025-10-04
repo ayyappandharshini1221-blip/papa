@@ -121,3 +121,12 @@
     transform: translateY(105vh) rotate(360deg);
   }
 }
+
+@keyframes move-train {
+  0% {
+    transform: translateX(-150px);
+  }
+  100% {
+    transform: translateX(150px);
+  }
+}

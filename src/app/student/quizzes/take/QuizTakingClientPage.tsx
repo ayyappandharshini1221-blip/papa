@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
-import { CheckCircle2, XCircle, Loader2, Award, Zap } from 'lucide-react';
+import { CheckCircle2, XCircle, Loader2, Award, Zap, TrainFront } from 'lucide-react';
 import { generateQuizContent, GenerateQuizContentOutput } from '@/ai/flows/generate-quiz-content';
 import { useStudentData } from '@/hooks/use-student-data';
 import { doc, updateDoc, increment, arrayUnion } from 'firebase/firestore';
@@ -244,8 +244,8 @@ export default function QuizTakingClientPage() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center h-full gap-4">
-        <Loader2 className="h-12 w-12 animate-spin text-primary" />
+      <div className="flex flex-col items-center justify-center h-full gap-4 overflow-hidden">
+        <TrainFront className="h-16 w-16 text-primary animate-move-train" />
         <p className="text-muted-foreground">Generating your {subject} quiz...</p>
       </div>
     );

@@ -96,7 +96,25 @@ export function CppIcon(props: SVGProps<SVGSVGElement>) {
       <path d="M11 12h2" />
       <path d="M12 11v2" />
       <path d="M10 16.5c0 .828 .672 1.5 1.5 1.5h1a1.5 1.5 0 0 0 1.5 -1.5v-3.5a1.5 1.5 0 0 0 -1.5 -1.5h-1a1.5 1.5 0 0 0 -1.5 1.5v3.5z" />
-      <path d="M3 16.5c0 .828 .672 1.5 1.5 1.5h1a1.5 1.5 0 0 0 1.5 -1.5v-3.5a1.5 1.5 0 0 0 -1.5 -1.5h-1a1.5 1.5 0 0 0 -1.5 1.5v3.5z" />
+      <path d="M3 16.5cО .828 .672 1.5 1.5 1.5h1a1.5 1.5 0 0 0 1.5 -1.5v-3.5a1.5 1.5 0 0 0 -1.5 -1.5h-1a1.5 1.5 0 0 0 -1.5 1.5v3.5z" />
+    </svg>
+  );
+}
+
+
+export function CIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      strokeWidth="2"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 16.5c0 .828 .672 1.5 1.5 1.5h1a1.5 1.5 0 0 0 1.5 -1.5v-3.5a1.5 1.5 0 0 0 -1.5 -1.5h-1a1.5 1.5 0 0 0 -1.5 1.5v3.5z" />
     </svg>
   );
 }

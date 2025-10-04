@@ -14,7 +14,7 @@ import {
   Sigma,
   BookOpen,
 } from 'lucide-react';
-import { CppIcon, JavaIcon, JavaScriptIcon, PythonIcon } from '@/components/icons';
+import { CIcon, CppIcon, JavaIcon, JavaScriptIcon, PythonIcon } from '@/components/icons';
 import { QuizStartDialog } from '@/components/quiz/quiz-start-dialog';
 import { Button } from '@/components/ui/button';
 
@@ -72,6 +72,11 @@ const programmingSubjects: Subject[] = [
         name: 'C++',
         description: 'Powerful language for systems programming.',
         icon: <CppIcon className="h-10 w-10" />,
+    },
+    {
+        name: 'C',
+        description: 'The foundational language for many systems.',
+        icon: <CIcon className="h-10 w-10" />,
     }
 ]
 

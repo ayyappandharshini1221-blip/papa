@@ -148,6 +148,9 @@ export default function QuizTakingClientPage() {
       if(subject?.toLowerCase() === 'c++' && !studentBadges.includes('cpp-captain')) {
         newlyEarnedBadges.push('cpp-captain');
       }
+       if(subject?.toLowerCase() === 'c' && !studentBadges.includes('c-commander')) {
+        newlyEarnedBadges.push('c-commander');
+      }
       if(subject?.toLowerCase() === 'biology' && !studentBadges.includes('biologist')) {
         newlyEarnedBadges.push('biologist');
       }

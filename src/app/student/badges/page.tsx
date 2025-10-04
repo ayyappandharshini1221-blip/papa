@@ -36,7 +36,7 @@ import {
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useStudentData } from '@/hooks/use-student-data';
-import { CppIcon, JavaIcon, JavaScriptIcon, PythonIcon } from '@/components/icons';
+import { CppIcon, JavaIcon, JavaScriptIcon, PythonIcon, CIcon } from '@/components/icons';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@/hooks/use-window-size';
 import { useState, useEffect } from 'react';
@@ -96,6 +96,13 @@ export const allBadges = [
     title: 'C++ Captain',
     description: 'Complete your first C++ quiz.',
     icon: <CppIcon className="h-10 w-10" />,
+    xp: 50,
+  },
+  {
+    id: 'c-commander',
+    title: 'C Commander',
+    description: 'Complete your first C quiz.',
+    icon: <CIcon className="h-10 w-10" />,
     xp: 50,
   },
   {

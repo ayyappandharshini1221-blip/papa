@@ -51,6 +51,23 @@ For each question, you must provide a brief explanation for why the answer is co
 Return the quiz in the exact JSON format specified.`,
 });
 
+const generateBilingualTamilQuizPrompt = ai.definePrompt({
+  name: 'generateBilingualTamilQuizPrompt',
+  input: { schema: GenerateQuizContentInputSchema },
+  output: { schema: GenerateQuizContentOutputSchema },
+  prompt: `You are an expert quiz generator for teachers. Generate a quiz on the subject of Tamil. The difficulty level should be {{{difficulty}}}.
+
+The quiz must be bilingual, with all questions, answers, and explanations provided in both Tamil and English. For example: "கேள்வி (Question)".
+
+The quiz must contain exactly {{{numberOfQuestions}}} questions.
+Each question must have exactly 4 possible answers, also in both languages.
+For each question, you must provide the index of the correct answer (from 0 to 3).
+For each question, you must provide a brief explanation for why the answer is correct, in both languages.
+
+Return the quiz in the exact JSON format specified.`,
+});
+
+
 const generateQuizContentFlow = ai.defineFlow(
   {
     name: 'generateQuizContentFlow',
@@ -65,6 +82,10 @@ const generateQuizContentFlow = ai.defineFlow(
     },
   },
   async input => {
+    if (input.subject.toLowerCase() === 'tamil') {
+        const { output } = await generateBilingualTamilQuizPrompt(input);
+        return output!;
+    }
     const {output} = await generateQuizContentPrompt(input);
     return output!;
   }

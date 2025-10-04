@@ -46,18 +46,13 @@ const subjects: Subject[] = [
     icon: <BrainCircuit className="h-10 w-10" />,
   },
    {
-    name: 'English',
-    description: 'Analyze classic and contemporary literary works.',
-    icon: <BookOpen className="h-10 w-10" />,
-  },
-  {
-    name: 'Tamil',
-    description: 'Explore rich literature and grammar.',
+    name: 'Literature',
+    description: 'Quizzes in English and Tamil literature.',
     icon: <BookOpen className="h-10 w-10" />,
   },
 ];
 
-const programmingLanguages: Subject[] = [
+const programmingSubjects: Subject[] = [
     {
         name: 'Python',
         description: 'Code with one of the most popular languages.',
@@ -80,30 +75,54 @@ const programmingLanguages: Subject[] = [
     }
 ]
 
+const literatureSubjects: Subject[] = [
+    {
+        name: 'English',
+        description: 'Analyze classic and contemporary literary works.',
+        icon: <BookOpen className="h-10 w-10" />,
+    },
+    {
+        name: 'Tamil',
+        description: 'Explore rich literature and grammar.',
+        icon: <BookOpen className="h-10 w-10" />,
+    },
+];
+
 
 export default function QuizzesPage() {
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
-  const [showLanguageSelection, setShowLanguageSelection] = useState(false);
+  const [showProgrammingSelection, setShowProgrammingSelection] = useState(false);
+  const [showLiteratureSelection, setShowLiteratureSelection] = useState(false);
 
   const handleSubjectSelect = (subject: Subject) => {
     if (subject.name === 'Programming') {
-        setShowLanguageSelection(true);
-    } else {
+        setShowProgrammingSelection(true);
+    } else if (subject.name === 'Literature') {
+        setShowLiteratureSelection(true);
+    }
+    else {
         setSelectedSubject(subject);
     }
   };
   
-  const handleLanguageSelect = (language: Subject) => {
-    setSelectedSubject(language);
-    setShowLanguageSelection(false);
+  const handleSubSubjectSelect = (subSubject: Subject) => {
+    setSelectedSubject(subSubject);
+    setShowProgrammingSelection(false);
+    setShowLiteratureSelection(false);
   }
 
   const handleDialogClose = () => {
     setSelectedSubject(null);
-    setShowLanguageSelection(false);
+    setShowProgrammingSelection(false);
+    setShowLiteratureSelection(false);
   };
+  
+  const handleBack = () => {
+    setShowProgrammingSelection(false);
+    setShowLiteratureSelection(false);
+  }
 
-  if(showLanguageSelection) {
+  if(showProgrammingSelection) {
     return (
         <div className="flex flex-col gap-6">
             <div>
@@ -115,11 +134,11 @@ export default function QuizzesPage() {
                 </p>
              </div>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {programmingLanguages.map((lang) => (
+                {programmingSubjects.map((lang) => (
                 <Card
                     key={lang.name}
                     className="group cursor-pointer transform transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
-                    onClick={() => handleLanguageSelect(lang)}
+                    onClick={() => handleSubSubjectSelect(lang)}
                 >
                     <CardHeader className="flex flex-row items-center gap-4">
                     <div className="rounded-lg bg-primary/10 p-4 text-primary">
@@ -133,7 +152,44 @@ export default function QuizzesPage() {
                 </Card>
                 ))}
             </div>
-             <Button variant="outline" onClick={() => setShowLanguageSelection(false)} className="self-start">
+             <Button variant="outline" onClick={handleBack} className="self-start">
+                Back to subjects
+            </Button>
+        </div>
+    )
+  }
+  
+  if(showLiteratureSelection) {
+    return (
+        <div className="flex flex-col gap-6">
+            <div>
+                <h1 className="text-3xl font-bold tracking-tight">
+                    Select a Language
+                </h1>
+                <p className="text-muted-foreground">
+                    Choose which language you want to be quizzed on.
+                </p>
+             </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {literatureSubjects.map((lang) => (
+                <Card
+                    key={lang.name}
+                    className="group cursor-pointer transform transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+                    onClick={() => handleSubSubjectSelect(lang)}
+                >
+                    <CardHeader className="flex flex-row items-center gap-4">
+                    <div className="rounded-lg bg-primary/10 p-4 text-primary">
+                        {lang.icon}
+                    </div>
+                    <div>
+                        <CardTitle className="text-xl">{lang.name}</CardTitle>
+                        <CardDescription>{lang.description}</CardDescription>
+                    </div>
+                    </CardHeader>
+                </Card>
+                ))}
+            </div>
+             <Button variant="outline" onClick={handleBack} className="self-start">
                 Back to subjects
             </Button>
         </div>

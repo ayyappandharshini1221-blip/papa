@@ -93,15 +93,6 @@ export default function SettingsPage() {
           </Button>
         </CardContent>
       </Card>
-       <Card>
-        <CardHeader>
-          <CardTitle className="text-destructive">Danger Zone</CardTitle>
-          <CardDescription>These actions are permanent and cannot be undone.</CardDescription>
-        </CardHeader>
-        <CardContent>
-            <Button variant="destructive">Delete Account</Button>
-        </CardContent>
-      </Card>
     </div>
   );
 }

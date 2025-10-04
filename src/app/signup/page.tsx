@@ -55,6 +55,7 @@ function SignupForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showEmoji, setShowEmoji] = useState<string | null>(null);
+  
   const roleFromQuery = searchParams.get('role');
 
   const form = useForm<z.infer<typeof formSchema>>({

@@ -160,6 +160,12 @@ export default function QuizTakingClientPage() {
       if(subject?.toLowerCase() === 'maths' && !studentBadges.includes('math-whiz')) {
         newlyEarnedBadges.push('math-whiz');
       }
+      if(subject?.toLowerCase() === 'english' && !studentBadges.includes('english-enthusiast')) {
+        newlyEarnedBadges.push('english-enthusiast');
+      }
+      if(subject?.toLowerCase() === 'tamil' && !studentBadges.includes('tamil-scholar')) {
+        newlyEarnedBadges.push('tamil-scholar');
+      }
       
       let badgeXp = 0;
       if(newlyEarnedBadges.length > 0) {

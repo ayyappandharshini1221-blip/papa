@@ -46,8 +46,13 @@ const subjects: Subject[] = [
     icon: <BrainCircuit className="h-10 w-10" />,
   },
    {
-    name: 'Literature',
+    name: 'English',
     description: 'Analyze classic and contemporary literary works.',
+    icon: <BookOpen className="h-10 w-10" />,
+  },
+  {
+    name: 'Tamil',
+    description: 'Explore rich literature and grammar.',
     icon: <BookOpen className="h-10 w-10" />,
   },
 ];

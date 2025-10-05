@@ -20,7 +20,6 @@ import {
   Target,
   Settings,
   Award,
-  Bot,
 } from 'lucide-react';
 import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
@@ -109,18 +108,6 @@ export default function StudentLayout({
                   <span>{t('leaderboard')}</span>
                 </Link>
               </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-                <SidebarMenuButton
-                    href="/student/aichat"
-                    asChild
-                    tooltip={t('aiChat')}
-                >
-                    <Link href="/student/aichat">
-                        <Bot />
-                        <span>{t('aiChat')}</span>
-                    </Link>
-                </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton

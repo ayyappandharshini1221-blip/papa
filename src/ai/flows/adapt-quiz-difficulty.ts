@@ -10,6 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import {googleAI} from '@genkit-ai/google-genai';
 
 const AdaptQuizDifficultyInputSchema = z.object({
   studentId: z.string().describe('The ID of the student taking the quiz.'),
@@ -51,6 +52,7 @@ const prompt = ai.definePrompt({
   name: 'adaptQuizDifficultyPrompt',
   input: {schema: AdaptQuizDifficultyInputSchema},
   output: {schema: AdaptQuizDifficultyOutputSchema},
+  model: googleAI.model('gemini-1.5-pro'),
   prompt: `You are an AI that adjusts the difficulty of quizzes based on student performance.
 
 You are provided with the student's ID, the quiz ID, their score on the quiz, and the current difficulty level.

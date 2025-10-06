@@ -10,6 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import {googleAI} from '@genkit-ai/google-genai';
 
 const RecommendLearningPathsInputSchema = z.object({
   studentPerformanceData: z
@@ -33,6 +34,7 @@ const prompt = ai.definePrompt({
   name: 'recommendLearningPathsPrompt',
   input: {schema: RecommendLearningPathsInputSchema},
   output: {schema: RecommendLearningPathsOutputSchema},
+  model: googleAI.model('gemini-1.5-pro'),
   prompt: `You are an AI assistant that recommends personalized learning paths to students based on their performance data.
 
 Analyze the following student performance data and recommend a personalized learning path for the student. The learning path should include recommended subjects, difficulty levels, and resources.

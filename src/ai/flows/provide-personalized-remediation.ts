@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import {googleAI} from '@genkit-ai/google-genai';
 
 const PersonalizedRemediationInputSchema = z.object({
   topic: z.string().describe('The topic for which remediation is needed.'),
@@ -33,6 +34,7 @@ const prompt = ai.definePrompt({
   name: 'personalizedRemediationPrompt',
   input: {schema: PersonalizedRemediationInputSchema},
   output: {schema: PersonalizedRemediationOutputSchema},
+  model: googleAI.model('gemini-1.5-pro'),
   prompt: `You are an AI assistant helping students learn from their mistakes. A student answered the following question incorrectly, provide an explanation of the correct answer and a practice quiz to help them learn.
 
 Question: {{{question}}}

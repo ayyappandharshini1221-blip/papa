@@ -43,6 +43,7 @@ const generateQuizContentPrompt = ai.definePrompt({
   name: 'generateQuizContentPrompt',
   input: {schema: GenerateQuizContentInputSchema},
   output: {schema: GenerateQuizContentOutputSchema},
+  model: googleAI.model('gemini-2.5-flash'),
   prompt: `You are an expert quiz generator for teachers. Generate a quiz on the following subject: {{{subject}}}. The difficulty level should be {{{difficulty}}}.
 
 The quiz must contain exactly {{{numberOfQuestions}}} questions.
@@ -57,6 +58,7 @@ const generateBilingualTamilQuizPrompt = ai.definePrompt({
   name: 'generateBilingualTamilQuizPrompt',
   input: { schema: GenerateQuizContentInputSchema },
   output: { schema: GenerateQuizContentOutputSchema },
+  model: googleAI.model('gemini-2.5-flash'),
   prompt: `You are an expert quiz generator for teachers. Generate a quiz on the subject of Tamil. The difficulty level should be {{{difficulty}}}.
 
 The quiz must be bilingual, with all questions, answers, and explanations provided in both Tamil and English. For example: "கேள்வி (Question)".

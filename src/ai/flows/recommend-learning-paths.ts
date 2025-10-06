@@ -34,7 +34,6 @@ const prompt = ai.definePrompt({
   name: 'recommendLearningPathsPrompt',
   input: {schema: RecommendLearningPathsInputSchema},
   output: {schema: RecommendLearningPathsOutputSchema},
-  model: googleAI.model('gemini-2.5-pro'),
   prompt: `You are an AI assistant that recommends personalized learning paths to students based on their performance data.
 
 Analyze the following student performance data and recommend a personalized learning path for the student. The learning path should include recommended subjects, difficulty levels, and resources.
@@ -50,6 +49,14 @@ const recommendLearningPathsFlow = ai.defineFlow(
     name: 'recommendLearningPathsFlow',
     inputSchema: RecommendLearningPathsInputSchema,
     outputSchema: RecommendLearningPathsOutputSchema,
+    model: googleAI.model('gemini-2.5-flash'),
+    retry: {
+      maxAttempts: 5,
+      backoff: {
+        initialDelay: 3000,
+        multiplier: 2,
+      },
+    },
   },
   async input => {
     const {output} = await prompt(input);

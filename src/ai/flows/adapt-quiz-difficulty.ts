@@ -79,13 +79,6 @@ const adaptQuizDifficultyFlow = ai.defineFlow(
     name: 'adaptQuizDifficultyFlow',
     inputSchema: AdaptQuizDifficultyInputSchema,
     outputSchema: AdaptQuizDifficultyOutputSchema,
-    retry: {
-      maxAttempts: 5,
-      backoff: {
-        initialDelay: 3000,
-        multiplier: 2,
-      },
-    },
   },
   async input => {
     const {output} = await prompt(input);

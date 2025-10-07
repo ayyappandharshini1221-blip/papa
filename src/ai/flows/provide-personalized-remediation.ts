@@ -52,13 +52,6 @@ const providePersonalizedRemediationFlow = ai.defineFlow(
     name: 'providePersonalizedRemediationFlow',
     inputSchema: PersonalizedRemediationInputSchema,
     outputSchema: PersonalizedRemediationOutputSchema,
-    retry: {
-      maxAttempts: 5,
-      backoff: {
-        initialDelay: 3000,
-        multiplier: 2,
-      },
-    },
   },
   async input => {
     const {output} = await prompt(input);

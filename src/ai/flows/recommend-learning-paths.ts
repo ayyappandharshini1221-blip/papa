@@ -51,13 +51,6 @@ const recommendLearningPathsFlow = ai.defineFlow(
     name: 'recommendLearningPathsFlow',
     inputSchema: RecommendLearningPathsInputSchema,
     outputSchema: RecommendLearningPathsOutputSchema,
-    retry: {
-      maxAttempts: 5,
-      backoff: {
-        initialDelay: 3000,
-        multiplier: 2,
-      },
-    },
   },
   async input => {
     const {output} = await prompt(input);

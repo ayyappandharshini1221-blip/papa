@@ -53,7 +53,7 @@ const prompt = ai.definePrompt({
   name: 'adaptQuizDifficultyPrompt',
   input: {schema: AdaptQuizDifficultyInputSchema},
   output: {schema: AdaptQuizDifficultyOutputSchema},
-  model: googleAI.model('gemini-2.0-flash'),
+  model: googleAI.model('gemini-2.5-flash'),
   prompt: `You are an AI that adjusts the difficulty of quizzes based on student performance.
 
 You are provided with the student's ID, the quiz ID, their score on the quiz, and the current difficulty level.

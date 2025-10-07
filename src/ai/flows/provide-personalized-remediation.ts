@@ -51,7 +51,7 @@ const providePersonalizedRemediationFlow = ai.defineFlow(
     name: 'providePersonalizedRemediationFlow',
     inputSchema: PersonalizedRemediationInputSchema,
     outputSchema: PersonalizedRemediationOutputSchema,
-    model: googleAI.model('gemini-2.5-flash'),
+    model: googleAI.model('gemini-2.0-flash'),
     retry: {
       maxAttempts: 5,
       backoff: {

@@ -11,7 +11,10 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import { googleAI } from '@genkit-ai/google-genai';
+import {googleAI} from '@genkit-ai/google-genai';
+
+// In-memory cache for generated quizzes
+const quizCache = new Map<string, GenerateQuizContentOutput>();
 
 const GenerateQuizContentInputSchema = z.object({
   subject: z.string().describe('The subject of the quiz.'),
@@ -35,8 +38,16 @@ export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutput
 
 
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
-  // Directly call the flow to ensure a new quiz is generated every time.
-  return await generateQuizContentFlow(input);
+  const cacheKey = `${input.subject}-${input.difficulty}-${input.language || 'en'}`;
+  if (quizCache.has(cacheKey)) {
+    console.log('Serving from cache:', cacheKey);
+    return quizCache.get(cacheKey)!;
+  }
+  
+  console.log('Generating new quiz:', cacheKey);
+  const result = await generateQuizContentFlow(input);
+  quizCache.set(cacheKey, result);
+  return result;
 }
 
 const generateQuizContentPrompt = ai.definePrompt({
@@ -77,13 +88,6 @@ const generateQuizContentFlow = ai.defineFlow(
     name: 'generateQuizContentFlow',
     inputSchema: GenerateQuizContentInputSchema,
     outputSchema: GenerateQuizContentOutputSchema,
-    retry: {
-      maxAttempts: 5,
-      backoff: {
-        initialDelay: 3000,
-        multiplier: 2,
-      },
-    },
   },
   async input => {
     if ((input.subject.toLowerCase() === 'tamil') || (input.language === 'ta')) {

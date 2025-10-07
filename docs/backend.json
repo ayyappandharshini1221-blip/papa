@@ -1,0 +1,308 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user in the EduSmart AI platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the User entity."
+        },
+        "email": {
+          "type": "string",
+          "description": "User's email address.",
+          "format": "email"
+        },
+        "name": {
+          "type": "string",
+          "description": "User's full name."
+        },
+        "role": {
+          "type": "string",
+          "description": "User's role (teacher or student)."
+        },
+        "language": {
+          "type": "string",
+          "description": "User's preferred language."
+        },
+        "region": {
+          "type": "string",
+          "description": "User's region."
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "name",
+        "role"
+      ]
+    },
+    "Class": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Class",
+      "type": "object",
+      "description": "Represents a class in the EduSmart AI platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Class entity."
+        },
+        "teacherId": {
+          "type": "string",
+          "description": "Reference to Teacher (User). (Relationship: Teacher 1:N Class)"
+        },
+        "studentIds": {
+          "type": "array",
+          "description": "References to Students (Users) enrolled in the class. (Relationship: Class 1:N Student)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the class."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the class."
+        },
+        "inviteCode": {
+          "type": "string",
+          "description": "Unique code used for students to join the class."
+        }
+      },
+      "required": [
+        "id",
+        "teacherId",
+        "name",
+        "description",
+        "inviteCode"
+      ]
+    },
+    "Quiz": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Quiz",
+      "type": "object",
+      "description": "Represents a quiz in the EduSmart AI platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Quiz entity."
+        },
+        "subject": {
+          "type": "string",
+          "description": "Subject of the quiz."
+        },
+        "difficulty": {
+          "type": "string",
+          "description": "Difficulty level of the quiz (easy, medium, hard)."
+        },
+        "questions": {
+          "type": "array",
+          "description": "Array of questions in the quiz.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aiExplanation": {
+          "type": "string",
+          "description": "AI-generated explanations for the quiz."
+        },
+        "assignedTo": {
+          "type": "array",
+          "description": "References to Students (Users) assigned to the quiz. (Relationship: Quiz 1:N Student)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "Reference to Teacher (User) who created the quiz. (Relationship: Teacher 1:N Quiz)"
+        }
+      },
+      "required": [
+        "id",
+        "subject",
+        "difficulty",
+        "questions",
+        "aiExplanation",
+        "assignedTo",
+        "createdBy"
+      ]
+    },
+    "Badge": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Badge",
+      "type": "object",
+      "description": "Represents a badge in the EduSmart AI platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Badge entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the badge."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the badge."
+        },
+        "icon": {
+          "type": "string",
+          "description": "Icon associated with the badge."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "icon"
+      ]
+    },
+    "Leaderboard": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Leaderboard",
+      "type": "object",
+      "description": "Represents a leaderboard in the EduSmart AI platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Leaderboard entry."
+        },
+        "classId": {
+          "type": "string",
+          "description": "Reference to the Class the leaderboard belongs to. (Relationship: Class 1:N Leaderboard)"
+        },
+        "studentId": {
+          "type": "string",
+          "description": "Reference to the Student (User) on the leaderboard. (Relationship: Leaderboard 1:N Student)"
+        },
+        "xp": {
+          "type": "number",
+          "description": "XP points earned by the student."
+        },
+        "rank": {
+          "type": "number",
+          "description": "Rank of the student on the leaderboard."
+        },
+        "achievements": {
+          "type": "array",
+          "description": "List of achievements earned by the student.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "classId",
+        "studentId",
+        "xp",
+        "rank",
+        "achievements"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles. The 'userId' parameter is the Firebase Auth UID. Includes user role (teacher or student).",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The Firebase Auth UID of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "classes/{classId}",
+        "definition": {
+          "entityName": "Class",
+          "schema": {
+            "$ref": "#/backend/entities/Class"
+          },
+          "description": "Stores class information, including the teacherId (creator), studentIds (enrolled students), and class metadata. `teacherId` and `studentIds` are used to control access and authorize operations.",
+          "params": [
+            {
+              "name": "classId",
+              "description": "Unique identifier for the class."
+            }
+          ]
+        }
+      },
+      {
+        "path": "classes/{classId}/quizzes/{quizId}",
+        "definition": {
+          "entityName": "Quiz",
+          "schema": {
+            "$ref": "#/backend/entities/Quiz"
+          },
+          "description": "Stores quizzes assigned to a specific class. Authorization is based on the class membership, and only assigned students and the teacher can access these quizzes. Includes denormalized 'classId' for authorization independence.",
+          "params": [
+            {
+              "name": "classId",
+              "description": "Unique identifier for the class."
+            },
+            {
+              "name": "quizId",
+              "description": "Unique identifier for the quiz."
+            }
+          ]
+        }
+      },
+      {
+        "path": "badges/{badgeId}",
+        "definition": {
+          "entityName": "Badge",
+          "schema": {
+            "$ref": "#/backend/entities/Badge"
+          },
+          "description": "Stores information about available badges.",
+          "params": [
+            {
+              "name": "badgeId",
+              "description": "Unique identifier for the badge."
+            }
+          ]
+        }
+      },
+      {
+        "path": "classes/{classId}/leaderboard/{leaderboardId}",
+        "definition": {
+          "entityName": "Leaderboard",
+          "schema": {
+            "$ref": "#/backend/entities/Leaderboard"
+          },
+          "description": "Stores leaderboard data for a specific class. Includes denormalized 'classId' for authorization independence. Only students enrolled in the class and the teacher can access this data.",
+          "params": [
+            {
+              "name": "classId",
+              "description": "Unique identifier for the class."
+            },
+            {
+              "name": "leaderboardId",
+              "description": "Unique identifier for the leaderboard entry."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to support EduSmart AI's features while prioritizing security, scalability, and ease of debugging. Authorization Independence is achieved through denormalization. For example, the `classes/{classId}/leaderboard/{leaderboardId}` path will contain the `classId`, removing the need for `get()` calls to the parent `classes` document to authorize access. The structure utilizes Structural Segregation by placing quizzes created by a specific teacher under the teacher's document (`users/{userId}/quizzes/{quizId}`), while quizzes assigned to students are located under the class (`classes/{classId}/quizzes/{quizId}`), thus supporting role-based access and QAPs. The membership map pattern is used implicitly in the `classes` documents, with `teacherId` defining the teacher and `studentIds` as an array representing enrolled students, defining the class membership and allowing list operation via segregation."
+  }
+}

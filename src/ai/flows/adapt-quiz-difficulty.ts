@@ -78,7 +78,7 @@ const adaptQuizDifficultyFlow = ai.defineFlow(
     name: 'adaptQuizDifficultyFlow',
     inputSchema: AdaptQuizDifficultyInputSchema,
     outputSchema: AdaptQuizDifficultyOutputSchema,
-    model: googleAI.model('gemini-2.5-flash'),
+    model: googleAI.model('gemini-2.5-pro'),
     retry: {
       maxAttempts: 5,
       backoff: {

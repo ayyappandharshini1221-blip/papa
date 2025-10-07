@@ -50,7 +50,7 @@ const recommendLearningPathsFlow = ai.defineFlow(
     name: 'recommendLearningPathsFlow',
     inputSchema: RecommendLearningPathsInputSchema,
     outputSchema: RecommendLearningPathsOutputSchema,
-    model: googleAI.model('gemini-1.5-flash-latest'),
+    model: googleAI.model('gemini-2.0-flash'),
     retry: {
       maxAttempts: 5,
       backoff: {

@@ -35,6 +35,7 @@ const prompt = ai.definePrompt({
   name: 'personalizedRemediationPrompt',
   input: {schema: PersonalizedRemediationInputSchema},
   output: {schema: PersonalizedRemediationOutputSchema},
+  model: googleAI.model('gemini-2.0-flash'),
   prompt: `You are an AI assistant helping students learn from their mistakes. A student answered the following question incorrectly, provide an explanation of the correct answer and a practice quiz to help them learn.
 
 Question: {{{question}}}
@@ -51,7 +52,6 @@ const providePersonalizedRemediationFlow = ai.defineFlow(
     name: 'providePersonalizedRemediationFlow',
     inputSchema: PersonalizedRemediationInputSchema,
     outputSchema: PersonalizedRemediationOutputSchema,
-    model: googleAI.model('gemini-2.5-flash-lite'),
     retry: {
       maxAttempts: 5,
       backoff: {

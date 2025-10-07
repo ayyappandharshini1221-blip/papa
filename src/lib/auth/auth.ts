@@ -61,7 +61,7 @@ export const signUpWithEmail = async (
           };
 
     const userDocRef = doc(db, 'users', user.uid);
-    await setDoc(userDocRef, userProfile).catch((serverError) => {
+    setDoc(userDocRef, userProfile).catch((serverError) => {
       const permissionError = new FirestorePermissionError({
         path: userDocRef.path,
         operation: 'create',
@@ -109,7 +109,7 @@ export const signInWithEmail = async (email: string, password: string) => {
       badges: [],
       classIds: [],
     };
-    await setDoc(userDocRef, userProfile).catch((serverError) => {
+    setDoc(userDocRef, userProfile).catch((serverError) => {
         const permissionError = new FirestorePermissionError({
             path: userDocRef.path,
             operation: 'create',
@@ -141,12 +141,22 @@ export const onAuthChange = (callback: (user: User | null) => void) => {
   const db = getDb();
   return onAuthStateChanged(auth, async (firebaseUser: FirebaseUser | null) => {
     if (firebaseUser) {
-      const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));
-      if (userDoc.exists()) {
-        callback(userDoc.data() as User);
-      } else {
-        console.warn(`User with UID ${firebaseUser.uid} authenticated but has no Firestore document.`);
-        callback(null);
+      const userDocRef = doc(db, 'users', firebaseUser.uid);
+      try {
+        const userDoc = await getDoc(userDocRef);
+        if (userDoc.exists()) {
+          callback(userDoc.data() as User);
+        } else {
+          console.warn(`User with UID ${firebaseUser.uid} authenticated but has no Firestore document.`);
+          callback(null);
+        }
+      } catch (error) {
+          const permissionError = new FirestorePermissionError({
+            path: userDocRef.path,
+            operation: 'get',
+          });
+          errorEmitter.emit('permission-error', permissionError);
+          callback(null);
       }
     } else {
       callback(null);

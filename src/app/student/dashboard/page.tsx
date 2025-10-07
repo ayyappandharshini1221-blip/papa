@@ -126,26 +126,27 @@ export default function StudentDashboard() {
       const classId = classDoc.id;
 
       const studentDocRef = doc(db, 'users', user.id);
-
-      updateDoc(studentDocRef, {
+      const studentUpdateData = {
         classIds: arrayUnion(classId),
-      }).catch((serverError) => {
+      };
+      updateDoc(studentDocRef, studentUpdateData).catch((serverError) => {
         const permissionError = new FirestorePermissionError({
           path: studentDocRef.path,
           operation: 'update',
-          requestResourceData: { classIds: arrayUnion(classId) },
+          requestResourceData: studentUpdateData,
         });
         errorEmitter.emit('permission-error', permissionError);
       });
 
       const classDocRef = doc(db, 'classes', classId);
-      updateDoc(classDocRef, {
+      const classUpdateData = {
         studentIds: arrayUnion(user.id),
-      }).catch((serverError) => {
+      };
+      updateDoc(classDocRef, classUpdateData).catch((serverError) => {
         const permissionError = new FirestorePermissionError({
           path: classDocRef.path,
           operation: 'update',
-          requestResourceData: { studentIds: arrayUnion(user.id) },
+          requestResourceData: classUpdateData,
         });
         errorEmitter.emit('permission-error', permissionError);
       });

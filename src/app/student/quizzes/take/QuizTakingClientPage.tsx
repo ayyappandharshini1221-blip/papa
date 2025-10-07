@@ -199,7 +199,7 @@ export default function QuizTakingClientPage() {
 
       const totalXpGained = xpGained + badgeXp;
 
-      await updateDoc(studentDocRef, updates)
+      updateDoc(studentDocRef, updates)
         .catch(serverError => {
             const permissionError = new FirestorePermissionError({
               path: studentDocRef.path,
@@ -235,10 +235,11 @@ export default function QuizTakingClientPage() {
       })
 
     } catch (err) {
-      console.error("Error updating student data: ", err);
+      // This will only catch client-side errors, not the Firestore permission error from the non-blocking call.
+      console.error("Client-side error during submit: ", err);
       toast({
-        title: 'Update Failed',
-        description: 'Could not save your progress, but your score is recorded here.',
+        title: 'An Unexpected Error Occurred',
+        description: 'Could not process the quiz submission.',
         variant: 'destructive',
       });
     }

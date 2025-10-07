@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -72,7 +73,7 @@ export default function ClassesPage() {
 
       const classesCollection = collection(db, 'classes');
 
-      await addDoc(classesCollection, newClassData).catch((serverError) => {
+      addDoc(classesCollection, newClassData).catch((serverError) => {
         const permissionError = new FirestorePermissionError({
           path: classesCollection.path,
           operation: 'create',

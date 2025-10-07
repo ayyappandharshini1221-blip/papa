@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview This file defines a Genkit flow for providing personalized remediation to students based on their wrong answers.
@@ -50,7 +51,7 @@ const providePersonalizedRemediationFlow = ai.defineFlow(
     name: 'providePersonalizedRemediationFlow',
     inputSchema: PersonalizedRemediationInputSchema,
     outputSchema: PersonalizedRemediationOutputSchema,
-    model: googleAI.model('gemini-2.0-flash'),
+    model: googleAI.model('gemini-1.5-flash-latest'),
     retry: {
       maxAttempts: 5,
       backoff: {

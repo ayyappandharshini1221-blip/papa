@@ -123,3657 +123,2583 @@ export const staticQuizData = {
           "correctAnswerIndex": 3,
           "explanation": "To add 27 and 86, you add the tens place (20 + 80 = 100) and the ones place (7 + 6 = 13), then add them together (100 + 13 = 113)."
         }
-      ],
-      [
-        {
-          "id": 11,
-          "question": "What is 21 + 60?",
-          "answers": [
-            "80",
-            "86",
-            "83",
-            "81"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 21 and 60, you add the tens place (20 + 60 = 80) and the ones place (1 + 0 = 1), then add them together (80 + 1 = 81)."
-        },
-        {
-          "id": 12,
-          "question": "What is 8 + 30?",
-          "answers": [
-            "28",
-            "39",
-            "40",
-            "38"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 8 and 30, you add the tens place (0 + 30 = 30) and the ones place (8 + 0 = 8), then add them together (30 + 8 = 38)."
-        },
-        {
-          "id": 13,
-          "question": "What is 73 + 41?",
-          "answers": [
-            "116",
-            "114",
-            "112",
-            "117"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 73 and 41, you add the tens place (70 + 40 = 110) and the ones place (3 + 1 = 4), then add them together (110 + 4 = 114)."
-        },
-        {
-          "id": 14,
-          "question": "What is 18 + 32?",
-          "answers": [
-            "49",
-            "50",
-            "60",
-            "55"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 18 and 32, you add the tens place (10 + 30 = 40) and the ones place (8 + 2 = 10), then add them together (40 + 10 = 50)."
-        },
-        {
-          "id": 15,
-          "question": "What is 47 + 29?",
-          "answers": [
-            "73",
-            "76",
-            "79",
-            "81"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 47 and 29, you add the tens place (40 + 20 = 60) and the ones place (7 + 9 = 16), then add them together (60 + 16 = 76)."
-        },
-        {
-          "id": 16,
-          "question": "What is 20 + 81?",
-          "answers": [
-            "103",
-            "101",
-            "111",
-            "98"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 20 and 81, you add the tens place (20 + 80 = 100) and the ones place (0 + 1 = 1), then add them together (100 + 1 = 101)."
-        },
-        {
-          "id": 17,
-          "question": "What is 77 + 60?",
-          "answers": [
-            "127",
-            "137",
-            "142",
-            "136"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 77 and 60, you add the tens place (70 + 60 = 130) and the ones place (7 + 0 = 7), then add them together (130 + 7 = 137)."
-        },
-        {
-          "id": 18,
-          "question": "What is 83 + 44?",
-          "answers": [
-            "126",
-            "129",
-            "127",
-            "122"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 83 and 44, you add the tens place (80 + 40 = 120) and the ones place (3 + 4 = 7), then add them together (120 + 7 = 127)."
-        },
-        {
-          "id": 19,
-          "question": "What is 34 + 65?",
-          "answers": [
-            "99",
-            "96",
-            "94",
-            "104"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 34 and 65, you add the tens place (30 + 60 = 90) and the ones place (4 + 5 = 9), then add them together (90 + 9 = 99)."
-        },
-        {
-          "id": 20,
-          "question": "What is 20 + 48?",
-          "answers": [
-            "68",
-            "73",
-            "65",
-            "58"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 20 and 48, you add the tens place (20 + 40 = 60) and the ones place (0 + 8 = 8), then add them together (60 + 8 = 68)."
-        }
-      ],
-      [
-        {
-          "id": 21,
-          "question": "What is 15 + 47?",
-          "answers": [
-            "52",
-            "60",
-            "62",
-            "61"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 15 and 47, you add the tens place (10 + 40 = 50) and the ones place (5 + 7 = 12), then add them together (50 + 12 = 62)."
-        },
-        {
-          "id": 22,
-          "question": "What is 11 + 63?",
-          "answers": [
-            "74",
-            "79",
-            "71",
-            "69"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 11 and 63, you add the tens place (10 + 60 = 70) and the ones place (1 + 3 = 4), then add them together (70 + 4 = 74)."
-        },
-        {
-          "id": 23,
-          "question": "What is 71 + 22?",
-          "answers": [
-            "92",
-            "93",
-            "98",
-            "103"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 71 and 22, you add the tens place (70 + 20 = 90) and the ones place (1 + 2 = 3), then add them together (90 + 3 = 93)."
-        },
-        {
-          "id": 24,
-          "question": "What is 40 + 52?",
-          "answers": [
-            "92",
-            "93",
-            "97",
-            "95"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 40 and 52, you add the tens place (40 + 50 = 90) and the ones place (0 + 2 = 2), then add them together (90 + 2 = 92)."
-        },
-        {
-          "id": 25,
-          "question": "What is 29 + 9?",
-          "answers": [
-            "39",
-            "48",
-            "38",
-            "28"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 29 and 9, you add the tens place (20 + 0 = 20) and the ones place (9 + 9 = 18), then add them together (20 + 18 = 38)."
-        },
-        {
-          "id": 26,
-          "question": "What is 1 + 10?",
-          "answers": [
-            "9",
-            "6",
-            "11",
-            "1"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 1 and 10, you add the tens place (0 + 10 = 10) and the ones place (1 + 0 = 1), then add them together (10 + 1 = 11)."
-        },
-        {
-          "id": 27,
-          "question": "What is 66 + 31?",
-          "answers": [
-            "96",
-            "95",
-            "100",
-            "97"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 66 and 31, you add the tens place (60 + 30 = 90) and the ones place (6 + 1 = 7), then add them together (90 + 7 = 97)."
-        },
-        {
-          "id": 28,
-          "question": "What is 32 + 61?",
-          "answers": [
-            "95",
-            "91",
-            "93",
-            "88"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 32 and 61, you add the tens place (30 + 60 = 90) and the ones place (2 + 1 = 3), then add them together (90 + 3 = 93)."
-        },
-        {
-          "id": 29,
-          "question": "What is 46 + 55?",
-          "answers": [
-            "101",
-            "91",
-            "103",
-            "104"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 46 and 55, you add the tens place (40 + 50 = 90) and the ones place (6 + 5 = 11), then add them together (90 + 11 = 101)."
-        },
-        {
-          "id": 30,
-          "question": "What is 44 + 14?",
-          "answers": [
-            "61",
-            "56",
-            "63",
-            "58"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 44 and 14, you add the tens place (40 + 10 = 50) and the ones place (4 + 4 = 8), then add them together (50 + 8 = 58)."
-        }
-      ],
-      [
-        {
-          "id": 31,
-          "question": "What is 36 + 60?",
-          "answers": [
-            "99",
-            "91",
-            "94",
-            "96"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 36 and 60, you add the tens place (30 + 60 = 90) and the ones place (6 + 0 = 6), then add them together (90 + 6 = 96)."
-        },
-        {
-          "id": 32,
-          "question": "What is 12 + 31?",
-          "answers": [
-            "45",
-            "43",
-            "40",
-            "46"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 12 and 31, you add the tens place (10 + 30 = 40) and the ones place (2 + 1 = 3), then add them together (40 + 3 = 43)."
-        },
-        {
-          "id": 33,
-          "question": "What is 8 + 22?",
-          "answers": [
-            "32",
-            "29",
-            "20",
-            "30"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 8 and 22, you add the tens place (0 + 20 = 20) and the ones place (8 + 2 = 10), then add them together (20 + 10 = 30)."
-        },
-        {
-          "id": 34,
-          "question": "What is 90 + 72?",
-          "answers": [
-            "162",
-            "159",
-            "160",
-            "165"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 90 and 72, you add the tens place (90 + 70 = 160) and the ones place (0 + 2 = 2), then add them together (160 + 2 = 162)."
-        },
-        {
-          "id": 35,
-          "question": "What is 75 + 70?",
-          "answers": [
-            "146",
-            "145",
-            "155",
-            "135"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 75 and 70, you add the tens place (70 + 70 = 140) and the ones place (5 + 0 = 5), then add them together (140 + 5 = 145)."
-        },
-        {
-          "id": 36,
-          "question": "What is 8 + 66?",
-          "answers": [
-            "84",
-            "71",
-            "69",
-            "74"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 8 and 66, you add the tens place (0 + 60 = 60) and the ones place (8 + 6 = 14), then add them together (60 + 14 = 74)."
-        },
-        {
-          "id": 37,
-          "question": "What is 52 + 16?",
-          "answers": [
-            "78",
-            "58",
-            "68",
-            "66"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 52 and 16, you add the tens place (50 + 10 = 60) and the ones place (2 + 6 = 8), then add them together (60 + 8 = 68)."
-        },
-        {
-          "id": 38,
-          "question": "What is 34 + 27?",
-          "answers": [
-            "61",
-            "60",
-            "59",
-            "62"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 34 and 27, you add the tens place (30 + 20 = 50) and the ones place (4 + 7 = 11), then add them together (50 + 11 = 61)."
-        },
-        {
-          "id": 39,
-          "question": "What is 59 + 41?",
-          "answers": [
-            "100",
-            "103",
-            "95",
-            "90"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 59 and 41, you add the tens place (50 + 40 = 90) and the ones place (9 + 1 = 10), then add them together (90 + 10 = 100)."
-        },
-        {
-          "id": 40,
-          "question": "What is 65 + 34?",
-          "answers": [
-            "96",
-            "100",
-            "94",
-            "99"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 65 and 34, you add the tens place (60 + 30 = 90) and the ones place (5 + 4 = 9), then add them together (90 + 9 = 99)."
-        }
-      ],
-      [
-        {
-          "id": 41,
-          "question": "What is 21 + 57?",
-          "answers": [
-            "78",
-            "83",
-            "77",
-            "88"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 21 and 57, you add the tens place (20 + 50 = 70) and the ones place (1 + 7 = 8), then add them together (70 + 8 = 78)."
-        },
-        {
-          "id": 42,
-          "question": "What is 85 + 14?",
-          "answers": [
-            "98",
-            "94",
-            "99",
-            "96"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 85 and 14, you add the tens place (80 + 10 = 90) and the ones place (5 + 4 = 9), then add them together (90 + 9 = 99)."
-        },
-        {
-          "id": 43,
-          "question": "What is 35 + 37?",
-          "answers": [
-            "72",
-            "70",
-            "82",
-            "73"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 35 and 37, you add the tens place (30 + 30 = 60) and the ones place (5 + 7 = 12), then add them together (60 + 12 = 72)."
-        },
-        {
-          "id": 44,
-          "question": "What is 65 + 63?",
-          "answers": [
-            "118",
-            "128",
-            "123",
-            "127"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 65 and 63, you add the tens place (60 + 60 = 120) and the ones place (5 + 3 = 8), then add them together (120 + 8 = 128)."
-        },
-        {
-          "id": 45,
-          "question": "What is 1 + 43?",
-          "answers": [
-            "43",
-            "41",
-            "44",
-            "47"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 1 and 43, you add the tens place (0 + 40 = 40) and the ones place (1 + 3 = 4), then add them together (40 + 4 = 44)."
-        },
-        {
-          "id": 46,
-          "question": "What is 15 + 10?",
-          "answers": [
-            "15",
-            "25",
-            "30",
-            "22"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 15 and 10, you add the tens place (10 + 10 = 20) and the ones place (5 + 0 = 5), then add them together (20 + 5 = 25)."
-        },
-        {
-          "id": 47,
-          "question": "What is 56 + 17?",
-          "answers": [
-            "74",
-            "63",
-            "73",
-            "72"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 56 and 17, you add the tens place (50 + 10 = 60) and the ones place (6 + 7 = 13), then add them together (60 + 13 = 73)."
-        },
-        {
-          "id": 48,
-          "question": "What is 88 + 32?",
-          "answers": [
-            "121",
-            "120",
-            "115",
-            "125"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 88 and 32, you add the tens place (80 + 30 = 110) and the ones place (8 + 2 = 10), then add them together (110 + 10 = 120)."
-        },
-        {
-          "id": 49,
-          "question": "What is 31 + 21?",
-          "answers": [
-            "49",
-            "54",
-            "52",
-            "42"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 31 and 21, you add the tens place (30 + 20 = 50) and the ones place (1 + 1 = 2), then add them together (50 + 2 = 52)."
-        },
-        {
-          "id": 50,
-          "question": "What is 53 + 86?",
-          "answers": [
-            "138",
-            "139",
-            "137",
-            "136"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 53 and 86, you add the tens place (50 + 80 = 130) and the ones place (3 + 6 = 9), then add them together (130 + 9 = 139)."
-        }
-      ],
-      [
-        {
-          "id": 51,
-          "question": "What is 61 + 29?",
-          "answers": [
-            "90",
-            "93",
-            "88",
-            "91"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 61 and 29, you add the tens place (60 + 20 = 80) and the ones place (1 + 9 = 10), then add them together (80 + 10 = 90)."
-        },
-        {
-          "id": 52,
-          "question": "What is 4 + 85?",
-          "answers": [
-            "87",
-            "90",
-            "89",
-            "91"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 4 and 85, you add the tens place (0 + 80 = 80) and the ones place (4 + 5 = 9), then add them together (80 + 9 = 89)."
-        },
-        {
-          "id": 53,
-          "question": "What is 45 + 83?",
-          "answers": [
-            "130",
-            "129",
-            "133",
-            "128"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 45 and 83, you add the tens place (40 + 80 = 120) and the ones place (5 + 3 = 8), then add them together (120 + 8 = 128)."
-        },
-        {
-          "id": 54,
-          "question": "What is 23 + 75?",
-          "answers": [
-            "88",
-            "98",
-            "97",
-            "93"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 23 and 75, you add the tens place (20 + 70 = 90) and the ones place (3 + 5 = 8), then add them together (90 + 8 = 98)."
-        },
-        {
-          "id": 55,
-          "question": "What is 56 + 78?",
-          "answers": [
-            "139",
-            "136",
-            "134",
-            "129"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 56 and 78, you add the tens place (50 + 70 = 120) and the ones place (6 + 8 = 14), then add them together (120 + 14 = 134)."
-        },
-        {
-          "id": 56,
-          "question": "What is 56 + 1?",
-          "answers": [
-            "62",
-            "58",
-            "57",
-            "55"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 56 and 1, you add the tens place (50 + 0 = 50) and the ones place (6 + 1 = 7), then add them together (50 + 7 = 57)."
-        },
-        {
-          "id": 57,
-          "question": "What is 80 + 41?",
-          "answers": [
-            "120",
-            "121",
-            "126",
-            "116"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 80 and 41, you add the tens place (80 + 40 = 120) and the ones place (0 + 1 = 1), then add them together (120 + 1 = 121)."
-        },
-        {
-          "id": 58,
-          "question": "What is 42 + 52?",
-          "answers": [
-            "91",
-            "93",
-            "94",
-            "99"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 42 and 52, you add the tens place (40 + 50 = 90) and the ones place (2 + 2 = 4), then add them together (90 + 4 = 94)."
-        },
-        {
-          "id": 59,
-          "question": "What is 87 + 23?",
-          "answers": [
-            "110",
-            "109",
-            "112",
-            "120"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 87 and 23, you add the tens place (80 + 20 = 100) and the ones place (7 + 3 = 10), then add them together (100 + 10 = 110)."
-        },
-        {
-          "id": 60,
-          "question": "What is 27 + 56?",
-          "answers": [
-            "93",
-            "83",
-            "84",
-            "86"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 27 and 56, you add the tens place (20 + 50 = 70) and the ones place (7 + 6 = 13), then add them together (70 + 13 = 83)."
-        }
-      ],
-      [
-        {
-          "id": 61,
-          "question": "What is 66 + 61?",
-          "answers": [
-            "124",
-            "127",
-            "122",
-            "126"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 66 and 61, you add the tens place (60 + 60 = 120) and the ones place (6 + 1 = 7), then add them together (120 + 7 = 127)."
-        },
-        {
-          "id": 62,
-          "question": "What is 87 + 40?",
-          "answers": [
-            "125",
-            "124",
-            "127",
-            "117"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 87 and 40, you add the tens place (80 + 40 = 120) and the ones place (7 + 0 = 7), then add them together (120 + 7 = 127)."
-        },
-        {
-          "id": 63,
-          "question": "What is 79 + 10?",
-          "answers": [
-            "99",
-            "92",
-            "91",
-            "89"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 79 and 10, you add the tens place (70 + 10 = 80) and the ones place (9 + 0 = 9), then add them together (80 + 9 = 89)."
-        },
-        {
-          "id": 64,
-          "question": "What is 64 + 52?",
-          "answers": [
-            "116",
-            "106",
-            "114",
-            "113"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 64 and 52, you add the tens place (60 + 50 = 110) and the ones place (4 + 2 = 6), then add them together (110 + 6 = 116)."
-        },
-        {
-          "id": 65,
-          "question": "What is 23 + 90?",
-          "answers": [
-            "118",
-            "103",
-            "113",
-            "116"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 23 and 90, you add the tens place (20 + 90 = 110) and the ones place (3 + 0 = 3), then add them together (110 + 3 = 113)."
-        },
-        {
-          "id": 66,
-          "question": "What is 18 + 60?",
-          "answers": [
-            "88",
-            "83",
-            "78",
-            "79"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 18 and 60, you add the tens place (10 + 60 = 70) and the ones place (8 + 0 = 8), then add them together (70 + 8 = 78)."
-        },
-        {
-          "id": 67,
-          "question": "What is 71 + 58?",
-          "answers": [
-            "128",
-            "126",
-            "132",
-            "129"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 71 and 58, you add the tens place (70 + 50 = 120) and the ones place (1 + 8 = 9), then add them together (120 + 9 = 129)."
-        },
-        {
-          "id": 68,
-          "question": "What is 67 + 63?",
-          "answers": [
-            "133",
-            "129",
-            "130",
-            "128"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 67 and 63, you add the tens place (60 + 60 = 120) and the ones place (7 + 3 = 10), then add them together (120 + 10 = 130)."
-        },
-        {
-          "id": 69,
-          "question": "What is 31 + 35?",
-          "answers": [
-            "71",
-            "61",
-            "66",
-            "67"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 31 and 35, you add the tens place (30 + 30 = 60) and the ones place (1 + 5 = 6), then add them together (60 + 6 = 66)."
-        },
-        {
-          "id": 70,
-          "question": "What is 50 + 89?",
-          "answers": [
-            "136",
-            "139",
-            "137",
-            "134"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 50 and 89, you add the tens place (50 + 80 = 130) and the ones place (0 + 9 = 9), then add them together (130 + 9 = 139)."
-        }
-      ],
-      [
-        {
-          "id": 71,
-          "question": "What is 70 + 60?",
-          "answers": [
-            "132",
-            "120",
-            "130",
-            "128"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 70 and 60, you simply add the two numbers together, which equals 130."
-        },
-        {
-          "id": 72,
-          "question": "What is 74 + 49?",
-          "answers": [
-            "113",
-            "126",
-            "123",
-            "124"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 74 and 49, you add the tens place (70 + 40 = 110) and the ones place (4 + 9 = 13), then add them together (110 + 13 = 123)."
-        },
-        {
-          "id": 73,
-          "question": "What is 69 + 70?",
-          "answers": [
-            "137",
-            "149",
-            "142",
-            "139"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 69 and 70, you add the tens place (60 + 70 = 130) and the ones place (9 + 0 = 9), then add them together (130 + 9 = 139)."
-        },
-        {
-          "id": 74,
-          "question": "What is 63 + 4?",
-          "answers": [
-            "67",
-            "68",
-            "64",
-            "69"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 63 and 4, you simply add the two numbers, which equals 67."
-        },
-        {
-          "id": 75,
-          "question": "What is 51 + 76?",
-          "answers": [
-            "117",
-            "122",
-            "137",
-            "127"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 51 and 76, you add the tens place (50 + 70 = 120) and the ones place (1 + 6 = 7), then add them together (120 + 7 = 127)."
-        },
-        {
-          "id": 76,
-          "question": "What is 24 + 7?",
-          "answers": [
-            "32",
-            "30",
-            "31",
-            "33"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 24 and 7, you simply add the two numbers, which equals 31."
-        },
-        {
-          "id": 77,
-          "question": "What is 44 + 49?",
-          "answers": [
-            "92",
-            "93",
-            "88",
-            "95"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 44 and 49, you add the tens place (40 + 40 = 80) and the ones place (4 + 9 = 13), then add them together (80 + 13 = 93)."
-        },
-        {
-          "id": 78,
-          "question": "What is 45 + 29?",
-          "answers": [
-            "69",
-            "72",
-            "64",
-            "74"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 45 and 29, you add the tens place (40 + 20 = 60) and the ones place (5 + 9 = 14), then add them together (60 + 14 = 74)."
-        },
-        {
-          "id": 79,
-          "question": "What is 31 + 17?",
-          "answers": [
-            "48",
-            "58",
-            "51",
-            "43"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 31 and 17, you add the tens place (30 + 10 = 40) and the ones place (1 + 7 = 8), then add them together (40 + 8 = 48)."
-        },
-        {
-          "id": 80,
-          "question": "What is 48 + 22?",
-          "answers": [
-            "65",
-            "70",
-            "80",
-            "67"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 48 and 22, you add the tens place (40 + 20 = 60) and the ones place (8 + 2 = 10), then add them together (60 + 10 = 70)."
-        }
-      ],
-      [
-        {
-          "id": 81,
-          "question": "What is 40 + 74?",
-          "answers": [
-            "116",
-            "109",
-            "112",
-            "114"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 40 and 74, you add the tens place (40 + 70 = 110) and the ones place (0 + 4 = 4), then add them together (110 + 4 = 114)."
-        },
-        {
-          "id": 82,
-          "question": "What is 88 + 77?",
-          "answers": [
-            "160",
-            "155",
-            "175",
-            "165"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 88 and 77, you add the tens place (80 + 70 = 150) and the ones place (8 + 7 = 15), then add them together (150 + 15 = 165)."
-        },
-        {
-          "id": 83,
-          "question": "What is 85 + 48?",
-          "answers": [
-            "134",
-            "133",
-            "138",
-            "128"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 85 and 48, you add the tens place (80 + 40 = 120) and the ones place (5 + 8 = 13), then add them together (120 + 13 = 133)."
-        },
-        {
-          "id": 84,
-          "question": "What is 14 + 56?",
-          "answers": [
-            "70",
-            "67",
-            "73",
-            "71"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 14 and 56, you add the tens place (10 + 50 = 60) and the ones place (4 + 6 = 10), then add them together (60 + 10 = 70)."
-        },
-        {
-          "id": 85,
-          "question": "What is 79 + 69?",
-          "answers": [
-            "151",
-            "158",
-            "148",
-            "150"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 79 and 69, you add the tens place (70 + 60 = 130) and the ones place (9 + 9 = 18), then add them together (130 + 18 = 148)."
-        },
-        {
-          "id": 86,
-          "question": "What is 12 + 36?",
-          "answers": [
-            "51",
-            "48",
-            "58",
-            "46"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 12 and 36, you add the tens place (10 + 30 = 40) and the ones place (2 + 6 = 8), then add them together (40 + 8 = 48)."
-        },
-        {
-          "id": 87,
-          "question": "What is 64 + 42?",
-          "answers": [
-            "104",
-            "103",
-            "106",
-            "109"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 64 and 42, you add the tens place (60 + 40 = 100) and the ones place (4 + 2 = 6), then add them together (100 + 6 = 106)."
-        },
-        {
-          "id": 88,
-          "question": "What is 36 + 77?",
-          "answers": [
-            "103",
-            "118",
-            "112",
-            "113"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 36 and 77, you add the tens place (30 + 70 = 100) and the ones place (6 + 7 = 13), then add them together (100 + 13 = 113)."
-        },
-        {
-          "id": 89,
-          "question": "What is 53 + 63?",
-          "answers": [
-            "116",
-            "121",
-            "114",
-            "119"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 53 and 63, you add the tens place (50 + 60 = 110) and the ones place (3 + 3 = 6), then add them together (110 + 6 = 116)."
-        },
-        {
-          "id": 90,
-          "question": "What is 12 + 38?",
-          "answers": [
-            "48",
-            "52",
-            "49",
-            "50"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 12 and 38, you add the tens place (10 + 30 = 40) and the ones place (2 + 8 = 10), then add them together (40 + 10 = 50)."
-        }
-      ],
-      [
-        {
-          "id": 91,
-          "question": "What is 55 + 71?",
-          "answers": [
-            "127",
-            "129",
-            "125",
-            "126"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 55 and 71, you add the tens place (50 + 70 = 120) and the ones place (5 + 1 = 6), then add them together (120 + 6 = 126)."
-        },
-        {
-          "id": 92,
-          "question": "What is 16 + 25?",
-          "answers": [
-            "46",
-            "36",
-            "41",
-            "42"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 16 and 25, you add the tens place (10 + 20 = 30) and the ones place (6 + 5 = 11), then add them together (30 + 11 = 41)."
-        },
-        {
-          "id": 93,
-          "question": "What is 62 + 36?",
-          "answers": [
-            "108",
-            "98",
-            "103",
-            "97"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 62 and 36, you add the tens place (60 + 30 = 90) and the ones place (2 + 6 = 8), then add them together (90 + 8 = 98)."
-        },
-        {
-          "id": 94,
-          "question": "What is 30 + 47?",
-          "answers": [
-            "76",
-            "74",
-            "77",
-            "67"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 30 and 47, you add the tens place (30 + 40 = 70) and the ones place (0 + 7 = 7), then add them together (70 + 7 = 77)."
-        },
-        {
-          "id": 95,
-          "question": "What is 7 + 71?",
-          "answers": [
-            "77",
-            "75",
-            "78",
-            "81"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 7 and 71, you add the tens place (0 + 70 = 70) and the ones place (7 + 1 = 8), then add them together (70 + 8 = 78)."
-        },
-        {
-          "id": 96,
-          "question": "What is 61 + 62?",
-          "answers": [
-            "126",
-            "124",
-            "123",
-            "120"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 61 and 62, you add the tens place (60 + 60 = 120) and the ones place (1 + 2 = 3), then add them together (120 + 3 = 123)."
-        },
-        {
-          "id": 97,
-          "question": "What is 15 + 9?",
-          "answers": [
-            "19",
-            "26",
-            "27",
-            "24"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 15 and 9, you simply add the two numbers, which equals 24."
-        },
-        {
-          "id": 98,
-          "question": "What is 73 + 39?",
-          "answers": [
-            "107",
-            "112",
-            "117",
-            "110"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 73 and 39, you add the tens place (70 + 30 = 100) and the ones place (3 + 9 = 12), then add them together (100 + 12 = 112)."
-        },
-        {
-          "id": 99,
-          "question": "What is 67 + 49?",
-          "answers": [
-            "126",
-            "115",
-            "116",
-            "119"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 67 and 49, you add the tens place (60 + 40 = 100) and the ones place (7 + 9 = 16), then add them together (100 + 16 = 116)."
-        },
-        {
-          "id": 100,
-          "question": "What is 79 + 13?",
-          "answers": [
-            "87",
-            "92",
-            "90",
-            "91"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 79 and 13, you add the tens place (70 + 10 = 80) and the ones place (9 + 3 = 12), then add them together (80 + 12 = 92)."
-        }
-      ],
-      [
-        {
-          "id": 101,
-          "question": "What is 71 + 10?",
-          "answers": [
-            "81",
-            "83",
-            "78",
-            "71"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 71 and 10, you add the tens place (70 + 10 = 80) and the ones place (1 + 0 = 1), then add them together (80 + 1 = 81)."
-        },
-        {
-          "id": 102,
-          "question": "What is 38 + 5?",
-          "answers": [
-            "42",
-            "46",
-            "43",
-            "41"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 38 and 5, you simply add the two numbers, which equals 43."
-        },
-        {
-          "id": 103,
-          "question": "What is 34 + 81?",
-          "answers": [
-            "117",
-            "125",
-            "115",
-            "113"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 34 and 81, you add the tens place (30 + 80 = 110) and the ones place (4 + 1 = 5), then add them together (110 + 5 = 115)."
-        },
-        {
-          "id": 104,
-          "question": "What is 83 + 20?",
-          "answers": [
-            "102",
-            "100",
-            "103",
-            "98"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 83 and 20, you add the tens place (80 + 20 = 100) and the ones place (3 + 0 = 3), then add them together (100 + 3 = 103)."
-        },
-        {
-          "id": 105,
-          "question": "What is 77 + 73?",
-          "answers": [
-            "153",
-            "145",
-            "149",
-            "150"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 77 and 73, you add the tens place (70 + 70 = 140) and the ones place (7 + 3 = 10), then add them together (140 + 10 = 150)."
-        },
-        {
-          "id": 106,
-          "question": "What is 90 + 52?",
-          "answers": [
-            "147",
-            "141",
-            "145",
-            "142"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 90 and 52, you add the tens place (90 + 50 = 140) and the ones place (0 + 2 = 2), then add them together (140 + 2 = 142)."
-        },
-        {
-          "id": 107,
-          "question": "What is 56 + 42?",
-          "answers": [
-            "97",
-            "98",
-            "108",
-            "88"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 56 and 42, you add the tens place (50 + 40 = 90) and the ones place (6 + 2 = 8), then add them together (90 + 8 = 98)."
-        },
-        {
-          "id": 108,
-          "question": "What is 87 + 35?",
-          "answers": [
-            "112",
-            "122",
-            "132",
-            "119"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 87 and 35, you add the tens place (80 + 30 = 110) and the ones place (7 + 5 = 12), then add them together (110 + 12 = 122)."
-        },
-        {
-          "id": 109,
-          "question": "What is 36 + 24?",
-          "answers": [
-            "63",
-            "70",
-            "60",
-            "62"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 36 and 24, you add the tens place (30 + 20 = 50) and the ones place (6 + 4 = 10), then add them together (50 + 10 = 60)."
-        },
-        {
-          "id": 110,
-          "question": "What is 53 + 43?",
-          "answers": [
-            "96",
-            "93",
-            "97",
-            "91"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 53 and 43, you add the tens place (50 + 40 = 90) and the ones place (3 + 3 = 6), then add them together (90 + 6 = 96)."
-        }
-      ],
-      [
-        {
-          "id": 111,
-          "question": "What is 37 + 85?",
-          "answers": [
-            "124",
-            "122",
-            "112",
-            "127"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 37 and 85, you add the tens place (30 + 80 = 110) and the ones place (7 + 5 = 12), then add them together (110 + 12 = 122)."
-        },
-        {
-          "id": 112,
-          "question": "What is 33 + 42?",
-          "answers": [
-            "70",
-            "75",
-            "77",
-            "80"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 33 and 42, you add the tens place (30 + 40 = 70) and the ones place (3 + 2 = 5), then add them together (70 + 5 = 75)."
-        },
-        {
-          "id": 113,
-          "question": "What is 53 + 7?",
-          "answers": [
-            "65",
-            "58",
-            "60",
-            "61"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 53 and 7, you simply add the two numbers, which equals 60."
-        },
-        {
-          "id": 114,
-          "question": "What is 7 + 27?",
-          "answers": [
-            "33",
-            "39",
-            "34",
-            "31"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 7 and 27, you simply add the two numbers, which equals 34."
-        },
-        {
-          "id": 115,
-          "question": "What is 16 + 4?",
-          "answers": [
-            "18",
-            "17",
-            "30",
-            "20"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 16 and 4, you simply add the two numbers, which equals 20."
-        },
-        {
-          "id": 116,
-          "question": "What is 71 + 53?",
-          "answers": [
-            "124",
-            "119",
-            "127",
-            "122"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 71 and 53, you add the tens place (70 + 50 = 120) and the ones place (1 + 3 = 4), then add them together (120 + 4 = 124)."
-        },
-        {
-          "id": 117,
-          "question": "What is 64 + 38?",
-          "answers": [
-            "101",
-            "104",
-            "107",
-            "102"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 64 and 38, you add the tens place (60 + 30 = 90) and the ones place (4 + 8 = 12), then add them together (90 + 12 = 102)."
-        },
-        {
-          "id": 118,
-          "question": "What is 59 + 71?",
-          "answers": [
-            "132",
-            "127",
-            "128",
-            "130"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 59 and 71, you add the tens place (50 + 70 = 120) and the ones place (9 + 1 = 10), then add them together (120 + 10 = 130)."
-        },
-        {
-          "id": 119,
-          "question": "What is 54 + 44?",
-          "answers": [
-            "88",
-            "97",
-            "103",
-            "98"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 54 and 44, you add the tens place (50 + 40 = 90) and the ones place (4 + 4 = 8), then add them together (90 + 8 = 98)."
-        },
-        {
-          "id": 120,
-          "question": "What is 76 + 75?",
-          "answers": [
-            "156",
-            "148",
-            "154",
-            "151"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 76 and 75, you add the tens place (70 + 70 = 140) and the ones place (6 + 5 = 11), then add them together (140 + 11 = 151)."
-        }
-      ],
-      [
-        {
-          "id": 121,
-          "question": "What is 71 + 70?",
-          "answers": [
-            "143",
-            "144",
-            "142",
-            "141"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 71 and 70, you add the tens place (70 + 70 = 140) and the ones place (1 + 0 = 1), then add them together (140 + 1 = 141)."
-        },
-        {
-          "id": 122,
-          "question": "What is 74 + 50?",
-          "answers": [
-            "122",
-            "124",
-            "114",
-            "126"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 74 and 50, you add the tens place (70 + 50 = 120) and the ones place (4 + 0 = 4), then add them together (120 + 4 = 124)."
-        },
-        {
-          "id": 123,
-          "question": "What is 49 + 50?",
-          "answers": [
-            "96",
-            "102",
-            "99",
-            "89"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 49 and 50, you add the tens place (40 + 50 = 90) and the ones place (9 + 0 = 9), then add them together (90 + 9 = 99)."
-        },
-        {
-          "id": 124,
-          "question": "What is 13 + 57?",
-          "answers": [
-            "65",
-            "70",
-            "75",
-            "73"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 13 and 57, you add the tens place (10 + 50 = 60) and the ones place (3 + 7 = 10), then add them together (60 + 10 = 70)."
-        },
-        {
-          "id": 125,
-          "question": "What is 53 + 84?",
-          "answers": [
-            "137",
-            "140",
-            "132",
-            "134"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 53 and 84, you add the tens place (50 + 80 = 130) and the ones place (3 + 4 = 7), then add them together (130 + 7 = 137)."
-        },
-        {
-          "id": 126,
-          "question": "What is 84 + 11?",
-          "answers": [
-            "96",
-            "97",
-            "95",
-            "100"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 84 and 11, you add the tens place (80 + 10 = 90) and the ones place (4 + 1 = 5), then add them together (90 + 5 = 95)."
-        },
-        {
-          "id": 127,
-          "question": "What is 70 + 5?",
-          "answers": [
-            "75",
-            "70",
-            "73",
-            "85"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 70 and 5, you simply add the two numbers, which equals 75."
-        },
-        {
-          "id": 128,
-          "question": "What is 56 + 13?",
-          "answers": [
-            "66",
-            "69",
-            "64",
-            "72"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 56 and 13, you add the tens place (50 + 10 = 60) and the ones place (6 + 3 = 9), then add them together (60 + 9 = 69)."
-        },
-        {
-          "id": 129,
-          "question": "What is 42 + 8?",
-          "answers": [
-            "51",
-            "52",
-            "49",
-            "50"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 42 and 8, you simply add the two numbers, which equals 50."
-        },
-        {
-          "id": 130,
-          "question": "What is 73 + 88?",
-          "answers": [
-            "171",
-            "161",
-            "156",
-            "158"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 73 and 88, you add the tens place (70 + 80 = 150) and the ones place (3 + 8 = 11), then add them together (150 + 11 = 161)."
-        }
-      ],
-      [
-        {
-          "id": 131,
-          "question": "What is 64 + 75?",
-          "answers": [
-            "136",
-            "142",
-            "137",
-            "139"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 64 and 75, you add the tens place (60 + 70 = 130) and the ones place (4 + 5 = 9), then add them together (130 + 9 = 139)."
-        },
-        {
-          "id": 132,
-          "question": "What is 86 + 2?",
-          "answers": [
-            "93",
-            "87",
-            "88",
-            "91"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 86 and 2, you simply add the two numbers, which equals 88."
-        },
-        {
-          "id": 133,
-          "question": "What is 45 + 76?",
-          "answers": [
-            "124",
-            "121",
-            "120",
-            "123"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 45 and 76, you add the tens place (40 + 70 = 110) and the ones place (5 + 6 = 11), then add them together (110 + 11 = 121)."
-        },
-        {
-          "id": 134,
-          "question": "What is 62 + 14?",
-          "answers": [
-            "86",
-            "74",
-            "78",
-            "76"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 62 and 14, you add the tens place (60 + 10 = 70) and the ones place (2 + 4 = 6), then add them together (70 + 6 = 76)."
-        },
-        {
-          "id": 135,
-          "question": "What is 90 + 38?",
-          "answers": [
-            "130",
-            "127",
-            "118",
-            "128"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 90 and 38, you add the tens place (90 + 30 = 120) and the ones place (0 + 8 = 8), then add them together (120 + 8 = 128)."
-        },
-        {
-          "id": 136,
-          "question": "What is 78 + 64?",
-          "answers": [
-            "140",
-            "142",
-            "152",
-            "141"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 78 and 64, you add the tens place (70 + 60 = 130) and the ones place (8 + 4 = 12), then add them together (130 + 12 = 142)."
-        },
-        {
-          "id": 137,
-          "question": "What is 80 + 33?",
-          "answers": [
-            "103",
-            "113",
-            "108",
-            "110"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 80 and 33, you add the tens place (80 + 30 = 110) and the ones place (0 + 3 = 3), then add them together (110 + 3 = 113)."
-        },
-        {
-          "id": 138,
-          "question": "What is 75 + 47?",
-          "answers": [
-            "121",
-            "122",
-            "119",
-            "117"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 75 and 47, you add the tens place (70 + 40 = 110) and the ones place (5 + 7 = 12), then add them together (110 + 12 = 122)."
-        },
-        {
-          "id": 139,
-          "question": "What is 23 + 26?",
-          "answers": [
-            "46",
-            "49",
-            "54",
-            "50"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 23 and 26, you add the tens place (20 + 20 = 40) and the ones place (3 + 6 = 9), then add them together (40 + 9 = 49)."
-        },
-        {
-          "id": 140,
-          "question": "What is 62 + 38?",
-          "answers": [
-            "100",
-            "101",
-            "95",
-            "103"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 62 and 38, you add the tens place (60 + 30 = 90) and the ones place (2 + 8 = 10), then add them together (90 + 10 = 100)."
-        }
-      ],
-      [
-        {
-          "id": 141,
-          "question": "What is 87 + 87?",
-          "answers": [
-            "174",
-            "175",
-            "179",
-            "176"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 87 and 87, you add the tens place (80 + 80 = 160) and the ones place (7 + 7 = 14), then add them together (160 + 14 = 174)."
-        },
-        {
-          "id": 142,
-          "question": "What is 34 + 69?",
-          "answers": [
-            "104",
-            "98",
-            "103",
-            "106"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 34 and 69, you add the tens place (30 + 60 = 90) and the ones place (4 + 9 = 13), then add them together (90 + 13 = 103)."
-        },
-        {
-          "id": 143,
-          "question": "What is 82 + 48?",
-          "answers": [
-            "133",
-            "130",
-            "125",
-            "128"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 82 and 48, you add the tens place (80 + 40 = 120) and the ones place (2 + 8 = 10), then add them together (120 + 10 = 130)."
-        },
-        {
-          "id": 144,
-          "question": "What is 79 + 29?",
-          "answers": [
-            "108",
-            "111",
-            "107",
-            "103"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 79 and 29, you add the tens place (70 + 20 = 90) and the ones place (9 + 9 = 18), then add them together (90 + 18 = 108)."
-        },
-        {
-          "id": 145,
-          "question": "What is 6 + 5?",
-          "answers": [
-            "11",
-            "14",
-            "6",
-            "10"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 6 and 5, you simply add the two numbers, which equals 11."
-        },
-        {
-          "id": 146,
-          "question": "What is 50 + 59?",
-          "answers": [
-            "110",
-            "114",
-            "111",
-            "109"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 50 and 59, you add the tens place (50 + 50 = 100) and the ones place (0 + 9 = 9), then add them together (100 + 9 = 109)."
-        },
-        {
-          "id": 147,
-          "question": "What is 63 + 79?",
-          "answers": [
-            "142",
-            "132",
-            "144",
-            "141"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 63 and 79, you add the tens place (60 + 70 = 130) and the ones place (3 + 9 = 12), then add them together (130 + 12 = 142)."
-        },
-        {
-          "id": 148,
-          "question": "What is 57 + 31?",
-          "answers": [
-            "93",
-            "89",
-            "88",
-            "83"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 57 and 31, you add the tens place (50 + 30 = 80) and the ones place (7 + 1 = 8), then add them together (80 + 8 = 88)."
-        },
-        {
-          "id": 149,
-          "question": "What is 36 + 25?",
-          "answers": [
-            "64",
-            "59",
-            "61",
-            "56"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 36 and 25, you add the tens place (30 + 20 = 50) and the ones place (6 + 5 = 11), then add them together (50 + 11 = 61)."
-        },
-        {
-          "id": 150,
-          "question": "What is 32 + 17?",
-          "answers": [
-            "47",
-            "49",
-            "44",
-            "59"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 32 and 17, you add the tens place (30 + 10 = 40) and the ones place (2 + 7 = 9), then add them together (40 + 9 = 49)."
-        }
-      ],
-      [
-        {
-          "id": 151,
-          "question": "What is 30 + 43?",
-          "answers": [
-            "83",
-            "63",
-            "73",
-            "70"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 30 and 43, you add the tens place (30 + 40 = 70) and the ones place (0 + 3 = 3), then add them together (70 + 3 = 73)."
-        },
-        {
-          "id": 152,
-          "question": "What is 70 + 33?",
-          "answers": [
-            "93",
-            "103",
-            "98",
-            "100"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 70 and 33, you add the tens place (70 + 30 = 100) and the ones place (0 + 3 = 3), then add them together (100 + 3 = 103)."
-        },
-        {
-          "id": 153,
-          "question": "What is 31 + 76?",
-          "answers": [
-            "97",
-            "108",
-            "104",
-            "107"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 31 and 76, you add the tens place (30 + 70 = 100) and the ones place (1 + 6 = 7), then add them together (100 + 7 = 107)."
-        },
-        {
-          "id": 154,
-          "question": "What is 54 + 68?",
-          "answers": [
-            "125",
-            "117",
-            "122",
-            "123"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 54 and 68, you add the tens place (50 + 60 = 110) and the ones place (4 + 8 = 12), then add them together (110 + 12 = 122)."
-        },
-        {
-          "id": 155,
-          "question": "What is 79 + 6?",
-          "answers": [
-            "84",
-            "90",
-            "85",
-            "88"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 79 and 6, you simply add the two numbers, which equals 85."
-        },
-        {
-          "id": 156,
-          "question": "What is 52 + 55?",
-          "answers": [
-            "102",
-            "108",
-            "110",
-            "107"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 52 and 55, you add the tens place (50 + 50 = 100) and the ones place (2 + 5 = 7), then add them together (100 + 7 = 107)."
-        },
-        {
-          "id": 157,
-          "question": "What is 36 + 80?",
-          "answers": [
-            "121",
-            "116",
-            "117",
-            "126"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 36 and 80, you add the tens place (30 + 80 = 110) and the ones place (6 + 0 = 6), then add them together (110 + 6 = 116)."
-        },
-        {
-          "id": 158,
-          "question": "What is 59 + 65?",
-          "answers": [
-            "124",
-            "119",
-            "134",
-            "126"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 59 and 65, you add the tens place (50 + 60 = 110) and the ones place (9 + 5 = 14), then add them together (110 + 14 = 124)."
-        },
-        {
-          "id": 159,
-          "question": "What is 56 + 58?",
-          "answers": [
-            "112",
-            "115",
-            "114",
-            "116"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 56 and 58, you add the tens place (50 + 50 = 100) and the ones place (6 + 8 = 14), then add them together (100 + 14 = 114)."
-        },
-        {
-          "id": 160,
-          "question": "What is 13 + 41?",
-          "answers": [
-            "55",
-            "53",
-            "56",
-            "54"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 13 and 41, you add the tens place (10 + 40 = 50) and the ones place (3 + 1 = 4), then add them together (50 + 4 = 54)."
-        }
-      ],
-      [
-        {
-          "id": 161,
-          "question": "What is 9 + 12?",
-          "answers": [
-            "23",
-            "16",
-            "22",
-            "21"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 9 and 12, you simply add the two numbers, which equals 21."
-        },
-        {
-          "id": 162,
-          "question": "What is 76 + 72?",
-          "answers": [
-            "153",
-            "149",
-            "148",
-            "143"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 76 and 72, you add the tens place (70 + 70 = 140) and the ones place (6 + 2 = 8), then add them together (140 + 8 = 148)."
-        },
-        {
-          "id": 163,
-          "question": "What is 7 + 37?",
-          "answers": [
-            "44",
-            "54",
-            "45",
-            "43"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 7 and 37, you simply add the two numbers, which equals 44."
-        },
-        {
-          "id": 164,
-          "question": "What is 20 + 85?",
-          "answers": [
-            "100",
-            "105",
-            "103",
-            "108"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 20 and 85, you add the tens place (20 + 80 = 100) and the ones place (0 + 5 = 5), then add them together (100 + 5 = 105)."
-        },
-        {
-          "id": 165,
-          "question": "What is 15 + 36?",
-          "answers": [
-            "61",
-            "49",
-            "51",
-            "53"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 15 and 36, you add the tens place (10 + 30 = 40) and the ones place (5 + 6 = 11), then add them together (40 + 11 = 51)."
-        },
-        {
-          "id": 166,
-          "question": "What is 4 + 24?",
-          "answers": [
-            "28",
-            "29",
-            "18",
-            "27"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 4 and 24, you simply add the two numbers, which equals 28."
-        },
-        {
-          "id": 167,
-          "question": "What is 9 + 19?",
-          "answers": [
-            "33",
-            "28",
-            "23",
-            "18"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 9 and 19, you simply add the two numbers, which equals 28."
-        },
-        {
-          "id": 168,
-          "question": "What is 59 + 44?",
-          "answers": [
-            "100",
-            "104",
-            "103",
-            "102"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 59 and 44, you add the tens place (50 + 40 = 90) and the ones place (9 + 4 = 13), then add them together (90 + 13 = 103)."
-        },
-        {
-          "id": 169,
-          "question": "What is 7 + 20?",
-          "answers": [
-            "37",
-            "27",
-            "17",
-            "24"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 7 and 20, you simply add the two numbers, which equals 27."
-        },
-        {
-          "id": 170,
-          "question": "What is 85 + 55?",
-          "answers": [
-            "140",
-            "143",
-            "142",
-            "150"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 85 and 55, you add the tens place (80 + 50 = 130) and the ones place (5 + 5 = 10), then add them together (130 + 10 = 140)."
-        }
-      ],
-      [
-        {
-          "id": 171,
-          "question": "What is 45 + 56?",
-          "answers": [
-            "96",
-            "100",
-            "101",
-            "111"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 45 and 56, you add the tens place (40 + 50 = 90) and the ones place (5 + 6 = 11), then add them together (90 + 11 = 101)."
-        },
-        {
-          "id": 172,
-          "question": "What is 6 + 29?",
-          "answers": [
-            "35",
-            "25",
-            "37",
-            "45"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 6 and 29, you simply add the two numbers, which equals 35."
-        },
-        {
-          "id": 173,
-          "question": "What is 28 + 18?",
-          "answers": [
-            "47",
-            "46",
-            "45",
-            "41"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 28 and 18, you add the tens place (20 + 10 = 30) and the ones place (8 + 8 = 16), then add them together (30 + 16 = 46)."
-        },
-        {
-          "id": 174,
-          "question": "What is 23 + 17?",
-          "answers": [
-            "38",
-            "42",
-            "40",
-            "45"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 23 and 17, you add the tens place (20 + 10 = 30) and the ones place (3 + 7 = 10), then add them together (30 + 10 = 40)."
-        },
-        {
-          "id": 175,
-          "question": "What is 6 + 56?",
-          "answers": [
-            "65",
-            "52",
-            "57",
-            "62"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 6 and 56, you simply add the two numbers, which equals 62."
-        },
-        {
-          "id": 176,
-          "question": "What is 74 + 52?",
-          "answers": [
-            "125",
-            "121",
-            "128",
-            "126"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 74 and 52, you add the tens place (70 + 50 = 120) and the ones place (4 + 2 = 6), then add them together (120 + 6 = 126)."
-        },
-        {
-          "id": 177,
-          "question": "What is 22 + 80?",
-          "answers": [
-            "97",
-            "102",
-            "105",
-            "103"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 22 and 80, you add the tens place (20 + 80 = 100) and the ones place (2 + 0 = 2), then add them together (100 + 2 = 102)."
-        },
-        {
-          "id": 178,
-          "question": "What is 56 + 76?",
-          "answers": [
-            "137",
-            "134",
-            "132",
-            "127"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 56 and 76, you add the tens place (50 + 70 = 120) and the ones place (6 + 6 = 12), then add them together (120 + 12 = 132)."
-        },
-        {
-          "id": 179,
-          "question": "What is 29 + 43?",
-          "answers": [
-            "67",
-            "69",
-            "77",
-            "72"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 29 and 43, you add the tens place (20 + 40 = 60) and the ones place (9 + 3 = 12), then add them together (60 + 12 = 72)."
-        },
-        {
-          "id": 180,
-          "question": "What is 45 + 45?",
-          "answers": [
-            "85",
-            "88",
-            "87",
-            "90"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 45 and 45, you add the tens place (40 + 40 = 80) and the ones place (5 + 5 = 10), then add them together (80 + 10 = 90)."
-        }
-      ],
-      [
-        {
-          "id": 181,
-          "question": "What is 23 + 78?",
-          "answers": [
-            "96",
-            "98",
-            "104",
-            "101"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 23 and 78, you add the tens place (20 + 70 = 90) and the ones place (3 + 8 = 11), then add them together (90 + 11 = 101)."
-        },
-        {
-          "id": 182,
-          "question": "What is 88 + 73?",
-          "answers": [
-            "171",
-            "162",
-            "161",
-            "158"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 88 and 73, you add the tens place (80 + 70 = 150) and the ones place (8 + 3 = 11), then add them together (150 + 11 = 161)."
-        },
-        {
-          "id": 183,
-          "question": "What is 57 + 81?",
-          "answers": [
-            "137",
-            "128",
-            "148",
-            "138"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 57 and 81, you add the tens place (50 + 80 = 130) and the ones place (7 + 1 = 8), then add them together (130 + 8 = 138)."
-        },
-        {
-          "id": 184,
-          "question": "What is 40 + 60?",
-          "answers": [
-            "100",
-            "103",
-            "90",
-            "101"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 40 and 60, you simply add the two numbers, which equals 100."
-        },
-        {
-          "id": 185,
-          "question": "What is 79 + 77?",
-          "answers": [
-            "158",
-            "159",
-            "156",
-            "161"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 79 and 77, you add the tens place (70 + 70 = 140) and the ones place (9 + 7 = 16), then add them together (140 + 16 = 156)."
-        },
-        {
-          "id": 186,
-          "question": "What is 42 + 78?",
-          "answers": [
-            "123",
-            "125",
-            "117",
-            "120"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 42 and 78, you add the tens place (40 + 70 = 110) and the ones place (2 + 8 = 10), then add them together (110 + 10 = 120)."
-        },
-        {
-          "id": 187,
-          "question": "What is 44 + 11?",
-          "answers": [
-            "60",
-            "55",
-            "52",
-            "45"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 44 and 11, you add the tens place (40 + 10 = 50) and the ones place (4 + 1 = 5), then add them together (50 + 5 = 55)."
-        },
-        {
-          "id": 188,
-          "question": "What is 57 + 68?",
-          "answers": [
-            "130",
-            "135",
-            "125",
-            "122"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 57 and 68, you add the tens place (50 + 60 = 110) and the ones place (7 + 8 = 15), then add them together (110 + 15 = 125)."
-        },
-        {
-          "id": 189,
-          "question": "What is 50 + 53?",
-          "answers": [
-            "103",
-            "113",
-            "104",
-            "93"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 50 and 53, you add the tens place (50 + 50 = 100) and the ones place (0 + 3 = 3), then add them together (100 + 3 = 103)."
-        },
-        {
-          "id": 190,
-          "question": "What is 13 + 72?",
-          "answers": [
-            "95",
-            "84",
-            "87",
-            "85"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 13 and 72, you add the tens place (10 + 70 = 80) and the ones place (3 + 2 = 5), then add them together (80 + 5 = 85)."
-        }
-      ],
-      [
-        {
-          "id": 191,
-          "question": "What is 75 + 85?",
-          "answers": [
-            "161",
-            "157",
-            "160",
-            "159"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 75 and 85, you add the tens place (70 + 80 = 150) and the ones place (5 + 5 = 10), then add them together (150 + 10 = 160)."
-        },
-        {
-          "id": 192,
-          "question": "What is 40 + 72?",
-          "answers": [
-            "109",
-            "113",
-            "114",
-            "112"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 40 and 72, you add the tens place (40 + 70 = 110) and the ones place (0 + 2 = 2), then add them together (110 + 2 = 112)."
-        },
-        {
-          "id": 193,
-          "question": "What is 66 + 47?",
-          "answers": [
-            "114",
-            "103",
-            "112",
-            "113"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 66 and 47, you add the tens place (60 + 40 = 100) and the ones place (6 + 7 = 13), then add them together (100 + 13 = 113)."
-        },
-        {
-          "id": 194,
-          "question": "What is 63 + 25?",
-          "answers": [
-            "83",
-            "86",
-            "88",
-            "85"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 63 and 25, you add the tens place (60 + 20 = 80) and the ones place (3 + 5 = 8), then add them together (80 + 8 = 88)."
-        },
-        {
-          "id": 195,
-          "question": "What is 85 + 44?",
-          "answers": [
-            "126",
-            "131",
-            "129",
-            "139"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 85 and 44, you add the tens place (80 + 40 = 120) and the ones place (5 + 4 = 9), then add them together (120 + 9 = 129)."
-        },
-        {
-          "id": 196,
-          "question": "What is 89 + 80?",
-          "answers": [
-            "166",
-            "169",
-            "172",
-            "159"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 89 and 80, you add the tens place (80 + 80 = 160) and the ones place (9 + 0 = 9), then add them together (160 + 9 = 169)."
-        },
-        {
-          "id": 197,
-          "question": "What is 57 + 79?",
-          "answers": [
-            "136",
-            "134",
-            "135",
-            "139"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 57 and 79, you add the tens place (50 + 70 = 120) and the ones place (7 + 9 = 16), then add them together (120 + 16 = 136)."
-        },
-        {
-          "id": 198,
-          "question": "What is 25 + 48?",
-          "answers": [
-            "72",
-            "73",
-            "83",
-            "76"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 25 and 48, you add the tens place (20 + 40 = 60) and the ones place (5 + 8 = 13), then add them together (60 + 13 = 73)."
-        },
-        {
-          "id": 199,
-          "question": "What is 21 + 26?",
-          "answers": [
-            "47",
-            "44",
-            "46",
-            "57"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 21 and 26, you add the tens place (20 + 20 = 40) and the ones place (1 + 6 = 7), then add them together (40 + 7 = 47)."
-        },
-        {
-          "id": 200,
-          "question": "What is 48 + 71?",
-          "answers": [
-            "118",
-            "124",
-            "119",
-            "114"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 48 and 71, you add the tens place (40 + 70 = 110) and the ones place (8 + 1 = 9), then add them together (110 + 9 = 119)."
-        }
-      ],
-      [
-        {
-          "id": 201,
-          "question": "What is 58 + 66?",
-          "answers": [
-            "121",
-            "126",
-            "119",
-            "124"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 58 and 66, you add the tens place (50 + 60 = 110) and the ones place (8 + 6 = 14), then add them together (110 + 14 = 124)."
-        },
-        {
-          "id": 202,
-          "question": "What is 4 + 54?",
-          "answers": [
-            "63",
-            "58",
-            "48",
-            "60"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 4 and 54, you simply add the two numbers, which equals 58."
-        },
-        {
-          "id": 203,
-          "question": "What is 11 + 48?",
-          "answers": [
-            "49",
-            "59",
-            "60",
-            "57"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 11 and 48, you add the tens place (10 + 40 = 50) and the ones place (1 + 8 = 9), then add them together (50 + 9 = 59)."
-        },
-        {
-          "id": 204,
-          "question": "What is 19 + 18?",
-          "answers": [
-            "40",
-            "37",
-            "36",
-            "27"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 19 and 18, you add the tens place (10 + 10 = 20) and the ones place (9 + 8 = 17), then add them together (20 + 17 = 37)."
-        },
-        {
-          "id": 205,
-          "question": "What is 58 + 79?",
-          "answers": [
-            "132",
-            "127",
-            "136",
-            "137"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 58 and 79, you add the tens place (50 + 70 = 120) and the ones place (8 + 9 = 17), then add them together (120 + 17 = 137)."
-        },
-        {
-          "id": 206,
-          "question": "What is 15 + 37?",
-          "answers": [
-            "52",
-            "51",
-            "47",
-            "50"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 15 and 37, you add the tens place (10 + 30 = 40) and the ones place (5 + 7 = 12), then add them together (40 + 12 = 52)."
-        },
-        {
-          "id": 207,
-          "question": "What is 82 + 80?",
-          "answers": [
-            "172",
-            "157",
-            "165",
-            "162"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 82 and 80, you add the tens place (80 + 80 = 160) and the ones place (2 + 0 = 2), then add them together (160 + 2 = 162)."
-        },
-        {
-          "id": 208,
-          "question": "What is 19 + 38?",
-          "answers": [
-            "47",
-            "67",
-            "57",
-            "59"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 19 and 38, you add the tens place (10 + 30 = 40) and the ones place (9 + 8 = 17), then add them together (40 + 17 = 57)."
-        },
-        {
-          "id": 209,
-          "question": "What is 24 + 86?",
-          "answers": [
-            "115",
-            "111",
-            "110",
-            "105"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 24 and 86, you add the tens place (20 + 80 = 100) and the ones place (4 + 6 = 10), then add them together (100 + 10 = 110)."
-        },
-        {
-          "id": 210,
-          "question": "What is 50 + 61?",
-          "answers": [
-            "113",
-            "112",
-            "111",
-            "101"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 50 and 61, you add the tens place (50 + 60 = 110) and the ones place (0 + 1 = 1), then add them together (110 + 1 = 111)."
-        }
-      ],
-      [
-        {
-          "id": 211,
-          "question": "What is 46 + 9?",
-          "answers": [
-            "50",
-            "55",
-            "56",
-            "53"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 46 and 9, you simply add the two numbers, which equals 55."
-        },
-        {
-          "id": 212,
-          "question": "What is 46 + 70?",
-          "answers": [
-            "116",
-            "113",
-            "117",
-            "119"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 46 and 70, you add the tens place (40 + 70 = 110) and the ones place (6 + 0 = 6), then add them together (110 + 6 = 116)."
-        },
-        {
-          "id": 213,
-          "question": "What is 18 + 9?",
-          "answers": [
-            "30",
-            "27",
-            "17",
-            "26"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 18 and 9, you simply add the two numbers, which equals 27."
-        },
-        {
-          "id": 214,
-          "question": "What is 6 + 41?",
-          "answers": [
-            "46",
-            "49",
-            "52",
-            "47"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 6 and 41, you simply add the two numbers, which equals 47."
-        },
-        {
-          "id": 215,
-          "question": "What is 83 + 25?",
-          "answers": [
-            "109",
-            "98",
-            "107",
-            "108"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 83 and 25, you add the tens place (80 + 20 = 100) and the ones place (3 + 5 = 8), then add them together (100 + 8 = 108)."
-        },
-        {
-          "id": 216,
-          "question": "What is 48 + 56?",
-          "answers": [
-            "104",
-            "106",
-            "107",
-            "105"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 48 and 56, you add the tens place (40 + 50 = 90) and the ones place (8 + 6 = 14), then add them together (90 + 14 = 104)."
-        },
-        {
-          "id": 217,
-          "question": "What is 48 + 67?",
-          "answers": [
-            "117",
-            "110",
-            "115",
-            "114"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 48 and 67, you add the tens place (40 + 60 = 100) and the ones place (8 + 7 = 15), then add them together (100 + 15 = 115)."
-        },
-        {
-          "id": 218,
-          "question": "What is 70 + 38?",
-          "answers": [
-            "107",
-            "103",
-            "108",
-            "109"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 70 and 38, you add the tens place (70 + 30 = 100) and the ones place (0 + 8 = 8), then add them together (100 + 8 = 108)."
-        },
-        {
-          "id": 219,
-          "question": "What is 22 + 89?",
-          "answers": [
-            "112",
-            "114",
-            "111",
-            "101"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 22 and 89, you add the tens place (20 + 80 = 100) and the ones place (2 + 9 = 11), then add them together (100 + 11 = 111)."
-        },
-        {
-          "id": 220,
-          "question": "What is 36 + 82?",
-          "answers": [
-            "113",
-            "120",
-            "118",
-            "108"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 36 and 82, you add the tens place (30 + 80 = 110) and the ones place (6 + 2 = 8), then add them together (110 + 8 = 118)."
-        }
-      ],
-      [
-        {
-          "id": 221,
-          "question": "What is 4 + 19?",
-          "answers": [
-            "23",
-            "13",
-            "33",
-            "26"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 4 and 19, you simply add the two numbers, which equals 23."
-        },
-        {
-          "id": 222,
-          "question": "What is 83 + 47?",
-          "answers": [
-            "130",
-            "132",
-            "131",
-            "140"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 83 and 47, you add the tens place (80 + 40 = 120) and the ones place (3 + 7 = 10), then add them together (120 + 10 = 130)."
-        },
-        {
-          "id": 223,
-          "question": "What is 87 + 58?",
-          "answers": [
-            "145",
-            "140",
-            "148",
-            "146"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 87 and 58, you add the tens place (80 + 50 = 130) and the ones place (7 + 8 = 15), then add them together (130 + 15 = 145)."
-        },
-        {
-          "id": 224,
-          "question": "What is 51 + 41?",
-          "answers": [
-            "91",
-            "87",
-            "92",
-            "90"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 51 and 41, you add the tens place (50 + 40 = 90) and the ones place (1 + 1 = 2), then add them together (90 + 2 = 92)."
-        },
-        {
-          "id": 225,
-          "question": "What is 64 + 67?",
-          "answers": [
-            "136",
-            "126",
-            "131",
-            "133"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 64 and 67, you add the tens place (60 + 60 = 120) and the ones place (4 + 7 = 11), then add them together (120 + 11 = 131)."
-        },
-        {
-          "id": 226,
-          "question": "What is 28 + 79?",
-          "answers": [
-            "106",
-            "107",
-            "110",
-            "105"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 28 and 79, you add the tens place (20 + 70 = 90) and the ones place (8 + 9 = 17), then add them together (90 + 17 = 107)."
-        },
-        {
-          "id": 227,
-          "question": "What is 58 + 23?",
-          "answers": [
-            "82",
-            "81",
-            "76",
-            "84"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 58 and 23, you add the tens place (50 + 20 = 70) and the ones place (8 + 3 = 11), then add them together (70 + 11 = 81)."
-        },
-        {
-          "id": 228,
-          "question": "What is 71 + 70?",
-          "answers": [
-            "142",
-            "141",
-            "138",
-            "140"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 71 and 70, you add the tens place (70 + 70 = 140) and the ones place (1 + 0 = 1), then add them together (140 + 1 = 141)."
-        },
-        {
-          "id": 229,
-          "question": "What is 18 + 31?",
-          "answers": [
-            "39",
-            "49",
-            "50",
-            "52"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 18 and 31, you add the tens place (10 + 30 = 40) and the ones place (8 + 1 = 9), then add them together (40 + 9 = 49)."
-        },
-        {
-          "id": 230,
-          "question": "What is 79 + 12?",
-          "answers": [
-            "90",
-            "91",
-            "93",
-            "86"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 79 and 12, you add the tens place (70 + 10 = 80) and the ones place (9 + 2 = 11), then add them together (80 + 11 = 91)."
-        }
-      ],
-      [
-        {
-          "id": 231,
-          "question": "What is 53 + 74?",
-          "answers": [
-            "127",
-            "124",
-            "122",
-            "128"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 53 and 74, you add the tens place (50 + 70 = 120) and the ones place (3 + 4 = 7), then add them together (120 + 7 = 127)."
-        },
-        {
-          "id": 232,
-          "question": "What is 88 + 67?",
-          "answers": [
-            "156",
-            "160",
-            "152",
-            "155"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 88 and 67, you add the tens place (80 + 60 = 140) and the ones place (8 + 7 = 15), then add them together (140 + 15 = 155)."
-        },
-        {
-          "id": 233,
-          "question": "What is 65 + 8?",
-          "answers": [
-            "68",
-            "70",
-            "73",
-            "78"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 65 and 8, you simply add the two numbers, which equals 73."
-        },
-        {
-          "id": 234,
-          "question": "What is 42 + 29?",
-          "answers": [
-            "70",
-            "71",
-            "76",
-            "72"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 42 and 29, you add the tens place (40 + 20 = 60) and the ones place (2 + 9 = 11), then add them together (60 + 11 = 71)."
-        },
-        {
-          "id": 235,
-          "question": "What is 82 + 71?",
-          "answers": [
-            "153",
-            "150",
-            "163",
-            "152"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 82 and 71, you add the tens place (80 + 70 = 150) and the ones place (2 + 1 = 3), then add them together (150 + 3 = 153)."
-        },
-        {
-          "id": 236,
-          "question": "What is 76 + 75?",
-          "answers": [
-            "161",
-            "148",
-            "151",
-            "152"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 76 and 75, you add the tens place (70 + 70 = 140) and the ones place (6 + 5 = 11), then add them together (140 + 11 = 151)."
-        },
-        {
-          "id": 237,
-          "question": "What is 6 + 83?",
-          "answers": [
-            "89",
-            "88",
-            "99",
-            "87"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 6 and 83, you simply add the two numbers, which equals 89."
-        },
-        {
-          "id": 238,
-          "question": "What is 64 + 81?",
-          "answers": [
-            "144",
-            "150",
-            "148",
-            "145"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 64 and 81, you add the tens place (60 + 80 = 140) and the ones place (4 + 1 = 5), then add them together (140 + 5 = 145)."
-        },
-        {
-          "id": 239,
-          "question": "What is 39 + 59?",
-          "answers": [
-            "88",
-            "93",
-            "98",
-            "95"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 39 and 59, you add the tens place (30 + 50 = 80) and the ones place (9 + 9 = 18), then add them together (80 + 18 = 98)."
-        },
-        {
-          "id": 240,
-          "question": "What is 60 + 27?",
-          "answers": [
-            "88",
-            "97",
-            "87",
-            "84"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 60 and 27, you add the tens place (60 + 20 = 80) and the ones place (0 + 7 = 7), then add them together (80 + 7 = 87)."
-        }
-      ],
-      [
-        {
-          "id": 241,
-          "question": "What is 45 + 52?",
-          "answers": [
-            "102",
-            "94",
-            "98",
-            "97"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 45 and 52, you add the tens place (40 + 50 = 90) and the ones place (5 + 2 = 7), then add them together (90 + 7 = 97)."
-        },
-        {
-          "id": 242,
-          "question": "What is 60 + 16?",
-          "answers": [
-            "79",
-            "76",
-            "74",
-            "75"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "To add 60 and 16, you add the tens place (60 + 10 = 70) and the ones place (0 + 6 = 6), then add them together (70 + 6 = 76)."
-        },
-        {
-          "id": 243,
-          "question": "What is 38 + 50?",
-          "answers": [
-            "88",
-            "90",
-            "86",
-            "98"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 38 and 50, you add the tens place (30 + 50 = 80) and the ones place (8 + 0 = 8), then add them together (80 + 8 = 88)."
-        },
-        {
-          "id": 244,
-          "question": "What is 25 + 21?",
-          "answers": [
-            "51",
-            "45",
-            "49",
-            "46"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 25 and 21, you add the tens place (20 + 20 = 40) and the ones place (5 + 1 = 6), then add them together (40 + 6 = 46)."
-        },
-        {
-          "id": 245,
-          "question": "What is 51 + 65?",
-          "answers": [
-            "116",
-            "119",
-            "114",
-            "126"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 51 and 65, you add the tens place (50 + 60 = 110) and the ones place (1 + 5 = 6), then add them together (110 + 6 = 116)."
-        },
-        {
-          "id": 246,
-          "question": "What is 37 + 64?",
-          "answers": [
-            "101",
-            "100",
-            "111",
-            "104"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 37 and 64, you add the tens place (30 + 60 = 90) and the ones place (7 + 4 = 11), then add them together (90 + 11 = 101)."
-        },
-        {
-          "id": 247,
-          "question": "What is 18 + 34?",
-          "answers": [
-            "52",
-            "53",
-            "42",
-            "54"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "To add 18 and 34, you add the tens place (10 + 30 = 40) and the ones place (8 + 4 = 12), then add them together (40 + 12 = 52)."
-        },
-        {
-          "id": 248,
-          "question": "What is 47 + 71?",
-          "answers": [
-            "120",
-            "113",
-            "117",
-            "118"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 47 and 71, you add the tens place (40 + 70 = 110) and the ones place (7 + 1 = 8), then add them together (110 + 8 = 118)."
-        },
-        {
-          "id": 249,
-          "question": "What is 80 + 88?",
-          "answers": [
-            "165",
-            "163",
-            "178",
-            "168"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "To add 80 and 88, you add the tens place (80 + 80 = 160) and the ones place (0 + 8 = 8), then add them together (160 + 8 = 168)."
-        },
-        {
-          "id": 250,
-          "question": "What is 44 + 72?",
-          "answers": [
-            "114",
-            "113",
-            "116",
-            "117"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "To add 44 and 72, you add the tens place (40 + 70 = 110) and the ones place (4 + 2 = 6), then add them together (110 + 6 = 116)."
-        }
-      ],
-      [
-        {
-          "id": 251,
-          "question": "What is 10 - 1?",
-          "answers": [
-            "10",
-            "12",
-            "9",
-            "6"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 1 from 10 leaves 9."
-        },
-        {
-          "id": 252,
-          "question": "What is 46 - 40?",
-          "answers": [
-            "8",
-            "3",
-            "7",
-            "6"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 40 from 46 leaves 6."
-        },
-        {
-          "id": 253,
-          "question": "What is 69 - 66?",
-          "answers": [
-            "6",
-            "8",
-            "3",
-            "13"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 66 from 69 leaves 3."
-        },
-        {
-          "id": 254,
-          "question": "What is 52 - 22?",
-          "answers": [
-            "25",
-            "32",
-            "30",
-            "40"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 22 from 52 leaves 30."
-        },
-        {
-          "id": 255,
-          "question": "What is 81 - 61?",
-          "answers": [
-            "30",
-            "19",
-            "20",
-            "18"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 61 from 81 leaves 20."
-        },
-        {
-          "id": 256,
-          "question": "What is 26 - 17?",
-          "answers": [
-            "6",
-            "19",
-            "11",
-            "9"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 17 from 26 leaves 9."
-        },
-        {
-          "id": 257,
-          "question": "What is 29 - 1?",
-          "answers": [
-            "30",
-            "28",
-            "31",
-            "29"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 1 from 29 leaves 28."
-        },
-        {
-          "id": 258,
-          "question": "What is 57 - 33?",
-          "answers": [
-            "14",
-            "24",
-            "27",
-            "34"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 33 from 57 leaves 24."
-        },
-        {
-          "id": 259,
-          "question": "What is 76 - 42?",
-          "answers": [
-            "39",
-            "36",
-            "34",
-            "37"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 42 from 76 leaves 34."
-        },
-        {
-          "id": 260,
-          "question": "What is 73 - 44?",
-          "answers": [
-            "28",
-            "29",
-            "34",
-            "30"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 44 from 73 leaves 29."
-        }
-      ],
-      [
-        {
-          "id": 261,
-          "question": "What is 40 - 36?",
-          "answers": [
-            "2",
-            "7",
-            "3",
-            "4"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 36 from 40 leaves 4."
-        },
-        {
-          "id": 262,
-          "question": "What is 76 - 36?",
-          "answers": [
-            "40",
-            "35",
-            "50",
-            "39"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 36 from 76 leaves 40."
-        },
-        {
-          "id": 263,
-          "question": "What is 23 - 10?",
-          "answers": [
-            "8",
-            "13",
-            "3",
-            "12"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 10 from 23 leaves 13."
-        },
-        {
-          "id": 264,
-          "question": "What is 66 - 28?",
-          "answers": [
-            "36",
-            "38",
-            "43",
-            "37"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 28 from 66 leaves 38."
-        },
-        {
-          "id": 265,
-          "question": "What is 83 - 76?",
-          "answers": [
-            "7",
-            "12",
-            "5",
-            "4"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 76 from 83 leaves 7."
-        },
-        {
-          "id": 266,
-          "question": "What is 11 - 2?",
-          "answers": [
-            "10",
-            "12",
-            "11",
-            "9"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 2 from 11 leaves 9."
-        },
-        {
-          "id": 267,
-          "question": "What is 5 - 5?",
-          "answers": [
-            "2",
-            "0",
-            "3",
-            "4"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 5 from 5 leaves 0."
-        },
-        {
-          "id": 268,
-          "question": "What is 41 - 21?",
-          "answers": [
-            "15",
-            "10",
-            "20",
-            "19"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 21 from 41 leaves 20."
-        },
-        {
-          "id": 269,
-          "question": "What is 27 - 14?",
-          "answers": [
-            "13",
-            "3",
-            "10",
-            "15"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 14 from 27 leaves 13."
-        },
-        {
-          "id": 270,
-          "question": "What is 9 - 1?",
-          "answers": [
-            "8",
-            "7",
-            "18",
-            "3"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 1 from 9 leaves 8."
-        }
-      ],
-      [
-        {
-          "id": 271,
-          "question": "What is 87 - 70?",
-          "answers": [
-            "22",
-            "17",
-            "20",
-            "14"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 70 from 87 leaves 17."
-        },
-        {
-          "id": 272,
-          "question": "What is 19 - 11?",
-          "answers": [
-            "5",
-            "7",
-            "8",
-            "11"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 11 from 19 leaves 8."
-        },
-        {
-          "id": 273,
-          "question": "What is 42 - 37?",
-          "answers": [
-            "2",
-            "5",
-            "3",
-            "15"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 37 from 42 leaves 5."
-        },
-        {
-          "id": 274,
-          "question": "What is 16 - 13?",
-          "answers": [
-            "4",
-            "6",
-            "0",
-            "3"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 13 from 16 leaves 3."
-        },
-        {
-          "id": 275,
-          "question": "What is 54 - 16?",
-          "answers": [
-            "37",
-            "41",
-            "39",
-            "38"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 16 from 54 leaves 38."
-        },
-        {
-          "id": 276,
-          "question": "What is 38 - 24?",
-          "answers": [
-            "4",
-            "9",
-            "12",
-            "14"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 24 from 38 leaves 14."
-        },
-        {
-          "id": 277,
-          "question": "What is 56 - 44?",
-          "answers": [
-            "7",
-            "17",
-            "11",
-            "12"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 44 from 56 leaves 12."
-        },
-        {
-          "id": 278,
-          "question": "What is 33 - 9?",
-          "answers": [
-            "24",
-            "21",
-            "34",
-            "27"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 9 from 33 leaves 24."
-        },
-        {
-          "id": 279,
-          "question": "What is 73 - 28?",
-          "answers": [
-            "40",
-            "43",
-            "45",
-            "55"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 28 from 73 leaves 45."
-        },
-        {
-          "id": 280,
-          "question": "What is 14 - 10?",
-          "answers": [
-            "7",
-            "9",
-            "4",
-            "2"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 10 from 14 leaves 4."
-        }
-      ],
-      [
-        {
-          "id": 281,
-          "question": "What is 26 - 11?",
-          "answers": [
-            "18",
-            "15",
-            "20",
-            "10"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 11 from 26 leaves 15."
-        },
-        {
-          "id": 282,
-          "question": "What is 16 - 15?",
-          "answers": [
-            "3",
-            "1",
-            "10",
-            "4"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 15 from 16 leaves 1."
-        },
-        {
-          "id": 283,
-          "question": "What is 76 - 60?",
-          "answers": [
-            "18",
-            "15",
-            "16",
-            "6"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 60 from 76 leaves 16."
-        },
-        {
-          "id": 284,
-          "question": "What is 79 - 10?",
-          "answers": [
-            "69",
-            "71",
-            "70",
-            "59"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 10 from 79 leaves 69."
-        },
-        {
-          "id": 285,
-          "question": "What is 13 - 8?",
-          "answers": [
-            "6",
-            "7",
-            "4",
-            "5"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 8 from 13 leaves 5."
-        },
-        {
-          "id": 286,
-          "question": "What is 52 - 25?",
-          "answers": [
-            "27",
-            "22",
-            "30",
-            "29"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 25 from 52 leaves 27."
-        },
-        {
-          "id": 287,
-          "question": "What is 20 - 6?",
-          "answers": [
-            "14",
-            "19",
-            "16",
-            "11"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 6 from 20 leaves 14."
-        },
-        {
-          "id": 288,
-          "question": "What is 43 - 30?",
-          "answers": [
-            "18",
-            "13",
-            "15",
-            "11"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 30 from 43 leaves 13."
-        },
-        {
-          "id": 289,
-          "question": "What is 24 - 9?",
-          "answers": [
-            "5",
-            "10",
-            "13",
-            "15"
-          ],
-          "correctAnswerIndex": 3,
-          "explanation": "Subtracting 9 from 24 leaves 15."
-        },
-        {
-          "id": 290,
-          "question": "What is 35 - 14?",
-          "answers": [
-            "11",
-            "16",
-            "21",
-            "31"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 14 from 35 leaves 21."
-        }
-      ],
-      [
-        {
-          "id": 291,
-          "question": "What is 36 - 3?",
-          "answers": [
-            "31",
-            "36",
-            "33",
-            "35"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 3 from 36 leaves 33."
-        },
-        {
-          "id": 292,
-          "question": "What is 69 - 38?",
-          "answers": [
-            "31",
-            "41",
-            "32",
-            "29"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 38 from 69 leaves 31."
-        },
-        {
-          "id": 293,
-          "question": "What is 23 - 22?",
-          "answers": [
-            "6",
-            "1",
-            "2",
-            "3"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 22 from 23 leaves 1."
-        },
-        {
-          "id": 294,
-          "question": "What is 76 - 76?",
-          "answers": [
-            "4",
-            "2",
-            "0",
-            "5"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 76 from 76 leaves 0."
-        },
-        {
-          "id": 295,
-          "question": "What is 87 - 86?",
-          "answers": [
-            "3",
-            "1",
-            "2",
-            "6"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 86 from 87 leaves 1."
-        },
-        {
-          "id": 296,
-          "question": "What is 43 - 25?",
-          "answers": [
-            "21",
-            "15",
-            "18",
-            "23"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 25 from 43 leaves 18."
-        },
-        {
-          "id": 297,
-          "question": "What is 95 - 19?",
-          "answers": [
-            "76",
-            "81",
-            "66",
-            "79"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 19 from 95 leaves 76."
-        },
-        {
-          "id": 298,
-          "question": "What is 54 - 16?",
-          "answers": [
-            "39",
-            "38",
-            "37",
-            "36"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Subtracting 16 from 54 leaves 38."
-        },
-        {
-          "id": 299,
-          "question": "What is 16 - 7?",
-          "answers": [
-            "9",
-            "2",
-            "11",
-            "8"
-          ],
-          "correctAnswerIndex": 0,
-          "explanation": "Subtracting 7 from 16 leaves 9."
-        },
-        {
-          "id": 300,
-          "question": "What is 80 - 72?",
-          "answers": [
-            "9",
-            "6",
-            "8",
-            "11"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Subtracting 72 from 80 leaves 8."
-        }
       ]
     ],
     "medium": [
       [
         {
-          "question": "What is the value of x if 2x + 5 = 15?",
+          "question": "What is 76 + 187?",
           "answers": [
-            "3",
-            "4",
-            "5",
-            "10"
+            "253",
+            "261",
+            "263",
+            "264"
           ],
           "correctAnswerIndex": 2,
-          "explanation": "Subtract 5 from both sides to get 2x = 10, then divide by 2 to get x = 5."
+          "explanation": "To add 76 and 187, you add the hundreds place (0 + 100 = 100), the tens place (70 + 80 = 150), and the ones place (6 + 7 = 13). Then you add them together (100 + 150 + 13 = 263)."
         },
         {
-          "question": "What is the area of a rectangle with a width of 5 units and a length of 8 units?",
+          "question": "What is 324 + 337?",
           "answers": [
-            "13 square units",
-            "30 square units",
-            "40 square units",
-            "45 square units"
+            "656",
+            "661",
+            "646",
+            "660"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 324 and 337, you add the hundreds place (300 + 300 = 600), the tens place (20 + 30 = 50), and the ones place (4 + 7 = 11). Then you add them together (600 + 50 + 11 = 661)."
+        },
+        {
+          "question": "What is 409 + 175?",
+          "answers": [
+            "585",
+            "569",
+            "579",
+            "584"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 409 and 175, you add the hundreds place (400 + 100 = 500), the tens place (0 + 70 = 70), and the ones place (9 + 5 = 14). Then you add them together (500 + 70 + 14 = 584)."
+        },
+        {
+          "question": "What is 85 + 53?",
+          "answers": [
+            "138",
+            "153",
+            "140",
+            "137"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 85 and 53, you add the tens place (80 + 50 = 130) and the ones place (5 + 3 = 8). Then you add them together (130 + 8 = 138)."
+        },
+        {
+          "question": "What is 391 + 122?",
+          "answers": [
+            "513",
+            "498",
+            "508",
+            "511"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 391 and 122, you add the hundreds place (300 + 100 = 400), the tens place (90 + 20 = 110), and the ones place (1 + 2 = 3). Then you add them together (400 + 110 + 3 = 513)."
+        },
+        {
+          "question": "What is 185 + 290?",
+          "answers": [
+            "475",
+            "474",
+            "473",
+            "460"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 185 and 290, you add the hundreds place (100 + 200 = 300), the tens place (80 + 90 = 170), and the ones place (5 + 0 = 5). Then you add them together (300 + 170 + 5 = 475)."
+        },
+        {
+          "question": "What is 56 + 253?",
+          "answers": [
+            "312",
+            "309",
+            "310",
+            "319"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 56 and 253, you add the hundreds place (0 + 200 = 200), the tens place (50 + 50 = 100), and the ones place (6 + 3 = 9). Then you add them together (200 + 100 + 9 = 309)."
+        },
+        {
+          "question": "What is 241 + 311?",
+          "answers": [
+            "547",
+            "562",
+            "537",
+            "552"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 241 and 311, you add the hundreds place (200 + 300 = 500), the tens place (40 + 10 = 50), and the ones place (1 + 1 = 2). Then you add them together (500 + 50 + 2 = 552)."
+        },
+        {
+          "question": "What is 137 + 221?",
+          "answers": [
+            "359",
+            "357",
+            "358",
+            "361"
           ],
           "correctAnswerIndex": 2,
-          "explanation": "The area of a rectangle is width times length (5 * 8 = 40)."
+          "explanation": "To add 137 and 221, you add the hundreds place (100 + 200 = 300), the tens place (30 + 20 = 50), and the ones place (7 + 1 = 8). Then you add them together (300 + 50 + 8 = 358)."
         },
         {
-          "question": "What is 15% of 200?",
+          "question": "What is 248 + 343?",
           "answers": [
+            "591",
+            "588",
+            "590",
+            "576"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 248 and 343, you add the hundreds place (200 + 300 = 500), the tens place (40 + 40 = 80), and the ones place (8 + 3 = 11). Then you add them together (500 + 80 + 11 = 591)."
+        }
+      ],
+      [
+        {
+          "question": "What is 56 + 230?",
+          "answers": [
+            "287",
+            "283",
+            "286",
+            "289"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 56 and 230, you add the hundreds place (0 + 200 = 200), the tens place (50 + 30 = 80), and the ones place (6 + 0 = 6). Then you add them together (200 + 80 + 6 = 286)."
+        },
+        {
+          "question": "What is 303 + 441?",
+          "answers": [
+            "754",
+            "741",
+            "744",
+            "759"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 303 and 441, you add the hundreds place (300 + 400 = 700), the tens place (0 + 40 = 40), and the ones place (3 + 1 = 4). Then you add them together (700 + 40 + 4 = 744)."
+        },
+        {
+          "question": "What is 324 + 277?",
+          "answers": [
+            "603",
+            "602",
+            "586",
+            "601"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 324 and 277, you add the hundreds place (300 + 200 = 500), the tens place (20 + 70 = 90), and the ones place (4 + 7 = 11). Then you add them together (500 + 90 + 11 = 601)."
+        },
+        {
+          "question": "What is 148 + 60?",
+          "answers": [
+            "208",
+            "207",
+            "218",
+            "206"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 148 and 60, you add the hundreds place (100 + 0 = 100), the tens place (40 + 60 = 100), and the ones place (8 + 0 = 8). Then you add them together (100 + 100 + 8 = 208)."
+        },
+        {
+          "question": "What is 50 + 105?",
+          "answers": [
+            "145",
+            "160",
+            "158",
+            "155"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 50 and 105, you add the hundreds place (0 + 100 = 100), the tens place (50 + 0 = 50), and the ones place (0 + 5 = 5). Then you add them together (100 + 50 + 5 = 155)."
+        },
+        {
+          "question": "What is 92 + 271?",
+          "answers": [
+            "366",
+            "363",
+            "348",
+            "364"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 92 and 271, you add the hundreds place (0 + 200 = 200), the tens place (90 + 70 = 160), and the ones place (2 + 1 = 3). Then you add them together (200 + 160 + 3 = 363)."
+        },
+        {
+          "question": "What is 64 + 215?",
+          "answers": [
+            "264",
+            "279",
+            "281",
+            "277"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 64 and 215, you add the hundreds place (0 + 200 = 200), the tens place (60 + 10 = 70), and the ones place (4 + 5 = 9). Then you add them together (200 + 70 + 9 = 279)."
+        },
+        {
+          "question": "What is 62 + 377?",
+          "answers": [
+            "449",
+            "439",
+            "434",
+            "440"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 62 and 377, you add the hundreds place (0 + 300 = 300), the tens place (60 + 70 = 130), and the ones place (2 + 7 = 9). Then you add them together (300 + 130 + 9 = 439)."
+        },
+        {
+          "question": "What is 240 + 392?",
+          "answers": [
+            "647",
+            "629",
+            "622",
+            "632"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 240 and 392, you add the hundreds place (200 + 300 = 500), the tens place (40 + 90 = 130), and the ones place (0 + 2 = 2). Then you add them together (500 + 130 + 2 = 632)."
+        },
+        {
+          "question": "What is 325 + 206?",
+          "answers": [
+            "541",
+            "529",
+            "531",
+            "526"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 325 and 206, you add the hundreds place (300 + 200 = 500), the tens place (20 + 0 = 20), and the ones place (5 + 6 = 11). Then you add them together (500 + 20 + 11 = 531)."
+        }
+      ],
+      [
+        {
+          "question": "What is 323 + 222?",
+          "answers": [
+            "545",
+            "535",
+            "548",
+            "555"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 323 and 222, you add the hundreds place (300 + 200 = 500), the tens place (20 + 20 = 40), and the ones place (3 + 2 = 5). Then you add them together (500 + 40 + 5 = 545)."
+        },
+        {
+          "question": "What is 271 + 81?",
+          "answers": [
+            "367",
+            "347",
+            "354",
+            "352"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 271 and 81, you add the hundreds place (200 + 0 = 200), the tens place (70 + 80 = 150), and the ones place (1 + 1 = 2). Then you add them together (200 + 150 + 2 = 352)."
+        },
+        {
+          "question": "What is 495 + 428?",
+          "answers": [
+            "925",
+            "938",
+            "923",
+            "933"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 495 and 428, you add the hundreds place (400 + 400 = 800), the tens place (90 + 20 = 110), and the ones place (5 + 8 = 13). Then you add them together (800 + 110 + 13 = 923)."
+        },
+        {
+          "question": "What is 131 + 317?",
+          "answers": [
+            "451",
+            "448",
+            "447",
+            "443"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 131 and 317, you add the hundreds place (100 + 300 = 400), the tens place (30 + 10 = 40), and the ones place (1 + 7 = 8). Then you add them together (400 + 40 + 8 = 448)."
+        },
+        {
+          "question": "What is 329 + 421?",
+          "answers": [
+            "755",
+            "749",
+            "747",
+            "750"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 329 and 421, you add the hundreds place (300 + 400 = 700), the tens place (20 + 20 = 40), and the ones place (9 + 1 = 10). Then you add them together (700 + 40 + 10 = 750)."
+        },
+        {
+          "question": "What is 309 + 174?",
+          "answers": [
+            "481",
+            "482",
+            "480",
+            "483"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 309 and 174, you add the hundreds place (300 + 100 = 400), the tens place (0 + 70 = 70), and the ones place (9 + 4 = 13). Then you add them together (400 + 70 + 13 = 483)."
+        },
+        {
+          "question": "What is 150 + 308?",
+          "answers": [
+            "443",
+            "455",
+            "456",
+            "458"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 150 and 308, you add the hundreds place (100 + 300 = 400), the tens place (50 + 0 = 50), and the ones place (0 + 8 = 8). Then you add them together (400 + 50 + 8 = 458)."
+        },
+        {
+          "question": "What is 92 + 224?",
+          "answers": [
+            "316",
+            "311",
+            "318",
+            "319"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 92 and 224, you add the hundreds place (0 + 200 = 200), the tens place (90 + 20 = 110), and the ones place (2 + 4 = 6). Then you add them together (200 + 110 + 6 = 316)."
+        },
+        {
+          "question": "What is 447 + 64?",
+          "answers": [
+            "516",
+            "526",
+            "509",
+            "511"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 447 and 64, you add the hundreds place (400 + 0 = 400), the tens place (40 + 60 = 100), and the ones place (7 + 4 = 11). Then you add them together (400 + 100 + 11 = 511)."
+        },
+        {
+          "question": "What is 164 + 480?",
+          "answers": [
+            "647",
+            "644",
+            "639",
+            "649"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 164 and 480, you add the hundreds place (100 + 400 = 500), the tens place (60 + 80 = 140), and the ones place (4 + 0 = 4). Then you add them together (500 + 140 + 4 = 644)."
+        }
+      ],
+      [
+        {
+          "question": "What is 225 + 406?",
+          "answers": [
+            "631",
+            "646",
+            "621",
+            "636"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 225 and 406, you add the hundreds place (200 + 400 = 600), the tens place (20 + 0 = 20), and the ones place (5 + 6 = 11). Then you add them together (600 + 20 + 11 = 631)."
+        },
+        {
+          "question": "What is 235 + 392?",
+          "answers": [
+            "627",
+            "624",
+            "626",
+            "628"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 235 and 392, you add the hundreds place (200 + 300 = 500), the tens place (30 + 90 = 120), and the ones place (5 + 2 = 7). Then you add them together (500 + 120 + 7 = 627)."
+        },
+        {
+          "question": "What is 470 + 142?",
+          "answers": [
+            "615",
+            "612",
+            "597",
+            "613"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 470 and 142, you add the hundreds place (400 + 100 = 500), the tens place (70 + 40 = 110), and the ones place (0 + 2 = 2). Then you add them together (500 + 110 + 2 = 612)."
+        },
+        {
+          "question": "What is 238 + 85?",
+          "answers": [
+            "313",
+            "323",
+            "321",
+            "326"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 238 and 85, you add the hundreds place (200 + 0 = 200), the tens place (30 + 80 = 110), and the ones place (8 + 5 = 13). Then you add them together (200 + 110 + 13 = 323)."
+        },
+        {
+          "question": "What is 76 + 350?",
+          "answers": [
+            "424",
+            "426",
+            "427",
+            "416"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 76 and 350, you add the hundreds place (0 + 300 = 300), the tens place (70 + 50 = 120), and the ones place (6 + 0 = 6). Then you add them together (300 + 120 + 6 = 426)."
+        },
+        {
+          "question": "What is 174 + 381?",
+          "answers": [
+            "557",
+            "553",
+            "560",
+            "555"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 174 and 381, you add the hundreds place (100 + 300 = 400), the tens place (70 + 80 = 150), and the ones place (4 + 1 = 5). Then you add them together (400 + 150 + 5 = 555)."
+        },
+        {
+          "question": "What is 306 + 344?",
+          "answers": [
+            "635",
+            "650",
+            "648",
+            "649"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 306 and 344, you add the hundreds place (300 + 300 = 600), the tens place (0 + 40 = 40), and the ones place (6 + 4 = 10). Then you add them together (600 + 40 + 10 = 650)."
+        },
+        {
+          "question": "What is 269 + 388?",
+          "answers": [
+            "657",
+            "672",
+            "659",
+            "652"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 269 and 388, you add the hundreds place (200 + 300 = 500), the tens place (60 + 80 = 140), and the ones place (9 + 8 = 17). Then you add them together (500 + 140 + 17 = 657)."
+        },
+        {
+          "question": "What is 290 + 327?",
+          "answers": [
+            "614",
+            "612",
+            "617",
+            "616"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 290 and 327, you add the hundreds place (200 + 300 = 500), the tens place (90 + 20 = 110), and the ones place (0 + 7 = 7). Then you add them together (500 + 110 + 7 = 617)."
+        },
+        {
+          "question": "What is 411 + 347?",
+          "answers": [
+            "757",
+            "758",
+            "773",
+            "743"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 411 and 347, you add the hundreds place (400 + 300 = 700), the tens place (10 + 40 = 50), and the ones place (1 + 7 = 8). Then you add them together (700 + 50 + 8 = 758)."
+        }
+      ],
+      [
+        {
+          "question": "What is 496 + 179?",
+          "answers": [
+            "670",
+            "673",
+            "675",
+            "676"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 496 and 179, you add the hundreds place (400 + 100 = 500), the tens place (90 + 70 = 160), and the ones place (6 + 9 = 15). Then you add them together (500 + 160 + 15 = 675)."
+        },
+        {
+          "question": "What is 360 + 56?",
+          "answers": [
+            "418",
+            "411",
+            "416",
+            "426"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 360 and 56, you add the hundreds place (300 + 0 = 300), the tens place (60 + 50 = 110), and the ones place (0 + 6 = 6). Then you add them together (300 + 110 + 6 = 416)."
+        },
+        {
+          "question": "What is 318 + 134?",
+          "answers": [
+            "449",
+            "455",
+            "467",
+            "452"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 318 and 134, you add the hundreds place (300 + 100 = 400), the tens place (10 + 30 = 40), and the ones place (8 + 4 = 12). Then you add them together (400 + 40 + 12 = 452)."
+        },
+        {
+          "question": "What is 164 + 194?",
+          "answers": [
+            "361",
+            "358",
+            "360",
+            "348"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 164 and 194, you add the hundreds place (100 + 100 = 200), the tens place (60 + 90 = 150), and the ones place (4 + 4 = 8). Then you add them together (200 + 150 + 8 = 358)."
+        },
+        {
+          "question": "What is 375 + 250?",
+          "answers": [
+            "615",
+            "626",
+            "627",
+            "625"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 375 and 250, you add the hundreds place (300 + 200 = 500), the tens place (70 + 50 = 120), and the ones place (5 + 0 = 5). Then you add them together (500 + 120 + 5 = 625)."
+        },
+        {
+          "question": "What is 439 + 384?",
+          "answers": [
+            "822",
+            "824",
+            "823",
+            "826"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 439 and 384, you add the hundreds place (400 + 300 = 700), the tens place (30 + 80 = 110), and the ones place (9 + 4 = 13). Then you add them together (700 + 110 + 13 = 823)."
+        },
+        {
+          "question": "What is 149 + 158?",
+          "answers": [
+            "297",
+            "307",
+            "304",
+            "292"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 149 and 158, you add the hundreds place (100 + 100 = 200), the tens place (40 + 50 = 90), and the ones place (9 + 8 = 17). Then you add them together (200 + 90 + 17 = 307)."
+        },
+        {
+          "question": "What is 261 + 385?",
+          "answers": [
+            "646",
+            "645",
+            "631",
+            "649"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 261 and 385, you add the hundreds place (200 + 300 = 500), the tens place (60 + 80 = 140), and the ones place (1 + 5 = 6). Then you add them together (500 + 140 + 6 = 646)."
+        },
+        {
+          "question": "What is 407 + 199?",
+          "answers": [
+            "601",
+            "604",
+            "596",
+            "606"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 407 and 199, you add the hundreds place (400 + 100 = 500), the tens place (0 + 90 = 90), and the ones place (7 + 9 = 16). Then you add them together (500 + 90 + 16 = 606)."
+        },
+        {
+          "question": "What is 158 + 313?",
+          "answers": [
+            "486",
+            "456",
+            "471",
+            "470"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 158 and 313, you add the hundreds place (100 + 300 = 400), the tens place (50 + 10 = 60), and the ones place (8 + 3 = 11). Then you add them together (400 + 60 + 11 = 471)."
+        }
+      ],
+      [
+        {
+          "question": "What is 262 + 163?",
+          "answers": [
+            "426",
+            "425",
+            "435",
+            "428"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 262 and 163, you add the hundreds place (200 + 100 = 300), the tens place (60 + 60 = 120), and the ones place (2 + 3 = 5). Then you add them together (300 + 120 + 5 = 425)."
+        },
+        {
+          "question": "What is 249 + 89?",
+          "answers": [
+            "323",
+            "336",
+            "340",
+            "338"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 249 and 89, you add the hundreds place (200 + 0 = 200), the tens place (40 + 80 = 120), and the ones place (9 + 9 = 18). Then you add them together (200 + 120 + 18 = 338)."
+        },
+        {
+          "question": "What is 114 + 112?",
+          "answers": [
+            "229",
+            "228",
+            "226",
+            "225"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 114 and 112, you add the hundreds place (100 + 100 = 200), the tens place (10 + 10 = 20), and the ones place (4 + 2 = 6). Then you add them together (200 + 20 + 6 = 226)."
+        },
+        {
+          "question": "What is 197 + 235?",
+          "answers": [
+            "433",
+            "429",
+            "417",
+            "432"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 197 and 235, you add the hundreds place (100 + 200 = 300), the tens place (90 + 30 = 120), and the ones place (7 + 5 = 12). Then you add them together (300 + 120 + 12 = 432)."
+        },
+        {
+          "question": "What is 353 + 390?",
+          "answers": [
+            "742",
+            "758",
+            "743",
+            "733"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 353 and 390, you add the hundreds place (300 + 300 = 600), the tens place (50 + 90 = 140), and the ones place (3 + 0 = 3). Then you add them together (600 + 140 + 3 = 743)."
+        },
+        {
+          "question": "What is 264 + 114?",
+          "answers": [
+            "380",
+            "373",
+            "378",
+            "363"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 264 and 114, you add the hundreds place (200 + 100 = 300), the tens place (60 + 10 = 70), and the ones place (4 + 4 = 8). Then you add them together (300 + 70 + 8 = 378)."
+        },
+        {
+          "question": "What is 66 + 100?",
+          "answers": [
+            "163",
+            "161",
+            "168",
+            "166"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 66 and 100, you simply add the two numbers, which equals 166."
+        },
+        {
+          "question": "What is 80 + 78?",
+          "answers": [
+            "153",
+            "148",
+            "158",
+            "160"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 80 and 78, you add the tens place (80 + 70 = 150) and the ones place (0 + 8 = 8). Then you add them together (150 + 8 = 158)."
+        },
+        {
+          "question": "What is 233 + 275?",
+          "answers": [
+            "509",
+            "508",
+            "505",
+            "507"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 233 and 275, you add the hundreds place (200 + 200 = 400), the tens place (30 + 70 = 100), and the ones place (3 + 5 = 8). Then you add them together (400 + 100 + 8 = 508)."
+        },
+        {
+          "question": "What is 199 + 217?",
+          "answers": [
+            "415",
+            "426",
+            "416",
+            "417"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 199 and 217, you add the hundreds place (100 + 200 = 300), the tens place (90 + 10 = 100), and the ones place (9 + 7 = 16). Then you add them together (300 + 100 + 16 = 416)."
+        }
+      ],
+      [
+        {
+          "question": "What is 331 + 83?",
+          "answers": [
+            "414",
+            "404",
+            "412",
+            "411"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 331 and 83, you add the hundreds place (300 + 0 = 300), the tens place (30 + 80 = 110), and the ones place (1 + 3 = 4). Then you add them together (300 + 110 + 4 = 414)."
+        },
+        {
+          "question": "What is 451 + 359?",
+          "answers": [
+            "808",
+            "810",
+            "820",
+            "813"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 451 and 359, you add the hundreds place (400 + 300 = 700), the tens place (50 + 50 = 100), and the ones place (1 + 9 = 10). Then you add them together (700 + 100 + 10 = 810)."
+        },
+        {
+          "question": "What is 239 + 370?",
+          "answers": [
+            "609",
+            "594",
+            "610",
+            "604"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 239 and 370, you add the hundreds place (200 + 300 = 500), the tens place (30 + 70 = 100), and the ones place (9 + 0 = 9). Then you add them together (500 + 100 + 9 = 609)."
+        },
+        {
+          "question": "What is 403 + 480?",
+          "answers": [
+            "886",
+            "883",
+            "868",
+            "882"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 403 and 480, you add the hundreds place (400 + 400 = 800), the tens place (0 + 80 = 80), and the ones place (3 + 0 = 3). Then you add them together (800 + 80 + 3 = 883)."
+        },
+        {
+          "question": "What is 90 + 243?",
+          "answers": [
+            "333",
+            "328",
+            "338",
+            "348"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 90 and 243, you add the hundreds place (0 + 200 = 200), the tens place (90 + 40 = 130), and the ones place (0 + 3 = 3). Then you add them together (200 + 130 + 3 = 333)."
+        },
+        {
+          "question": "What is 425 + 355?",
+          "answers": [
+            "795",
+            "777",
+            "780",
+            "783"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 425 and 355, you add the hundreds place (400 + 300 = 700), the tens place (20 + 50 = 70), and the ones place (5 + 5 = 10). Then you add them together (700 + 70 + 10 = 780)."
+        },
+        {
+          "question": "What is 148 + 155?",
+          "answers": [
+            "318",
+            "302",
+            "304",
+            "303"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 148 and 155, you add the hundreds place (100 + 100 = 200), the tens place (40 + 50 = 90), and the ones place (8 + 5 = 13). Then you add them together (200 + 90 + 13 = 303)."
+        },
+        {
+          "question": "What is 248 + 63?",
+          "answers": [
+            "326",
+            "311",
+            "296",
+            "309"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 248 and 63, you add the hundreds place (200 + 0 = 200), the tens place (40 + 60 = 100), and the ones place (8 + 3 = 11). Then you add them together (200 + 100 + 11 = 311)."
+        },
+        {
+          "question": "What is 144 + 101?",
+          "answers": [
+            "260",
+            "245",
+            "250",
+            "240"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 144 and 101, you add the hundreds place (100 + 100 = 200), the tens place (40 + 0 = 40), and the ones place (4 + 1 = 5). Then you add them together (200 + 40 + 5 = 245)."
+        },
+        {
+          "question": "What is 87 + 234?",
+          "answers": [
+            "320",
+            "306",
+            "319",
+            "321"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 87 and 234, you add the hundreds place (0 + 200 = 200), the tens place (80 + 30 = 110), and the ones place (7 + 4 = 11). Then you add them together (200 + 110 + 11 = 321)."
+        }
+      ],
+      [
+        {
+          "question": "What is 97 + 367?",
+          "answers": [
+            "462",
+            "454",
+            "467",
+            "464"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 97 and 367, you add the hundreds place (0 + 300 = 300), the tens place (90 + 60 = 150), and the ones place (7 + 7 = 14). Then you add them together (300 + 150 + 14 = 464)."
+        },
+        {
+          "question": "What is 459 + 460?",
+          "answers": [
+            "919",
+            "917",
+            "929",
+            "921"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 459 and 460, you add the hundreds place (400 + 400 = 800), the tens place (50 + 60 = 110), and the ones place (9 + 0 = 9). Then you add them together (800 + 110 + 9 = 919)."
+        },
+        {
+          "question": "What is 479 + 107?",
+          "answers": [
+            "588",
+            "576",
+            "586",
+            "591"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 479 and 107, you add the hundreds place (400 + 100 = 500), the tens place (70 + 0 = 70), and the ones place (9 + 7 = 16). Then you add them together (500 + 70 + 16 = 586)."
+        },
+        {
+          "question": "What is 469 + 117?",
+          "answers": [
+            "587",
+            "583",
+            "571",
+            "586"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 469 and 117, you add the hundreds place (400 + 100 = 500), the tens place (60 + 10 = 70), and the ones place (9 + 7 = 16). Then you add them together (500 + 70 + 16 = 586)."
+        },
+        {
+          "question": "What is 116 + 461?",
+          "answers": [
+            "567",
+            "577",
+            "572",
+            "580"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 116 and 461, you add the hundreds place (100 + 400 = 500), the tens place (10 + 60 = 70), and the ones place (6 + 1 = 7). Then you add them together (500 + 70 + 7 = 577)."
+        },
+        {
+          "question": "What is 448 + 249?",
+          "answers": [
+            "695",
+            "682",
+            "687",
+            "697"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 448 and 249, you add the hundreds place (400 + 200 = 600), the tens place (40 + 40 = 80), and the ones place (8 + 9 = 17). Then you add them together (600 + 80 + 17 = 697)."
+        },
+        {
+          "question": "What is 186 + 341?",
+          "answers": [
+            "512",
+            "530",
+            "527",
+            "537"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 186 and 341, you add the hundreds place (100 + 300 = 400), the tens place (80 + 40 = 120), and the ones place (6 + 1 = 7). Then you add them together (400 + 120 + 7 = 527)."
+        },
+        {
+          "question": "What is 355 + 330?",
+          "answers": [
+            "684",
+            "670",
+            "695",
+            "685"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 355 and 330, you add the hundreds place (300 + 300 = 600), the tens place (50 + 30 = 80), and the ones place (5 + 0 = 5). Then you add them together (600 + 80 + 5 = 685)."
+        },
+        {
+          "question": "What is 500 + 152?",
+          "answers": [
+            "653",
+            "654",
+            "652",
+            "649"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 500 and 152, you add the hundreds place (500 + 100 = 600), the tens place (0 + 50 = 50), and the ones place (0 + 2 = 2). Then you add them together (600 + 50 + 2 = 652)."
+        },
+        {
+          "question": "What is 493 + 459?",
+          "answers": [
+            "962",
+            "947",
+            "952",
+            "937"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 493 and 459, you add the hundreds place (400 + 400 = 800), the tens place (90 + 50 = 140), and the ones place (3 + 9 = 12). Then you add them together (800 + 140 + 12 = 952)."
+        }
+      ],
+      [
+        {
+          "question": "What is 346 + 147?",
+          "answers": [
+            "498",
+            "508",
+            "493",
+            "494"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 346 and 147, you add the hundreds place (300 + 100 = 400), the tens place (40 + 40 = 80), and the ones place (6 + 7 = 13). Then you add them together (400 + 80 + 13 = 493)."
+        },
+        {
+          "question": "What is 88 + 475?",
+          "answers": [
+            "565",
+            "553",
+            "563",
+            "560"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 88 and 475, you add the hundreds place (0 + 400 = 400), the tens place (80 + 70 = 150), and the ones place (8 + 5 = 13). Then you add them together (400 + 150 + 13 = 563)."
+        },
+        {
+          "question": "What is 409 + 65?",
+          "answers": [
+            "471",
+            "474",
+            "484",
+            "459"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 409 and 65, you add the hundreds place (400 + 0 = 400), the tens place (0 + 60 = 60), and the ones place (9 + 5 = 14). Then you add them together (400 + 60 + 14 = 474)."
+        },
+        {
+          "question": "What is 415 + 75?",
+          "answers": [
+            "491",
+            "505",
+            "490",
+            "492"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 415 and 75, you add the hundreds place (400 + 0 = 400), the tens place (10 + 70 = 80), and the ones place (5 + 5 = 10). Then you add them together (400 + 80 + 10 = 490)."
+        },
+        {
+          "question": "What is 379 + 386?",
+          "answers": [
+            "765",
+            "766",
+            "775",
+            "755"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 379 and 386, you add the hundreds place (300 + 300 = 600), the tens place (70 + 80 = 150), and the ones place (9 + 6 = 15). Then you add them together (600 + 150 + 15 = 765)."
+        },
+        {
+          "question": "What is 127 + 386?",
+          "answers": [
+            "528",
+            "508",
+            "513",
+            "523"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 127 and 386, you add the hundreds place (100 + 300 = 400), the tens place (20 + 80 = 100), and the ones place (7 + 6 = 13). Then you add them together (400 + 100 + 13 = 513)."
+        },
+        {
+          "question": "What is 411 + 184?",
+          "answers": [
+            "595",
+            "596",
+            "590",
+            "593"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 411 and 184, you add the hundreds place (400 + 100 = 500), the tens place (10 + 80 = 90), and the ones place (1 + 4 = 5). Then you add them together (500 + 90 + 5 = 595)."
+        },
+        {
+          "question": "What is 316 + 438?",
+          "answers": [
+            "754",
+            "744",
+            "764",
+            "759"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 316 and 438, you add the hundreds place (300 + 400 = 700), the tens place (10 + 30 = 40), and the ones place (6 + 8 = 14). Then you add them together (700 + 40 + 14 = 754)."
+        },
+        {
+          "question": "What is 370 + 458?",
+          "answers": [
+            "828",
+            "831",
+            "813",
+            "830"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 370 and 458, you add the hundreds place (300 + 400 = 700), the tens place (70 + 50 = 120), and the ones place (0 + 8 = 8). Then you add them together (700 + 120 + 8 = 828)."
+        },
+        {
+          "question": "What is 241 + 381?",
+          "answers": [
+            "620",
+            "622",
+            "625",
+            "637"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 241 and 381, you add the hundreds place (200 + 300 = 500), the tens place (40 + 80 = 120), and the ones place (1 + 1 = 2). Then you add them together (500 + 120 + 2 = 622)."
+        }
+      ],
+      [
+        {
+          "question": "What is 70 + 241?",
+          "answers": [
+            "296",
+            "301",
+            "316",
+            "311"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 70 and 241, you add the hundreds place (0 + 200 = 200), the tens place (70 + 40 = 110), and the ones place (0 + 1 = 1). Then you add them together (200 + 110 + 1 = 311)."
+        },
+        {
+          "question": "What is 389 + 140?",
+          "answers": [
+            "534",
+            "539",
+            "519",
+            "529"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 389 and 140, you add the hundreds place (300 + 100 = 400), the tens place (80 + 40 = 120), and the ones place (9 + 0 = 9). Then you add them together (400 + 120 + 9 = 529)."
+        },
+        {
+          "question": "What is 119 + 309?",
+          "answers": [
+            "443",
+            "418",
+            "428",
+            "438"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 119 and 309, you add the hundreds place (100 + 300 = 400), the tens place (10 + 0 = 10), and the ones place (9 + 9 = 18). Then you add them together (400 + 10 + 18 = 428)."
+        },
+        {
+          "question": "What is 500 + 371?",
+          "answers": [
+            "873",
+            "874",
+            "871",
+            "870"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 500 and 371, you add the hundreds place (500 + 300 = 800), the tens place (0 + 70 = 70), and the ones place (0 + 1 = 1). Then you add them together (800 + 70 + 1 = 871)."
+        },
+        {
+          "question": "What is 452 + 440?",
+          "answers": [
+            "891",
+            "892",
+            "890",
+            "902"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 452 and 440, you add the hundreds place (400 + 400 = 800), the tens place (50 + 40 = 90), and the ones place (2 + 0 = 2). Then you add them together (800 + 90 + 2 = 892)."
+        },
+        {
+          "question": "What is 102 + 423?",
+          "answers": [
+            "525",
+            "528",
+            "510",
+            "540"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 102 and 423, you add the hundreds place (100 + 400 = 500), the tens place (0 + 20 = 20), and the ones place (2 + 3 = 5). Then you add them together (500 + 20 + 5 = 525)."
+        },
+        {
+          "question": "What is 121 + 125?",
+          "answers": [
+            "247",
+            "256",
+            "246",
+            "241"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 121 and 125, you add the hundreds place (100 + 100 = 200), the tens place (20 + 20 = 40), and the ones place (1 + 5 = 6). Then you add them together (200 + 40 + 6 = 246)."
+        },
+        {
+          "question": "What is 310 + 384?",
+          "answers": [
+            "697",
+            "694",
+            "689",
+            "696"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 310 and 384, you add the hundreds place (300 + 300 = 600), the tens place (10 + 80 = 90), and the ones place (0 + 4 = 4). Then you add them together (600 + 90 + 4 = 694)."
+        },
+        {
+          "question": "What is 191 + 229?",
+          "answers": [
+            "430",
+            "423",
+            "420",
+            "422"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 191 and 229, you add the hundreds place (100 + 200 = 300), the tens place (90 + 20 = 110), and the ones place (1 + 9 = 10). Then you add them together (300 + 110 + 10 = 420)."
+        },
+        {
+          "question": "What is 432 + 484?",
+          "answers": [
+            "918",
+            "916",
+            "917",
+            "915"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 432 and 484, you add the hundreds place (400 + 400 = 800), the tens place (30 + 80 = 110), and the ones place (2 + 4 = 6). Then you add them together (800 + 110 + 6 = 916)."
+        }
+      ],
+      [
+        {
+          "question": "What is 492 + 263?",
+          "answers": [
+            "770",
+            "754",
+            "745",
+            "755"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 492 and 263, you add the hundreds place (400 + 200 = 600), the tens place (90 + 60 = 150), and the ones place (2 + 3 = 5). Then you add them together (600 + 150 + 5 = 755)."
+        },
+        {
+          "question": "What is 107 + 69?",
+          "answers": [
+            "176",
+            "175",
+            "173",
+            "191"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 107 and 69, you add the hundreds place (100 + 0 = 100), the tens place (0 + 60 = 60), and the ones place (7 + 9 = 16). Then you add them together (100 + 60 + 16 = 176)."
+        },
+        {
+          "question": "What is 390 + 169?",
+          "answers": [
+            "554",
+            "569",
+            "544",
+            "559"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 390 and 169, you add the hundreds place (300 + 100 = 400), the tens place (90 + 60 = 150), and the ones place (0 + 9 = 9). Then you add them together (400 + 150 + 9 = 559)."
+        },
+        {
+          "question": "What is 269 + 377?",
+          "answers": [
+            "656",
+            "646",
+            "631",
+            "645"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 269 and 377, you add the hundreds place (200 + 300 = 500), the tens place (60 + 70 = 130), and the ones place (9 + 7 = 16). Then you add them together (500 + 130 + 16 = 646)."
+        },
+        {
+          "question": "What is 328 + 209?",
+          "answers": [
+            "527",
+            "547",
+            "536",
+            "537"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 328 and 209, you add the hundreds place (300 + 200 = 500), the tens place (20 + 0 = 20), and the ones place (8 + 9 = 17). Then you add them together (500 + 20 + 17 = 537)."
+        },
+        {
+          "question": "What is 335 + 115?",
+          "answers": [
+            "450",
+            "435",
+            "453",
+            "455"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 335 and 115, you add the hundreds place (300 + 100 = 400), the tens place (30 + 10 = 40), and the ones place (5 + 5 = 10). Then you add them together (400 + 40 + 10 = 450)."
+        },
+        {
+          "question": "What is 254 + 410?",
+          "answers": [
+            "661",
+            "664",
+            "654",
+            "666"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 254 and 410, you add the hundreds place (200 + 400 = 600), the tens place (50 + 10 = 60), and the ones place (4 + 0 = 4). Then you add them together (600 + 60 + 4 = 664)."
+        },
+        {
+          "question": "What is 218 + 407?",
+          "answers": [
+            "626",
+            "627",
+            "625",
+            "640"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 218 and 407, you add the hundreds place (200 + 400 = 600), the tens place (10 + 0 = 10), and the ones place (8 + 7 = 15). Then you add them together (600 + 10 + 15 = 625)."
+        },
+        {
+          "question": "What is 233 + 310?",
+          "answers": [
+            "540",
+            "543",
+            "544",
+            "533"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 233 and 310, you add the hundreds place (200 + 300 = 500), the tens place (30 + 10 = 40), and the ones place (3 + 0 = 3). Then you add them together (500 + 40 + 3 = 543)."
+        },
+        {
+          "question": "What is 238 + 139?",
+          "answers": [
+            "377",
+            "378",
+            "374",
+            "367"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 238 and 139, you add the hundreds place (200 + 100 = 300), the tens place (30 + 30 = 60), and the ones place (8 + 9 = 17). Then you add them together (300 + 60 + 17 = 377)."
+        }
+      ],
+      [
+        {
+          "question": "What is 279 + 415?",
+          "answers": [
+            "695",
+            "684",
+            "679",
+            "694"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 279 and 415, you add the hundreds place (200 + 400 = 600), the tens place (70 + 10 = 80), and the ones place (9 + 5 = 14). Then you add them together (600 + 80 + 14 = 694)."
+        },
+        {
+          "question": "What is 242 + 476?",
+          "answers": [
+            "708",
+            "717",
+            "718",
+            "733"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 242 and 476, you add the hundreds place (200 + 400 = 600), the tens place (40 + 70 = 110), and the ones place (2 + 6 = 8). Then you add them together (600 + 110 + 8 = 718)."
+        },
+        {
+          "question": "What is 111 + 63?",
+          "answers": [
+            "177",
+            "175",
+            "176",
+            "174"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 111 and 63, you add the hundreds place (100 + 0 = 100), the tens place (10 + 60 = 70), and the ones place (1 + 3 = 4). Then you add them together (100 + 70 + 4 = 174)."
+        },
+        {
+          "question": "What is 461 + 196?",
+          "answers": [
+            "656",
+            "672",
+            "655",
+            "657"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 461 and 196, you add the hundreds place (400 + 100 = 500), the tens place (60 + 90 = 150), and the ones place (1 + 6 = 7). Then you add them together (500 + 150 + 7 = 657)."
+        },
+        {
+          "question": "What is 234 + 165?",
+          "answers": [
+            "402",
+            "404",
+            "384",
+            "399"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 234 and 165, you add the hundreds place (200 + 100 = 300), the tens place (30 + 60 = 90), and the ones place (4 + 5 = 9). Then you add them together (300 + 90 + 9 = 399)."
+        },
+        {
+          "question": "What is 219 + 173?",
+          "answers": [
+            "395",
+            "392",
+            "407",
+            "394"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 219 and 173, you add the hundreds place (200 + 100 = 300), the tens place (10 + 70 = 80), and the ones place (9 + 3 = 12). Then you add them together (300 + 80 + 12 = 392)."
+        },
+        {
+          "question": "What is 150 + 287?",
+          "answers": [
+            "447",
+            "437",
+            "436",
+            "439"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 150 and 287, you add the hundreds place (100 + 200 = 300), the tens place (50 + 80 = 130), and the ones place (0 + 7 = 7). Then you add them together (300 + 130 + 7 = 437)."
+        },
+        {
+          "question": "What is 273 + 418?",
+          "answers": [
+            "691",
+            "681",
+            "689",
+            "701"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 273 and 418, you add the hundreds place (200 + 400 = 600), the tens place (70 + 10 = 80), and the ones place (3 + 8 = 11). Then you add them together (600 + 80 + 11 = 691)."
+        },
+        {
+          "question": "What is 496 + 362?",
+          "answers": [
+            "863",
+            "859",
+            "857",
+            "858"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 496 and 362, you add the hundreds place (400 + 300 = 700), the tens place (90 + 60 = 150), and the ones place (6 + 2 = 8). Then you add them together (700 + 150 + 8 = 858)."
+        },
+        {
+          "question": "What is 132 + 406?",
+          "answers": [
+            "539",
+            "538",
+            "541",
+            "540"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 132 and 406, you add the hundreds place (100 + 400 = 500), the tens place (30 + 0 = 30), and the ones place (2 + 6 = 8). Then you add them together (500 + 30 + 8 = 538)."
+        }
+      ],
+      [
+        {
+          "question": "What is 447 + 198?",
+          "answers": [
+            "648",
+            "640",
+            "645",
+            "642"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 447 and 198, you add the hundreds place (400 + 100 = 500), the tens place (40 + 90 = 130), and the ones place (7 + 8 = 15). Then you add them together (500 + 130 + 15 = 645)."
+        },
+        {
+          "question": "What is 348 + 247?",
+          "answers": [
+            "594",
+            "585",
+            "595",
+            "598"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 348 and 247, you add the hundreds place (300 + 200 = 500), the tens place (40 + 40 = 80), and the ones place (8 + 7 = 15). Then you add them together (500 + 80 + 15 = 595)."
+        },
+        {
+          "question": "What is 136 + 226?",
+          "answers": [
+            "377",
+            "357",
+            "367",
+            "362"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 136 and 226, you add the hundreds place (100 + 200 = 300), the tens place (30 + 20 = 50), and the ones place (6 + 6 = 12). Then you add them together (300 + 50 + 12 = 362)."
+        },
+        {
+          "question": "What is 129 + 132?",
+          "answers": [
+            "263",
+            "266",
+            "261",
+            "259"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 129 and 132, you add the hundreds place (100 + 100 = 200), the tens place (20 + 30 = 50), and the ones place (9 + 2 = 11). Then you add them together (200 + 50 + 11 = 261)."
+        },
+        {
+          "question": "What is 201 + 147?",
+          "answers": [
+            "353",
+            "333",
+            "348",
+            "346"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 201 and 147, you add the hundreds place (200 + 100 = 300), the tens place (0 + 40 = 40), and the ones place (1 + 7 = 8). Then you add them together (300 + 40 + 8 = 348)."
+        },
+        {
+          "question": "What is 63 + 142?",
+          "answers": [
+            "204",
+            "200",
+            "205",
+            "210"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 63 and 142, you add the hundreds place (0 + 100 = 100), the tens place (60 + 40 = 100), and the ones place (3 + 2 = 5). Then you add them together (100 + 100 + 5 = 205)."
+        },
+        {
+          "question": "What is 101 + 174?",
+          "answers": [
+            "275",
+            "274",
+            "260",
+            "272"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 101 and 174, you add the hundreds place (100 + 100 = 200), the tens place (0 + 70 = 70), and the ones place (1 + 4 = 5). Then you add them together (200 + 70 + 5 = 275)."
+        },
+        {
+          "question": "What is 272 + 138?",
+          "answers": [
+            "413",
+            "400",
+            "395",
+            "410"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 272 and 138, you add the hundreds place (200 + 100 = 300), the tens place (70 + 30 = 100), and the ones place (2 + 8 = 10). Then you add them together (300 + 100 + 10 = 410)."
+        },
+        {
+          "question": "What is 262 + 129?",
+          "answers": [
+            "389",
+            "401",
+            "391",
+            "388"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 262 and 129, you add the hundreds place (200 + 100 = 300), the tens place (60 + 20 = 80), and the ones place (2 + 9 = 11). Then you add them together (300 + 80 + 11 = 391)."
+        },
+        {
+          "question": "What is 347 + 238?",
+          "answers": [
+            "600",
+            "586",
+            "585",
+            "570"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 347 and 238, you add the hundreds place (300 + 200 = 500), the tens place (40 + 30 = 70), and the ones place (7 + 8 = 15). Then you add them together (500 + 70 + 15 = 585)."
+        }
+      ],
+      [
+        {
+          "question": "What is 271 + 421?",
+          "answers": [
+            "697",
+            "692",
+            "687",
+            "689"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 271 and 421, you add the hundreds place (200 + 400 = 600), the tens place (70 + 20 = 90), and the ones place (1 + 1 = 2). Then you add them together (600 + 90 + 2 = 692)."
+        },
+        {
+          "question": "What is 308 + 124?",
+          "answers": [
+            "447",
+            "437",
+            "432",
+            "442"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 308 and 124, you add the hundreds place (300 + 100 = 400), the tens place (0 + 20 = 20), and the ones place (8 + 4 = 12). Then you add them together (400 + 20 + 12 = 432)."
+        },
+        {
+          "question": "What is 168 + 305?",
+          "answers": [
+            "463",
+            "488",
+            "471",
+            "473"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 168 and 305, you add the hundreds place (100 + 300 = 400), the tens place (60 + 0 = 60), and the ones place (8 + 5 = 13). Then you add them together (400 + 60 + 13 = 473)."
+        },
+        {
+          "question": "What is 305 + 418?",
+          "answers": [
+            "720",
+            "733",
+            "724",
+            "723"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 305 and 418, you add the hundreds place (300 + 400 = 700), the tens place (0 + 10 = 10), and the ones place (5 + 8 = 13). Then you add them together (700 + 10 + 13 = 723)."
+        },
+        {
+          "question": "What is 417 + 494?",
+          "answers": [
+            "911",
+            "914",
+            "901",
+            "909"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 417 and 494, you add the hundreds place (400 + 400 = 800), the tens place (10 + 90 = 100), and the ones place (7 + 4 = 11). Then you add them together (800 + 100 + 11 = 911)."
+        },
+        {
+          "question": "What is 127 + 366?",
+          "answers": [
+            "503",
+            "478",
+            "493",
+            "490"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 127 and 366, you add the hundreds place (100 + 300 = 400), the tens place (20 + 60 = 80), and the ones place (7 + 6 = 13). Then you add them together (400 + 80 + 13 = 493)."
+        },
+        {
+          "question": "What is 299 + 86?",
+          "answers": [
+            "380",
+            "387",
+            "385",
+            "384"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 299 and 86, you add the hundreds place (200 + 0 = 200), the tens place (90 + 80 = 170), and the ones place (9 + 6 = 15). Then you add them together (200 + 170 + 15 = 385)."
+        },
+        {
+          "question": "What is 99 + 439?",
+          "answers": [
+            "538",
+            "540",
+            "548",
+            "523"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 99 and 439, you add the hundreds place (0 + 400 = 400), the tens place (90 + 30 = 120), and the ones place (9 + 9 = 18). Then you add them together (400 + 120 + 18 = 538)."
+        },
+        {
+          "question": "What is 115 + 275?",
+          "answers": [
+            "390",
+            "388",
+            "405",
+            "392"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 115 and 275, you add the hundreds place (100 + 200 = 300), the tens place (10 + 70 = 80), and the ones place (5 + 5 = 10). Then you add them together (300 + 80 + 10 = 390)."
+        },
+        {
+          "question": "What is 295 + 229?",
+          "answers": [
+            "521",
+            "514",
+            "524",
+            "523"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 295 and 229, you add the hundreds place (200 + 200 = 400), the tens place (90 + 20 = 110), and the ones place (5 + 9 = 14). Then you add them together (400 + 110 + 14 = 524)."
+        }
+      ],
+      [
+        {
+          "question": "What is 186 + 343?",
+          "answers": [
+            "529",
+            "519",
+            "514",
+            "532"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 186 and 343, you add the hundreds place (100 + 300 = 400), the tens place (80 + 40 = 120), and the ones place (6 + 3 = 9). Then you add them together (400 + 120 + 9 = 529)."
+        },
+        {
+          "question": "What is 279 + 248?",
+          "answers": [
+            "527",
+            "522",
+            "537",
+            "524"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 279 and 248, you add the hundreds place (200 + 200 = 400), the tens place (70 + 40 = 110), and the ones place (9 + 8 = 17). Then you add them together (400 + 110 + 17 = 527)."
+        },
+        {
+          "question": "What is 436 + 123?",
+          "answers": [
+            "569",
+            "556",
+            "562",
+            "559"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 436 and 123, you add the hundreds place (400 + 100 = 500), the tens place (30 + 20 = 50), and the ones place (6 + 3 = 9). Then you add them together (500 + 50 + 9 = 559)."
+        },
+        {
+          "question": "What is 132 + 182?",
+          "answers": [
+            "314",
+            "313",
+            "315",
+            "319"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 132 and 182, you add the hundreds place (100 + 100 = 200), the tens place (30 + 80 = 110), and the ones place (2 + 2 = 4). Then you add them together (200 + 110 + 4 = 314)."
+        },
+        {
+          "question": "What is 411 + 168?",
+          "answers": [
+            "589",
+            "581",
+            "576",
+            "579"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 411 and 168, you add the hundreds place (400 + 100 = 500), the tens place (10 + 60 = 70), and the ones place (1 + 8 = 9). Then you add them together (500 + 70 + 9 = 579)."
+        },
+        {
+          "question": "What is 277 + 462?",
+          "answers": [
+            "739",
+            "738",
+            "754",
+            "744"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 277 and 462, you add the hundreds place (200 + 400 = 600), the tens place (70 + 60 = 130), and the ones place (7 + 2 = 9). Then you add them together (600 + 130 + 9 = 739)."
+        },
+        {
+          "question": "What is 222 + 282?",
+          "answers": [
+            "514",
+            "501",
+            "489",
+            "504"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 222 and 282, you add the hundreds place (200 + 200 = 400), the tens place (20 + 80 = 100), and the ones place (2 + 2 = 4). Then you add them together (400 + 100 + 4 = 504)."
+        },
+        {
+          "question": "What is 461 + 188?",
+          "answers": [
+            "659",
+            "644",
+            "649",
+            "651"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 461 and 188, you add the hundreds place (400 + 100 = 500), the tens place (60 + 80 = 140), and the ones place (1 + 8 = 9). Then you add them together (500 + 140 + 9 = 649)."
+        },
+        {
+          "question": "What is 138 + 379?",
+          "answers": [
+            "517",
+            "515",
+            "520",
+            "518"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 138 and 379, you add the hundreds place (100 + 300 = 400), the tens place (30 + 70 = 100), and the ones place (8 + 9 = 17). Then you add them together (400 + 100 + 17 = 517)."
+        },
+        {
+          "question": "What is 338 + 264?",
+          "answers": [
+            "617",
+            "612",
+            "600",
+            "602"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 338 and 264, you add the hundreds place (300 + 200 = 500), the tens place (30 + 60 = 90), and the ones place (8 + 4 = 12). Then you add them together (500 + 90 + 12 = 602)."
+        }
+      ],
+      [
+        {
+          "question": "What is 168 + 429?",
+          "answers": [
+            "607",
+            "599",
+            "597",
+            "595"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 168 and 429, you add the hundreds place (100 + 400 = 500), the tens place (60 + 20 = 80), and the ones place (8 + 9 = 17). Then you add them together (500 + 80 + 17 = 597)."
+        },
+        {
+          "question": "What is 263 + 192?",
+          "answers": [
+            "458",
+            "457",
+            "470",
+            "455"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 263 and 192, you add the hundreds place (200 + 100 = 300), the tens place (60 + 90 = 150), and the ones place (3 + 2 = 5). Then you add them together (300 + 150 + 5 = 455)."
+        },
+        {
+          "question": "What is 78 + 172?",
+          "answers": [
+            "252",
+            "245",
+            "250",
+            "251"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 78 and 172, you add the hundreds place (0 + 100 = 100), the tens place (70 + 70 = 140), and the ones place (8 + 2 = 10). Then you add them together (100 + 140 + 10 = 250)."
+        },
+        {
+          "question": "What is 70 + 489?",
+          "answers": [
+            "559",
+            "558",
+            "554",
+            "564"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 70 and 489, you add the hundreds place (0 + 400 = 400), the tens place (70 + 80 = 150), and the ones place (0 + 9 = 9). Then you add them together (400 + 150 + 9 = 559)."
+        },
+        {
+          "question": "What is 402 + 83?",
+          "answers": [
+            "485",
+            "488",
+            "475",
+            "487"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 402 and 83, you add the hundreds place (400 + 0 = 400), the tens place (0 + 80 = 80), and the ones place (2 + 3 = 5). Then you add them together (400 + 80 + 5 = 485)."
+        },
+        {
+          "question": "What is 216 + 459?",
+          "answers": [
+            "685",
+            "676",
+            "672",
+            "675"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 216 and 459, you add the hundreds place (200 + 400 = 600), the tens place (10 + 50 = 60), and the ones place (6 + 9 = 15). Then you add them together (600 + 60 + 15 = 675)."
+        },
+        {
+          "question": "What is 389 + 396?",
+          "answers": [
+            "785",
+            "782",
+            "795",
+            "788"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 389 and 396, you add the hundreds place (300 + 300 = 600), the tens place (80 + 90 = 170), and the ones place (9 + 6 = 15). Then you add them together (600 + 170 + 15 = 785)."
+        },
+        {
+          "question": "What is 196 + 120?",
+          "answers": [
+            "319",
+            "317",
+            "315",
+            "316"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 196 and 120, you add the hundreds place (100 + 100 = 200), the tens place (90 + 20 = 110), and the ones place (6 + 0 = 6). Then you add them together (200 + 110 + 6 = 316)."
+        },
+        {
+          "question": "What is 89 + 240?",
+          "answers": [
+            "326",
+            "329",
+            "339",
+            "328"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 89 and 240, you add the hundreds place (0 + 200 = 200), the tens place (80 + 40 = 120), and the ones place (9 + 0 = 9). Then you add them together (200 + 120 + 9 = 329)."
+        },
+        {
+          "question": "What is 487 + 78?",
+          "answers": [
+            "564",
+            "565",
+            "550",
+            "580"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 487 and 78, you add the hundreds place (400 + 0 = 400), the tens place (80 + 70 = 150), and the ones place (7 + 8 = 15). Then you add them together (400 + 150 + 15 = 565)."
+        }
+      ],
+      [
+        {
+          "question": "What is 421 + 446?",
+          "answers": [
+            "867",
+            "877",
+            "866",
+            "882"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 421 and 446, you add the hundreds place (400 + 400 = 800), the tens place (20 + 40 = 60), and the ones place (1 + 6 = 7). Then you add them together (800 + 60 + 7 = 867)."
+        },
+        {
+          "question": "What is 471 + 443?",
+          "answers": [
+            "912",
+            "915",
+            "924",
+            "914"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 471 and 443, you add the hundreds place (400 + 400 = 800), the tens place (70 + 40 = 110), and the ones place (1 + 3 = 4). Then you add them together (800 + 110 + 4 = 914)."
+        },
+        {
+          "question": "What is 153 + 351?",
+          "answers": [
+            "504",
+            "506",
+            "503",
+            "502"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 153 and 351, you add the hundreds place (100 + 300 = 400), the tens place (50 + 50 = 100), and the ones place (3 + 1 = 4). Then you add them together (400 + 100 + 4 = 504)."
+        },
+        {
+          "question": "What is 238 + 310?",
+          "answers": [
+            "548",
+            "553",
+            "547",
+            "543"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 238 and 310, you add the hundreds place (200 + 300 = 500), the tens place (30 + 10 = 40), and the ones place (8 + 0 = 8). Then you add them together (500 + 40 + 8 = 548)."
+        },
+        {
+          "question": "What is 380 + 118?",
+          "answers": [
+            "493",
+            "499",
+            "508",
+            "498"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 380 and 118, you add the hundreds place (300 + 100 = 400), the tens place (80 + 10 = 90), and the ones place (0 + 8 = 8). Then you add them together (400 + 90 + 8 = 498)."
+        },
+        {
+          "question": "What is 251 + 398?",
+          "answers": [
+            "659",
+            "649",
+            "646",
+            "651"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 251 and 398, you add the hundreds place (200 + 300 = 500), the tens place (50 + 90 = 140), and the ones place (1 + 8 = 9). Then you add them together (500 + 140 + 9 = 649)."
+        },
+        {
+          "question": "What is 157 + 383?",
+          "answers": [
+            "545",
+            "537",
+            "535",
+            "540"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 157 and 383, you add the hundreds place (100 + 300 = 400), the tens place (50 + 80 = 130), and the ones place (7 + 3 = 10). Then you add them together (400 + 130 + 10 = 540)."
+        },
+        {
+          "question": "What is 272 + 120?",
+          "answers": [
+            "393",
+            "392",
+            "395",
+            "397"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 272 and 120, you add the hundreds place (200 + 100 = 300), the tens place (70 + 20 = 90), and the ones place (2 + 0 = 2). Then you add them together (300 + 90 + 2 = 392)."
+        },
+        {
+          "question": "What is 52 + 82?",
+          "answers": [
+            "134",
+            "144",
+            "149",
+            "139"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 52 and 82, you add the tens place (50 + 80 = 130) and the ones place (2 + 2 = 4). Then you add them together (130 + 4 = 134)."
+        },
+        {
+          "question": "What is 176 + 77?",
+          "answers": [
+            "253",
+            "250",
+            "252",
+            "255"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 176 and 77, you add the hundreds place (100 + 0 = 100), the tens place (70 + 70 = 140), and the ones place (6 + 7 = 13). Then you add them together (100 + 140 + 13 = 253)."
+        }
+      ],
+      [
+        {
+          "question": "What is 325 + 209?",
+          "answers": [
+            "544",
+            "535",
+            "534",
+            "549"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 325 and 209, you add the hundreds place (300 + 200 = 500), the tens place (20 + 0 = 20), and the ones place (5 + 9 = 14). Then you add them together (500 + 20 + 14 = 534)."
+        },
+        {
+          "question": "What is 139 + 217?",
+          "answers": [
+            "356",
+            "355",
+            "359",
+            "353"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 139 and 217, you add the hundreds place (100 + 200 = 300), the tens place (30 + 10 = 40), and the ones place (9 + 7 = 16). Then you add them together (300 + 40 + 16 = 356)."
+        },
+        {
+          "question": "What is 377 + 224?",
+          "answers": [
+            "603",
+            "591",
+            "601",
+            "616"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 377 and 224, you add the hundreds place (300 + 200 = 500), the tens place (70 + 20 = 90), and the ones place (7 + 4 = 11). Then you add them together (500 + 90 + 11 = 601)."
+        },
+        {
+          "question": "What is 369 + 405?",
+          "answers": [
+            "759",
+            "775",
+            "774",
+            "764"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 369 and 405, you add the hundreds place (300 + 400 = 700), the tens place (60 + 0 = 60), and the ones place (9 + 5 = 14). Then you add them together (700 + 60 + 14 = 774)."
+        },
+        {
+          "question": "What is 117 + 221?",
+          "answers": [
+            "335",
+            "348",
+            "336",
+            "338"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 117 and 221, you add the hundreds place (100 + 200 = 300), the tens place (10 + 20 = 30), and the ones place (7 + 1 = 8). Then you add them together (300 + 30 + 8 = 338)."
+        },
+        {
+          "question": "What is 276 + 61?",
+          "answers": [
+            "337",
+            "340",
+            "327",
+            "322"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 276 and 61, you add the hundreds place (200 + 0 = 200), the tens place (70 + 60 = 130), and the ones place (6 + 1 = 7). Then you add them together (200 + 130 + 7 = 337)."
+        },
+        {
+          "question": "What is 332 + 120?",
+          "answers": [
+            "452",
+            "467",
+            "454",
+            "447"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 332 and 120, you add the hundreds place (300 + 100 = 400), the tens place (30 + 20 = 50), and the ones place (2 + 0 = 2). Then you add them together (400 + 50 + 2 = 452)."
+        },
+        {
+          "question": "What is 108 + 266?",
+          "answers": [
+            "364",
+            "376",
+            "374",
+            "384"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 108 and 266, you add the hundreds place (100 + 200 = 300), the tens place (0 + 60 = 60), and the ones place (8 + 6 = 14). Then you add them together (300 + 60 + 14 = 374)."
+        },
+        {
+          "question": "What is 123 + 280?",
+          "answers": [
+            "406",
+            "400",
+            "408",
+            "403"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 123 and 280, you add the hundreds place (100 + 200 = 300), the tens place (20 + 80 = 100), and the ones place (3 + 0 = 3). Then you add them together (300 + 100 + 3 = 403)."
+        },
+        {
+          "question": "What is 175 + 134?",
+          "answers": [
+            "314",
+            "309",
+            "307",
+            "299"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 175 and 134, you add the hundreds place (100 + 100 = 200), the tens place (70 + 30 = 100), and the ones place (5 + 4 = 9). Then you add them together (200 + 100 + 9 = 309)."
+        }
+      ],
+      [
+        {
+          "question": "What is 170 + 52?",
+          "answers": [
+            "220",
+            "222",
+            "232",
+            "221"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 170 and 52, you add the hundreds place (100 + 0 = 100), the tens place (70 + 50 = 120), and the ones place (0 + 2 = 2). Then you add them together (100 + 120 + 2 = 222)."
+        },
+        {
+          "question": "What is 313 + 209?",
+          "answers": [
+            "507",
+            "537",
+            "512",
+            "522"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 313 and 209, you add the hundreds place (300 + 200 = 500), the tens place (10 + 0 = 10), and the ones place (3 + 9 = 12). Then you add them together (500 + 10 + 12 = 522)."
+        },
+        {
+          "question": "What is 175 + 238?",
+          "answers": [
+            "418",
+            "415",
+            "413",
+            "412"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 175 and 238, you add the hundreds place (100 + 200 = 300), the tens place (70 + 30 = 100), and the ones place (5 + 8 = 13). Then you add them together (300 + 100 + 13 = 413)."
+        },
+        {
+          "question": "What is 298 + 69?",
+          "answers": [
+            "369",
+            "357",
+            "352",
+            "367"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 298 and 69, you add the hundreds place (200 + 0 = 200), the tens place (90 + 60 = 150), and the ones place (8 + 9 = 17). Then you add them together (200 + 150 + 17 = 367)."
+        },
+        {
+          "question": "What is 331 + 421?",
+          "answers": [
+            "751",
+            "749",
+            "752",
+            "762"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 331 and 421, you add the hundreds place (300 + 400 = 700), the tens place (30 + 20 = 50), and the ones place (1 + 1 = 2). Then you add them together (700 + 50 + 2 = 752)."
+        },
+        {
+          "question": "What is 368 + 495?",
+          "answers": [
+            "863",
+            "873",
+            "868",
+            "878"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 368 and 495, you add the hundreds place (300 + 400 = 700), the tens place (60 + 90 = 150), and the ones place (8 + 5 = 13). Then you add them together (700 + 150 + 13 = 863)."
+        },
+        {
+          "question": "What is 492 + 278?",
+          "answers": [
+            "755",
+            "770",
+            "768",
+            "760"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 492 and 278, you add the hundreds place (400 + 200 = 600), the tens place (90 + 70 = 160), and the ones place (2 + 8 = 10). Then you add them together (600 + 160 + 10 = 770)."
+        },
+        {
+          "question": "What is 390 + 423?",
+          "answers": [
+            "813",
+            "812",
+            "823",
+            "815"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 390 and 423, you add the hundreds place (300 + 400 = 700), the tens place (90 + 20 = 110), and the ones place (0 + 3 = 3). Then you add them together (700 + 110 + 3 = 813)."
+        },
+        {
+          "question": "What is 392 + 120?",
+          "answers": [
+            "512",
+            "510",
+            "515",
+            "517"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 392 and 120, you add the hundreds place (300 + 100 = 400), the tens place (90 + 20 = 110), and the ones place (2 + 0 = 2). Then you add them together (400 + 110 + 2 = 512)."
+        },
+        {
+          "question": "What is 136 + 151?",
+          "answers": [
+            "284",
+            "287",
+            "297",
+            "289"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 136 and 151, you add the hundreds place (100 + 100 = 200), the tens place (30 + 50 = 80), and the ones place (6 + 1 = 7). Then you add them together (200 + 80 + 7 = 287)."
+        }
+      ],
+      [
+        {
+          "question": "What is 291 + 498?",
+          "answers": [
+            "786",
+            "791",
+            "790",
+            "789"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 291 and 498, you add the hundreds place (200 + 400 = 600), the tens place (90 + 90 = 180), and the ones place (1 + 8 = 9). Then you add them together (600 + 180 + 9 = 789)."
+        },
+        {
+          "question": "What is 208 + 215?",
+          "answers": [
+            "421",
+            "423",
+            "438",
+            "426"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 208 and 215, you add the hundreds place (200 + 200 = 400), the tens place (0 + 10 = 10), and the ones place (8 + 5 = 13). Then you add them together (400 + 10 + 13 = 423)."
+        },
+        {
+          "question": "What is 274 + 399?",
+          "answers": [
+            "673",
+            "668",
+            "675",
+            "674"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 274 and 399, you add the hundreds place (200 + 300 = 500), the tens place (70 + 90 = 160), and the ones place (4 + 9 = 13). Then you add them together (500 + 160 + 13 = 673)."
+        },
+        {
+          "question": "What is 420 + 112?",
+          "answers": [
+            "532",
+            "530",
+            "527",
+            "529"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 420 and 112, you add the hundreds place (400 + 100 = 500), the tens place (20 + 10 = 30), and the ones place (0 + 2 = 2). Then you add them together (500 + 30 + 2 = 532)."
+        },
+        {
+          "question": "What is 222 + 120?",
+          "answers": [
+            "341",
+            "343",
+            "352",
+            "342"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 222 and 120, you add the hundreds place (200 + 100 = 300), the tens place (20 + 20 = 40), and the ones place (2 + 0 = 2). Then you add them together (300 + 40 + 2 = 342)."
+        },
+        {
+          "question": "What is 497 + 340?",
+          "answers": [
+            "840",
+            "837",
+            "852",
+            "822"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 497 and 340, you add the hundreds place (400 + 300 = 700), the tens place (90 + 40 = 130), and the ones place (7 + 0 = 7). Then you add them together (700 + 130 + 7 = 837)."
+        },
+        {
+          "question": "What is 445 + 469?",
+          "answers": [
+            "912",
+            "899",
+            "924",
+            "914"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 445 and 469, you add the hundreds place (400 + 400 = 800), the tens place (40 + 60 = 100), and the ones place (5 + 9 = 14). Then you add them together (800 + 100 + 14 = 914)."
+        },
+        {
+          "question": "What is 393 + 327?",
+          "answers": [
+            "710",
+            "717",
+            "720",
+            "722"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 393 and 327, you add the hundreds place (300 + 300 = 600), the tens place (90 + 20 = 110), and the ones place (3 + 7 = 10). Then you add them together (600 + 110 + 10 = 720)."
+        },
+        {
+          "question": "What is 312 + 492?",
+          "answers": [
+            "799",
+            "804",
+            "802",
+            "814"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 312 and 492, you add the hundreds place (300 + 400 = 700), the tens place (10 + 90 = 100), and the ones place (2 + 2 = 4). Then you add them together (700 + 100 + 4 = 804)."
+        },
+        {
+          "question": "What is 91 + 256?",
+          "answers": [
+            "346",
+            "347",
+            "344",
+            "348"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 91 and 256, you add the hundreds place (0 + 200 = 200), the tens place (90 + 50 = 140), and the ones place (1 + 6 = 7). Then you add them together (200 + 140 + 7 = 347)."
+        }
+      ],
+      [
+        {
+          "question": "What is 396 - 307?",
+          "answers": [
+            "104",
+            "74",
+            "94",
+            "89"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "Subtracting 307 from 396 leaves 89."
+        },
+        {
+          "question": "What is 275 - 258?",
+          "answers": [
+            "2",
+            "32",
             "15",
-            "20",
-            "30",
-            "40"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "15% of 200 is (15/100) * 200, which equals 30."
-        },
-        {
-          "question": "What is the square root of 144?",
-          "answers": [
-            "10",
-            "11",
-            "12",
-            "13"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "The square root of 144 is 12, because 12 * 12 = 144."
-        },
-        {
-          "question": "What is the next prime number after 13?",
-          "answers": [
-            "14",
-            "15",
-            "16",
             "17"
           ],
           "correctAnswerIndex": 3,
-          "explanation": "A prime number is only divisible by 1 and itself. 17 is the next prime number after 13."
+          "explanation": "Subtracting 258 from 275 leaves 17."
         },
         {
-          "question": "Solve for y: 3y - 4 = 11",
+          "question": "What is 100 - 52?",
           "answers": [
-            "3",
-            "4",
-            "5",
-            "6"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Add 4 to both sides (3y = 15), then divide by 3 to get y = 5."
-        },
-        {
-          "question": "What is the perimeter of a square with a side length of 7 cm?",
-          "answers": [
-            "14 cm",
-            "21 cm",
-            "28 cm",
-            "49 cm"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "The perimeter of a square is 4 times the side length (4 * 7 = 28)."
-        },
-        {
-          "question": "Simplify the fraction 12/18.",
-          "answers": [
-            "1/2",
-            "2/3",
-            "3/4",
-            "5/6"
+            "43",
+            "48",
+            "46",
+            "47"
           ],
           "correctAnswerIndex": 1,
-          "explanation": "Both 12 and 18 are divisible by 6. 12/6 = 2 and 18/6 = 3, so the fraction simplifies to 2/3."
+          "explanation": "Subtracting 52 from 100 leaves 48."
         },
         {
-          "question": "If a train travels at 60 mph, how far will it travel in 2.5 hours?",
+          "question": "What is 298 - 245?",
           "answers": [
-            "120 miles",
-            "150 miles",
-            "180 miles",
-            "200 miles"
+            "55",
+            "38",
+            "48",
+            "53"
           ],
-          "correctAnswerIndex": 1,
-          "explanation": "Distance = Speed × Time. 60 mph * 2.5 hours = 150 miles."
+          "correctAnswerIndex": 3,
+          "explanation": "Subtracting 245 from 298 leaves 53."
         },
         {
-          "question": "What is 5 factorial (5!)?",
+          "question": "What is 282 - 250?",
           "answers": [
-            "25",
-            "60",
-            "120",
-            "720"
+            "32",
+            "35",
+            "22",
+            "17"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 250 from 282 leaves 32."
+        },
+        {
+          "question": "What is 784 - 589?",
+          "answers": [
+            "190",
+            "194",
+            "195",
+            "198"
           ],
           "correctAnswerIndex": 2,
-          "explanation": "5! = 5 × 4 × 3 × 2 × 1 = 120."
+          "explanation": "Subtracting 589 from 784 leaves 195."
+        },
+        {
+          "question": "What is 125 - 82?",
+          "answers": [
+            "43",
+            "40",
+            "53",
+            "44"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 82 from 125 leaves 43."
+        },
+        {
+          "question": "What is 648 - 236?",
+          "answers": [
+            "412",
+            "409",
+            "407",
+            "410"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 236 from 648 leaves 412."
+        },
+        {
+          "question": "What is 512 - 484?",
+          "answers": [
+            "33",
+            "27",
+            "28",
+            "23"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 484 from 512 leaves 28."
+        },
+        {
+          "question": "What is 836 - 339?",
+          "answers": [
+            "497",
+            "492",
+            "494",
+            "487"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 339 from 836 leaves 497."
+        }
+      ],
+      [
+        {
+          "question": "What is 177 - 102?",
+          "answers": [
+            "75",
+            "74",
+            "85",
+            "90"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 102 from 177 leaves 75."
+        },
+        {
+          "question": "What is 611 - 468?",
+          "answers": [
+            "158",
+            "128",
+            "148",
+            "143"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "Subtracting 468 from 611 leaves 143."
+        },
+        {
+          "question": "What is 311 - 245?",
+          "answers": [
+            "69",
+            "56",
+            "66",
+            "71"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 245 from 311 leaves 66."
+        },
+        {
+          "question": "What is 769 - 244?",
+          "answers": [
+            "525",
+            "510",
+            "528",
+            "522"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 244 from 769 leaves 525."
+        },
+        {
+          "question": "What is 522 - 196?",
+          "answers": [
+            "341",
+            "321",
+            "326",
+            "336"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 196 from 522 leaves 326."
+        },
+        {
+          "question": "What is 672 - 316?",
+          "answers": [
+            "366",
+            "357",
+            "356",
+            "346"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 316 from 672 leaves 356."
+        },
+        {
+          "question": "What is 516 - 469?",
+          "answers": [
+            "57",
+            "47",
+            "52",
+            "46"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Subtracting 469 from 516 leaves 47."
+        },
+        {
+          "question": "What is 497 - 128?",
+          "answers": [
+            "369",
+            "384",
+            "364",
+            "359"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 128 from 497 leaves 369."
+        },
+        {
+          "question": "What is 471 - 155?",
+          "answers": [
+            "301",
+            "317",
+            "316",
+            "331"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 155 from 471 leaves 316."
+        },
+        {
+          "question": "What is 327 - 208?",
+          "answers": [
+            "124",
+            "129",
+            "119",
+            "118"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 208 from 327 leaves 119."
+        }
+      ],
+      [
+        {
+          "question": "What is 415 - 324?",
+          "answers": [
+            "86",
+            "93",
+            "91",
+            "94"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 324 from 415 leaves 91."
+        },
+        {
+          "question": "What is 390 - 249?",
+          "answers": [
+            "126",
+            "151",
+            "141",
+            "131"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 249 from 390 leaves 141."
+        },
+        {
+          "question": "What is 365 - 86?",
+          "answers": [
+            "282",
+            "264",
+            "276",
+            "279"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "Subtracting 86 from 365 leaves 279."
+        },
+        {
+          "question": "What is 230 - 122?",
+          "answers": [
+            "108",
+            "106",
+            "107",
+            "111"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 122 from 230 leaves 108."
+        },
+        {
+          "question": "What is 671 - 244?",
+          "answers": [
+            "427",
+            "429",
+            "424",
+            "432"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Subtracting 244 from 671 leaves 427."
+        },
+        {
+          "question": "What is 273 - 119?",
+          "answers": [
+            "159",
+            "156",
+            "155",
+            "154"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "Subtracting 119 from 273 leaves 154."
+        },
+        {
+          "question": "What is 632 - 82?",
+          "answers": [
+            "552",
+            "545",
+            "550",
+            "547"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 82 from 632 leaves 550."
+        },
+        {
+          "question": "What is 479 - 215?",
+          "answers": [
+            "267",
+            "269",
+            "263",
+            "264"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "Subtracting 215 from 479 leaves 264."
+        },
+        {
+          "question": "What is 434 - 180?",
+          "answers": [
+            "251",
+            "257",
+            "254",
+            "269"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Subtracting 180 from 434 leaves 254."
+        },
+        {
+          "question": "What is 583 - 342?",
+          "answers": [
+            "256",
+            "244",
+            "246",
+            "241"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "Subtracting 342 from 583 leaves 241."
         }
       ]
     ],
@@ -6645,5 +5571,7 @@ export const staticQuizData = {
     ]
   }
 }
+
+    
 
     

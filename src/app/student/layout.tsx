@@ -19,6 +19,7 @@ import {
   Target,
   Settings,
   Award,
+  BookOpen,
 } from 'lucide-react';
 import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
@@ -57,6 +58,18 @@ export default function StudentLayout({
                 <Link href="/student/dashboard">
                   <LayoutDashboard />
                   <span>{t('dashboard')}</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                href="/student/quizzes"
+                asChild
+                tooltip={t('myQuizzes')}
+              >
+                <Link href="/student/quizzes">
+                  <BookOpen />
+                  <span>{t('myQuizzes')}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

@@ -43,11 +43,12 @@ export async function generateQuizContent(input: GenerateQuizContentInput): Prom
     return quizCache.get(cacheKey)!;
   }
   
-  // If a quiz is not in the cache, it means it wasn't pre-generated.
-  // This could be a new subject or an issue with the pre-generation process.
-  // We'll throw an error to indicate that the content is unavailable.
-  console.error('Quiz not found in cache for key:', cacheKey);
-  throw new Error(`Quiz content for ${input.subject} (${input.difficulty}) is not available.`);
+  // If not in cache, generate, then cache and return it.
+  console.log(`Cache miss for: ${cacheKey}. Generating on-demand.`);
+  const result = await generateQuizContentFlow(input);
+  quizCache.set(cacheKey, result);
+  console.log(`Successfully generated and cached quiz for: ${cacheKey}`);
+  return result;
 }
 
 const generateQuizContentPrompt = ai.definePrompt({

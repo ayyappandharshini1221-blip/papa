@@ -13,6 +13,66 @@ export const staticQuizData = {
         { "question": "What is 9 - 9?", "answers": ["0", "1", "9", "18"], "correctAnswerIndex": 0, "explanation": "Any number subtracted from itself is 0." },
         { "question": "How many days are in a week?", "answers": ["5", "6", "7", "8"], "correctAnswerIndex": 2, "explanation": "There are 7 days in a week." },
         { "question": "What is 5 * 5?", "answers": ["20", "25", "30", "35"], "correctAnswerIndex": 1, "explanation": "5 multiplied by 5 is 25." }
+      ],
+      [
+        { "question": "What is 82 + 15?", "answers": ["87", "95", "96", "97"], "correctAnswerIndex": 3, "explanation": "82 + 15 = 97." },
+        { "question": "What is 87 + 70?", "answers": ["159", "157", "167", "152"], "correctAnswerIndex": 1, "explanation": "87 + 70 = 157." },
+        { "question": "What is 28 + 30?", "answers": ["48", "63", "68", "58"], "correctAnswerIndex": 3, "explanation": "28 + 30 = 58." },
+        { "question": "What is 29 + 58?", "answers": ["97", "87", "86", "77"], "correctAnswerIndex": 1, "explanation": "29 + 58 = 87." },
+        { "question": "What is 44 + 36?", "answers": ["77", "81", "78", "80"], "correctAnswerIndex": 3, "explanation": "44 + 36 = 80." },
+        { "question": "What is 13 + 46?", "answers": ["69", "59", "60", "58"], "correctAnswerIndex": 1, "explanation": "13 + 46 = 59." },
+        { "question": "What is 69 + 16?", "answers": ["80", "90", "87", "85"], "correctAnswerIndex": 3, "explanation": "69 + 16 = 85." },
+        { "question": "What is 74 + 25?", "answers": ["99", "97", "89", "94"], "correctAnswerIndex": 0, "explanation": "74 + 25 = 99." },
+        { "question": "What is 13 + 49?", "answers": ["65", "62", "63", "61"], "correctAnswerIndex": 1, "explanation": "13 + 49 = 62." },
+        { "question": "What is 27 + 86?", "answers": ["108", "112", "123", "113"], "correctAnswerIndex": 3, "explanation": "27 + 86 = 113." }
+      ],
+      [
+        { "question": "What is 21 + 60?", "answers": ["80", "86", "83", "81"], "correctAnswerIndex": 3, "explanation": "21 + 60 = 81." },
+        { "question": "What is 8 + 30?", "answers": ["28", "39", "40", "38"], "correctAnswerIndex": 3, "explanation": "8 + 30 = 38." },
+        { "question": "What is 73 + 41?", "answers": ["116", "114", "112", "117"], "correctAnswerIndex": 1, "explanation": "73 + 41 = 114." },
+        { "question": "What is 18 + 32?", "answers": ["49", "50", "60", "55"], "correctAnswerIndex": 1, "explanation": "18 + 32 = 50." },
+        { "question": "What is 47 + 29?", "answers": ["73", "76", "79", "81"], "correctAnswerIndex": 1, "explanation": "47 + 29 = 76." },
+        { "question": "What is 20 + 81?", "answers": ["103", "101", "111", "98"], "correctAnswerIndex": 1, "explanation": "20 + 81 = 101." },
+        { "question": "What is 77 + 60?", "answers": ["127", "137", "142", "136"], "correctAnswerIndex": 1, "explanation": "77 + 60 = 137." },
+        { "question": "What is 83 + 44?", "answers": ["126", "129", "127", "122"], "correctAnswerIndex": 2, "explanation": "83 + 44 = 127." },
+        { "question": "What is 34 + 65?", "answers": ["99", "96", "94", "104"], "correctAnswerIndex": 0, "explanation": "34 + 65 = 99." },
+        { "question": "What is 20 + 48?", "answers": ["68", "73", "65", "58"], "correctAnswerIndex": 0, "explanation": "20 + 48 = 68." }
+      ],
+      [
+        { "question": "What is 15 + 47?", "answers": ["52", "60", "62", "61"], "correctAnswerIndex": 2, "explanation": "15 + 47 = 62." },
+        { "question": "What is 11 + 63?", "answers": ["74", "79", "71", "69"], "correctAnswerIndex": 0, "explanation": "11 + 63 = 74." },
+        { "question": "What is 71 + 22?", "answers": ["92", "93", "98", "103"], "correctAnswerIndex": 1, "explanation": "71 + 22 = 93." },
+        { "question": "What is 40 + 52?", "answers": ["92", "93", "97", "95"], "correctAnswerIndex": 0, "explanation": "40 + 52 = 92." },
+        { "question": "What is 29 + 9?", "answers": ["39", "48", "38", "28"], "correctAnswerIndex": 2, "explanation": "29 + 9 = 38." },
+        { "question": "What is 1 + 10?", "answers": ["9", "6", "11", "1"], "correctAnswerIndex": 2, "explanation": "1 + 10 = 11." },
+        { "question": "What is 66 + 31?", "answers": ["96", "95", "100", "97"], "correctAnswerIndex": 3, "explanation": "66 + 31 = 97." },
+        { "question": "What is 32 + 61?", "answers": ["95", "91", "93", "88"], "correctAnswerIndex": 2, "explanation": "32 + 61 = 93." },
+        { "question": "What is 46 + 55?", "answers": ["101", "91", "103", "104"], "correctAnswerIndex": 0, "explanation": "46 + 55 = 101." },
+        { "question": "What is 44 + 14?", "answers": ["61", "56", "63", "58"], "correctAnswerIndex": 3, "explanation": "44 + 14 = 58." }
+      ],
+      [
+        { "question": "What is 36 + 60?", "answers": ["99", "91", "94", "96"], "correctAnswerIndex": 3, "explanation": "36 + 60 = 96." },
+        { "question": "What is 12 + 31?", "answers": ["45", "43", "40", "46"], "correctAnswerIndex": 1, "explanation": "12 + 31 = 43." },
+        { "question": "What is 8 + 22?", "answers": ["32", "29", "20", "30"], "correctAnswerIndex": 3, "explanation": "8 + 22 = 30." },
+        { "question": "What is 90 + 72?", "answers": ["162", "159", "160", "165"], "correctAnswerIndex": 0, "explanation": "90 + 72 = 162." },
+        { "question": "What is 75 + 70?", "answers": ["146", "145", "155", "135"], "correctAnswerIndex": 1, "explanation": "75 + 70 = 145." },
+        { "question": "What is 8 + 66?", "answers": ["84", "71", "69", "74"], "correctAnswerIndex": 3, "explanation": "8 + 66 = 74." },
+        { "question": "What is 52 + 16?", "answers": ["78", "58", "68", "66"], "correctAnswerIndex": 2, "explanation": "52 + 16 = 68." },
+        { "question": "What is 34 + 27?", "answers": ["61", "60", "59", "62"], "correctAnswerIndex": 0, "explanation": "34 + 27 = 61." },
+        { "question": "What is 59 + 41?", "answers": ["100", "103", "95", "90"], "correctAnswerIndex": 0, "explanation": "59 + 41 = 100." },
+        { "question": "What is 65 + 34?", "answers": ["96", "100", "94", "99"], "correctAnswerIndex": 3, "explanation": "65 + 34 = 99." }
+      ],
+      [
+        { "question": "What is 21 + 57?", "answers": ["78", "83", "77", "88"], "correctAnswerIndex": 0, "explanation": "21 + 57 = 78." },
+        { "question": "What is 85 + 14?", "answers": ["98", "94", "99", "96"], "correctAnswerIndex": 2, "explanation": "85 + 14 = 99." },
+        { "question": "What is 35 + 37?", "answers": ["72", "70", "82", "73"], "correctAnswerIndex": 0, "explanation": "35 + 37 = 72." },
+        { "question": "What is 65 + 63?", "answers": ["118", "128", "123", "127"], "correctAnswerIndex": 1, "explanation": "65 + 63 = 128." },
+        { "question": "What is 1 + 43?", "answers": ["43", "41", "44", "47"], "correctAnswerIndex": 2, "explanation": "1 + 43 = 44." },
+        { "question": "What is 15 + 10?", "answers": ["15", "25", "30", "22"], "correctAnswerIndex": 1, "explanation": "15 + 10 = 25." },
+        { "question": "What is 56 + 17?", "answers": ["74", "63", "73", "72"], "correctAnswerIndex": 2, "explanation": "56 + 17 = 73." },
+        { "question": "What is 88 + 32?", "answers": ["121", "120", "115", "125"], "correctAnswerIndex": 1, "explanation": "88 + 32 = 120." },
+        { "question": "What is 31 + 21?", "answers": ["49", "54", "52", "42"], "correctAnswerIndex": 2, "explanation": "31 + 21 = 52." },
+        { "question": "What is 53 + 86?", "answers": ["138", "139", "137", "136"], "correctAnswerIndex": 1, "explanation": "53 + 86 = 139." }
       ]
     ],
     "medium": [
@@ -397,3 +457,5 @@ export const staticQuizData = {
     ]
   }
 }
+
+    

@@ -85,36 +85,33 @@ const allSubjects = ['Maths', 'English', 'Chemistry', 'Biology', 'C', 'C++', 'Ja
 const allDifficulties: ('easy' | 'medium' | 'hard')[] = ['easy', 'medium', 'hard'];
 
 async function preCacheQuizzes() {
-    console.log('Starting to pre-cache all quizzes...');
-    const generationPromises: Promise<void>[] = [];
+    console.log('Starting to pre-cache all quizzes sequentially...');
 
     for (const subject of allSubjects) {
         for (const difficulty of allDifficulties) {
-            const promise = (async () => {
-                const cacheKey = `${subject.toLowerCase()}-${difficulty}`;
-                if (quizCache.has(cacheKey)) {
-                    console.log(`Quiz for ${subject} (${difficulty}) already cached. Skipping.`);
-                    return;
-                }
-                
-                try {
-                    console.log(`Generating quiz for: ${subject} (${difficulty})`);
-                    const result = await generateQuizContentFlow({
-                        subject,
-                        difficulty,
-                        numberOfQuestions: 10
-                    });
-                    quizCache.set(cacheKey, result);
-                    console.log(`Successfully cached quiz for: ${subject} (${difficulty})`);
-                } catch (error) {
-                    console.error(`Failed to generate or cache quiz for ${subject} (${difficulty}):`, error);
-                }
-            })();
-            generationPromises.push(promise);
+            const cacheKey = `${subject.toLowerCase()}-${difficulty}`;
+            if (quizCache.has(cacheKey)) {
+                console.log(`Quiz for ${subject} (${difficulty}) already cached. Skipping.`);
+                continue;
+            }
+            
+            try {
+                console.log(`Generating quiz for: ${subject} (${difficulty})`);
+                const result = await generateQuizContentFlow({
+                    subject,
+                    difficulty,
+                    numberOfQuestions: 10
+                });
+                quizCache.set(cacheKey, result);
+                console.log(`Successfully cached quiz for: ${subject} (${difficulty})`);
+            } catch (error) {
+                console.error(`Failed to generate or cache quiz for ${subject} (${difficulty}):`, error);
+                // Optional: add a small delay before retrying or moving to the next one
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
         }
     }
 
-    await Promise.all(generationPromises);
     console.log('Finished pre-caching all quizzes.');
 }
 

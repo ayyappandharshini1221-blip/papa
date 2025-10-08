@@ -2,77 +2,11207 @@
 export const staticQuizData = {
   "maths": {
     "easy": [
-      [ // Set 1
-        { "question": "What is 2 + 2?", "answers": ["3", "4", "5", "6"], "correctAnswerIndex": 1, "explanation": "The sum of 2 and 2 is 4." },
-        { "question": "What is 5 - 3?", "answers": ["1", "2", "3", "4"], "correctAnswerIndex": 1, "explanation": "Subtracting 3 from 5 leaves 2." },
-        { "question": "What is 3 * 4?", "answers": ["9", "10", "11", "12"], "correctAnswerIndex": 3, "explanation": "3 multiplied by 4 equals 12." },
-        { "question": "What is 10 / 2?", "answers": ["3", "4", "5", "6"], "correctAnswerIndex": 2, "explanation": "10 divided by 2 is 5." },
-        { "question": "How many sides does a triangle have?", "answers": ["2", "3", "4", "5"], "correctAnswerIndex": 1, "explanation": "A triangle is a polygon with three edges and three vertices." },
-        { "question": "What is the next number in the sequence: 2, 4, 6, 8, ...?", "answers": ["9", "10", "11", "12"], "correctAnswerIndex": 1, "explanation": "This is a sequence of even numbers, so the next number is 10." },
-        { "question": "What is 7 + 8?", "answers": ["13", "14", "15", "16"], "correctAnswerIndex": 2, "explanation": "The sum of 7 and 8 is 15." },
-        { "question": "What is 9 - 9?", "answers": ["0", "1", "9", "18"], "correctAnswerIndex": 0, "explanation": "Any number subtracted from itself is 0." },
-        { "question": "How many days are in a week?", "answers": ["5", "6", "7", "8"], "correctAnswerIndex": 2, "explanation": "There are 7 days in a week." },
-        { "question": "What is 5 * 5?", "answers": ["20", "25", "30", "35"], "correctAnswerIndex": 1, "explanation": "5 multiplied by 5 is 25." }
-      ],
       [
-        { "question": "What is 82 + 15?", "answers": ["87", "95", "96", "97"], "correctAnswerIndex": 3, "explanation": "82 + 15 = 97." },
-        { "question": "What is 87 + 70?", "answers": ["159", "157", "167", "152"], "correctAnswerIndex": 1, "explanation": "87 + 70 = 157." },
-        { "question": "What is 28 + 30?", "answers": ["48", "63", "68", "58"], "correctAnswerIndex": 3, "explanation": "28 + 30 = 58." },
-        { "question": "What is 29 + 58?", "answers": ["97", "87", "86", "77"], "correctAnswerIndex": 1, "explanation": "29 + 58 = 87." },
-        { "question": "What is 44 + 36?", "answers": ["77", "81", "78", "80"], "correctAnswerIndex": 3, "explanation": "44 + 36 = 80." },
-        { "question": "What is 13 + 46?", "answers": ["69", "59", "60", "58"], "correctAnswerIndex": 1, "explanation": "13 + 46 = 59." },
-        { "question": "What is 69 + 16?", "answers": ["80", "90", "87", "85"], "correctAnswerIndex": 3, "explanation": "69 + 16 = 85." },
-        { "question": "What is 74 + 25?", "answers": ["99", "97", "89", "94"], "correctAnswerIndex": 0, "explanation": "74 + 25 = 99." },
-        { "question": "What is 13 + 49?", "answers": ["65", "62", "63", "61"], "correctAnswerIndex": 1, "explanation": "13 + 49 = 62." },
-        { "question": "What is 27 + 86?", "answers": ["108", "112", "123", "113"], "correctAnswerIndex": 3, "explanation": "27 + 86 = 113." }
-      ],
-      [
-        { "question": "What is 21 + 60?", "answers": ["80", "86", "83", "81"], "correctAnswerIndex": 3, "explanation": "21 + 60 = 81." },
-        { "question": "What is 8 + 30?", "answers": ["28", "39", "40", "38"], "correctAnswerIndex": 3, "explanation": "8 + 30 = 38." },
-        { "question": "What is 73 + 41?", "answers": ["116", "114", "112", "117"], "correctAnswerIndex": 1, "explanation": "73 + 41 = 114." },
-        { "question": "What is 18 + 32?", "answers": ["49", "50", "60", "55"], "correctAnswerIndex": 1, "explanation": "18 + 32 = 50." },
-        { "question": "What is 47 + 29?", "answers": ["73", "76", "79", "81"], "correctAnswerIndex": 1, "explanation": "47 + 29 = 76." },
-        { "question": "What is 20 + 81?", "answers": ["103", "101", "111", "98"], "correctAnswerIndex": 1, "explanation": "20 + 81 = 101." },
-        { "question": "What is 77 + 60?", "answers": ["127", "137", "142", "136"], "correctAnswerIndex": 1, "explanation": "77 + 60 = 137." },
-        { "question": "What is 83 + 44?", "answers": ["126", "129", "127", "122"], "correctAnswerIndex": 2, "explanation": "83 + 44 = 127." },
-        { "question": "What is 34 + 65?", "answers": ["99", "96", "94", "104"], "correctAnswerIndex": 0, "explanation": "34 + 65 = 99." },
-        { "question": "What is 20 + 48?", "answers": ["68", "73", "65", "58"], "correctAnswerIndex": 0, "explanation": "20 + 48 = 68." }
-      ],
-      [
-        { "question": "What is 15 + 47?", "answers": ["52", "60", "62", "61"], "correctAnswerIndex": 2, "explanation": "15 + 47 = 62." },
-        { "question": "What is 11 + 63?", "answers": ["74", "79", "71", "69"], "correctAnswerIndex": 0, "explanation": "11 + 63 = 74." },
-        { "question": "What is 71 + 22?", "answers": ["92", "93", "98", "103"], "correctAnswerIndex": 1, "explanation": "71 + 22 = 93." },
-        { "question": "What is 40 + 52?", "answers": ["92", "93", "97", "95"], "correctAnswerIndex": 0, "explanation": "40 + 52 = 92." },
-        { "question": "What is 29 + 9?", "answers": ["39", "48", "38", "28"], "correctAnswerIndex": 2, "explanation": "29 + 9 = 38." },
-        { "question": "What is 1 + 10?", "answers": ["9", "6", "11", "1"], "correctAnswerIndex": 2, "explanation": "1 + 10 = 11." },
-        { "question": "What is 66 + 31?", "answers": ["96", "95", "100", "97"], "correctAnswerIndex": 3, "explanation": "66 + 31 = 97." },
-        { "question": "What is 32 + 61?", "answers": ["95", "91", "93", "88"], "correctAnswerIndex": 2, "explanation": "32 + 61 = 93." },
-        { "question": "What is 46 + 55?", "answers": ["101", "91", "103", "104"], "correctAnswerIndex": 0, "explanation": "46 + 55 = 101." },
-        { "question": "What is 44 + 14?", "answers": ["61", "56", "63", "58"], "correctAnswerIndex": 3, "explanation": "44 + 14 = 58." }
-      ],
-      [
-        { "question": "What is 36 + 60?", "answers": ["99", "91", "94", "96"], "correctAnswerIndex": 3, "explanation": "36 + 60 = 96." },
-        { "question": "What is 12 + 31?", "answers": ["45", "43", "40", "46"], "correctAnswerIndex": 1, "explanation": "12 + 31 = 43." },
-        { "question": "What is 8 + 22?", "answers": ["32", "29", "20", "30"], "correctAnswerIndex": 3, "explanation": "8 + 22 = 30." },
-        { "question": "What is 90 + 72?", "answers": ["162", "159", "160", "165"], "correctAnswerIndex": 0, "explanation": "90 + 72 = 162." },
-        { "question": "What is 75 + 70?", "answers": ["146", "145", "155", "135"], "correctAnswerIndex": 1, "explanation": "75 + 70 = 145." },
-        { "question": "What is 8 + 66?", "answers": ["84", "71", "69", "74"], "correctAnswerIndex": 3, "explanation": "8 + 66 = 74." },
-        { "question": "What is 52 + 16?", "answers": ["78", "58", "68", "66"], "correctAnswerIndex": 2, "explanation": "52 + 16 = 68." },
-        { "question": "What is 34 + 27?", "answers": ["61", "60", "59", "62"], "correctAnswerIndex": 0, "explanation": "34 + 27 = 61." },
-        { "question": "What is 59 + 41?", "answers": ["100", "103", "95", "90"], "correctAnswerIndex": 0, "explanation": "59 + 41 = 100." },
-        { "question": "What is 65 + 34?", "answers": ["96", "100", "94", "99"], "correctAnswerIndex": 3, "explanation": "65 + 34 = 99." }
-      ],
-      [
-        { "question": "What is 21 + 57?", "answers": ["78", "83", "77", "88"], "correctAnswerIndex": 0, "explanation": "21 + 57 = 78." },
-        { "question": "What is 85 + 14?", "answers": ["98", "94", "99", "96"], "correctAnswerIndex": 2, "explanation": "85 + 14 = 99." },
-        { "question": "What is 35 + 37?", "answers": ["72", "70", "82", "73"], "correctAnswerIndex": 0, "explanation": "35 + 37 = 72." },
-        { "question": "What is 65 + 63?", "answers": ["118", "128", "123", "127"], "correctAnswerIndex": 1, "explanation": "65 + 63 = 128." },
-        { "question": "What is 1 + 43?", "answers": ["43", "41", "44", "47"], "correctAnswerIndex": 2, "explanation": "1 + 43 = 44." },
-        { "question": "What is 15 + 10?", "answers": ["15", "25", "30", "22"], "correctAnswerIndex": 1, "explanation": "15 + 10 = 25." },
-        { "question": "What is 56 + 17?", "answers": ["74", "63", "73", "72"], "correctAnswerIndex": 2, "explanation": "56 + 17 = 73." },
-        { "question": "What is 88 + 32?", "answers": ["121", "120", "115", "125"], "correctAnswerIndex": 1, "explanation": "88 + 32 = 120." },
-        { "question": "What is 31 + 21?", "answers": ["49", "54", "52", "42"], "correctAnswerIndex": 2, "explanation": "31 + 21 = 52." },
-        { "question": "What is 53 + 86?", "answers": ["138", "139", "137", "136"], "correctAnswerIndex": 1, "explanation": "53 + 86 = 139." }
+        [
+          {
+            "question": "What is 76 + 187?",
+            "answers": [
+              "253",
+              "261",
+              "263",
+              "264"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 263."
+          },
+          {
+            "question": "What is 324 + 337?",
+            "answers": [
+              "656",
+              "661",
+              "646",
+              "660"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 661."
+          },
+          {
+            "question": "What is 409 + 175?",
+            "answers": [
+              "585",
+              "569",
+              "579",
+              "584"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 584."
+          },
+          {
+            "question": "What is 85 + 53?",
+            "answers": [
+              "138",
+              "153",
+              "140",
+              "137"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 138."
+          },
+          {
+            "question": "What is 391 + 122?",
+            "answers": [
+              "513",
+              "498",
+              "508",
+              "511"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 513."
+          },
+          {
+            "question": "What is 185 + 290?",
+            "answers": [
+              "475",
+              "474",
+              "473",
+              "460"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 475."
+          },
+          {
+            "question": "What is 56 + 253?",
+            "answers": [
+              "312",
+              "309",
+              "310",
+              "319"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 309."
+          },
+          {
+            "question": "What is 241 + 311?",
+            "answers": [
+              "547",
+              "562",
+              "537",
+              "552"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 552."
+          },
+          {
+            "question": "What is 137 + 221?",
+            "answers": [
+              "359",
+              "357",
+              "358",
+              "361"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 358."
+          },
+          {
+            "question": "What is 248 + 343?",
+            "answers": [
+              "591",
+              "588",
+              "590",
+              "576"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 591."
+          }
+        ],
+        [
+          {
+            "question": "What is 56 + 230?",
+            "answers": [
+              "287",
+              "283",
+              "286",
+              "289"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 286."
+          },
+          {
+            "question": "What is 303 + 441?",
+            "answers": [
+              "754",
+              "741",
+              "744",
+              "759"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 744."
+          },
+          {
+            "question": "What is 324 + 277?",
+            "answers": [
+              "603",
+              "602",
+              "586",
+              "601"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 601."
+          },
+          {
+            "question": "What is 148 + 60?",
+            "answers": [
+              "208",
+              "207",
+              "218",
+              "206"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 208."
+          },
+          {
+            "question": "What is 50 + 105?",
+            "answers": [
+              "145",
+              "160",
+              "158",
+              "155"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 155."
+          },
+          {
+            "question": "What is 92 + 271?",
+            "answers": [
+              "366",
+              "363",
+              "348",
+              "364"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 363."
+          },
+          {
+            "question": "What is 64 + 215?",
+            "answers": [
+              "264",
+              "279",
+              "281",
+              "277"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 279."
+          },
+          {
+            "question": "What is 62 + 377?",
+            "answers": [
+              "449",
+              "439",
+              "434",
+              "440"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 439."
+          },
+          {
+            "question": "What is 240 + 392?",
+            "answers": [
+              "647",
+              "629",
+              "622",
+              "632"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 632."
+          },
+          {
+            "question": "What is 325 + 206?",
+            "answers": [
+              "541",
+              "529",
+              "531",
+              "526"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 531."
+          }
+        ],
+        [
+          {
+            "question": "What is 323 + 222?",
+            "answers": [
+              "545",
+              "535",
+              "548",
+              "555"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 545."
+          },
+          {
+            "question": "What is 271 + 81?",
+            "answers": [
+              "367",
+              "347",
+              "354",
+              "352"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 352."
+          },
+          {
+            "question": "What is 495 + 428?",
+            "answers": [
+              "925",
+              "938",
+              "923",
+              "933"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 923."
+          },
+          {
+            "question": "What is 131 + 317?",
+            "answers": [
+              "451",
+              "448",
+              "447",
+              "443"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 448."
+          },
+          {
+            "question": "What is 329 + 421?",
+            "answers": [
+              "755",
+              "749",
+              "747",
+              "750"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 750."
+          },
+          {
+            "question": "What is 309 + 174?",
+            "answers": [
+              "481",
+              "482",
+              "480",
+              "483"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 483."
+          },
+          {
+            "question": "What is 150 + 308?",
+            "answers": [
+              "443",
+              "455",
+              "456",
+              "458"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 458."
+          },
+          {
+            "question": "What is 92 + 224?",
+            "answers": [
+              "316",
+              "311",
+              "318",
+              "319"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 316."
+          },
+          {
+            "question": "What is 447 + 64?",
+            "answers": [
+              "516",
+              "526",
+              "509",
+              "511"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 511."
+          },
+          {
+            "question": "What is 164 + 480?",
+            "answers": [
+              "647",
+              "644",
+              "639",
+              "649"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 644."
+          }
+        ],
+        [
+          {
+            "question": "What is 225 + 406?",
+            "answers": [
+              "631",
+              "646",
+              "621",
+              "636"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 631."
+          },
+          {
+            "question": "What is 235 + 392?",
+            "answers": [
+              "627",
+              "624",
+              "626",
+              "628"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 627."
+          },
+          {
+            "question": "What is 470 + 142?",
+            "answers": [
+              "615",
+              "612",
+              "597",
+              "613"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 612."
+          },
+          {
+            "question": "What is 238 + 85?",
+            "answers": [
+              "313",
+              "323",
+              "321",
+              "326"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 323."
+          },
+          {
+            "question": "What is 76 + 350?",
+            "answers": [
+              "424",
+              "426",
+              "427",
+              "416"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 426."
+          },
+          {
+            "question": "What is 174 + 381?",
+            "answers": [
+              "557",
+              "553",
+              "560",
+              "555"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 555."
+          },
+          {
+            "question": "What is 306 + 344?",
+            "answers": [
+              "635",
+              "650",
+              "648",
+              "649"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 650."
+          },
+          {
+            "question": "What is 269 + 388?",
+            "answers": [
+              "657",
+              "672",
+              "659",
+              "652"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 657."
+          },
+          {
+            "question": "What is 290 + 327?",
+            "answers": [
+              "614",
+              "612",
+              "617",
+              "616"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 617."
+          },
+          {
+            "question": "What is 411 + 347?",
+            "answers": [
+              "757",
+              "758",
+              "773",
+              "743"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 758."
+          }
+        ],
+        [
+          {
+            "question": "What is 496 + 179?",
+            "answers": [
+              "670",
+              "673",
+              "675",
+              "676"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 675."
+          },
+          {
+            "question": "What is 360 + 56?",
+            "answers": [
+              "418",
+              "411",
+              "416",
+              "426"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 416."
+          },
+          {
+            "question": "What is 318 + 134?",
+            "answers": [
+              "449",
+              "455",
+              "467",
+              "452"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 452."
+          },
+          {
+            "question": "What is 164 + 194?",
+            "answers": [
+              "361",
+              "358",
+              "360",
+              "348"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 358."
+          },
+          {
+            "question": "What is 375 + 250?",
+            "answers": [
+              "615",
+              "626",
+              "627",
+              "625"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 625."
+          },
+          {
+            "question": "What is 439 + 384?",
+            "answers": [
+              "822",
+              "824",
+              "823",
+              "826"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 823."
+          },
+          {
+            "question": "What is 149 + 158?",
+            "answers": [
+              "297",
+              "307",
+              "304",
+              "292"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 307."
+          },
+          {
+            "question": "What is 261 + 385?",
+            "answers": [
+              "646",
+              "645",
+              "631",
+              "649"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 646."
+          },
+          {
+            "question": "What is 407 + 199?",
+            "answers": [
+              "601",
+              "604",
+              "596",
+              "606"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 606."
+          },
+          {
+            "question": "What is 158 + 313?",
+            "answers": [
+              "486",
+              "456",
+              "471",
+              "470"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 471."
+          }
+        ],
+        [
+          {
+            "question": "What is 262 + 163?",
+            "answers": [
+              "426",
+              "425",
+              "435",
+              "428"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 425."
+          },
+          {
+            "question": "What is 249 + 89?",
+            "answers": [
+              "323",
+              "336",
+              "340",
+              "338"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 338."
+          },
+          {
+            "question": "What is 114 + 112?",
+            "answers": [
+              "229",
+              "228",
+              "226",
+              "225"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 226."
+          },
+          {
+            "question": "What is 197 + 235?",
+            "answers": [
+              "433",
+              "429",
+              "417",
+              "432"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 432."
+          },
+          {
+            "question": "What is 353 + 390?",
+            "answers": [
+              "742",
+              "758",
+              "743",
+              "733"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 743."
+          },
+          {
+            "question": "What is 264 + 114?",
+            "answers": [
+              "380",
+              "373",
+              "378",
+              "363"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 378."
+          },
+          {
+            "question": "What is 66 + 100?",
+            "answers": [
+              "163",
+              "161",
+              "168",
+              "166"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 166."
+          },
+          {
+            "question": "What is 80 + 78?",
+            "answers": [
+              "153",
+              "148",
+              "158",
+              "160"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 158."
+          },
+          {
+            "question": "What is 233 + 275?",
+            "answers": [
+              "509",
+              "508",
+              "505",
+              "507"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 508."
+          },
+          {
+            "question": "What is 199 + 217?",
+            "answers": [
+              "415",
+              "426",
+              "416",
+              "417"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 416."
+          }
+        ],
+        [
+          {
+            "question": "What is 331 + 83?",
+            "answers": [
+              "414",
+              "404",
+              "412",
+              "411"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 414."
+          },
+          {
+            "question": "What is 451 + 359?",
+            "answers": [
+              "808",
+              "810",
+              "820",
+              "813"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 810."
+          },
+          {
+            "question": "What is 239 + 370?",
+            "answers": [
+              "609",
+              "594",
+              "610",
+              "604"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 609."
+          },
+          {
+            "question": "What is 403 + 480?",
+            "answers": [
+              "886",
+              "883",
+              "868",
+              "882"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 883."
+          },
+          {
+            "question": "What is 90 + 243?",
+            "answers": [
+              "333",
+              "328",
+              "338",
+              "348"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 333."
+          },
+          {
+            "question": "What is 425 + 355?",
+            "answers": [
+              "795",
+              "777",
+              "780",
+              "783"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 780."
+          },
+          {
+            "question": "What is 148 + 155?",
+            "answers": [
+              "318",
+              "302",
+              "304",
+              "303"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 303."
+          },
+          {
+            "question": "What is 248 + 63?",
+            "answers": [
+              "326",
+              "311",
+              "296",
+              "309"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 311."
+          },
+          {
+            "question": "What is 144 + 101?",
+            "answers": [
+              "260",
+              "245",
+              "250",
+              "240"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 245."
+          },
+          {
+            "question": "What is 87 + 234?",
+            "answers": [
+              "320",
+              "306",
+              "319",
+              "321"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 321."
+          }
+        ],
+        [
+          {
+            "question": "What is 97 + 367?",
+            "answers": [
+              "462",
+              "454",
+              "467",
+              "464"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 464."
+          },
+          {
+            "question": "What is 459 + 460?",
+            "answers": [
+              "919",
+              "917",
+              "929",
+              "921"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 919."
+          },
+          {
+            "question": "What is 479 + 107?",
+            "answers": [
+              "588",
+              "576",
+              "586",
+              "591"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 586."
+          },
+          {
+            "question": "What is 469 + 117?",
+            "answers": [
+              "587",
+              "583",
+              "571",
+              "586"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 586."
+          },
+          {
+            "question": "What is 116 + 461?",
+            "answers": [
+              "567",
+              "577",
+              "572",
+              "580"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 577."
+          },
+          {
+            "question": "What is 448 + 249?",
+            "answers": [
+              "695",
+              "682",
+              "687",
+              "697"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 697."
+          },
+          {
+            "question": "What is 186 + 341?",
+            "answers": [
+              "512",
+              "530",
+              "527",
+              "537"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 527."
+          },
+          {
+            "question": "What is 355 + 330?",
+            "answers": [
+              "684",
+              "670",
+              "695",
+              "685"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 685."
+          },
+          {
+            "question": "What is 500 + 152?",
+            "answers": [
+              "653",
+              "654",
+              "652",
+              "649"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 652."
+          },
+          {
+            "question": "What is 493 + 459?",
+            "answers": [
+              "962",
+              "947",
+              "952",
+              "937"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 952."
+          }
+        ],
+        [
+          {
+            "question": "What is 346 + 147?",
+            "answers": [
+              "498",
+              "508",
+              "493",
+              "494"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 493."
+          },
+          {
+            "question": "What is 88 + 475?",
+            "answers": [
+              "565",
+              "553",
+              "563",
+              "560"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 563."
+          },
+          {
+            "question": "What is 409 + 65?",
+            "answers": [
+              "471",
+              "474",
+              "484",
+              "459"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 474."
+          },
+          {
+            "question": "What is 415 + 75?",
+            "answers": [
+              "491",
+              "505",
+              "490",
+              "492"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 490."
+          },
+          {
+            "question": "What is 379 + 386?",
+            "answers": [
+              "765",
+              "766",
+              "775",
+              "755"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 765."
+          },
+          {
+            "question": "What is 127 + 386?",
+            "answers": [
+              "528",
+              "508",
+              "513",
+              "523"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 513."
+          },
+          {
+            "question": "What is 411 + 184?",
+            "answers": [
+              "595",
+              "596",
+              "590",
+              "593"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 595."
+          },
+          {
+            "question": "What is 316 + 438?",
+            "answers": [
+              "754",
+              "744",
+              "764",
+              "759"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 754."
+          },
+          {
+            "question": "What is 370 + 458?",
+            "answers": [
+              "828",
+              "831",
+              "813",
+              "830"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 828."
+          },
+          {
+            "question": "What is 241 + 381?",
+            "answers": [
+              "620",
+              "622",
+              "625",
+              "637"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 622."
+          }
+        ],
+        [
+          {
+            "question": "What is 70 + 241?",
+            "answers": [
+              "296",
+              "301",
+              "316",
+              "311"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 311."
+          },
+          {
+            "question": "What is 389 + 140?",
+            "answers": [
+              "534",
+              "539",
+              "519",
+              "529"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 529."
+          },
+          {
+            "question": "What is 119 + 309?",
+            "answers": [
+              "443",
+              "418",
+              "428",
+              "438"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 428."
+          },
+          {
+            "question": "What is 500 + 371?",
+            "answers": [
+              "873",
+              "874",
+              "871",
+              "870"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 871."
+          },
+          {
+            "question": "What is 452 + 440?",
+            "answers": [
+              "891",
+              "892",
+              "890",
+              "902"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 892."
+          },
+          {
+            "question": "What is 102 + 423?",
+            "answers": [
+              "525",
+              "528",
+              "510",
+              "540"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 525."
+          },
+          {
+            "question": "What is 121 + 125?",
+            "answers": [
+              "247",
+              "256",
+              "246",
+              "241"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 246."
+          },
+          {
+            "question": "What is 310 + 384?",
+            "answers": [
+              "697",
+              "694",
+              "689",
+              "696"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 694."
+          },
+          {
+            "question": "What is 191 + 229?",
+            "answers": [
+              "430",
+              "423",
+              "420",
+              "422"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 420."
+          },
+          {
+            "question": "What is 432 + 484?",
+            "answers": [
+              "918",
+              "916",
+              "917",
+              "915"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 916."
+          }
+        ],
+        [
+          {
+            "question": "What is 492 + 263?",
+            "answers": [
+              "770",
+              "754",
+              "745",
+              "755"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 755."
+          },
+          {
+            "question": "What is 107 + 69?",
+            "answers": [
+              "176",
+              "175",
+              "173",
+              "191"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 176."
+          },
+          {
+            "question": "What is 390 + 169?",
+            "answers": [
+              "554",
+              "569",
+              "544",
+              "559"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 559."
+          },
+          {
+            "question": "What is 269 + 377?",
+            "answers": [
+              "656",
+              "646",
+              "631",
+              "645"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 646."
+          },
+          {
+            "question": "What is 328 + 209?",
+            "answers": [
+              "527",
+              "547",
+              "536",
+              "537"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 537."
+          },
+          {
+            "question": "What is 335 + 115?",
+            "answers": [
+              "450",
+              "435",
+              "453",
+              "455"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 450."
+          },
+          {
+            "question": "What is 254 + 410?",
+            "answers": [
+              "661",
+              "664",
+              "654",
+              "666"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 664."
+          },
+          {
+            "question": "What is 218 + 407?",
+            "answers": [
+              "626",
+              "627",
+              "625",
+              "640"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 625."
+          },
+          {
+            "question": "What is 233 + 310?",
+            "answers": [
+              "540",
+              "543",
+              "544",
+              "533"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 543."
+          },
+          {
+            "question": "What is 238 + 139?",
+            "answers": [
+              "377",
+              "378",
+              "374",
+              "367"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 377."
+          }
+        ],
+        [
+          {
+            "question": "What is 279 + 415?",
+            "answers": [
+              "695",
+              "684",
+              "679",
+              "694"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 694."
+          },
+          {
+            "question": "What is 242 + 476?",
+            "answers": [
+              "708",
+              "717",
+              "718",
+              "733"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 718."
+          },
+          {
+            "question": "What is 111 + 63?",
+            "answers": [
+              "177",
+              "175",
+              "176",
+              "174"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 174."
+          },
+          {
+            "question": "What is 461 + 196?",
+            "answers": [
+              "656",
+              "672",
+              "655",
+              "657"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 657."
+          },
+          {
+            "question": "What is 234 + 165?",
+            "answers": [
+              "402",
+              "404",
+              "384",
+              "399"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 399."
+          },
+          {
+            "question": "What is 219 + 173?",
+            "answers": [
+              "395",
+              "392",
+              "407",
+              "394"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 392."
+          },
+          {
+            "question": "What is 150 + 287?",
+            "answers": [
+              "447",
+              "437",
+              "436",
+              "439"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 437."
+          },
+          {
+            "question": "What is 273 + 418?",
+            "answers": [
+              "691",
+              "681",
+              "689",
+              "701"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 691."
+          },
+          {
+            "question": "What is 496 + 362?",
+            "answers": [
+              "863",
+              "859",
+              "857",
+              "858"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 858."
+          },
+          {
+            "question": "What is 132 + 406?",
+            "answers": [
+              "539",
+              "538",
+              "541",
+              "540"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 538."
+          }
+        ],
+        [
+          {
+            "question": "What is 447 + 198?",
+            "answers": [
+              "648",
+              "640",
+              "645",
+              "642"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 645."
+          },
+          {
+            "question": "What is 348 + 247?",
+            "answers": [
+              "594",
+              "585",
+              "595",
+              "598"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 595."
+          },
+          {
+            "question": "What is 136 + 226?",
+            "answers": [
+              "377",
+              "357",
+              "367",
+              "362"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 362."
+          },
+          {
+            "question": "What is 129 + 132?",
+            "answers": [
+              "263",
+              "266",
+              "261",
+              "259"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 261."
+          },
+          {
+            "question": "What is 201 + 147?",
+            "answers": [
+              "353",
+              "333",
+              "348",
+              "346"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 348."
+          },
+          {
+            "question": "What is 63 + 142?",
+            "answers": [
+              "204",
+              "200",
+              "205",
+              "210"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 205."
+          },
+          {
+            "question": "What is 101 + 174?",
+            "answers": [
+              "275",
+              "274",
+              "260",
+              "272"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 275."
+          },
+          {
+            "question": "What is 272 + 138?",
+            "answers": [
+              "413",
+              "400",
+              "395",
+              "410"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 410."
+          },
+          {
+            "question": "What is 262 + 129?",
+            "answers": [
+              "389",
+              "401",
+              "391",
+              "388"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 391."
+          },
+          {
+            "question": "What is 347 + 238?",
+            "answers": [
+              "600",
+              "586",
+              "585",
+              "570"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 585."
+          }
+        ],
+        [
+          {
+            "question": "What is 271 + 421?",
+            "answers": [
+              "697",
+              "692",
+              "687",
+              "689"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 692."
+          },
+          {
+            "question": "What is 308 + 124?",
+            "answers": [
+              "447",
+              "437",
+              "432",
+              "442"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 432."
+          },
+          {
+            "question": "What is 168 + 305?",
+            "answers": [
+              "463",
+              "488",
+              "471",
+              "473"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 473."
+          },
+          {
+            "question": "What is 305 + 418?",
+            "answers": [
+              "720",
+              "733",
+              "724",
+              "723"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 723."
+          },
+          {
+            "question": "What is 417 + 494?",
+            "answers": [
+              "911",
+              "914",
+              "901",
+              "909"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 911."
+          },
+          {
+            "question": "What is 127 + 366?",
+            "answers": [
+              "503",
+              "478",
+              "493",
+              "490"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 493."
+          },
+          {
+            "question": "What is 299 + 86?",
+            "answers": [
+              "380",
+              "387",
+              "385",
+              "384"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 385."
+          },
+          {
+            "question": "What is 99 + 439?",
+            "answers": [
+              "538",
+              "540",
+              "548",
+              "523"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 538."
+          },
+          {
+            "question": "What is 115 + 275?",
+            "answers": [
+              "390",
+              "388",
+              "405",
+              "392"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 390."
+          },
+          {
+            "question": "What is 295 + 229?",
+            "answers": [
+              "521",
+              "514",
+              "524",
+              "523"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 524."
+          }
+        ],
+        [
+          {
+            "question": "What is 186 + 343?",
+            "answers": [
+              "529",
+              "519",
+              "514",
+              "532"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 529."
+          },
+          {
+            "question": "What is 279 + 248?",
+            "answers": [
+              "527",
+              "522",
+              "537",
+              "524"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 527."
+          },
+          {
+            "question": "What is 436 + 123?",
+            "answers": [
+              "569",
+              "556",
+              "562",
+              "559"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 559."
+          },
+          {
+            "question": "What is 132 + 182?",
+            "answers": [
+              "314",
+              "313",
+              "315",
+              "319"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 314."
+          },
+          {
+            "question": "What is 411 + 168?",
+            "answers": [
+              "589",
+              "581",
+              "576",
+              "579"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 579."
+          },
+          {
+            "question": "What is 277 + 462?",
+            "answers": [
+              "739",
+              "738",
+              "754",
+              "744"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 739."
+          },
+          {
+            "question": "What is 222 + 282?",
+            "answers": [
+              "514",
+              "501",
+              "489",
+              "504"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 504."
+          },
+          {
+            "question": "What is 461 + 188?",
+            "answers": [
+              "659",
+              "644",
+              "649",
+              "651"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 649."
+          },
+          {
+            "question": "What is 138 + 379?",
+            "answers": [
+              "517",
+              "515",
+              "520",
+              "518"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 517."
+          },
+          {
+            "question": "What is 338 + 264?",
+            "answers": [
+              "617",
+              "612",
+              "600",
+              "602"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 602."
+          }
+        ],
+        [
+          {
+            "question": "What is 168 + 429?",
+            "answers": [
+              "607",
+              "599",
+              "597",
+              "595"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 597."
+          },
+          {
+            "question": "What is 263 + 192?",
+            "answers": [
+              "458",
+              "457",
+              "470",
+              "455"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 455."
+          },
+          {
+            "question": "What is 78 + 172?",
+            "answers": [
+              "252",
+              "245",
+              "250",
+              "251"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 250."
+          },
+          {
+            "question": "What is 70 + 489?",
+            "answers": [
+              "559",
+              "558",
+              "554",
+              "564"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 559."
+          },
+          {
+            "question": "What is 402 + 83?",
+            "answers": [
+              "485",
+              "488",
+              "475",
+              "487"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 485."
+          },
+          {
+            "question": "What is 216 + 459?",
+            "answers": [
+              "685",
+              "676",
+              "672",
+              "675"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 675."
+          },
+          {
+            "question": "What is 389 + 396?",
+            "answers": [
+              "785",
+              "782",
+              "795",
+              "788"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 785."
+          },
+          {
+            "question": "What is 196 + 120?",
+            "answers": [
+              "319",
+              "317",
+              "315",
+              "316"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 316."
+          },
+          {
+            "question": "What is 89 + 240?",
+            "answers": [
+              "326",
+              "329",
+              "339",
+              "328"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 329."
+          },
+          {
+            "question": "What is 487 + 78?",
+            "answers": [
+              "564",
+              "565",
+              "550",
+              "580"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 565."
+          }
+        ],
+        [
+          {
+            "question": "What is 421 + 446?",
+            "answers": [
+              "867",
+              "877",
+              "866",
+              "882"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 867."
+          },
+          {
+            "question": "What is 471 + 443?",
+            "answers": [
+              "912",
+              "915",
+              "924",
+              "914"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 914."
+          },
+          {
+            "question": "What is 153 + 351?",
+            "answers": [
+              "504",
+              "506",
+              "503",
+              "502"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 504."
+          },
+          {
+            "question": "What is 238 + 310?",
+            "answers": [
+              "548",
+              "553",
+              "547",
+              "543"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 548."
+          },
+          {
+            "question": "What is 380 + 118?",
+            "answers": [
+              "493",
+              "499",
+              "508",
+              "498"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 498."
+          },
+          {
+            "question": "What is 251 + 398?",
+            "answers": [
+              "659",
+              "649",
+              "646",
+              "651"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 649."
+          },
+          {
+            "question": "What is 157 + 383?",
+            "answers": [
+              "545",
+              "537",
+              "535",
+              "540"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 540."
+          },
+          {
+            "question": "What is 272 + 120?",
+            "answers": [
+              "393",
+              "392",
+              "395",
+              "397"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 392."
+          },
+          {
+            "question": "What is 52 + 82?",
+            "answers": [
+              "134",
+              "144",
+              "149",
+              "139"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 134."
+          },
+          {
+            "question": "What is 176 + 77?",
+            "answers": [
+              "253",
+              "250",
+              "252",
+              "255"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 253."
+          }
+        ],
+        [
+          {
+            "question": "What is 325 + 209?",
+            "answers": [
+              "544",
+              "535",
+              "534",
+              "549"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 534."
+          },
+          {
+            "question": "What is 139 + 217?",
+            "answers": [
+              "356",
+              "355",
+              "359",
+              "353"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 356."
+          },
+          {
+            "question": "What is 377 + 224?",
+            "answers": [
+              "603",
+              "591",
+              "601",
+              "616"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 601."
+          },
+          {
+            "question": "What is 369 + 405?",
+            "answers": [
+              "759",
+              "775",
+              "774",
+              "764"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 774."
+          },
+          {
+            "question": "What is 117 + 221?",
+            "answers": [
+              "335",
+              "348",
+              "336",
+              "338"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 338."
+          },
+          {
+            "question": "What is 276 + 61?",
+            "answers": [
+              "337",
+              "340",
+              "327",
+              "322"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 337."
+          },
+          {
+            "question": "What is 332 + 120?",
+            "answers": [
+              "452",
+              "467",
+              "454",
+              "447"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 452."
+          },
+          {
+            "question": "What is 108 + 266?",
+            "answers": [
+              "364",
+              "376",
+              "374",
+              "384"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 374."
+          },
+          {
+            "question": "What is 123 + 280?",
+            "answers": [
+              "406",
+              "400",
+              "408",
+              "403"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 403."
+          },
+          {
+            "question": "What is 175 + 134?",
+            "answers": [
+              "314",
+              "309",
+              "307",
+              "299"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 309."
+          }
+        ],
+        [
+          {
+            "question": "What is 170 + 52?",
+            "answers": [
+              "220",
+              "222",
+              "232",
+              "221"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 222."
+          },
+          {
+            "question": "What is 313 + 209?",
+            "answers": [
+              "507",
+              "537",
+              "512",
+              "522"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 522."
+          },
+          {
+            "question": "What is 175 + 238?",
+            "answers": [
+              "418",
+              "415",
+              "413",
+              "412"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 413."
+          },
+          {
+            "question": "What is 298 + 69?",
+            "answers": [
+              "369",
+              "357",
+              "352",
+              "367"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 367."
+          },
+          {
+            "question": "What is 331 + 421?",
+            "answers": [
+              "751",
+              "749",
+              "752",
+              "762"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 752."
+          },
+          {
+            "question": "What is 368 + 495?",
+            "answers": [
+              "863",
+              "873",
+              "868",
+              "878"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 863."
+          },
+          {
+            "question": "What is 492 + 278?",
+            "answers": [
+              "755",
+              "770",
+              "768",
+              "760"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 770."
+          },
+          {
+            "question": "What is 390 + 423?",
+            "answers": [
+              "813",
+              "812",
+              "823",
+              "815"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 813."
+          },
+          {
+            "question": "What is 392 + 120?",
+            "answers": [
+              "512",
+              "510",
+              "515",
+              "517"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 512."
+          },
+          {
+            "question": "What is 136 + 151?",
+            "answers": [
+              "284",
+              "287",
+              "297",
+              "289"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 287."
+          }
+        ],
+        [
+          {
+            "question": "What is 291 + 498?",
+            "answers": [
+              "786",
+              "791",
+              "790",
+              "789"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 789."
+          },
+          {
+            "question": "What is 208 + 215?",
+            "answers": [
+              "421",
+              "423",
+              "438",
+              "426"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 423."
+          },
+          {
+            "question": "What is 274 + 399?",
+            "answers": [
+              "673",
+              "668",
+              "675",
+              "674"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 673."
+          },
+          {
+            "question": "What is 420 + 112?",
+            "answers": [
+              "532",
+              "530",
+              "527",
+              "529"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 532."
+          },
+          {
+            "question": "What is 222 + 120?",
+            "answers": [
+              "341",
+              "343",
+              "352",
+              "342"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 342."
+          },
+          {
+            "question": "What is 497 + 340?",
+            "answers": [
+              "840",
+              "837",
+              "852",
+              "822"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 837."
+          },
+          {
+            "question": "What is 445 + 469?",
+            "answers": [
+              "912",
+              "899",
+              "924",
+              "914"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 914."
+          },
+          {
+            "question": "What is 393 + 327?",
+            "answers": [
+              "710",
+              "717",
+              "720",
+              "722"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 720."
+          },
+          {
+            "question": "What is 312 + 492?",
+            "answers": [
+              "799",
+              "804",
+              "802",
+              "814"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 804."
+          },
+          {
+            "question": "What is 91 + 256?",
+            "answers": [
+              "346",
+              "347",
+              "344",
+              "348"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 347."
+          }
+        ],
+        [
+          {
+            "question": "What is 396 - 307?",
+            "answers": [
+              "104",
+              "74",
+              "94",
+              "89"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 89."
+          },
+          {
+            "question": "What is 275 - 258?",
+            "answers": [
+              "2",
+              "32",
+              "15",
+              "17"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 17."
+          },
+          {
+            "question": "What is 100 - 52?",
+            "answers": [
+              "43",
+              "48",
+              "46",
+              "47"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 48."
+          },
+          {
+            "question": "What is 298 - 245?",
+            "answers": [
+              "55",
+              "38",
+              "48",
+              "53"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 53."
+          },
+          {
+            "question": "What is 282 - 250?",
+            "answers": [
+              "32",
+              "35",
+              "22",
+              "17"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 32."
+          },
+          {
+            "question": "What is 784 - 589?",
+            "answers": [
+              "190",
+              "194",
+              "195",
+              "198"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 195."
+          },
+          {
+            "question": "What is 125 - 82?",
+            "answers": [
+              "43",
+              "40",
+              "53",
+              "44"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 43."
+          },
+          {
+            "question": "What is 648 - 236?",
+            "answers": [
+              "412",
+              "409",
+              "407",
+              "410"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 412."
+          },
+          {
+            "question": "What is 512 - 484?",
+            "answers": [
+              "33",
+              "27",
+              "28",
+              "23"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 28."
+          },
+          {
+            "question": "What is 836 - 339?",
+            "answers": [
+              "497",
+              "492",
+              "494",
+              "487"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 497."
+          }
+        ],
+        [
+          {
+            "question": "What is 177 - 102?",
+            "answers": [
+              "75",
+              "74",
+              "85",
+              "90"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 75."
+          },
+          {
+            "question": "What is 611 - 468?",
+            "answers": [
+              "158",
+              "128",
+              "148",
+              "143"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 143."
+          },
+          {
+            "question": "What is 311 - 245?",
+            "answers": [
+              "69",
+              "56",
+              "66",
+              "71"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 66."
+          },
+          {
+            "question": "What is 769 - 244?",
+            "answers": [
+              "525",
+              "510",
+              "528",
+              "522"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 525."
+          },
+          {
+            "question": "What is 522 - 196?",
+            "answers": [
+              "341",
+              "321",
+              "326",
+              "336"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 326."
+          },
+          {
+            "question": "What is 672 - 316?",
+            "answers": [
+              "366",
+              "357",
+              "356",
+              "346"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 356."
+          },
+          {
+            "question": "What is 516 - 469?",
+            "answers": [
+              "57",
+              "47",
+              "52",
+              "46"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 47."
+          },
+          {
+            "question": "What is 497 - 128?",
+            "answers": [
+              "369",
+              "384",
+              "364",
+              "359"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 369."
+          },
+          {
+            "question": "What is 471 - 155?",
+            "answers": [
+              "301",
+              "317",
+              "316",
+              "331"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 316."
+          },
+          {
+            "question": "What is 327 - 208?",
+            "answers": [
+              "124",
+              "129",
+              "119",
+              "118"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 119."
+          }
+        ],
+        [
+          {
+            "question": "What is 415 - 324?",
+            "answers": [
+              "86",
+              "93",
+              "91",
+              "94"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 91."
+          },
+          {
+            "question": "What is 390 - 249?",
+            "answers": [
+              "126",
+              "151",
+              "141",
+              "131"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 141."
+          },
+          {
+            "question": "What is 365 - 86?",
+            "answers": [
+              "282",
+              "264",
+              "276",
+              "279"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 279."
+          },
+          {
+            "question": "What is 230 - 122?",
+            "answers": [
+              "108",
+              "106",
+              "107",
+              "111"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 108."
+          },
+          {
+            "question": "What is 671 - 244?",
+            "answers": [
+              "427",
+              "429",
+              "424",
+              "432"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 427."
+          },
+          {
+            "question": "What is 273 - 119?",
+            "answers": [
+              "159",
+              "156",
+              "155",
+              "154"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 154."
+          },
+          {
+            "question": "What is 632 - 82?",
+            "answers": [
+              "552",
+              "545",
+              "550",
+              "547"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 550."
+          },
+          {
+            "question": "What is 479 - 215?",
+            "answers": [
+              "267",
+              "269",
+              "263",
+              "264"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 264."
+          },
+          {
+            "question": "What is 434 - 180?",
+            "answers": [
+              "251",
+              "257",
+              "254",
+              "269"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 254."
+          },
+          {
+            "question": "What is 583 - 342?",
+            "answers": [
+              "256",
+              "244",
+              "246",
+              "241"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 241."
+          }
+        ],
+        [
+          {
+            "question": "What is 882 - 678?",
+            "answers": [
+              "203",
+              "219",
+              "204",
+              "205"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 204."
+          },
+          {
+            "question": "What is 974 - 107?",
+            "answers": [
+              "857",
+              "872",
+              "867",
+              "877"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 867."
+          },
+          {
+            "question": "What is 645 - 348?",
+            "answers": [
+              "299",
+              "287",
+              "297",
+              "295"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 297."
+          },
+          {
+            "question": "What is 281 - 176?",
+            "answers": [
+              "105",
+              "104",
+              "100",
+              "115"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 105."
+          },
+          {
+            "question": "What is 745 - 730?",
+            "answers": [
+              "14",
+              "5",
+              "12",
+              "15"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 15."
+          },
+          {
+            "question": "What is 155 - 140?",
+            "answers": [
+              "15",
+              "30",
+              "17",
+              "10"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 15."
+          },
+          {
+            "question": "What is 635 - 213?",
+            "answers": [
+              "417",
+              "407",
+              "422",
+              "432"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 422."
+          },
+          {
+            "question": "What is 897 - 171?",
+            "answers": [
+              "723",
+              "726",
+              "711",
+              "725"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 726."
+          },
+          {
+            "question": "What is 453 - 144?",
+            "answers": [
+              "308",
+              "309",
+              "304",
+              "294"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 309."
+          },
+          {
+            "question": "What is 932 - 329?",
+            "answers": [
+              "593",
+              "603",
+              "613",
+              "608"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 603."
+          }
+        ],
+        [
+          {
+            "question": "What is 459 - 129?",
+            "answers": [
+              "340",
+              "345",
+              "330",
+              "332"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 330."
+          },
+          {
+            "question": "What is 153 - 79?",
+            "answers": [
+              "84",
+              "69",
+              "74",
+              "64"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 74."
+          },
+          {
+            "question": "What is 314 - 314?",
+            "answers": [
+              "5",
+              "11",
+              "3",
+              "0"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 0."
+          },
+          {
+            "question": "What is 898 - 602?",
+            "answers": [
+              "296",
+              "294",
+              "286",
+              "298"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 296."
+          },
+          {
+            "question": "What is 861 - 290?",
+            "answers": [
+              "561",
+              "576",
+              "572",
+              "571"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 571."
+          },
+          {
+            "question": "What is 489 - 217?",
+            "answers": [
+              "262",
+              "271",
+              "267",
+              "272"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 272."
+          },
+          {
+            "question": "What is 577 - 328?",
+            "answers": [
+              "249",
+              "248",
+              "252",
+              "264"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 249."
+          },
+          {
+            "question": "What is 667 - 401?",
+            "answers": [
+              "267",
+              "266",
+              "251",
+              "261"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 266."
+          },
+          {
+            "question": "What is 849 - 511?",
+            "answers": [
+              "338",
+              "337",
+              "336",
+              "341"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 338."
+          },
+          {
+            "question": "What is 444 - 387?",
+            "answers": [
+              "58",
+              "47",
+              "57",
+              "55"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 57."
+          }
+        ],
+        [
+          {
+            "question": "What is 887 - 127?",
+            "answers": [
+              "760",
+              "763",
+              "775",
+              "757"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 760."
+          },
+          {
+            "question": "What is 841 - 88?",
+            "answers": [
+              "755",
+              "753",
+              "748",
+              "752"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 753."
+          },
+          {
+            "question": "What is 147 - 89?",
+            "answers": [
+              "59",
+              "48",
+              "61",
+              "58"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 58."
+          },
+          {
+            "question": "What is 386 - 375?",
+            "answers": [
+              "6",
+              "1",
+              "21",
+              "11"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 11."
+          },
+          {
+            "question": "What is 468 - 219?",
+            "answers": [
+              "249",
+              "246",
+              "252",
+              "254"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 249."
+          },
+          {
+            "question": "What is 317 - 93?",
+            "answers": [
+              "225",
+              "224",
+              "222",
+              "219"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 224."
+          },
+          {
+            "question": "What is 198 - 81?",
+            "answers": [
+              "117",
+              "122",
+              "119",
+              "114"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 117."
+          },
+          {
+            "question": "What is 488 - 383?",
+            "answers": [
+              "95",
+              "105",
+              "115",
+              "110"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 105."
+          },
+          {
+            "question": "What is 396 - 77?",
+            "answers": [
+              "322",
+              "319",
+              "304",
+              "329"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 319."
+          },
+          {
+            "question": "What is 780 - 623?",
+            "answers": [
+              "156",
+              "155",
+              "157",
+              "172"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 157."
+          }
+        ],
+        [
+          {
+            "question": "What is 531 - 369?",
+            "answers": [
+              "164",
+              "162",
+              "165",
+              "160"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 162."
+          },
+          {
+            "question": "What is 403 - 75?",
+            "answers": [
+              "325",
+              "338",
+              "328",
+              "326"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 328."
+          },
+          {
+            "question": "What is 450 - 243?",
+            "answers": [
+              "207",
+              "212",
+              "202",
+              "206"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 207."
+          },
+          {
+            "question": "What is 560 - 320?",
+            "answers": [
+              "240",
+              "238",
+              "250",
+              "243"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 240."
+          },
+          {
+            "question": "What is 869 - 786?",
+            "answers": [
+              "83",
+              "80",
+              "86",
+              "68"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 83."
+          },
+          {
+            "question": "What is 278 - 254?",
+            "answers": [
+              "9",
+              "26",
+              "19",
+              "24"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 24."
+          },
+          {
+            "question": "What is 310 - 164?",
+            "answers": [
+              "146",
+              "141",
+              "148",
+              "161"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 146."
+          },
+          {
+            "question": "What is 648 - 566?",
+            "answers": [
+              "87",
+              "85",
+              "82",
+              "67"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 82."
+          },
+          {
+            "question": "What is 503 - 399?",
+            "answers": [
+              "106",
+              "109",
+              "104",
+              "101"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 104."
+          },
+          {
+            "question": "What is 586 - 428?",
+            "answers": [
+              "155",
+              "173",
+              "148",
+              "158"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 158."
+          }
+        ],
+        [
+          {
+            "question": "What is 444 - 363?",
+            "answers": [
+              "96",
+              "81",
+              "91",
+              "66"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 81."
+          },
+          {
+            "question": "What is 373 - 67?",
+            "answers": [
+              "321",
+              "306",
+              "311",
+              "308"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 306."
+          },
+          {
+            "question": "What is 849 - 68?",
+            "answers": [
+              "778",
+              "780",
+              "783",
+              "781"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 781."
+          },
+          {
+            "question": "What is 964 - 179?",
+            "answers": [
+              "770",
+              "785",
+              "786",
+              "800"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 785."
+          },
+          {
+            "question": "What is 109 - 80?",
+            "answers": [
+              "31",
+              "29",
+              "39",
+              "44"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 29."
+          },
+          {
+            "question": "What is 703 - 424?",
+            "answers": [
+              "281",
+              "279",
+              "284",
+              "294"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 279."
+          },
+          {
+            "question": "What is 832 - 677?",
+            "answers": [
+              "153",
+              "154",
+              "158",
+              "155"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 155."
+          },
+          {
+            "question": "What is 989 - 827?",
+            "answers": [
+              "159",
+              "162",
+              "172",
+              "163"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 162."
+          },
+          {
+            "question": "What is 853 - 239?",
+            "answers": [
+              "624",
+              "604",
+              "613",
+              "614"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 614."
+          },
+          {
+            "question": "What is 966 - 133?",
+            "answers": [
+              "838",
+              "831",
+              "833",
+              "832"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 833."
+          }
+        ],
+        [
+          {
+            "question": "What is 881 - 599?",
+            "answers": [
+              "282",
+              "280",
+              "281",
+              "267"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 282."
+          },
+          {
+            "question": "What is 664 - 412?",
+            "answers": [
+              "253",
+              "252",
+              "247",
+              "267"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 252."
+          },
+          {
+            "question": "What is 777 - 138?",
+            "answers": [
+              "639",
+              "642",
+              "637",
+              "644"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 639."
+          },
+          {
+            "question": "What is 687 - 258?",
+            "answers": [
+              "427",
+              "431",
+              "419",
+              "429"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 429."
+          },
+          {
+            "question": "What is 584 - 382?",
+            "answers": [
+              "202",
+              "192",
+              "212",
+              "204"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 202."
+          },
+          {
+            "question": "What is 760 - 382?",
+            "answers": [
+              "368",
+              "377",
+              "375",
+              "378"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 378."
+          },
+          {
+            "question": "What is 519 - 428?",
+            "answers": [
+              "91",
+              "101",
+              "88",
+              "89"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 91."
+          },
+          {
+            "question": "What is 614 - 322?",
+            "answers": [
+              "292",
+              "290",
+              "297",
+              "307"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 292."
+          },
+          {
+            "question": "What is 187 - 84?",
+            "answers": [
+              "93",
+              "103",
+              "105",
+              "118"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 103."
+          },
+          {
+            "question": "What is 697 - 461?",
+            "answers": [
+              "226",
+              "238",
+              "246",
+              "236"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 236."
+          }
+        ],
+        [
+          {
+            "question": "What is 175 - 59?",
+            "answers": [
+              "121",
+              "113",
+              "114",
+              "116"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 116."
+          },
+          {
+            "question": "What is 661 - 257?",
+            "answers": [
+              "405",
+              "404",
+              "409",
+              "406"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 404."
+          },
+          {
+            "question": "What is 961 - 841?",
+            "answers": [
+              "119",
+              "121",
+              "120",
+              "135"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 120."
+          },
+          {
+            "question": "What is 592 - 348?",
+            "answers": [
+              "241",
+              "259",
+              "244",
+              "239"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 244."
+          },
+          {
+            "question": "What is 631 - 557?",
+            "answers": [
+              "76",
+              "72",
+              "74",
+              "59"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 74."
+          },
+          {
+            "question": "What is 441 - 243?",
+            "answers": [
+              "203",
+              "188",
+              "198",
+              "196"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 198."
+          },
+          {
+            "question": "What is 791 - 757?",
+            "answers": [
+              "31",
+              "24",
+              "32",
+              "34"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 34."
+          },
+          {
+            "question": "What is 249 - 205?",
+            "answers": [
+              "59",
+              "47",
+              "29",
+              "44"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 44."
+          },
+          {
+            "question": "What is 747 - 138?",
+            "answers": [
+              "599",
+              "611",
+              "609",
+              "608"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 609."
+          },
+          {
+            "question": "What is 277 - 69?",
+            "answers": [
+              "223",
+              "205",
+              "198",
+              "208"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 208."
+          }
+        ],
+        [
+          {
+            "question": "What is 860 - 224?",
+            "answers": [
+              "636",
+              "651",
+              "621",
+              "634"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 636."
+          },
+          {
+            "question": "What is 173 - 87?",
+            "answers": [
+              "88",
+              "83",
+              "86",
+              "76"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 86."
+          },
+          {
+            "question": "What is 574 - 496?",
+            "answers": [
+              "68",
+              "78",
+              "76",
+              "75"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 78."
+          },
+          {
+            "question": "What is 391 - 88?",
+            "answers": [
+              "288",
+              "298",
+              "313",
+              "303"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 303."
+          },
+          {
+            "question": "What is 947 - 203?",
+            "answers": [
+              "744",
+              "745",
+              "742",
+              "743"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 744."
+          },
+          {
+            "question": "What is 699 - 260?",
+            "answers": [
+              "441",
+              "437",
+              "434",
+              "439"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 439."
+          },
+          {
+            "question": "What is 159 - 100?",
+            "answers": [
+              "64",
+              "69",
+              "58",
+              "59"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 59."
+          },
+          {
+            "question": "What is 907 - 571?",
+            "answers": [
+              "331",
+              "333",
+              "336",
+              "326"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 336."
+          },
+          {
+            "question": "What is 646 - 304?",
+            "answers": [
+              "344",
+              "341",
+              "342",
+              "337"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 342."
+          },
+          {
+            "question": "What is 369 - 304?",
+            "answers": [
+              "63",
+              "65",
+              "67",
+              "62"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 65."
+          }
+        ],
+        [
+          {
+            "question": "What is 373 - 365?",
+            "answers": [
+              "13",
+              "8",
+              "3",
+              "18"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 8."
+          },
+          {
+            "question": "What is 150 - 124?",
+            "answers": [
+              "21",
+              "26",
+              "41",
+              "23"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 112 - 86?",
+            "answers": [
+              "29",
+              "26",
+              "41",
+              "28"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 657 - 100?",
+            "answers": [
+              "572",
+              "554",
+              "556",
+              "557"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 557."
+          },
+          {
+            "question": "What is 522 - 181?",
+            "answers": [
+              "341",
+              "339",
+              "351",
+              "340"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 341."
+          },
+          {
+            "question": "What is 691 - 334?",
+            "answers": [
+              "372",
+              "352",
+              "357",
+              "362"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 357."
+          },
+          {
+            "question": "What is 212 - 158?",
+            "answers": [
+              "57",
+              "54",
+              "56",
+              "69"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 54."
+          },
+          {
+            "question": "What is 676 - 283?",
+            "answers": [
+              "393",
+              "395",
+              "403",
+              "408"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 393."
+          },
+          {
+            "question": "What is 989 - 746?",
+            "answers": [
+              "240",
+              "243",
+              "248",
+              "253"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 243."
+          },
+          {
+            "question": "What is 129 - 69?",
+            "answers": [
+              "62",
+              "50",
+              "70",
+              "60"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 60."
+          }
+        ],
+        [
+          {
+            "question": "What is 521 - 414?",
+            "answers": [
+              "108",
+              "117",
+              "104",
+              "107"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 107."
+          },
+          {
+            "question": "What is 750 - 156?",
+            "answers": [
+              "579",
+              "594",
+              "597",
+              "593"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 594."
+          },
+          {
+            "question": "What is 985 - 309?",
+            "answers": [
+              "691",
+              "661",
+              "676",
+              "681"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 676."
+          },
+          {
+            "question": "What is 756 - 229?",
+            "answers": [
+              "528",
+              "542",
+              "527",
+              "537"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 527."
+          },
+          {
+            "question": "What is 724 - 240?",
+            "answers": [
+              "483",
+              "484",
+              "487",
+              "469"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 484."
+          },
+          {
+            "question": "What is 911 - 61?",
+            "answers": [
+              "860",
+              "845",
+              "850",
+              "849"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 850."
+          },
+          {
+            "question": "What is 983 - 898?",
+            "answers": [
+              "83",
+              "80",
+              "75",
+              "85"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 85."
+          },
+          {
+            "question": "What is 707 - 191?",
+            "answers": [
+              "531",
+              "513",
+              "516",
+              "521"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 516."
+          },
+          {
+            "question": "What is 842 - 630?",
+            "answers": [
+              "197",
+              "212",
+              "211",
+              "227"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 212."
+          },
+          {
+            "question": "What is 878 - 59?",
+            "answers": [
+              "820",
+              "829",
+              "816",
+              "819"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 819."
+          }
+        ],
+        [
+          {
+            "question": "What is 555 - 193?",
+            "answers": [
+              "360",
+              "362",
+              "367",
+              "357"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 362."
+          },
+          {
+            "question": "What is 777 - 215?",
+            "answers": [
+              "567",
+              "562",
+              "559",
+              "560"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 562."
+          },
+          {
+            "question": "What is 196 - 102?",
+            "answers": [
+              "96",
+              "84",
+              "79",
+              "94"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 94."
+          },
+          {
+            "question": "What is 541 - 148?",
+            "answers": [
+              "388",
+              "396",
+              "393",
+              "378"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 393."
+          },
+          {
+            "question": "What is 839 - 211?",
+            "answers": [
+              "631",
+              "638",
+              "628",
+              "613"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 628."
+          },
+          {
+            "question": "What is 233 - 199?",
+            "answers": [
+              "31",
+              "34",
+              "39",
+              "33"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 34."
+          },
+          {
+            "question": "What is 151 - 54?",
+            "answers": [
+              "94",
+              "97",
+              "99",
+              "112"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 97."
+          },
+          {
+            "question": "What is 128 - 69?",
+            "answers": [
+              "56",
+              "59",
+              "57",
+              "54"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 59."
+          },
+          {
+            "question": "What is 318 - 99?",
+            "answers": [
+              "234",
+              "219",
+              "221",
+              "204"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 219."
+          },
+          {
+            "question": "What is 210 - 61?",
+            "answers": [
+              "164",
+              "149",
+              "147",
+              "152"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 149."
+          }
+        ],
+        [
+          {
+            "question": "What is 339 - 175?",
+            "answers": [
+              "169",
+              "164",
+              "159",
+              "154"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 164."
+          },
+          {
+            "question": "What is 455 - 89?",
+            "answers": [
+              "356",
+              "365",
+              "371",
+              "366"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 366."
+          },
+          {
+            "question": "What is 394 - 213?",
+            "answers": [
+              "181",
+              "176",
+              "186",
+              "171"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 181."
+          },
+          {
+            "question": "What is 540 - 320?",
+            "answers": [
+              "222",
+              "210",
+              "205",
+              "220"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 220."
+          },
+          {
+            "question": "What is 657 - 456?",
+            "answers": [
+              "186",
+              "203",
+              "201",
+              "191"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 201."
+          },
+          {
+            "question": "What is 226 - 153?",
+            "answers": [
+              "73",
+              "76",
+              "88",
+              "58"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 73."
+          },
+          {
+            "question": "What is 617 - 224?",
+            "answers": [
+              "388",
+              "393",
+              "408",
+              "398"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 393."
+          },
+          {
+            "question": "What is 314 - 118?",
+            "answers": [
+              "193",
+              "196",
+              "206",
+              "195"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 196."
+          },
+          {
+            "question": "What is 701 - 635?",
+            "answers": [
+              "61",
+              "51",
+              "81",
+              "66"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 66."
+          },
+          {
+            "question": "What is 318 - 127?",
+            "answers": [
+              "191",
+              "176",
+              "181",
+              "193"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 191."
+          }
+        ],
+        [
+          {
+            "question": "What is 518 - 161?",
+            "answers": [
+              "357",
+              "362",
+              "354",
+              "359"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 357."
+          },
+          {
+            "question": "What is 149 - 53?",
+            "answers": [
+              "111",
+              "86",
+              "96",
+              "95"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 96."
+          },
+          {
+            "question": "What is 855 - 850?",
+            "answers": [
+              "6",
+              "20",
+              "5",
+              "0"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 5."
+          },
+          {
+            "question": "What is 295 - 290?",
+            "answers": [
+              "8",
+              "5",
+              "0",
+              "7"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 5."
+          },
+          {
+            "question": "What is 858 - 658?",
+            "answers": [
+              "200",
+              "203",
+              "190",
+              "185"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 200."
+          },
+          {
+            "question": "What is 926 - 365?",
+            "answers": [
+              "561",
+              "556",
+              "562",
+              "560"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 561."
+          },
+          {
+            "question": "What is 419 - 376?",
+            "answers": [
+              "42",
+              "43",
+              "41",
+              "53"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 43."
+          },
+          {
+            "question": "What is 138 - 122?",
+            "answers": [
+              "16",
+              "1",
+              "26",
+              "6"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 185 - 85?",
+            "answers": [
+              "103",
+              "90",
+              "100",
+              "95"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 100."
+          },
+          {
+            "question": "What is 391 - 160?",
+            "answers": [
+              "231",
+              "233",
+              "228",
+              "246"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 231."
+          }
+        ],
+        [
+          {
+            "question": "What is 789 - 519?",
+            "answers": [
+              "260",
+              "272",
+              "270",
+              "267"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 270."
+          },
+          {
+            "question": "What is 736 - 632?",
+            "answers": [
+              "102",
+              "114",
+              "104",
+              "99"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 104."
+          },
+          {
+            "question": "What is 384 - 264?",
+            "answers": [
+              "118",
+              "125",
+              "120",
+              "110"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 120."
+          },
+          {
+            "question": "What is 584 - 483?",
+            "answers": [
+              "111",
+              "101",
+              "91",
+              "104"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 101."
+          },
+          {
+            "question": "What is 989 - 443?",
+            "answers": [
+              "546",
+              "551",
+              "547",
+              "548"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 546."
+          },
+          {
+            "question": "What is 945 - 462?",
+            "answers": [
+              "486",
+              "478",
+              "480",
+              "483"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 483."
+          },
+          {
+            "question": "What is 163 - 90?",
+            "answers": [
+              "73",
+              "74",
+              "58",
+              "70"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 73."
+          },
+          {
+            "question": "What is 982 - 422?",
+            "answers": [
+              "561",
+              "575",
+              "560",
+              "558"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 560."
+          },
+          {
+            "question": "What is 252 - 242?",
+            "answers": [
+              "12",
+              "5",
+              "15",
+              "10"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 10."
+          },
+          {
+            "question": "What is 949 - 894?",
+            "answers": [
+              "58",
+              "55",
+              "56",
+              "53"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 55."
+          }
+        ],
+        [
+          {
+            "question": "What is 829 - 292?",
+            "answers": [
+              "542",
+              "552",
+              "537",
+              "540"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 537."
+          },
+          {
+            "question": "What is 912 - 912?",
+            "answers": [
+              "3",
+              "0",
+              "1",
+              "5"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 0."
+          },
+          {
+            "question": "What is 147 - 130?",
+            "answers": [
+              "32",
+              "17",
+              "16",
+              "14"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 17."
+          },
+          {
+            "question": "What is 131 - 85?",
+            "answers": [
+              "47",
+              "46",
+              "36",
+              "41"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 46."
+          },
+          {
+            "question": "What is 206 - 82?",
+            "answers": [
+              "124",
+              "134",
+              "122",
+              "126"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 124."
+          },
+          {
+            "question": "What is 571 - 368?",
+            "answers": [
+              "213",
+              "203",
+              "205",
+              "208"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 203."
+          },
+          {
+            "question": "What is 781 - 697?",
+            "answers": [
+              "69",
+              "74",
+              "81",
+              "84"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 84."
+          },
+          {
+            "question": "What is 510 - 164?",
+            "answers": [
+              "343",
+              "347",
+              "346",
+              "336"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 346."
+          },
+          {
+            "question": "What is 213 - 159?",
+            "answers": [
+              "54",
+              "51",
+              "56",
+              "64"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 54."
+          },
+          {
+            "question": "What is 258 - 205?",
+            "answers": [
+              "53",
+              "54",
+              "38",
+              "43"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 53."
+          }
+        ],
+        [
+          {
+            "question": "What is 138 - 64?",
+            "answers": [
+              "84",
+              "69",
+              "72",
+              "74"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 74."
+          },
+          {
+            "question": "What is 655 - 356?",
+            "answers": [
+              "297",
+              "302",
+              "284",
+              "299"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 299."
+          },
+          {
+            "question": "What is 999 - 943?",
+            "answers": [
+              "53",
+              "61",
+              "56",
+              "54"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 56."
+          },
+          {
+            "question": "What is 650 - 367?",
+            "answers": [
+              "286",
+              "283",
+              "293",
+              "273"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 283."
+          },
+          {
+            "question": "What is 356 - 248?",
+            "answers": [
+              "93",
+              "123",
+              "108",
+              "98"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 108."
+          },
+          {
+            "question": "What is 543 - 415?",
+            "answers": [
+              "138",
+              "123",
+              "128",
+              "118"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 128."
+          },
+          {
+            "question": "What is 121 - 56?",
+            "answers": [
+              "55",
+              "67",
+              "65",
+              "63"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 65."
+          },
+          {
+            "question": "What is 119 - 110?",
+            "answers": [
+              "10",
+              "9",
+              "19",
+              "11"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 9."
+          },
+          {
+            "question": "What is 775 - 249?",
+            "answers": [
+              "527",
+              "541",
+              "516",
+              "526"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 526."
+          },
+          {
+            "question": "What is 432 - 419?",
+            "answers": [
+              "10",
+              "12",
+              "13",
+              "11"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 13."
+          }
+        ],
+        [
+          {
+            "question": "What is 972 - 190?",
+            "answers": [
+              "767",
+              "772",
+              "782",
+              "783"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 782."
+          },
+          {
+            "question": "What is 658 - 150?",
+            "answers": [
+              "509",
+              "508",
+              "493",
+              "503"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 508."
+          },
+          {
+            "question": "What is 216 - 106?",
+            "answers": [
+              "125",
+              "110",
+              "100",
+              "95"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 110."
+          },
+          {
+            "question": "What is 345 - 185?",
+            "answers": [
+              "158",
+              "160",
+              "161",
+              "170"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 160."
+          },
+          {
+            "question": "What is 640 - 459?",
+            "answers": [
+              "181",
+              "182",
+              "196",
+              "183"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 181."
+          },
+          {
+            "question": "What is 497 - 138?",
+            "answers": [
+              "357",
+              "369",
+              "344",
+              "359"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 359."
+          },
+          {
+            "question": "What is 812 - 325?",
+            "answers": [
+              "487",
+              "492",
+              "472",
+              "497"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 487."
+          },
+          {
+            "question": "What is 754 - 155?",
+            "answers": [
+              "599",
+              "596",
+              "601",
+              "598"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 599."
+          },
+          {
+            "question": "What is 945 - 891?",
+            "answers": [
+              "54",
+              "55",
+              "51",
+              "59"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 54."
+          },
+          {
+            "question": "What is 355 - 140?",
+            "answers": [
+              "200",
+              "212",
+              "215",
+              "225"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 215."
+          }
+        ],
+        [
+          {
+            "question": "What is 48 \u00d7 23?",
+            "answers": [
+              "1104",
+              "1094",
+              "1106",
+              "1114"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1104."
+          },
+          {
+            "question": "What is 45 \u00d7 13?",
+            "answers": [
+              "585",
+              "584",
+              "570",
+              "587"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 585."
+          },
+          {
+            "question": "What is 28 \u00d7 19?",
+            "answers": [
+              "527",
+              "532",
+              "531",
+              "537"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 532."
+          },
+          {
+            "question": "What is 39 \u00d7 30?",
+            "answers": [
+              "1170",
+              "1155",
+              "1172",
+              "1168"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1170."
+          },
+          {
+            "question": "What is 22 \u00d7 29?",
+            "answers": [
+              "633",
+              "638",
+              "636",
+              "653"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 638."
+          },
+          {
+            "question": "What is 19 \u00d7 22?",
+            "answers": [
+              "433",
+              "417",
+              "403",
+              "418"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 418."
+          },
+          {
+            "question": "What is 19 \u00d7 30?",
+            "answers": [
+              "569",
+              "570",
+              "571",
+              "555"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 570."
+          },
+          {
+            "question": "What is 27 \u00d7 20?",
+            "answers": [
+              "540",
+              "530",
+              "535",
+              "550"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 540."
+          },
+          {
+            "question": "What is 18 \u00d7 30?",
+            "answers": [
+              "550",
+              "530",
+              "539",
+              "540"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 540."
+          },
+          {
+            "question": "What is 21 \u00d7 6?",
+            "answers": [
+              "127",
+              "126",
+              "116",
+              "125"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 126."
+          }
+        ],
+        [
+          {
+            "question": "What is 33 \u00d7 14?",
+            "answers": [
+              "459",
+              "452",
+              "462",
+              "457"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 462."
+          },
+          {
+            "question": "What is 34 \u00d7 7?",
+            "answers": [
+              "248",
+              "238",
+              "253",
+              "240"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 238."
+          },
+          {
+            "question": "What is 15 \u00d7 23?",
+            "answers": [
+              "330",
+              "346",
+              "345",
+              "343"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 345."
+          },
+          {
+            "question": "What is 22 \u00d7 29?",
+            "answers": [
+              "643",
+              "653",
+              "638",
+              "636"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 638."
+          },
+          {
+            "question": "What is 14 \u00d7 10?",
+            "answers": [
+              "140",
+              "137",
+              "145",
+              "142"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 140."
+          },
+          {
+            "question": "What is 30 \u00d7 17?",
+            "answers": [
+              "510",
+              "508",
+              "520",
+              "525"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 510."
+          },
+          {
+            "question": "What is 36 \u00d7 7?",
+            "answers": [
+              "254",
+              "250",
+              "242",
+              "252"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 252."
+          },
+          {
+            "question": "What is 21 \u00d7 14?",
+            "answers": [
+              "292",
+              "279",
+              "294",
+              "295"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 294."
+          },
+          {
+            "question": "What is 43 \u00d7 27?",
+            "answers": [
+              "1151",
+              "1164",
+              "1161",
+              "1156"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1161."
+          },
+          {
+            "question": "What is 17 \u00d7 28?",
+            "answers": [
+              "476",
+              "481",
+              "477",
+              "491"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 476."
+          }
+        ],
+        [
+          {
+            "question": "What is 17 \u00d7 6?",
+            "answers": [
+              "102",
+              "97",
+              "103",
+              "107"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 102."
+          },
+          {
+            "question": "What is 34 \u00d7 19?",
+            "answers": [
+              "647",
+              "646",
+              "636",
+              "656"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 646."
+          },
+          {
+            "question": "What is 48 \u00d7 19?",
+            "answers": [
+              "912",
+              "910",
+              "927",
+              "914"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 912."
+          },
+          {
+            "question": "What is 10 \u00d7 22?",
+            "answers": [
+              "205",
+              "223",
+              "220",
+              "235"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 220."
+          },
+          {
+            "question": "What is 11 \u00d7 30?",
+            "answers": [
+              "333",
+              "335",
+              "330",
+              "340"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 330."
+          },
+          {
+            "question": "What is 46 \u00d7 24?",
+            "answers": [
+              "1109",
+              "1107",
+              "1104",
+              "1103"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1104."
+          },
+          {
+            "question": "What is 41 \u00d7 18?",
+            "answers": [
+              "741",
+              "723",
+              "738",
+              "740"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 738."
+          },
+          {
+            "question": "What is 14 \u00d7 22?",
+            "answers": [
+              "308",
+              "293",
+              "310",
+              "307"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 308."
+          },
+          {
+            "question": "What is 22 \u00d7 20?",
+            "answers": [
+              "439",
+              "425",
+              "440",
+              "442"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 440."
+          },
+          {
+            "question": "What is 23 \u00d7 17?",
+            "answers": [
+              "401",
+              "396",
+              "391",
+              "393"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 391."
+          }
+        ],
+        [
+          {
+            "question": "What is 42 \u00d7 30?",
+            "answers": [
+              "1275",
+              "1260",
+              "1261",
+              "1259"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1260."
+          },
+          {
+            "question": "What is 47 \u00d7 15?",
+            "answers": [
+              "703",
+              "705",
+              "700",
+              "702"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 705."
+          },
+          {
+            "question": "What is 40 \u00d7 6?",
+            "answers": [
+              "245",
+              "240",
+              "239",
+              "255"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 240."
+          },
+          {
+            "question": "What is 48 \u00d7 29?",
+            "answers": [
+              "1393",
+              "1394",
+              "1392",
+              "1377"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1392."
+          },
+          {
+            "question": "What is 11 \u00d7 14?",
+            "answers": [
+              "154",
+              "155",
+              "151",
+              "144"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 154."
+          },
+          {
+            "question": "What is 23 \u00d7 15?",
+            "answers": [
+              "335",
+              "348",
+              "355",
+              "345"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 345."
+          },
+          {
+            "question": "What is 23 \u00d7 15?",
+            "answers": [
+              "346",
+              "348",
+              "347",
+              "345"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 345."
+          },
+          {
+            "question": "What is 33 \u00d7 26?",
+            "answers": [
+              "868",
+              "861",
+              "863",
+              "858"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 858."
+          },
+          {
+            "question": "What is 38 \u00d7 11?",
+            "answers": [
+              "413",
+              "421",
+              "418",
+              "423"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 418."
+          },
+          {
+            "question": "What is 46 \u00d7 13?",
+            "answers": [
+              "583",
+              "595",
+              "593",
+              "598"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 598."
+          }
+        ],
+        [
+          {
+            "question": "What is 26 \u00d7 6?",
+            "answers": [
+              "141",
+              "153",
+              "156",
+              "159"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 156."
+          },
+          {
+            "question": "What is 16 \u00d7 29?",
+            "answers": [
+              "464",
+              "465",
+              "474",
+              "449"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 464."
+          },
+          {
+            "question": "What is 14 \u00d7 8?",
+            "answers": [
+              "109",
+              "112",
+              "111",
+              "102"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 112."
+          },
+          {
+            "question": "What is 45 \u00d7 12?",
+            "answers": [
+              "538",
+              "530",
+              "540",
+              "537"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 540."
+          },
+          {
+            "question": "What is 44 \u00d7 20?",
+            "answers": [
+              "881",
+              "870",
+              "885",
+              "880"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 880."
+          },
+          {
+            "question": "What is 44 \u00d7 5?",
+            "answers": [
+              "215",
+              "220",
+              "222",
+              "235"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 220."
+          },
+          {
+            "question": "What is 25 \u00d7 19?",
+            "answers": [
+              "475",
+              "465",
+              "490",
+              "485"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 475."
+          },
+          {
+            "question": "What is 18 \u00d7 17?",
+            "answers": [
+              "305",
+              "306",
+              "316",
+              "291"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 306."
+          },
+          {
+            "question": "What is 26 \u00d7 8?",
+            "answers": [
+              "213",
+              "208",
+              "211",
+              "198"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 208."
+          },
+          {
+            "question": "What is 40 \u00d7 24?",
+            "answers": [
+              "960",
+              "950",
+              "945",
+              "963"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 960."
+          }
+        ],
+        [
+          {
+            "question": "What is 41 \u00d7 18?",
+            "answers": [
+              "735",
+              "740",
+              "738",
+              "733"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 738."
+          },
+          {
+            "question": "What is 16 \u00d7 10?",
+            "answers": [
+              "160",
+              "158",
+              "157",
+              "155"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 160."
+          },
+          {
+            "question": "What is 23 \u00d7 18?",
+            "answers": [
+              "404",
+              "414",
+              "411",
+              "412"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 414."
+          },
+          {
+            "question": "What is 44 \u00d7 10?",
+            "answers": [
+              "450",
+              "425",
+              "440",
+              "445"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 440."
+          },
+          {
+            "question": "What is 42 \u00d7 15?",
+            "answers": [
+              "628",
+              "645",
+              "640",
+              "630"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 630."
+          },
+          {
+            "question": "What is 39 \u00d7 28?",
+            "answers": [
+              "1092",
+              "1090",
+              "1087",
+              "1093"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1092."
+          },
+          {
+            "question": "What is 34 \u00d7 28?",
+            "answers": [
+              "967",
+              "954",
+              "957",
+              "952"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 952."
+          },
+          {
+            "question": "What is 12 \u00d7 14?",
+            "answers": [
+              "183",
+              "168",
+              "163",
+              "170"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 168."
+          },
+          {
+            "question": "What is 18 \u00d7 15?",
+            "answers": [
+              "270",
+              "275",
+              "265",
+              "260"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 270."
+          },
+          {
+            "question": "What is 19 \u00d7 28?",
+            "answers": [
+              "522",
+              "531",
+              "532",
+              "542"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 532."
+          }
+        ],
+        [
+          {
+            "question": "What is 30 \u00d7 7?",
+            "answers": [
+              "209",
+              "210",
+              "195",
+              "205"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 210."
+          },
+          {
+            "question": "What is 48 \u00d7 24?",
+            "answers": [
+              "1154",
+              "1137",
+              "1152",
+              "1142"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1152."
+          },
+          {
+            "question": "What is 30 \u00d7 18?",
+            "answers": [
+              "545",
+              "540",
+              "525",
+              "543"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 540."
+          },
+          {
+            "question": "What is 49 \u00d7 14?",
+            "answers": [
+              "686",
+              "689",
+              "685",
+              "701"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 686."
+          },
+          {
+            "question": "What is 45 \u00d7 15?",
+            "answers": [
+              "673",
+              "675",
+              "680",
+              "685"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 675."
+          },
+          {
+            "question": "What is 16 \u00d7 21?",
+            "answers": [
+              "335",
+              "336",
+              "339",
+              "334"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 336."
+          },
+          {
+            "question": "What is 40 \u00d7 22?",
+            "answers": [
+              "880",
+              "882",
+              "879",
+              "865"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 880."
+          },
+          {
+            "question": "What is 34 \u00d7 8?",
+            "answers": [
+              "274",
+              "272",
+              "262",
+              "277"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 272."
+          },
+          {
+            "question": "What is 22 \u00d7 29?",
+            "answers": [
+              "638",
+              "640",
+              "641",
+              "639"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 638."
+          },
+          {
+            "question": "What is 44 \u00d7 21?",
+            "answers": [
+              "929",
+              "924",
+              "914",
+              "919"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 924."
+          }
+        ],
+        [
+          {
+            "question": "What is 38 \u00d7 27?",
+            "answers": [
+              "1028",
+              "1027",
+              "1029",
+              "1026"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1026."
+          },
+          {
+            "question": "What is 45 \u00d7 22?",
+            "answers": [
+              "992",
+              "989",
+              "987",
+              "990"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 990."
+          },
+          {
+            "question": "What is 39 \u00d7 30?",
+            "answers": [
+              "1170",
+              "1155",
+              "1185",
+              "1169"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1170."
+          },
+          {
+            "question": "What is 29 \u00d7 17?",
+            "answers": [
+              "493",
+              "494",
+              "496",
+              "503"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 493."
+          },
+          {
+            "question": "What is 46 \u00d7 15?",
+            "answers": [
+              "690",
+              "675",
+              "695",
+              "691"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 690."
+          },
+          {
+            "question": "What is 49 \u00d7 13?",
+            "answers": [
+              "647",
+              "637",
+              "634",
+              "635"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 637."
+          },
+          {
+            "question": "What is 18 \u00d7 14?",
+            "answers": [
+              "267",
+              "252",
+              "249",
+              "242"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 252."
+          },
+          {
+            "question": "What is 27 \u00d7 24?",
+            "answers": [
+              "663",
+              "646",
+              "648",
+              "643"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 648."
+          },
+          {
+            "question": "What is 34 \u00d7 18?",
+            "answers": [
+              "609",
+              "627",
+              "612",
+              "602"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 612."
+          },
+          {
+            "question": "What is 47 \u00d7 25?",
+            "answers": [
+              "1160",
+              "1165",
+              "1190",
+              "1175"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1175."
+          }
+        ],
+        [
+          {
+            "question": "What is 36 \u00d7 25?",
+            "answers": [
+              "900",
+              "885",
+              "895",
+              "890"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 900."
+          },
+          {
+            "question": "What is 47 \u00d7 24?",
+            "answers": [
+              "1130",
+              "1128",
+              "1143",
+              "1133"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1128."
+          },
+          {
+            "question": "What is 18 \u00d7 29?",
+            "answers": [
+              "517",
+              "520",
+              "522",
+              "512"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 522."
+          },
+          {
+            "question": "What is 21 \u00d7 28?",
+            "answers": [
+              "578",
+              "591",
+              "588",
+              "587"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 588."
+          },
+          {
+            "question": "What is 20 \u00d7 22?",
+            "answers": [
+              "439",
+              "450",
+              "435",
+              "440"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 440."
+          },
+          {
+            "question": "What is 50 \u00d7 15?",
+            "answers": [
+              "751",
+              "750",
+              "745",
+              "755"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 750."
+          },
+          {
+            "question": "What is 38 \u00d7 27?",
+            "answers": [
+              "1021",
+              "1027",
+              "1026",
+              "1025"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1026."
+          },
+          {
+            "question": "What is 16 \u00d7 26?",
+            "answers": [
+              "416",
+              "401",
+              "411",
+              "413"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 416."
+          },
+          {
+            "question": "What is 25 \u00d7 18?",
+            "answers": [
+              "465",
+              "451",
+              "450",
+              "447"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 450."
+          },
+          {
+            "question": "What is 37 \u00d7 27?",
+            "answers": [
+              "998",
+              "996",
+              "999",
+              "994"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 999."
+          }
+        ],
+        [
+          {
+            "question": "What is 14 \u00d7 29?",
+            "answers": [
+              "406",
+              "391",
+              "407",
+              "405"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 406."
+          },
+          {
+            "question": "What is 36 \u00d7 30?",
+            "answers": [
+              "1077",
+              "1083",
+              "1085",
+              "1080"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1080."
+          },
+          {
+            "question": "What is 27 \u00d7 25?",
+            "answers": [
+              "665",
+              "674",
+              "660",
+              "675"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 675."
+          },
+          {
+            "question": "What is 46 \u00d7 12?",
+            "answers": [
+              "552",
+              "557",
+              "537",
+              "547"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 552."
+          },
+          {
+            "question": "What is 16 \u00d7 21?",
+            "answers": [
+              "336",
+              "321",
+              "333",
+              "335"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 336."
+          },
+          {
+            "question": "What is 30 \u00d7 29?",
+            "answers": [
+              "872",
+              "873",
+              "860",
+              "870"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 870."
+          },
+          {
+            "question": "What is 44 \u00d7 26?",
+            "answers": [
+              "1129",
+              "1159",
+              "1141",
+              "1144"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1144."
+          },
+          {
+            "question": "What is 19 \u00d7 8?",
+            "answers": [
+              "150",
+              "153",
+              "152",
+              "142"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 152."
+          },
+          {
+            "question": "What is 50 \u00d7 30?",
+            "answers": [
+              "1500",
+              "1499",
+              "1510",
+              "1498"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1500."
+          },
+          {
+            "question": "What is 22 \u00d7 10?",
+            "answers": [
+              "219",
+              "221",
+              "220",
+              "223"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 220."
+          }
+        ],
+        [
+          {
+            "question": "What is 42 \u00d7 30?",
+            "answers": [
+              "1259",
+              "1260",
+              "1261",
+              "1262"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1260."
+          },
+          {
+            "question": "What is 28 \u00d7 21?",
+            "answers": [
+              "588",
+              "586",
+              "591",
+              "587"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 588."
+          },
+          {
+            "question": "What is 11 \u00d7 9?",
+            "answers": [
+              "96",
+              "99",
+              "102",
+              "101"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 99."
+          },
+          {
+            "question": "What is 18 \u00d7 18?",
+            "answers": [
+              "334",
+              "324",
+              "323",
+              "314"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 324."
+          },
+          {
+            "question": "What is 34 \u00d7 14?",
+            "answers": [
+              "474",
+              "476",
+              "461",
+              "477"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 476."
+          },
+          {
+            "question": "What is 26 \u00d7 29?",
+            "answers": [
+              "769",
+              "751",
+              "754",
+              "764"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 754."
+          },
+          {
+            "question": "What is 32 \u00d7 15?",
+            "answers": [
+              "475",
+              "470",
+              "485",
+              "480"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 480."
+          },
+          {
+            "question": "What is 12 \u00d7 29?",
+            "answers": [
+              "348",
+              "363",
+              "353",
+              "338"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 348."
+          },
+          {
+            "question": "What is 28 \u00d7 20?",
+            "answers": [
+              "550",
+              "545",
+              "575",
+              "560"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 560."
+          },
+          {
+            "question": "What is 18 \u00d7 19?",
+            "answers": [
+              "337",
+              "342",
+              "343",
+              "352"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 342."
+          }
+        ],
+        [
+          {
+            "question": "What is 10 \u00d7 22?",
+            "answers": [
+              "222",
+              "220",
+              "219",
+              "218"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 220."
+          },
+          {
+            "question": "What is 31 \u00d7 15?",
+            "answers": [
+              "465",
+              "468",
+              "467",
+              "475"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 465."
+          },
+          {
+            "question": "What is 50 \u00d7 26?",
+            "answers": [
+              "1310",
+              "1315",
+              "1300",
+              "1290"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1300."
+          },
+          {
+            "question": "What is 45 \u00d7 14?",
+            "answers": [
+              "630",
+              "615",
+              "625",
+              "632"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 630."
+          },
+          {
+            "question": "What is 45 \u00d7 17?",
+            "answers": [
+              "755",
+              "780",
+              "768",
+              "765"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 765."
+          },
+          {
+            "question": "What is 18 \u00d7 24?",
+            "answers": [
+              "435",
+              "430",
+              "432",
+              "447"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 432."
+          },
+          {
+            "question": "What is 46 \u00d7 24?",
+            "answers": [
+              "1104",
+              "1089",
+              "1105",
+              "1107"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1104."
+          },
+          {
+            "question": "What is 47 \u00d7 29?",
+            "answers": [
+              "1378",
+              "1368",
+              "1363",
+              "1365"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1363."
+          },
+          {
+            "question": "What is 43 \u00d7 23?",
+            "answers": [
+              "987",
+              "974",
+              "989",
+              "984"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 989."
+          },
+          {
+            "question": "What is 42 \u00d7 18?",
+            "answers": [
+              "757",
+              "756",
+              "753",
+              "754"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 756."
+          }
+        ],
+        [
+          {
+            "question": "What is 25 \u00d7 19?",
+            "answers": [
+              "480",
+              "475",
+              "473",
+              "476"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 475."
+          },
+          {
+            "question": "What is 34 \u00d7 6?",
+            "answers": [
+              "201",
+              "203",
+              "207",
+              "204"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 204."
+          },
+          {
+            "question": "What is 21 \u00d7 11?",
+            "answers": [
+              "229",
+              "231",
+              "246",
+              "228"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 231."
+          },
+          {
+            "question": "What is 38 \u00d7 29?",
+            "answers": [
+              "1101",
+              "1102",
+              "1087",
+              "1097"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1102."
+          },
+          {
+            "question": "What is 25 \u00d7 22?",
+            "answers": [
+              "550",
+              "552",
+              "548",
+              "549"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 550."
+          },
+          {
+            "question": "What is 30 \u00d7 6?",
+            "answers": [
+              "175",
+              "170",
+              "182",
+              "180"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 180."
+          },
+          {
+            "question": "What is 37 \u00d7 18?",
+            "answers": [
+              "681",
+              "664",
+              "666",
+              "665"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 666."
+          },
+          {
+            "question": "What is 10 \u00d7 6?",
+            "answers": [
+              "59",
+              "55",
+              "61",
+              "60"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 60."
+          },
+          {
+            "question": "What is 14 \u00d7 18?",
+            "answers": [
+              "250",
+              "253",
+              "252",
+              "242"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 252."
+          },
+          {
+            "question": "What is 20 \u00d7 6?",
+            "answers": [
+              "121",
+              "130",
+              "120",
+              "123"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 120."
+          }
+        ],
+        [
+          {
+            "question": "What is 24 \u00d7 19?",
+            "answers": [
+              "456",
+              "454",
+              "458",
+              "441"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 456."
+          },
+          {
+            "question": "What is 33 \u00d7 15?",
+            "answers": [
+              "497",
+              "490",
+              "495",
+              "498"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 495."
+          },
+          {
+            "question": "What is 25 \u00d7 19?",
+            "answers": [
+              "475",
+              "470",
+              "474",
+              "460"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 475."
+          },
+          {
+            "question": "What is 27 \u00d7 21?",
+            "answers": [
+              "567",
+              "565",
+              "557",
+              "566"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 567."
+          },
+          {
+            "question": "What is 16 \u00d7 29?",
+            "answers": [
+              "463",
+              "459",
+              "461",
+              "464"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 464."
+          },
+          {
+            "question": "What is 14 \u00d7 14?",
+            "answers": [
+              "186",
+              "197",
+              "194",
+              "196"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 196."
+          },
+          {
+            "question": "What is 13 \u00d7 14?",
+            "answers": [
+              "172",
+              "179",
+              "184",
+              "182"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 182."
+          },
+          {
+            "question": "What is 27 \u00d7 19?",
+            "answers": [
+              "513",
+              "523",
+              "511",
+              "528"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 513."
+          },
+          {
+            "question": "What is 20 \u00d7 7?",
+            "answers": [
+              "142",
+              "140",
+              "143",
+              "139"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 140."
+          },
+          {
+            "question": "What is 24 \u00d7 13?",
+            "answers": [
+              "297",
+              "312",
+              "317",
+              "313"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 312."
+          }
+        ],
+        [
+          {
+            "question": "What is 26 \u00d7 11?",
+            "answers": [
+              "276",
+              "286",
+              "296",
+              "281"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 286."
+          },
+          {
+            "question": "What is 26 \u00d7 16?",
+            "answers": [
+              "415",
+              "416",
+              "413",
+              "421"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 416."
+          },
+          {
+            "question": "What is 10 \u00d7 17?",
+            "answers": [
+              "170",
+              "173",
+              "169",
+              "155"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 170."
+          },
+          {
+            "question": "What is 29 \u00d7 26?",
+            "answers": [
+              "751",
+              "753",
+              "764",
+              "754"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 754."
+          },
+          {
+            "question": "What is 13 \u00d7 17?",
+            "answers": [
+              "231",
+              "221",
+              "223",
+              "206"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 221."
+          },
+          {
+            "question": "What is 17 \u00d7 20?",
+            "answers": [
+              "340",
+              "341",
+              "337",
+              "345"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 340."
+          },
+          {
+            "question": "What is 17 \u00d7 8?",
+            "answers": [
+              "135",
+              "136",
+              "134",
+              "126"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 136."
+          },
+          {
+            "question": "What is 41 \u00d7 7?",
+            "answers": [
+              "272",
+              "287",
+              "282",
+              "277"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 287."
+          },
+          {
+            "question": "What is 30 \u00d7 7?",
+            "answers": [
+              "210",
+              "215",
+              "211",
+              "220"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 210."
+          },
+          {
+            "question": "What is 19 \u00d7 27?",
+            "answers": [
+              "513",
+              "498",
+              "523",
+              "510"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 513."
+          }
+        ],
+        [
+          {
+            "question": "What is 26 \u00d7 13?",
+            "answers": [
+              "339",
+              "335",
+              "338",
+              "328"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 338."
+          },
+          {
+            "question": "What is 24 \u00d7 14?",
+            "answers": [
+              "341",
+              "336",
+              "326",
+              "338"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 336."
+          },
+          {
+            "question": "What is 16 \u00d7 5?",
+            "answers": [
+              "75",
+              "83",
+              "95",
+              "80"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 80."
+          },
+          {
+            "question": "What is 11 \u00d7 17?",
+            "answers": [
+              "188",
+              "182",
+              "187",
+              "184"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 187."
+          },
+          {
+            "question": "What is 20 \u00d7 14?",
+            "answers": [
+              "270",
+              "280",
+              "282",
+              "265"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 280."
+          },
+          {
+            "question": "What is 12 \u00d7 7?",
+            "answers": [
+              "89",
+              "84",
+              "74",
+              "94"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 84."
+          },
+          {
+            "question": "What is 22 \u00d7 19?",
+            "answers": [
+              "417",
+              "423",
+              "413",
+              "418"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 418."
+          },
+          {
+            "question": "What is 30 \u00d7 26?",
+            "answers": [
+              "775",
+              "790",
+              "795",
+              "780"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 780."
+          },
+          {
+            "question": "What is 39 \u00d7 29?",
+            "answers": [
+              "1126",
+              "1130",
+              "1121",
+              "1131"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1131."
+          },
+          {
+            "question": "What is 50 \u00d7 20?",
+            "answers": [
+              "998",
+              "1001",
+              "1000",
+              "985"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1000."
+          }
+        ],
+        [
+          {
+            "question": "What is 35 \u00d7 16?",
+            "answers": [
+              "565",
+              "560",
+              "575",
+              "557"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 560."
+          },
+          {
+            "question": "What is 46 \u00d7 16?",
+            "answers": [
+              "735",
+              "736",
+              "734",
+              "731"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 736."
+          },
+          {
+            "question": "What is 29 \u00d7 30?",
+            "answers": [
+              "880",
+              "871",
+              "885",
+              "870"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 870."
+          },
+          {
+            "question": "What is 19 \u00d7 19?",
+            "answers": [
+              "362",
+              "361",
+              "356",
+              "360"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 361."
+          },
+          {
+            "question": "What is 27 \u00d7 22?",
+            "answers": [
+              "594",
+              "597",
+              "599",
+              "589"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 594."
+          },
+          {
+            "question": "What is 10 \u00d7 11?",
+            "answers": [
+              "110",
+              "125",
+              "105",
+              "112"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 110."
+          },
+          {
+            "question": "What is 30 \u00d7 17?",
+            "answers": [
+              "510",
+              "515",
+              "511",
+              "500"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 510."
+          },
+          {
+            "question": "What is 32 \u00d7 7?",
+            "answers": [
+              "239",
+              "224",
+              "219",
+              "234"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 224."
+          },
+          {
+            "question": "What is 43 \u00d7 6?",
+            "answers": [
+              "256",
+              "255",
+              "258",
+              "260"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 258."
+          },
+          {
+            "question": "What is 30 \u00d7 15?",
+            "answers": [
+              "465",
+              "452",
+              "449",
+              "450"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 450."
+          }
+        ],
+        [
+          {
+            "question": "What is 26 \u00d7 19?",
+            "answers": [
+              "504",
+              "496",
+              "491",
+              "494"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 494."
+          },
+          {
+            "question": "What is 47 \u00d7 8?",
+            "answers": [
+              "377",
+              "366",
+              "374",
+              "376"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 376."
+          },
+          {
+            "question": "What is 35 \u00d7 14?",
+            "answers": [
+              "492",
+              "489",
+              "495",
+              "490"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 490."
+          },
+          {
+            "question": "What is 41 \u00d7 5?",
+            "answers": [
+              "202",
+              "220",
+              "205",
+              "210"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 205."
+          },
+          {
+            "question": "What is 20 \u00d7 26?",
+            "answers": [
+              "520",
+              "517",
+              "522",
+              "518"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 520."
+          },
+          {
+            "question": "What is 37 \u00d7 9?",
+            "answers": [
+              "331",
+              "330",
+              "332",
+              "333"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 333."
+          },
+          {
+            "question": "What is 19 \u00d7 24?",
+            "answers": [
+              "456",
+              "455",
+              "471",
+              "461"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 456."
+          },
+          {
+            "question": "What is 46 \u00d7 12?",
+            "answers": [
+              "552",
+              "553",
+              "550",
+              "555"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 552."
+          },
+          {
+            "question": "What is 50 \u00d7 27?",
+            "answers": [
+              "1350",
+              "1352",
+              "1347",
+              "1355"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1350."
+          },
+          {
+            "question": "What is 29 \u00d7 25?",
+            "answers": [
+              "740",
+              "710",
+              "728",
+              "725"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 725."
+          }
+        ],
+        [
+          {
+            "question": "What is 20 \u00d7 26?",
+            "answers": [
+              "505",
+              "525",
+              "517",
+              "520"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 520."
+          },
+          {
+            "question": "What is 47 \u00d7 14?",
+            "answers": [
+              "659",
+              "658",
+              "643",
+              "663"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 658."
+          },
+          {
+            "question": "What is 44 \u00d7 23?",
+            "answers": [
+              "1009",
+              "1013",
+              "1012",
+              "1007"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1012."
+          },
+          {
+            "question": "What is 24 \u00d7 20?",
+            "answers": [
+              "480",
+              "485",
+              "483",
+              "479"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 480."
+          },
+          {
+            "question": "What is 15 \u00d7 15?",
+            "answers": [
+              "227",
+              "225",
+              "235",
+              "210"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 225."
+          },
+          {
+            "question": "What is 31 \u00d7 20?",
+            "answers": [
+              "605",
+              "615",
+              "610",
+              "620"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 620."
+          },
+          {
+            "question": "What is 12 \u00d7 7?",
+            "answers": [
+              "69",
+              "82",
+              "84",
+              "86"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 84."
+          },
+          {
+            "question": "What is 12 \u00d7 8?",
+            "answers": [
+              "91",
+              "95",
+              "96",
+              "106"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 96."
+          },
+          {
+            "question": "What is 22 \u00d7 22?",
+            "answers": [
+              "484",
+              "489",
+              "482",
+              "486"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 484."
+          },
+          {
+            "question": "What is 16 \u00d7 17?",
+            "answers": [
+              "273",
+              "287",
+              "272",
+              "271"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 272."
+          }
+        ],
+        [
+          {
+            "question": "What is 21 \u00d7 8?",
+            "answers": [
+              "170",
+              "168",
+              "178",
+              "165"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 168."
+          },
+          {
+            "question": "What is 50 \u00d7 14?",
+            "answers": [
+              "700",
+              "701",
+              "703",
+              "702"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 700."
+          },
+          {
+            "question": "What is 26 \u00d7 21?",
+            "answers": [
+              "556",
+              "561",
+              "547",
+              "546"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 546."
+          },
+          {
+            "question": "What is 25 \u00d7 11?",
+            "answers": [
+              "285",
+              "270",
+              "277",
+              "275"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 275."
+          },
+          {
+            "question": "What is 39 \u00d7 27?",
+            "answers": [
+              "1051",
+              "1053",
+              "1056",
+              "1050"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1053."
+          },
+          {
+            "question": "What is 47 \u00d7 16?",
+            "answers": [
+              "749",
+              "742",
+              "752",
+              "757"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 752."
+          },
+          {
+            "question": "What is 27 \u00d7 26?",
+            "answers": [
+              "707",
+              "705",
+              "702",
+              "697"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 702."
+          },
+          {
+            "question": "What is 13 \u00d7 22?",
+            "answers": [
+              "288",
+              "276",
+              "287",
+              "286"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 286."
+          },
+          {
+            "question": "What is 29 \u00d7 27?",
+            "answers": [
+              "785",
+              "783",
+              "768",
+              "793"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 783."
+          },
+          {
+            "question": "What is 46 \u00d7 13?",
+            "answers": [
+              "603",
+              "613",
+              "595",
+              "598"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 598."
+          }
+        ],
+        [
+          {
+            "question": "What is 18 \u00d7 21?",
+            "answers": [
+              "378",
+              "368",
+              "373",
+              "388"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 378."
+          },
+          {
+            "question": "What is 38 \u00d7 5?",
+            "answers": [
+              "190",
+              "192",
+              "175",
+              "205"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 190."
+          },
+          {
+            "question": "What is 33 \u00d7 10?",
+            "answers": [
+              "345",
+              "328",
+              "332",
+              "330"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 330."
+          },
+          {
+            "question": "What is 31 \u00d7 17?",
+            "answers": [
+              "512",
+              "537",
+              "528",
+              "527"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 527."
+          },
+          {
+            "question": "What is 31 \u00d7 9?",
+            "answers": [
+              "279",
+              "284",
+              "280",
+              "294"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 279."
+          },
+          {
+            "question": "What is 23 \u00d7 27?",
+            "answers": [
+              "621",
+              "619",
+              "624",
+              "626"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 621."
+          },
+          {
+            "question": "What is 27 \u00d7 17?",
+            "answers": [
+              "469",
+              "459",
+              "444",
+              "462"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 459."
+          },
+          {
+            "question": "What is 13 \u00d7 23?",
+            "answers": [
+              "299",
+              "296",
+              "302",
+              "298"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 299."
+          },
+          {
+            "question": "What is 46 \u00d7 16?",
+            "answers": [
+              "738",
+              "737",
+              "736",
+              "731"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 736."
+          },
+          {
+            "question": "What is 50 \u00d7 20?",
+            "answers": [
+              "1005",
+              "1000",
+              "998",
+              "999"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1000."
+          }
+        ],
+        [
+          {
+            "question": "What is 17 \u00d7 30?",
+            "answers": [
+              "510",
+              "525",
+              "505",
+              "500"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 510."
+          },
+          {
+            "question": "What is 48 \u00d7 17?",
+            "answers": [
+              "801",
+              "814",
+              "813",
+              "816"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 816."
+          },
+          {
+            "question": "What is 20 \u00d7 7?",
+            "answers": [
+              "130",
+              "140",
+              "139",
+              "143"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 140."
+          },
+          {
+            "question": "What is 18 \u00d7 25?",
+            "answers": [
+              "455",
+              "450",
+              "460",
+              "449"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 450."
+          },
+          {
+            "question": "What is 10 \u00d7 14?",
+            "answers": [
+              "140",
+              "143",
+              "130",
+              "139"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 140."
+          },
+          {
+            "question": "What is 47 \u00d7 30?",
+            "answers": [
+              "1410",
+              "1412",
+              "1411",
+              "1425"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1410."
+          },
+          {
+            "question": "What is 21 \u00d7 29?",
+            "answers": [
+              "612",
+              "594",
+              "608",
+              "609"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 609."
+          },
+          {
+            "question": "What is 19 \u00d7 11?",
+            "answers": [
+              "211",
+              "209",
+              "207",
+              "199"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 209."
+          },
+          {
+            "question": "What is 43 \u00d7 24?",
+            "answers": [
+              "1017",
+              "1034",
+              "1032",
+              "1030"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1032."
+          },
+          {
+            "question": "What is 32 \u00d7 22?",
+            "answers": [
+              "706",
+              "704",
+              "701",
+              "689"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 704."
+          }
+        ],
+        [
+          {
+            "question": "What is 20 \u00d7 24?",
+            "answers": [
+              "481",
+              "480",
+              "465",
+              "478"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 480."
+          },
+          {
+            "question": "What is 11 \u00d7 6?",
+            "answers": [
+              "71",
+              "66",
+              "81",
+              "64"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 66."
+          },
+          {
+            "question": "What is 40 \u00d7 15?",
+            "answers": [
+              "599",
+              "600",
+              "610",
+              "585"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 600."
+          },
+          {
+            "question": "What is 44 \u00d7 26?",
+            "answers": [
+              "1149",
+              "1139",
+              "1144",
+              "1142"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1144."
+          },
+          {
+            "question": "What is 28 \u00d7 28?",
+            "answers": [
+              "781",
+              "785",
+              "774",
+              "784"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 784."
+          },
+          {
+            "question": "What is 29 \u00d7 20?",
+            "answers": [
+              "579",
+              "577",
+              "580",
+              "575"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 580."
+          },
+          {
+            "question": "What is 22 \u00d7 26?",
+            "answers": [
+              "572",
+              "574",
+              "569",
+              "582"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 572."
+          },
+          {
+            "question": "What is 32 \u00d7 8?",
+            "answers": [
+              "261",
+              "271",
+              "251",
+              "256"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 256."
+          },
+          {
+            "question": "What is 46 \u00d7 15?",
+            "answers": [
+              "689",
+              "687",
+              "692",
+              "690"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 690."
+          },
+          {
+            "question": "What is 10 \u00d7 25?",
+            "answers": [
+              "250",
+              "248",
+              "240",
+              "260"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 250."
+          }
+        ],
+        [
+          {
+            "question": "What is 36 \u00d7 10?",
+            "answers": [
+              "370",
+              "361",
+              "365",
+              "360"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 360."
+          },
+          {
+            "question": "What is 22 \u00d7 27?",
+            "answers": [
+              "593",
+              "597",
+              "589",
+              "594"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 594."
+          },
+          {
+            "question": "What is 48 \u00d7 6?",
+            "answers": [
+              "285",
+              "288",
+              "291",
+              "278"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 288."
+          },
+          {
+            "question": "What is 14 \u00d7 11?",
+            "answers": [
+              "154",
+              "139",
+              "151",
+              "157"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 154."
+          },
+          {
+            "question": "What is 19 \u00d7 16?",
+            "answers": [
+              "304",
+              "305",
+              "289",
+              "319"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 304."
+          },
+          {
+            "question": "What is 14 \u00d7 10?",
+            "answers": [
+              "142",
+              "141",
+              "140",
+              "145"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 140."
+          },
+          {
+            "question": "What is 17 \u00d7 19?",
+            "answers": [
+              "328",
+              "323",
+              "325",
+              "326"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 323."
+          },
+          {
+            "question": "What is 50 \u00d7 18?",
+            "answers": [
+              "903",
+              "905",
+              "895",
+              "900"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 900."
+          },
+          {
+            "question": "What is 23 \u00d7 27?",
+            "answers": [
+              "611",
+              "616",
+              "621",
+              "622"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 621."
+          },
+          {
+            "question": "What is 44 \u00d7 15?",
+            "answers": [
+              "675",
+              "660",
+              "650",
+              "662"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 660."
+          }
+        ],
+        [
+          {
+            "question": "What is 21 \u00d7 5?",
+            "answers": [
+              "107",
+              "105",
+              "100",
+              "103"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 105."
+          },
+          {
+            "question": "What is 48 \u00d7 24?",
+            "answers": [
+              "1167",
+              "1149",
+              "1152",
+              "1162"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1152."
+          },
+          {
+            "question": "What is 46 \u00d7 7?",
+            "answers": [
+              "321",
+              "322",
+              "332",
+              "317"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 322."
+          },
+          {
+            "question": "What is 19 \u00d7 26?",
+            "answers": [
+              "494",
+              "493",
+              "509",
+              "484"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 494."
+          },
+          {
+            "question": "What is 32 \u00d7 24?",
+            "answers": [
+              "758",
+              "769",
+              "773",
+              "768"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 768."
+          },
+          {
+            "question": "What is 44 \u00d7 22?",
+            "answers": [
+              "967",
+              "958",
+              "969",
+              "968"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 968."
+          },
+          {
+            "question": "What is 41 \u00d7 20?",
+            "answers": [
+              "820",
+              "835",
+              "821",
+              "810"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 820."
+          },
+          {
+            "question": "What is 11 \u00d7 5?",
+            "answers": [
+              "70",
+              "54",
+              "55",
+              "60"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 55."
+          },
+          {
+            "question": "What is 41 \u00d7 5?",
+            "answers": [
+              "203",
+              "190",
+              "220",
+              "205"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 205."
+          },
+          {
+            "question": "What is 42 \u00d7 8?",
+            "answers": [
+              "336",
+              "339",
+              "321",
+              "341"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 336."
+          }
+        ],
+        [
+          {
+            "question": "What is 40 \u00d7 26?",
+            "answers": [
+              "1039",
+              "1040",
+              "1042",
+              "1045"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1040."
+          },
+          {
+            "question": "What is 42 \u00d7 30?",
+            "answers": [
+              "1262",
+              "1258",
+              "1265",
+              "1260"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1260."
+          },
+          {
+            "question": "What is 42 \u00d7 7?",
+            "answers": [
+              "297",
+              "294",
+              "309",
+              "296"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 294."
+          },
+          {
+            "question": "What is 25 \u00d7 11?",
+            "answers": [
+              "270",
+              "273",
+              "275",
+              "272"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 275."
+          },
+          {
+            "question": "What is 38 \u00d7 18?",
+            "answers": [
+              "684",
+              "682",
+              "689",
+              "699"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 684."
+          },
+          {
+            "question": "What is 50 \u00d7 9?",
+            "answers": [
+              "450",
+              "465",
+              "445",
+              "453"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 450."
+          },
+          {
+            "question": "What is 31 \u00d7 30?",
+            "answers": [
+              "915",
+              "930",
+              "933",
+              "945"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 930."
+          },
+          {
+            "question": "What is 16 \u00d7 6?",
+            "answers": [
+              "106",
+              "99",
+              "96",
+              "81"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 96."
+          },
+          {
+            "question": "What is 27 \u00d7 25?",
+            "answers": [
+              "685",
+              "675",
+              "690",
+              "672"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 675."
+          },
+          {
+            "question": "What is 12 \u00d7 16?",
+            "answers": [
+              "190",
+              "207",
+              "192",
+              "187"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 192."
+          }
+        ],
+        [
+          {
+            "question": "What is 21 \u00d7 16?",
+            "answers": [
+              "346",
+              "321",
+              "336",
+              "339"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 336."
+          },
+          {
+            "question": "What is 32 \u00d7 6?",
+            "answers": [
+              "191",
+              "194",
+              "187",
+              "192"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 192."
+          },
+          {
+            "question": "What is 13 \u00d7 28?",
+            "answers": [
+              "374",
+              "364",
+              "365",
+              "367"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 364."
+          },
+          {
+            "question": "What is 31 \u00d7 20?",
+            "answers": [
+              "635",
+              "617",
+              "630",
+              "620"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 620."
+          },
+          {
+            "question": "What is 16 \u00d7 28?",
+            "answers": [
+              "449",
+              "458",
+              "443",
+              "448"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 448."
+          },
+          {
+            "question": "What is 13 \u00d7 12?",
+            "answers": [
+              "166",
+              "156",
+              "153",
+              "151"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 156."
+          },
+          {
+            "question": "What is 13 \u00d7 25?",
+            "answers": [
+              "315",
+              "310",
+              "323",
+              "325"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 325."
+          },
+          {
+            "question": "What is 25 \u00d7 26?",
+            "answers": [
+              "653",
+              "660",
+              "635",
+              "650"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 650."
+          },
+          {
+            "question": "What is 45 \u00d7 21?",
+            "answers": [
+              "943",
+              "930",
+              "940",
+              "945"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 945."
+          },
+          {
+            "question": "What is 46 \u00d7 21?",
+            "answers": [
+              "964",
+              "971",
+              "966",
+              "951"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 966."
+          }
+        ],
+        [
+          {
+            "question": "What is 18 \u00d7 17?",
+            "answers": [
+              "305",
+              "304",
+              "309",
+              "306"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 306."
+          },
+          {
+            "question": "What is 50 \u00d7 21?",
+            "answers": [
+              "1065",
+              "1055",
+              "1049",
+              "1050"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1050."
+          },
+          {
+            "question": "What is 34 \u00d7 14?",
+            "answers": [
+              "466",
+              "478",
+              "476",
+              "474"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 476."
+          },
+          {
+            "question": "What is 35 \u00d7 20?",
+            "answers": [
+              "697",
+              "703",
+              "710",
+              "700"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 700."
+          },
+          {
+            "question": "What is 49 \u00d7 14?",
+            "answers": [
+              "688",
+              "696",
+              "671",
+              "686"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 686."
+          },
+          {
+            "question": "What is 39 \u00d7 14?",
+            "answers": [
+              "546",
+              "541",
+              "545",
+              "549"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 546."
+          },
+          {
+            "question": "What is 46 \u00d7 8?",
+            "answers": [
+              "373",
+              "365",
+              "368",
+              "383"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 368."
+          },
+          {
+            "question": "What is 11 \u00d7 6?",
+            "answers": [
+              "56",
+              "61",
+              "66",
+              "65"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 66."
+          },
+          {
+            "question": "What is 26 \u00d7 10?",
+            "answers": [
+              "245",
+              "260",
+              "255",
+              "259"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 260."
+          },
+          {
+            "question": "What is 32 \u00d7 25?",
+            "answers": [
+              "800",
+              "805",
+              "790",
+              "802"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 800."
+          }
+        ],
+        [
+          {
+            "question": "What is 15 \u00d7 13?",
+            "answers": [
+              "195",
+              "190",
+              "210",
+              "194"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 195."
+          },
+          {
+            "question": "What is 31 \u00d7 27?",
+            "answers": [
+              "822",
+              "832",
+              "835",
+              "837"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 837."
+          },
+          {
+            "question": "What is 44 \u00d7 25?",
+            "answers": [
+              "1115",
+              "1099",
+              "1100",
+              "1103"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1100."
+          },
+          {
+            "question": "What is 24 \u00d7 27?",
+            "answers": [
+              "658",
+              "646",
+              "648",
+              "645"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 648."
+          },
+          {
+            "question": "What is 16 \u00d7 9?",
+            "answers": [
+              "142",
+              "146",
+              "147",
+              "144"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 144."
+          },
+          {
+            "question": "What is 14 \u00d7 27?",
+            "answers": [
+              "376",
+              "378",
+              "380",
+              "368"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 378."
+          },
+          {
+            "question": "What is 23 \u00d7 5?",
+            "answers": [
+              "130",
+              "105",
+              "116",
+              "115"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 115."
+          },
+          {
+            "question": "What is 39 \u00d7 13?",
+            "answers": [
+              "507",
+              "492",
+              "509",
+              "506"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 507."
+          },
+          {
+            "question": "What is 26 \u00d7 7?",
+            "answers": [
+              "184",
+              "187",
+              "182",
+              "192"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 182."
+          },
+          {
+            "question": "What is 10 \u00d7 11?",
+            "answers": [
+              "110",
+              "95",
+              "111",
+              "107"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 110."
+          }
+        ],
+        [
+          {
+            "question": "What is 34 \u00d7 30?",
+            "answers": [
+              "1017",
+              "1018",
+              "1030",
+              "1020"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1020."
+          },
+          {
+            "question": "What is 11 \u00d7 8?",
+            "answers": [
+              "89",
+              "78",
+              "88",
+              "87"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 88."
+          },
+          {
+            "question": "What is 18 \u00d7 22?",
+            "answers": [
+              "401",
+              "396",
+              "394",
+              "393"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 396."
+          },
+          {
+            "question": "What is 20 \u00d7 10?",
+            "answers": [
+              "200",
+              "199",
+              "195",
+              "215"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 200."
+          },
+          {
+            "question": "What is 48 \u00d7 16?",
+            "answers": [
+              "773",
+              "765",
+              "768",
+              "753"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 768."
+          },
+          {
+            "question": "What is 11 \u00d7 18?",
+            "answers": [
+              "183",
+              "199",
+              "201",
+              "198"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 198."
+          },
+          {
+            "question": "What is 34 \u00d7 16?",
+            "answers": [
+              "544",
+              "549",
+              "542",
+              "539"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 544."
+          },
+          {
+            "question": "What is 18 \u00d7 27?",
+            "answers": [
+              "486",
+              "501",
+              "481",
+              "483"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 486."
+          },
+          {
+            "question": "What is 23 \u00d7 9?",
+            "answers": [
+              "207",
+              "217",
+              "212",
+              "192"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 207."
+          },
+          {
+            "question": "What is 47 \u00d7 20?",
+            "answers": [
+              "930",
+              "925",
+              "937",
+              "940"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 940."
+          }
+        ],
+        [
+          {
+            "question": "What is 247 \u00f7 19?",
+            "answers": [
+              "13",
+              "3",
+              "8",
+              "14"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 13."
+          },
+          {
+            "question": "What is 192 \u00f7 16?",
+            "answers": [
+              "22",
+              "2",
+              "4",
+              "12"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 12."
+          },
+          {
+            "question": "What is 182 \u00f7 14?",
+            "answers": [
+              "3",
+              "18",
+              "16",
+              "13"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 13."
+          },
+          {
+            "question": "What is 820 \u00f7 20?",
+            "answers": [
+              "40",
+              "38",
+              "41",
+              "56"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 41."
+          },
+          {
+            "question": "What is 77 \u00f7 7?",
+            "answers": [
+              "12",
+              "21",
+              "5",
+              "11"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 11."
+          },
+          {
+            "question": "What is 12 \u00f7 2?",
+            "answers": [
+              "5",
+              "16",
+              "6",
+              "8"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 6."
+          },
+          {
+            "question": "What is 420 \u00f7 14?",
+            "answers": [
+              "45",
+              "30",
+              "29",
+              "35"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 30."
+          },
+          {
+            "question": "What is 114 \u00f7 6?",
+            "answers": [
+              "19",
+              "34",
+              "20",
+              "17"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 1250 \u00f7 25?",
+            "answers": [
+              "53",
+              "50",
+              "40",
+              "48"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 50."
+          },
+          {
+            "question": "What is 84 \u00f7 2?",
+            "answers": [
+              "43",
+              "41",
+              "47",
+              "42"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 42."
+          }
+        ],
+        [
+          {
+            "question": "What is 154 \u00f7 14?",
+            "answers": [
+              "6",
+              "11",
+              "21",
+              "26"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 11."
+          },
+          {
+            "question": "What is 102 \u00f7 17?",
+            "answers": [
+              "8",
+              "16",
+              "6",
+              "5"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 6."
+          },
+          {
+            "question": "What is 387 \u00f7 9?",
+            "answers": [
+              "43",
+              "58",
+              "40",
+              "48"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 43."
+          },
+          {
+            "question": "What is 480 \u00f7 10?",
+            "answers": [
+              "48",
+              "49",
+              "58",
+              "47"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 48."
+          },
+          {
+            "question": "What is 504 \u00f7 18?",
+            "answers": [
+              "28",
+              "43",
+              "30",
+              "23"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 28."
+          },
+          {
+            "question": "What is 567 \u00f7 21?",
+            "answers": [
+              "37",
+              "26",
+              "27",
+              "24"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 286 \u00f7 11?",
+            "answers": [
+              "41",
+              "26",
+              "27",
+              "31"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 52 \u00f7 2?",
+            "answers": [
+              "29",
+              "26",
+              "28",
+              "11"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 480 \u00f7 24?",
+            "answers": [
+              "21",
+              "25",
+              "17",
+              "20"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 20."
+          },
+          {
+            "question": "What is 912 \u00f7 24?",
+            "answers": [
+              "23",
+              "38",
+              "36",
+              "28"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 38."
+          }
+        ],
+        [
+          {
+            "question": "What is 250 \u00f7 10?",
+            "answers": [
+              "26",
+              "40",
+              "25",
+              "35"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 25."
+          },
+          {
+            "question": "What is 374 \u00f7 17?",
+            "answers": [
+              "22",
+              "7",
+              "23",
+              "19"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 22."
+          },
+          {
+            "question": "What is 168 \u00f7 24?",
+            "answers": [
+              "7",
+              "9",
+              "4",
+              "22"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 7."
+          },
+          {
+            "question": "What is 80 \u00f7 16?",
+            "answers": [
+              "11",
+              "4",
+              "6",
+              "5"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 5."
+          },
+          {
+            "question": "What is 384 \u00f7 8?",
+            "answers": [
+              "46",
+              "51",
+              "48",
+              "47"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 48."
+          },
+          {
+            "question": "What is 456 \u00f7 12?",
+            "answers": [
+              "36",
+              "41",
+              "38",
+              "43"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 38."
+          },
+          {
+            "question": "What is 396 \u00f7 9?",
+            "answers": [
+              "44",
+              "46",
+              "41",
+              "59"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 44."
+          },
+          {
+            "question": "What is 300 \u00f7 15?",
+            "answers": [
+              "30",
+              "10",
+              "20",
+              "5"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 20."
+          },
+          {
+            "question": "What is 228 \u00f7 6?",
+            "answers": [
+              "43",
+              "37",
+              "38",
+              "53"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 38."
+          },
+          {
+            "question": "What is 242 \u00f7 22?",
+            "answers": [
+              "26",
+              "11",
+              "12",
+              "13"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 11."
+          }
+        ],
+        [
+          {
+            "question": "What is 140 \u00f7 4?",
+            "answers": [
+              "35",
+              "40",
+              "36",
+              "20"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 35."
+          },
+          {
+            "question": "What is 216 \u00f7 24?",
+            "answers": [
+              "7",
+              "6",
+              "11",
+              "9"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 9."
+          },
+          {
+            "question": "What is 102 \u00f7 3?",
+            "answers": [
+              "34",
+              "19",
+              "33",
+              "39"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 34."
+          },
+          {
+            "question": "What is 150 \u00f7 15?",
+            "answers": [
+              "15",
+              "0",
+              "10",
+              "25"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 10."
+          },
+          {
+            "question": "What is 470 \u00f7 10?",
+            "answers": [
+              "46",
+              "47",
+              "32",
+              "44"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 47."
+          },
+          {
+            "question": "What is 117 \u00f7 3?",
+            "answers": [
+              "44",
+              "36",
+              "39",
+              "41"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 39."
+          },
+          {
+            "question": "What is 360 \u00f7 10?",
+            "answers": [
+              "34",
+              "36",
+              "51",
+              "38"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 36."
+          },
+          {
+            "question": "What is 882 \u00f7 21?",
+            "answers": [
+              "42",
+              "39",
+              "57",
+              "27"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 42."
+          },
+          {
+            "question": "What is 760 \u00f7 19?",
+            "answers": [
+              "37",
+              "41",
+              "25",
+              "40"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 40."
+          },
+          {
+            "question": "What is 448 \u00f7 14?",
+            "answers": [
+              "33",
+              "47",
+              "32",
+              "35"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 32."
+          }
+        ],
+        [
+          {
+            "question": "What is 966 \u00f7 21?",
+            "answers": [
+              "46",
+              "49",
+              "36",
+              "31"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 46."
+          },
+          {
+            "question": "What is 150 \u00f7 10?",
+            "answers": [
+              "18",
+              "15",
+              "25",
+              "30"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 15."
+          },
+          {
+            "question": "What is 648 \u00f7 24?",
+            "answers": [
+              "32",
+              "22",
+              "27",
+              "30"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 418 \u00f7 22?",
+            "answers": [
+              "20",
+              "17",
+              "29",
+              "19"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 864 \u00f7 24?",
+            "answers": [
+              "36",
+              "41",
+              "35",
+              "51"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 36."
+          },
+          {
+            "question": "What is 93 \u00f7 3?",
+            "answers": [
+              "29",
+              "21",
+              "31",
+              "16"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 31."
+          },
+          {
+            "question": "What is 84 \u00f7 12?",
+            "answers": [
+              "4",
+              "7",
+              "10",
+              "17"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 7."
+          },
+          {
+            "question": "What is 44 \u00f7 4?",
+            "answers": [
+              "1",
+              "21",
+              "11",
+              "13"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 11."
+          },
+          {
+            "question": "What is 264 \u00f7 22?",
+            "answers": [
+              "22",
+              "11",
+              "12",
+              "7"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 12."
+          },
+          {
+            "question": "What is 792 \u00f7 18?",
+            "answers": [
+              "44",
+              "42",
+              "43",
+              "59"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 44."
+          }
+        ],
+        [
+          {
+            "question": "What is 493 \u00f7 17?",
+            "answers": [
+              "19",
+              "14",
+              "29",
+              "44"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 29."
+          },
+          {
+            "question": "What is 374 \u00f7 22?",
+            "answers": [
+              "27",
+              "7",
+              "17",
+              "2"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 17."
+          },
+          {
+            "question": "What is 376 \u00f7 8?",
+            "answers": [
+              "52",
+              "47",
+              "42",
+              "37"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 47."
+          },
+          {
+            "question": "What is 836 \u00f7 22?",
+            "answers": [
+              "43",
+              "48",
+              "38",
+              "33"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 38."
+          },
+          {
+            "question": "What is 720 \u00f7 24?",
+            "answers": [
+              "40",
+              "31",
+              "30",
+              "15"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 30."
+          },
+          {
+            "question": "What is 456 \u00f7 24?",
+            "answers": [
+              "19",
+              "16",
+              "9",
+              "29"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 234 \u00f7 13?",
+            "answers": [
+              "3",
+              "18",
+              "19",
+              "21"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 18."
+          },
+          {
+            "question": "What is 81 \u00f7 9?",
+            "answers": [
+              "2",
+              "24",
+              "7",
+              "9"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 9."
+          },
+          {
+            "question": "What is 486 \u00f7 18?",
+            "answers": [
+              "12",
+              "22",
+              "32",
+              "27"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 192 \u00f7 16?",
+            "answers": [
+              "12",
+              "11",
+              "22",
+              "2"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 12."
+          }
+        ],
+        [
+          {
+            "question": "What is 132 \u00f7 22?",
+            "answers": [
+              "9",
+              "6",
+              "16",
+              "11"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 6."
+          },
+          {
+            "question": "What is 338 \u00f7 13?",
+            "answers": [
+              "26",
+              "24",
+              "36",
+              "23"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 483 \u00f7 23?",
+            "answers": [
+              "11",
+              "19",
+              "16",
+              "21"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 21."
+          },
+          {
+            "question": "What is 288 \u00f7 16?",
+            "answers": [
+              "18",
+              "33",
+              "15",
+              "20"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 18."
+          },
+          {
+            "question": "What is 140 \u00f7 7?",
+            "answers": [
+              "5",
+              "15",
+              "35",
+              "20"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 20."
+          },
+          {
+            "question": "What is 204 \u00f7 6?",
+            "answers": [
+              "33",
+              "34",
+              "32",
+              "37"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 34."
+          },
+          {
+            "question": "What is 319 \u00f7 11?",
+            "answers": [
+              "26",
+              "31",
+              "34",
+              "29"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 29."
+          },
+          {
+            "question": "What is 320 \u00f7 20?",
+            "answers": [
+              "1",
+              "14",
+              "16",
+              "31"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 205 \u00f7 5?",
+            "answers": [
+              "31",
+              "36",
+              "41",
+              "44"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 41."
+          },
+          {
+            "question": "What is 63 \u00f7 7?",
+            "answers": [
+              "6",
+              "9",
+              "8",
+              "7"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 9."
+          }
+        ],
+        [
+          {
+            "question": "What is 240 \u00f7 5?",
+            "answers": [
+              "63",
+              "51",
+              "43",
+              "48"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 48."
+          },
+          {
+            "question": "What is 152 \u00f7 19?",
+            "answers": [
+              "8",
+              "5",
+              "6",
+              "11"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 8."
+          },
+          {
+            "question": "What is 180 \u00f7 12?",
+            "answers": [
+              "25",
+              "13",
+              "15",
+              "10"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 15."
+          },
+          {
+            "question": "What is 476 \u00f7 14?",
+            "answers": [
+              "24",
+              "49",
+              "34",
+              "37"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 34."
+          },
+          {
+            "question": "What is 210 \u00f7 5?",
+            "answers": [
+              "42",
+              "32",
+              "47",
+              "39"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 42."
+          },
+          {
+            "question": "What is 175 \u00f7 5?",
+            "answers": [
+              "50",
+              "35",
+              "33",
+              "38"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 35."
+          },
+          {
+            "question": "What is 940 \u00f7 20?",
+            "answers": [
+              "47",
+              "45",
+              "32",
+              "44"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 47."
+          },
+          {
+            "question": "What is 775 \u00f7 25?",
+            "answers": [
+              "29",
+              "30",
+              "31",
+              "41"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 31."
+          },
+          {
+            "question": "What is 738 \u00f7 18?",
+            "answers": [
+              "56",
+              "39",
+              "41",
+              "42"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 41."
+          },
+          {
+            "question": "What is 171 \u00f7 19?",
+            "answers": [
+              "7",
+              "8",
+              "9",
+              "6"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 9."
+          }
+        ],
+        [
+          {
+            "question": "What is 96 \u00f7 16?",
+            "answers": [
+              "21",
+              "1",
+              "6",
+              "11"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 6."
+          },
+          {
+            "question": "What is 476 \u00f7 17?",
+            "answers": [
+              "33",
+              "43",
+              "28",
+              "13"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 28."
+          },
+          {
+            "question": "What is 574 \u00f7 14?",
+            "answers": [
+              "36",
+              "41",
+              "39",
+              "40"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 41."
+          },
+          {
+            "question": "What is 184 \u00f7 23?",
+            "answers": [
+              "8",
+              "18",
+              "10",
+              "23"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 8."
+          },
+          {
+            "question": "What is 324 \u00f7 12?",
+            "answers": [
+              "30",
+              "29",
+              "27",
+              "37"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 370 \u00f7 10?",
+            "answers": [
+              "37",
+              "34",
+              "42",
+              "36"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 37."
+          },
+          {
+            "question": "What is 138 \u00f7 3?",
+            "answers": [
+              "51",
+              "41",
+              "47",
+              "46"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 46."
+          },
+          {
+            "question": "What is 126 \u00f7 18?",
+            "answers": [
+              "9",
+              "7",
+              "5",
+              "22"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 7."
+          },
+          {
+            "question": "What is 216 \u00f7 18?",
+            "answers": [
+              "27",
+              "15",
+              "14",
+              "12"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 12."
+          },
+          {
+            "question": "What is 315 \u00f7 21?",
+            "answers": [
+              "10",
+              "15",
+              "12",
+              "20"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 15."
+          }
+        ],
+        [
+          {
+            "question": "What is 450 \u00f7 25?",
+            "answers": [
+              "23",
+              "18",
+              "21",
+              "19"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 18."
+          },
+          {
+            "question": "What is 208 \u00f7 8?",
+            "answers": [
+              "23",
+              "25",
+              "26",
+              "29"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 285 \u00f7 15?",
+            "answers": [
+              "18",
+              "21",
+              "16",
+              "19"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 270 \u00f7 18?",
+            "answers": [
+              "14",
+              "30",
+              "0",
+              "15"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 15."
+          },
+          {
+            "question": "What is 987 \u00f7 21?",
+            "answers": [
+              "52",
+              "47",
+              "57",
+              "44"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 47."
+          },
+          {
+            "question": "What is 264 \u00f7 8?",
+            "answers": [
+              "48",
+              "28",
+              "33",
+              "32"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 33."
+          },
+          {
+            "question": "What is 112 \u00f7 16?",
+            "answers": [
+              "5",
+              "12",
+              "4",
+              "7"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 7."
+          },
+          {
+            "question": "What is 342 \u00f7 19?",
+            "answers": [
+              "19",
+              "18",
+              "16",
+              "20"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 18."
+          },
+          {
+            "question": "What is 30 \u00f7 3?",
+            "answers": [
+              "10",
+              "9",
+              "8",
+              "25"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 10."
+          },
+          {
+            "question": "What is 589 \u00f7 19?",
+            "answers": [
+              "21",
+              "31",
+              "30",
+              "26"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 31."
+          }
+        ],
+        [
+          {
+            "question": "What is 1100 \u00f7 25?",
+            "answers": [
+              "39",
+              "47",
+              "54",
+              "44"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 44."
+          },
+          {
+            "question": "What is 504 \u00f7 18?",
+            "answers": [
+              "30",
+              "43",
+              "28",
+              "33"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 28."
+          },
+          {
+            "question": "What is 42 \u00f7 2?",
+            "answers": [
+              "11",
+              "16",
+              "21",
+              "36"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 21."
+          },
+          {
+            "question": "What is 638 \u00f7 22?",
+            "answers": [
+              "44",
+              "30",
+              "26",
+              "29"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 29."
+          },
+          {
+            "question": "What is 102 \u00f7 6?",
+            "answers": [
+              "32",
+              "19",
+              "17",
+              "2"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 17."
+          },
+          {
+            "question": "What is 510 \u00f7 17?",
+            "answers": [
+              "15",
+              "30",
+              "27",
+              "32"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 30."
+          },
+          {
+            "question": "What is 315 \u00f7 21?",
+            "answers": [
+              "20",
+              "15",
+              "13",
+              "14"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 15."
+          },
+          {
+            "question": "What is 374 \u00f7 17?",
+            "answers": [
+              "12",
+              "22",
+              "24",
+              "27"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 22."
+          },
+          {
+            "question": "What is 637 \u00f7 13?",
+            "answers": [
+              "59",
+              "44",
+              "51",
+              "49"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 49."
+          },
+          {
+            "question": "What is 250 \u00f7 5?",
+            "answers": [
+              "50",
+              "60",
+              "49",
+              "52"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 50."
+          }
+        ],
+        [
+          {
+            "question": "What is 513 \u00f7 19?",
+            "answers": [
+              "42",
+              "27",
+              "30",
+              "25"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 114 \u00f7 6?",
+            "answers": [
+              "21",
+              "19",
+              "22",
+              "18"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 900 \u00f7 20?",
+            "answers": [
+              "42",
+              "45",
+              "35",
+              "48"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 45."
+          },
+          {
+            "question": "What is 18 \u00f7 3?",
+            "answers": [
+              "6",
+              "10",
+              "1",
+              "16"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 6."
+          },
+          {
+            "question": "What is 1000 \u00f7 25?",
+            "answers": [
+              "37",
+              "41",
+              "38",
+              "40"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 40."
+          },
+          {
+            "question": "What is 442 \u00f7 17?",
+            "answers": [
+              "36",
+              "26",
+              "16",
+              "28"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 475 \u00f7 25?",
+            "answers": [
+              "16",
+              "4",
+              "21",
+              "19"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 360 \u00f7 8?",
+            "answers": [
+              "44",
+              "45",
+              "55",
+              "43"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 45."
+          },
+          {
+            "question": "What is 144 \u00f7 16?",
+            "answers": [
+              "7",
+              "9",
+              "12",
+              "24"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 9."
+          },
+          {
+            "question": "What is 87 \u00f7 3?",
+            "answers": [
+              "34",
+              "19",
+              "29",
+              "26"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 29."
+          }
+        ],
+        [
+          {
+            "question": "What is 851 \u00f7 23?",
+            "answers": [
+              "27",
+              "39",
+              "37",
+              "40"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 37."
+          },
+          {
+            "question": "What is 216 \u00f7 18?",
+            "answers": [
+              "10",
+              "12",
+              "4",
+              "13"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 12."
+          },
+          {
+            "question": "What is 361 \u00f7 19?",
+            "answers": [
+              "29",
+              "19",
+              "24",
+              "14"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 936 \u00f7 24?",
+            "answers": [
+              "36",
+              "24",
+              "39",
+              "41"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 39."
+          },
+          {
+            "question": "What is 192 \u00f7 4?",
+            "answers": [
+              "50",
+              "63",
+              "48",
+              "46"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 48."
+          },
+          {
+            "question": "What is 364 \u00f7 14?",
+            "answers": [
+              "11",
+              "26",
+              "36",
+              "31"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 819 \u00f7 21?",
+            "answers": [
+              "39",
+              "40",
+              "37",
+              "49"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 39."
+          },
+          {
+            "question": "What is 140 \u00f7 7?",
+            "answers": [
+              "5",
+              "20",
+              "21",
+              "35"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 20."
+          },
+          {
+            "question": "What is 585 \u00f7 15?",
+            "answers": [
+              "42",
+              "44",
+              "49",
+              "39"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 39."
+          },
+          {
+            "question": "What is 517 \u00f7 11?",
+            "answers": [
+              "32",
+              "47",
+              "62",
+              "52"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 47."
+          }
+        ],
+        [
+          {
+            "question": "What is 154 \u00f7 22?",
+            "answers": [
+              "7",
+              "22",
+              "12",
+              "17"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 7."
+          },
+          {
+            "question": "What is 943 \u00f7 23?",
+            "answers": [
+              "40",
+              "56",
+              "41",
+              "46"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 41."
+          },
+          {
+            "question": "What is 42 \u00f7 2?",
+            "answers": [
+              "11",
+              "19",
+              "20",
+              "21"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 21."
+          },
+          {
+            "question": "What is 95 \u00f7 5?",
+            "answers": [
+              "22",
+              "9",
+              "19",
+              "14"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 136 \u00f7 17?",
+            "answers": [
+              "10",
+              "9",
+              "8",
+              "23"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 8."
+          },
+          {
+            "question": "What is 111 \u00f7 3?",
+            "answers": [
+              "22",
+              "32",
+              "37",
+              "52"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 37."
+          },
+          {
+            "question": "What is 276 \u00f7 6?",
+            "answers": [
+              "46",
+              "41",
+              "47",
+              "51"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 46."
+          },
+          {
+            "question": "What is 882 \u00f7 21?",
+            "answers": [
+              "47",
+              "32",
+              "57",
+              "42"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 42."
+          },
+          {
+            "question": "What is 75 \u00f7 3?",
+            "answers": [
+              "23",
+              "40",
+              "25",
+              "20"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 25."
+          },
+          {
+            "question": "What is 77 \u00f7 7?",
+            "answers": [
+              "1",
+              "16",
+              "26",
+              "11"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 11."
+          }
+        ],
+        [
+          {
+            "question": "What is 533 \u00f7 13?",
+            "answers": [
+              "41",
+              "42",
+              "43",
+              "39"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 41."
+          },
+          {
+            "question": "What is 105 \u00f7 3?",
+            "answers": [
+              "35",
+              "36",
+              "45",
+              "34"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 35."
+          },
+          {
+            "question": "What is 450 \u00f7 25?",
+            "answers": [
+              "28",
+              "19",
+              "13",
+              "18"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 18."
+          },
+          {
+            "question": "What is 552 \u00f7 23?",
+            "answers": [
+              "29",
+              "26",
+              "34",
+              "24"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 24."
+          },
+          {
+            "question": "What is 600 \u00f7 20?",
+            "answers": [
+              "40",
+              "28",
+              "30",
+              "32"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 30."
+          },
+          {
+            "question": "What is 63 \u00f7 9?",
+            "answers": [
+              "10",
+              "7",
+              "4",
+              "2"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 7."
+          },
+          {
+            "question": "What is 799 \u00f7 17?",
+            "answers": [
+              "47",
+              "48",
+              "62",
+              "45"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 47."
+          },
+          {
+            "question": "What is 288 \u00f7 9?",
+            "answers": [
+              "32",
+              "34",
+              "17",
+              "47"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 32."
+          },
+          {
+            "question": "What is 182 \u00f7 14?",
+            "answers": [
+              "16",
+              "28",
+              "13",
+              "15"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 13."
+          },
+          {
+            "question": "What is 154 \u00f7 11?",
+            "answers": [
+              "9",
+              "15",
+              "19",
+              "14"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 14."
+          }
+        ],
+        [
+          {
+            "question": "What is 574 \u00f7 14?",
+            "answers": [
+              "41",
+              "39",
+              "36",
+              "26"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 41."
+          },
+          {
+            "question": "What is 602 \u00f7 14?",
+            "answers": [
+              "43",
+              "46",
+              "53",
+              "38"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 43."
+          },
+          {
+            "question": "What is 288 \u00f7 24?",
+            "answers": [
+              "4",
+              "13",
+              "12",
+              "2"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 12."
+          },
+          {
+            "question": "What is 630 \u00f7 14?",
+            "answers": [
+              "60",
+              "30",
+              "45",
+              "42"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 45."
+          },
+          {
+            "question": "What is 250 \u00f7 25?",
+            "answers": [
+              "15",
+              "10",
+              "5",
+              "0"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 10."
+          },
+          {
+            "question": "What is 432 \u00f7 16?",
+            "answers": [
+              "30",
+              "42",
+              "12",
+              "27"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 672 \u00f7 14?",
+            "answers": [
+              "47",
+              "48",
+              "58",
+              "43"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 48."
+          },
+          {
+            "question": "What is 110 \u00f7 10?",
+            "answers": [
+              "9",
+              "26",
+              "5",
+              "11"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 11."
+          },
+          {
+            "question": "What is 88 \u00f7 8?",
+            "answers": [
+              "9",
+              "21",
+              "11",
+              "13"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 11."
+          },
+          {
+            "question": "What is 1058 \u00f7 23?",
+            "answers": [
+              "31",
+              "48",
+              "45",
+              "46"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 46."
+          }
+        ],
+        [
+          {
+            "question": "What is 44 \u00f7 2?",
+            "answers": [
+              "22",
+              "21",
+              "12",
+              "37"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 22."
+          },
+          {
+            "question": "What is 722 \u00f7 19?",
+            "answers": [
+              "35",
+              "38",
+              "53",
+              "28"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 38."
+          },
+          {
+            "question": "What is 126 \u00f7 3?",
+            "answers": [
+              "37",
+              "45",
+              "40",
+              "42"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 42."
+          },
+          {
+            "question": "What is 338 \u00f7 13?",
+            "answers": [
+              "31",
+              "26",
+              "11",
+              "29"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 72 \u00f7 3?",
+            "answers": [
+              "27",
+              "21",
+              "24",
+              "34"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 24."
+          },
+          {
+            "question": "What is 646 \u00f7 19?",
+            "answers": [
+              "24",
+              "34",
+              "32",
+              "44"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 34."
+          },
+          {
+            "question": "What is 235 \u00f7 5?",
+            "answers": [
+              "50",
+              "32",
+              "62",
+              "47"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 47."
+          },
+          {
+            "question": "What is 572 \u00f7 22?",
+            "answers": [
+              "26",
+              "11",
+              "24",
+              "31"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 26."
+          },
+          {
+            "question": "What is 220 \u00f7 20?",
+            "answers": [
+              "12",
+              "11",
+              "6",
+              "9"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 11."
+          },
+          {
+            "question": "What is 110 \u00f7 5?",
+            "answers": [
+              "17",
+              "22",
+              "20",
+              "27"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 22."
+          }
+        ],
+        [
+          {
+            "question": "What is 221 \u00f7 13?",
+            "answers": [
+              "16",
+              "17",
+              "2",
+              "7"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 17."
+          },
+          {
+            "question": "What is 80 \u00f7 2?",
+            "answers": [
+              "40",
+              "35",
+              "39",
+              "30"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 40."
+          },
+          {
+            "question": "What is 255 \u00f7 15?",
+            "answers": [
+              "17",
+              "16",
+              "7",
+              "19"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 17."
+          },
+          {
+            "question": "What is 200 \u00f7 20?",
+            "answers": [
+              "0",
+              "9",
+              "10",
+              "15"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 10."
+          },
+          {
+            "question": "What is 1058 \u00f7 23?",
+            "answers": [
+              "45",
+              "49",
+              "44",
+              "46"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 46."
+          },
+          {
+            "question": "What is 50 \u00f7 10?",
+            "answers": [
+              "8",
+              "2",
+              "11",
+              "5"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 5."
+          },
+          {
+            "question": "What is 588 \u00f7 12?",
+            "answers": [
+              "52",
+              "49",
+              "44",
+              "64"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 49."
+          },
+          {
+            "question": "What is 264 \u00f7 6?",
+            "answers": [
+              "44",
+              "42",
+              "49",
+              "47"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 44."
+          },
+          {
+            "question": "What is 510 \u00f7 17?",
+            "answers": [
+              "30",
+              "32",
+              "33",
+              "28"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 30."
+          },
+          {
+            "question": "What is 828 \u00f7 23?",
+            "answers": [
+              "51",
+              "34",
+              "38",
+              "36"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 36."
+          }
+        ],
+        [
+          {
+            "question": "What is 432 \u00f7 24?",
+            "answers": [
+              "21",
+              "19",
+              "18",
+              "3"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 18."
+          },
+          {
+            "question": "What is 1008 \u00f7 24?",
+            "answers": [
+              "47",
+              "41",
+              "42",
+              "32"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 42."
+          },
+          {
+            "question": "What is 667 \u00f7 23?",
+            "answers": [
+              "39",
+              "34",
+              "14",
+              "29"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 29."
+          },
+          {
+            "question": "What is 54 \u00f7 2?",
+            "answers": [
+              "27",
+              "29",
+              "25",
+              "42"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 315 \u00f7 7?",
+            "answers": [
+              "42",
+              "45",
+              "30",
+              "40"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 45."
+          },
+          {
+            "question": "What is 1032 \u00f7 24?",
+            "answers": [
+              "43",
+              "48",
+              "40",
+              "41"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 43."
+          },
+          {
+            "question": "What is 143 \u00f7 13?",
+            "answers": [
+              "11",
+              "10",
+              "13",
+              "16"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 11."
+          },
+          {
+            "question": "What is 480 \u00f7 10?",
+            "answers": [
+              "50",
+              "48",
+              "53",
+              "63"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 48."
+          },
+          {
+            "question": "What is 372 \u00f7 12?",
+            "answers": [
+              "31",
+              "46",
+              "29",
+              "36"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 31."
+          },
+          {
+            "question": "What is 72 \u00f7 3?",
+            "answers": [
+              "14",
+              "21",
+              "19",
+              "24"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 24."
+          }
+        ],
+        [
+          {
+            "question": "What is 792 \u00f7 24?",
+            "answers": [
+              "35",
+              "31",
+              "33",
+              "18"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 33."
+          },
+          {
+            "question": "What is 672 \u00f7 16?",
+            "answers": [
+              "44",
+              "42",
+              "39",
+              "41"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 42."
+          },
+          {
+            "question": "What is 437 \u00f7 23?",
+            "answers": [
+              "17",
+              "18",
+              "21",
+              "19"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 19."
+          },
+          {
+            "question": "What is 510 \u00f7 17?",
+            "answers": [
+              "25",
+              "30",
+              "28",
+              "31"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 30."
+          },
+          {
+            "question": "What is 88 \u00f7 4?",
+            "answers": [
+              "22",
+              "7",
+              "27",
+              "17"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 22."
+          },
+          {
+            "question": "What is 456 \u00f7 12?",
+            "answers": [
+              "43",
+              "36",
+              "38",
+              "40"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 38."
+          },
+          {
+            "question": "What is 492 \u00f7 12?",
+            "answers": [
+              "56",
+              "46",
+              "44",
+              "41"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 41."
+          },
+          {
+            "question": "What is 315 \u00f7 21?",
+            "answers": [
+              "12",
+              "25",
+              "10",
+              "15"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 15."
+          },
+          {
+            "question": "What is 72 \u00f7 12?",
+            "answers": [
+              "5",
+              "11",
+              "16",
+              "6"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 6."
+          },
+          {
+            "question": "What is 552 \u00f7 12?",
+            "answers": [
+              "31",
+              "47",
+              "48",
+              "46"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 46."
+          }
+        ],
+        [
+          {
+            "question": "What is 9 to the power of 3?",
+            "answers": [
+              "729",
+              "732",
+              "744",
+              "728"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 729."
+          },
+          {
+            "question": "What is 3 to the power of 3?",
+            "answers": [
+              "25",
+              "28",
+              "17",
+              "27"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 7 to the power of 4?",
+            "answers": [
+              "2406",
+              "2386",
+              "2416",
+              "2401"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 2401."
+          },
+          {
+            "question": "What is 2 to the power of 4?",
+            "answers": [
+              "26",
+              "17",
+              "19",
+              "16"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 5 to the power of 3?",
+            "answers": [
+              "135",
+              "110",
+              "125",
+              "140"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 125."
+          },
+          {
+            "question": "What is 9 to the power of 4?",
+            "answers": [
+              "6563",
+              "6561",
+              "6564",
+              "6571"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 6561."
+          },
+          {
+            "question": "What is 2 to the power of 3?",
+            "answers": [
+              "8",
+              "11",
+              "18",
+              "6"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 8."
+          },
+          {
+            "question": "What is 4 to the power of 4?",
+            "answers": [
+              "255",
+              "256",
+              "258",
+              "246"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 256."
+          },
+          {
+            "question": "What is 6 to the power of 2?",
+            "answers": [
+              "41",
+              "36",
+              "33",
+              "51"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 36."
+          },
+          {
+            "question": "What is 9 to the power of 2?",
+            "answers": [
+              "79",
+              "86",
+              "81",
+              "78"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 81."
+          }
+        ],
+        [
+          {
+            "question": "What is 8 to the power of 2?",
+            "answers": [
+              "67",
+              "64",
+              "59",
+              "61"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 64."
+          },
+          {
+            "question": "What is 8 to the power of 2?",
+            "answers": [
+              "64",
+              "74",
+              "54",
+              "59"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 64."
+          },
+          {
+            "question": "What is 7 to the power of 4?",
+            "answers": [
+              "2401",
+              "2403",
+              "2404",
+              "2411"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 2401."
+          },
+          {
+            "question": "What is 8 to the power of 2?",
+            "answers": [
+              "61",
+              "64",
+              "69",
+              "79"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 64."
+          },
+          {
+            "question": "What is 4 to the power of 2?",
+            "answers": [
+              "21",
+              "15",
+              "14",
+              "16"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 6 to the power of 4?",
+            "answers": [
+              "1281",
+              "1311",
+              "1296",
+              "1291"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1296."
+          },
+          {
+            "question": "What is 10 to the power of 2?",
+            "answers": [
+              "100",
+              "115",
+              "103",
+              "98"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 100."
+          },
+          {
+            "question": "What is 9 to the power of 3?",
+            "answers": [
+              "714",
+              "729",
+              "726",
+              "728"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 729."
+          },
+          {
+            "question": "What is 7 to the power of 2?",
+            "answers": [
+              "44",
+              "49",
+              "39",
+              "64"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 49."
+          },
+          {
+            "question": "What is 5 to the power of 2?",
+            "answers": [
+              "25",
+              "26",
+              "40",
+              "28"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 25."
+          }
+        ],
+        [
+          {
+            "question": "What is 7 to the power of 4?",
+            "answers": [
+              "2399",
+              "2401",
+              "2406",
+              "2416"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 2401."
+          },
+          {
+            "question": "What is 7 to the power of 2?",
+            "answers": [
+              "52",
+              "49",
+              "47",
+              "48"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 49."
+          },
+          {
+            "question": "What is 8 to the power of 4?",
+            "answers": [
+              "4096",
+              "4106",
+              "4101",
+              "4094"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 4096."
+          },
+          {
+            "question": "What is 7 to the power of 2?",
+            "answers": [
+              "34",
+              "47",
+              "44",
+              "49"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 49."
+          },
+          {
+            "question": "What is 4 to the power of 2?",
+            "answers": [
+              "14",
+              "11",
+              "16",
+              "18"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 6 to the power of 2?",
+            "answers": [
+              "38",
+              "31",
+              "36",
+              "26"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 36."
+          },
+          {
+            "question": "What is 8 to the power of 2?",
+            "answers": [
+              "64",
+              "67",
+              "61",
+              "79"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 64."
+          },
+          {
+            "question": "What is 5 to the power of 3?",
+            "answers": [
+              "120",
+              "125",
+              "127",
+              "126"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 125."
+          },
+          {
+            "question": "What is 7 to the power of 2?",
+            "answers": [
+              "34",
+              "54",
+              "49",
+              "47"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 49."
+          },
+          {
+            "question": "What is 7 to the power of 4?",
+            "answers": [
+              "2396",
+              "2406",
+              "2401",
+              "2386"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 2401."
+          }
+        ],
+        [
+          {
+            "question": "What is 6 to the power of 2?",
+            "answers": [
+              "51",
+              "36",
+              "31",
+              "37"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 36."
+          },
+          {
+            "question": "What is 2 to the power of 2?",
+            "answers": [
+              "7",
+              "6",
+              "4",
+              "1"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 4."
+          },
+          {
+            "question": "What is 3 to the power of 4?",
+            "answers": [
+              "79",
+              "81",
+              "91",
+              "84"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 81."
+          },
+          {
+            "question": "What is 3 to the power of 3?",
+            "answers": [
+              "37",
+              "32",
+              "27",
+              "25"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 5 to the power of 2?",
+            "answers": [
+              "20",
+              "26",
+              "25",
+              "24"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 25."
+          },
+          {
+            "question": "What is 9 to the power of 2?",
+            "answers": [
+              "81",
+              "96",
+              "82",
+              "79"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 81."
+          },
+          {
+            "question": "What is 5 to the power of 4?",
+            "answers": [
+              "625",
+              "628",
+              "635",
+              "623"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 625."
+          },
+          {
+            "question": "What is 9 to the power of 3?",
+            "answers": [
+              "730",
+              "744",
+              "726",
+              "729"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 729."
+          },
+          {
+            "question": "What is 7 to the power of 2?",
+            "answers": [
+              "54",
+              "50",
+              "49",
+              "51"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 49."
+          },
+          {
+            "question": "What is 8 to the power of 3?",
+            "answers": [
+              "522",
+              "517",
+              "513",
+              "512"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 512."
+          }
+        ],
+        [
+          {
+            "question": "What is 2 to the power of 4?",
+            "answers": [
+              "31",
+              "17",
+              "16",
+              "21"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 5 to the power of 3?",
+            "answers": [
+              "115",
+              "125",
+              "126",
+              "140"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 125."
+          },
+          {
+            "question": "What is 8 to the power of 4?",
+            "answers": [
+              "4101",
+              "4097",
+              "4099",
+              "4096"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 4096."
+          },
+          {
+            "question": "What is 9 to the power of 4?",
+            "answers": [
+              "6561",
+              "6566",
+              "6551",
+              "6564"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 6561."
+          },
+          {
+            "question": "What is 8 to the power of 4?",
+            "answers": [
+              "4081",
+              "4096",
+              "4095",
+              "4098"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 4096."
+          },
+          {
+            "question": "What is 10 to the power of 3?",
+            "answers": [
+              "997",
+              "1000",
+              "1002",
+              "1003"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1000."
+          },
+          {
+            "question": "What is 10 to the power of 3?",
+            "answers": [
+              "1000",
+              "998",
+              "997",
+              "1003"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 1000."
+          },
+          {
+            "question": "What is 5 to the power of 2?",
+            "answers": [
+              "25",
+              "24",
+              "10",
+              "20"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 25."
+          },
+          {
+            "question": "What is 5 to the power of 3?",
+            "answers": [
+              "120",
+              "127",
+              "122",
+              "125"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 125."
+          },
+          {
+            "question": "What is 4 to the power of 2?",
+            "answers": [
+              "17",
+              "16",
+              "19",
+              "18"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 16."
+          }
+        ],
+        [
+          {
+            "question": "What is 5 to the power of 2?",
+            "answers": [
+              "23",
+              "27",
+              "15",
+              "25"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 25."
+          },
+          {
+            "question": "What is 9 to the power of 3?",
+            "answers": [
+              "744",
+              "728",
+              "729",
+              "732"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 729."
+          },
+          {
+            "question": "What is 10 to the power of 3?",
+            "answers": [
+              "1001",
+              "1000",
+              "1003",
+              "985"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 1000."
+          },
+          {
+            "question": "What is 5 to the power of 2?",
+            "answers": [
+              "10",
+              "28",
+              "25",
+              "20"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 25."
+          },
+          {
+            "question": "What is 8 to the power of 2?",
+            "answers": [
+              "54",
+              "63",
+              "64",
+              "59"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 64."
+          },
+          {
+            "question": "What is 2 to the power of 4?",
+            "answers": [
+              "13",
+              "18",
+              "16",
+              "15"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 6 to the power of 2?",
+            "answers": [
+              "35",
+              "36",
+              "41",
+              "21"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 36."
+          },
+          {
+            "question": "What is 5 to the power of 2?",
+            "answers": [
+              "23",
+              "28",
+              "20",
+              "25"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 25."
+          },
+          {
+            "question": "What is 9 to the power of 3?",
+            "answers": [
+              "719",
+              "730",
+              "729",
+              "739"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 729."
+          },
+          {
+            "question": "What is 10 to the power of 3?",
+            "answers": [
+              "1010",
+              "1003",
+              "1000",
+              "1005"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1000."
+          }
+        ],
+        [
+          {
+            "question": "What is 10 to the power of 3?",
+            "answers": [
+              "998",
+              "1010",
+              "1005",
+              "1000"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1000."
+          },
+          {
+            "question": "What is 2 to the power of 2?",
+            "answers": [
+              "19",
+              "1",
+              "14",
+              "4"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 4."
+          },
+          {
+            "question": "What is 2 to the power of 2?",
+            "answers": [
+              "14",
+              "19",
+              "12",
+              "4"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 4."
+          },
+          {
+            "question": "What is 10 to the power of 4?",
+            "answers": [
+              "9999",
+              "10005",
+              "10000",
+              "9990"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 10000."
+          },
+          {
+            "question": "What is 9 to the power of 3?",
+            "answers": [
+              "719",
+              "726",
+              "734",
+              "729"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 729."
+          },
+          {
+            "question": "What is 2 to the power of 4?",
+            "answers": [
+              "26",
+              "16",
+              "21",
+              "15"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 7 to the power of 4?",
+            "answers": [
+              "2401",
+              "2404",
+              "2386",
+              "2400"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 2401."
+          },
+          {
+            "question": "What is 7 to the power of 2?",
+            "answers": [
+              "47",
+              "49",
+              "59",
+              "39"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 49."
+          },
+          {
+            "question": "What is 4 to the power of 2?",
+            "answers": [
+              "21",
+              "1",
+              "26",
+              "16"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 16."
+          },
+          {
+            "question": "What is 5 to the power of 2?",
+            "answers": [
+              "25",
+              "15",
+              "27",
+              "40"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 25."
+          }
+        ],
+        [
+          {
+            "question": "What is 5 to the power of 2?",
+            "answers": [
+              "27",
+              "10",
+              "35",
+              "25"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 25."
+          },
+          {
+            "question": "What is 7 to the power of 3?",
+            "answers": [
+              "343",
+              "344",
+              "333",
+              "342"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 343."
+          },
+          {
+            "question": "What is 3 to the power of 3?",
+            "answers": [
+              "32",
+              "22",
+              "27",
+              "37"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 27."
+          },
+          {
+            "question": "What is 5 to the power of 3?",
+            "answers": [
+              "124",
+              "125",
+              "126",
+              "130"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 125."
+          },
+          {
+            "question": "What is 10 to the power of 4?",
+            "answers": [
+              "10015",
+              "10000",
+              "10002",
+              "9997"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 10000."
+          },
+          {
+            "question": "What is 5 to the power of 4?",
+            "answers": [
+              "610",
+              "625",
+              "635",
+              "624"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 625."
+          },
+          {
+            "question": "What is 10 to the power of 2?",
+            "answers": [
+              "90",
+              "105",
+              "85",
+              "100"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 100."
+          },
+          {
+            "question": "What is 3 to the power of 2?",
+            "answers": [
+              "2",
+              "9",
+              "4",
+              "10"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 9."
+          },
+          {
+            "question": "What is 4 to the power of 3?",
+            "answers": [
+              "65",
+              "64",
+              "62",
+              "79"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 64."
+          },
+          {
+            "question": "What is 7 to the power of 3?",
+            "answers": [
+              "346",
+              "343",
+              "342",
+              "341"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 343."
+          }
+        ],
+        [
+          {
+            "question": "What is 5 to the power of 4?",
+            "answers": [
+              "625",
+              "627",
+              "628",
+              "635"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 625."
+          },
+          {
+            "question": "What is 4 to the power of 4?",
+            "answers": [
+              "241",
+              "256",
+              "266",
+              "261"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 256."
+          },
+          {
+            "question": "What is 2 to the power of 2?",
+            "answers": [
+              "1",
+              "4",
+              "3",
+              "5"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 4."
+          },
+          {
+            "question": "What is 4 to the power of 4?",
+            "answers": [
+              "271",
+              "261",
+              "256",
+              "253"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 256."
+          },
+          {
+            "question": "What is 4 to the power of 3?",
+            "answers": [
+              "64",
+              "62",
+              "49",
+              "74"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 64."
+          },
+          {
+            "question": "What is 6 to the power of 2?",
+            "answers": [
+              "36",
+              "38",
+              "26",
+              "35"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 36."
+          },
+          {
+            "question": "What is 5 to the power of 4?",
+            "answers": [
+              "625",
+              "615",
+              "627",
+              "624"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 625."
+          },
+          {
+            "question": "What is 2 to the power of 3?",
+            "answers": [
+              "11",
+              "13",
+              "5",
+              "8"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 8."
+          },
+          {
+            "question": "What is 7 to the power of 4?",
+            "answers": [
+              "2401",
+              "2399",
+              "2386",
+              "2402"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 2401."
+          },
+          {
+            "question": "What is 10 to the power of 3?",
+            "answers": [
+              "985",
+              "995",
+              "999",
+              "1000"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 1000."
+          }
+        ],
+        [
+          {
+            "question": "What is 8 to the power of 3?",
+            "answers": [
+              "509",
+              "512",
+              "522",
+              "507"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The correct answer is 512."
+          },
+          {
+            "question": "What is 2 to the power of 2?",
+            "answers": [
+              "3",
+              "2",
+              "4",
+              "1"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 4."
+          },
+          {
+            "question": "What is 6 to the power of 3?",
+            "answers": [
+              "226",
+              "215",
+              "218",
+              "216"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 216."
+          },
+          {
+            "question": "What is 6 to the power of 4?",
+            "answers": [
+              "1311",
+              "1306",
+              "1296",
+              "1286"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 1296."
+          },
+          {
+            "question": "What is 4 to the power of 3?",
+            "answers": [
+              "64",
+              "62",
+              "67",
+              "65"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 64."
+          },
+          {
+            "question": "What is 9 to the power of 2?",
+            "answers": [
+              "81",
+              "71",
+              "66",
+              "84"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 81."
+          },
+          {
+            "question": "What is 2 to the power of 2?",
+            "answers": [
+              "2",
+              "5",
+              "14",
+              "4"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The correct answer is 4."
+          },
+          {
+            "question": "What is 3 to the power of 2?",
+            "answers": [
+              "9",
+              "7",
+              "2",
+              "11"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The correct answer is 9."
+          },
+          {
+            "question": "What is 5 to the power of 4?",
+            "answers": [
+              "624",
+              "627",
+              "625",
+              "623"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 625."
+          },
+          {
+            "question": "What is 2 to the power of 2?",
+            "answers": [
+              "9",
+              "7",
+              "4",
+              "19"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The correct answer is 4."
+          }
+        ]
       ]
     ],
     "medium": [

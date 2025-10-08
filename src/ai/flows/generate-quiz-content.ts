@@ -32,36 +32,22 @@ const GenerateQuizContentOutputSchema = z.object({
 export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutputSchema>;
 
 
-/**
- * Shuffles an array in place using the Fisher-Yates algorithm.
- * @param array The array to shuffle.
- */
-function shuffleArray<T>(array: T[]): T[] {
-  const newArray = [...array]; // Create a copy to avoid mutating the original data
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
-  return newArray;
-}
-
-
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
   const subjectKey = input.subject.toLowerCase();
   const difficultyKey = input.difficulty;
 
   // @ts-ignore
-  const allQuestions = staticQuizData[subjectKey]?.[difficultyKey];
+  const questionSets = staticQuizData[subjectKey]?.[difficultyKey];
 
-  if (!allQuestions) {
+  if (!questionSets || questionSets.length === 0) {
     throw new Error(`Quiz content for ${input.subject} (${input.difficulty}) is not available.`);
   }
-  
-  // Shuffle the questions before selecting them
-  const shuffledQuestions = shuffleArray(allQuestions);
 
-  // Return a slice of the questions based on the requested number
-  const quizContent = shuffledQuestions.slice(0, input.numberOfQuestions);
+  // Randomly select one of the 10-question sets
+  const setIndex = Math.floor(Math.random() * questionSets.length);
+  const selectedSet = questionSets[setIndex];
 
-  return { quiz: quizContent };
+  // The set is already 10 questions, so we just return it.
+  // The numberOfQuestions input is now implicitly handled by the data structure.
+  return { quiz: selectedSet };
 }

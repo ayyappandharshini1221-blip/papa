@@ -45,6 +45,7 @@ import { useToast } from '@/hooks/use-toast';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { useTeacherData } from '@/hooks/use-teacher-data';
+import Link from 'next/link';
 
 export default function ClassesPage() {
   const { teacher, classes, students, loading } = useTeacherData();
@@ -225,8 +226,8 @@ export default function ClassesPage() {
                               </div>
                             </TableCell>
                             <TableCell className="text-right">
-                              <Button variant="outline" size="sm">
-                                View Progress
+                              <Button asChild variant="outline" size="sm">
+                                <Link href="/teacher/analytics">View Progress</Link>
                               </Button>
                             </TableCell>
                           </TableRow>

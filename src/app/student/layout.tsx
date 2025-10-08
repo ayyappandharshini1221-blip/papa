@@ -63,18 +63,6 @@ export default function StudentLayout({
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton
-                href="/student/quizzes"
-                asChild
-                tooltip={t('myQuizzes')}
-              >
-                <Link href="/student/quizzes">
-                  <Swords />
-                  <span>{t('myQuizzes')}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton
                 href="/student/progress"
                 asChild
                 tooltip={t('myProgress')}

@@ -24,17 +24,12 @@ import {
 import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
 import { ThemeToggle } from '@/components/dashboard/ThemeToggle';
-import { LanguageToggle } from '@/components/dashboard/LanguageToggle';
-import { useLanguage } from '@/context/language-context';
-import { getTranslation } from '@/lib/translations';
 
 export default function StudentLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { language } = useLanguage();
-  const t = (key: string) => getTranslation(language, key);
 
   return (
     <SidebarProvider>
@@ -53,11 +48,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/dashboard"
                 asChild
-                tooltip={t('dashboard')}
+                tooltip="Dashboard"
               >
                 <Link href="/student/dashboard">
                   <LayoutDashboard />
-                  <span>{t('dashboard')}</span>
+                  <span>Dashboard</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -65,11 +60,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/quizzes"
                 asChild
-                tooltip={t('myQuizzes')}
+                tooltip="My Quizzes"
               >
                 <Link href="/student/quizzes">
                   <BookOpen />
-                  <span>{t('myQuizzes')}</span>
+                  <span>My Quizzes</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -77,11 +72,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/progress"
                 asChild
-                tooltip={t('myProgress')}
+                tooltip="My Progress"
               >
                 <Link href="/student/progress">
                   <Target />
-                  <span>{t('myProgress')}</span>
+                  <span>My Progress</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -89,11 +84,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/badges"
                 asChild
-                tooltip={t('badges')}
+                tooltip="Badges"
               >
                 <Link href="/student/badges">
                   <Award />
-                  <span>{t('badges')}</span>
+                  <span>Badges</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -101,11 +96,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/leaderboard"
                 asChild
-                tooltip={t('leaderboard')}
+                tooltip="Leaderboard"
               >
                 <Link href="/student/leaderboard">
                   <Trophy />
-                  <span>{t('leaderboard')}</span>
+                  <span>Leaderboard</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -113,11 +108,11 @@ export default function StudentLayout({
               <SidebarMenuButton
                 href="/student/settings"
                 asChild
-                tooltip={t('settings')}
+                tooltip="Settings"
               >
                 <Link href="/student/settings">
                   <Settings />
-                  <span>{t('settings')}</span>
+                  <span>Settings</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -130,7 +125,6 @@ export default function StudentLayout({
           <div className="w-full flex-1">
             {/* Can add breadcrumbs here */}
           </div>
-          <LanguageToggle />
           <ThemeToggle />
           <UserNav />
         </header>

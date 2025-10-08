@@ -18,7 +18,6 @@ import {
 import { CIcon, CppIcon, JavaIcon, JavaScriptIcon, PythonIcon } from '@/components/icons';
 import { QuizStartDialog } from '@/components/quiz/quiz-start-dialog';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/context/language-context';
 import { getTranslation } from '@/lib/translations';
 
 export type Subject = {
@@ -32,6 +31,11 @@ const subjects: Subject[] = [
     name: 'Maths',
     description: 'Tackle problems in algebra, calculus, and more.',
     icon: <Sigma className="h-10 w-10" />,
+  },
+    {
+    name: 'Literature',
+    description: 'Quizzes in English literature.',
+    icon: <BookOpen className="h-10 w-10" />,
   },
   {
     name: 'Chemistry',
@@ -78,15 +82,26 @@ const programmingSubjects: Subject[] = [
     },
 ]
 
+const literatureSubjects: Subject[] = [
+    {
+        name: 'English',
+        description: 'Quizzes on English literature.',
+        icon: <BookOpen className="h-10 w-10" />,
+    },
+]
+
 export default function QuizzesPage() {
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
   const [showProgrammingSelection, setShowProgrammingSelection] = useState(false);
-  const { language } = useLanguage();
-  const t = (key: string) => getTranslation(language, key);
+  const [showLiteratureSelection, setShowLiteratureSelection] = useState(false);
+  const t = (key: string) => getTranslation('en', key);
 
   const handleSubjectSelect = (subject: Subject) => {
     if (subject.name === 'Programming') {
         setShowProgrammingSelection(true);
+    }
+    else if (subject.name === 'Literature') {
+        setShowLiteratureSelection(true);
     }
     else {
         setSelectedSubject(subject);
@@ -96,15 +111,18 @@ export default function QuizzesPage() {
   const handleSubSubjectSelect = (subSubject: Subject) => {
     setSelectedSubject(subSubject);
     setShowProgrammingSelection(false);
+    setShowLiteratureSelection(false);
   }
 
   const handleDialogClose = () => {
     setSelectedSubject(null);
     setShowProgrammingSelection(false);
+    setShowLiteratureSelection(false);
   };
   
   const handleBack = () => {
     setShowProgrammingSelection(false);
+    setShowLiteratureSelection(false);
   }
 
   if(showProgrammingSelection) {
@@ -120,6 +138,43 @@ export default function QuizzesPage() {
              </div>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {programmingSubjects.map((lang) => (
+                <Card
+                    key={lang.name}
+                    className="group cursor-pointer transform transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+                    onClick={() => handleSubSubjectSelect(lang)}
+                >
+                    <CardHeader className="flex flex-row items-center gap-4">
+                    <div className="rounded-lg bg-primary/10 p-4 text-primary">
+                        {lang.icon}
+                    </div>
+                    <div>
+                        <CardTitle className="text-xl">{lang.name}</CardTitle>
+                        <CardDescription>{lang.description}</CardDescription>
+                    </div>
+                    </CardHeader>
+                </Card>
+                ))}
+            </div>
+             <Button variant="outline" onClick={handleBack} className="self-start">
+                {t('backToSubjects')}
+            </Button>
+        </div>
+    )
+  }
+
+  if(showLiteratureSelection) {
+    return (
+        <div className="flex flex-col gap-6">
+            <div>
+                <h1 className="text-3xl font-bold tracking-tight">
+                    Select a Literature
+                </h1>
+                <p className="text-muted-foreground">
+                    Choose which literature you want to be quizzed on.
+                </p>
+             </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {literatureSubjects.map((lang) => (
                 <Card
                     key={lang.name}
                     className="group cursor-pointer transform transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"

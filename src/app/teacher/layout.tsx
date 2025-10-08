@@ -20,8 +20,6 @@ import {
 import Link from 'next/link';
 import { UserNav } from '@/components/dashboard/UserNav';
 import { ThemeToggle } from '@/components/dashboard/ThemeToggle';
-import { LanguageToggle } from '@/components/dashboard/LanguageToggle';
-import { LanguageProvider } from '@/context/language-context';
 
 export default function TeacherLayout({
   children,
@@ -29,7 +27,6 @@ export default function TeacherLayout({
   children: React.ReactNode;
 }) {
   return (
-    <LanguageProvider>
       <SidebarProvider>
         <Sidebar>
           <SidebarHeader className="border-b border-sidebar-border">
@@ -99,13 +96,11 @@ export default function TeacherLayout({
             <div className="w-full flex-1">
               {/* Can add breadcrumbs here */}
             </div>
-            <LanguageToggle />
             <ThemeToggle />
             <UserNav />
           </header>
           <main className="flex-1 p-4 sm:p-6">{children}</main>
         </SidebarInset>
       </SidebarProvider>
-    </LanguageProvider>
   );
 }

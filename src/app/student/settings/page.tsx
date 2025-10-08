@@ -19,7 +19,6 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { getDb } from '@/lib/firebase';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
-import { useLanguage } from '@/context/language-context';
 import { getTranslation } from '@/lib/translations';
 
 export default function SettingsPage() {
@@ -27,8 +26,7 @@ export default function SettingsPage() {
   const [name, setName] = useState(student?.name || '');
   const [isSaving, setIsSaving] = useState(false);
   const { toast } = useToast();
-  const { language } = useLanguage();
-  const t = (key: string) => getTranslation(language, key);
+  const t = (key: string) => getTranslation('en', key);
 
   if (loading) {
     return (

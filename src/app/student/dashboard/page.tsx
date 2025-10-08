@@ -58,7 +58,6 @@ import type { User } from '@/lib/types';
 import Candy from '@/components/ui/candy';
 import { Progress } from '@/components/ui/progress';
 import Link from 'next/link';
-import { useLanguage } from '@/context/language-context';
 import { getTranslation } from '@/lib/translations';
 
 export default function StudentDashboard() {
@@ -72,8 +71,7 @@ export default function StudentDashboard() {
     student?.classIds?.[0]
   );
   const [showCandy, setShowCandy] = useState(true);
-  const { language } = useLanguage();
-  const t = (key: string, params: { [key: string]: string | number } = {}) => getTranslation(language, key).replace(/{(\w+)}/g, (_, G) => params[G]?.toString() || G);
+  const t = (key: string, params: { [key: string]: string | number } = {}) => getTranslation('en', key).replace(/{(\w+)}/g, (_, G) => params[G]?.toString() || G);
 
 
   useEffect(() => {

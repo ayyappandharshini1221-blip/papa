@@ -22,14 +22,12 @@ import { Trophy, Flame, Loader2 } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useLeaderboard } from '@/hooks/use-leaderboard';
 import { useStudentData } from '@/hooks/use-student-data';
-import { useLanguage } from '@/context/language-context';
 import { getTranslation } from '@/lib/translations';
 
 export default function LeaderboardPage() {
   const { leaderboardData, loading } = useLeaderboard();
   const { student } = useStudentData();
-  const { language } = useLanguage();
-  const t = (key: string, params: { [key: string]: string | number } = {}) => getTranslation(language, key).replace(/{(\w+)}/g, (_, G) => params[G]?.toString() || G);
+  const t = (key: string, params: { [key: string]: string | number } = {}) => getTranslation('en', key).replace(/{(\w+)}/g, (_, G) => params[G]?.toString() || G);
 
   const getTrophy = (rank: number) => {
     if (rank === 1) return <Trophy className="h-5 w-5 text-yellow-500" />;

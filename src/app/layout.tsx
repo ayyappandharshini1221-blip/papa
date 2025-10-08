@@ -4,7 +4,6 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
-import { LanguageProvider } from '@/context/language-context';
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
@@ -30,7 +29,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-headline antialiased', ptSans.variable)}>
-        <LanguageProvider>
           <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -40,7 +38,6 @@ export default function RootLayout({
             {children}
             <Toaster />
           </ThemeProvider>
-        </LanguageProvider>
       </body>
     </html>
   );

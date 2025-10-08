@@ -41,8 +41,6 @@ import { CppIcon, JavaIcon, JavaScriptIcon, PythonIcon, CIcon } from '@/componen
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@/hooks/use-window-size';
 import { useState, useEffect } from 'react';
-import { useLanguage } from '@/context/language-context';
-import { getTranslation } from '@/lib/translations';
 
 export const allBadges = [
   {
@@ -240,13 +238,6 @@ export const allBadges = [
     xp: 50,
   },
   {
-    id: 'tamil-scholar',
-    title: 'Tamil Scholar',
-    description: 'Complete your first Tamil quiz.',
-    icon: <Feather className="h-10 w-10" />,
-    xp: 50,
-  },
-  {
     id: 'over-9000',
     title: 'Over 9000!',
     description: 'Earn over 9000 XP points in total.',
@@ -292,8 +283,6 @@ export default function BadgesPage() {
   const { student, loading } = useStudentData();
   const { width, height } = useWindowSize();
   const [showConfetti, setShowConfetti] = useState(false);
-  const { language } = useLanguage();
-  const t = (key: string) => getTranslation(language, key);
 
   useEffect(() => {
     // Trigger confetti when the component mounts
@@ -328,21 +317,21 @@ export default function BadgesPage() {
         />
       )}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">{t('badgesCollection')}</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Badges Collection</h1>
         <p className="text-muted-foreground">
-          {t('badgesDescription')}
+          Celebrate your achievements and unlock new ones!
         </p>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>{t('yourProgress')}</CardTitle>
+          <CardTitle>Your Progress</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-center gap-4">
             <Progress value={progressValue} className="h-3 flex-1" />
             <p className="font-semibold">
-              {unlockedBadges.length} / {allBadges.length} {t('unlocked')}
+              {unlockedBadges.length} / {allBadges.length} Unlocked
             </p>
           </div>
         </CardContent>
@@ -350,7 +339,7 @@ export default function BadgesPage() {
 
       <div>
         <h2 className="text-2xl font-semibold tracking-tight mb-4">
-          {t('earnedBadges')}
+          Earned Badges
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {unlockedBadges.map((badge) => (
@@ -377,7 +366,7 @@ export default function BadgesPage() {
 
       <div>
         <h2 className="text-2xl font-semibold tracking-tight mb-4">
-          {t('lockedBadges')}
+          Locked Badges
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {lockedBadges.map((badge) => (
@@ -397,7 +386,7 @@ export default function BadgesPage() {
                   {badge.description}
                 </p>
                  {badge.progress && <div className="mt-4 font-semibold text-primary text-sm">
-                    {badge.progress} {t('complete')}
+                    {badge.progress} Complete
                 </div>}
               </CardContent>
             </Card>

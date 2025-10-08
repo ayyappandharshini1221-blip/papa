@@ -4,7 +4,7 @@
 /**
  * @fileOverview This file defines a Genkit flow for generating quiz questions and answers on a given subject, including explanations.
  *
- * - generateQuizContent - A function that generates quiz content based on the provided subject.
+ * - generateQuizContent - A function that returns pre-generated quiz content based on the provided subject and difficulty.
  * - GenerateQuizContentInput - The input type for the generateQuizContent function.
  * - GenerateQuizContentOutput - The return type for the generateQuizContent function.
  */
@@ -13,7 +13,7 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import {googleAI} from '@genkit-ai/google-genai';
 
-// In-memory cache for generated quizzes
+// In-memory cache for all pre-generated quizzes
 const quizCache = new Map<string, GenerateQuizContentOutput>();
 
 const GenerateQuizContentInputSchema = z.object({
@@ -37,16 +37,17 @@ export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutput
 
 
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
-  const cacheKey = `${input.subject}-${input.difficulty}`;
+  const cacheKey = `${input.subject.toLowerCase()}-${input.difficulty}`;
   if (quizCache.has(cacheKey)) {
     console.log('Serving from cache:', cacheKey);
     return quizCache.get(cacheKey)!;
   }
   
-  console.log('Generating new quiz:', cacheKey);
-  const result = await generateQuizContentFlow(input);
-  quizCache.set(cacheKey, result);
-  return result;
+  // If a quiz is not in the cache, it means it wasn't pre-generated.
+  // This could be a new subject or an issue with the pre-generation process.
+  // We'll throw an error to indicate that the content is unavailable.
+  console.error('Quiz not found in cache for key:', cacheKey);
+  throw new Error(`Quiz content for ${input.subject} (${input.difficulty}) is not available.`);
 }
 
 const generateQuizContentPrompt = ai.definePrompt({
@@ -75,3 +76,49 @@ const generateQuizContentFlow = ai.defineFlow(
     return output!;
   }
 );
+
+
+// --- Pre-caching logic ---
+
+const allSubjects = ['Maths', 'English', 'Chemistry', 'Biology', 'C', 'C++', 'Java', 'JavaScript', 'Python'];
+const allDifficulties: ('easy' | 'medium' | 'hard')[] = ['easy', 'medium', 'hard'];
+
+async function preCacheQuizzes() {
+    console.log('Starting to pre-cache all quizzes...');
+    const generationPromises: Promise<void>[] = [];
+
+    for (const subject of allSubjects) {
+        for (const difficulty of allDifficulties) {
+            const promise = (async () => {
+                const cacheKey = `${subject.toLowerCase()}-${difficulty}`;
+                if (quizCache.has(cacheKey)) {
+                    console.log(`Quiz for ${subject} (${difficulty}) already cached. Skipping.`);
+                    return;
+                }
+                
+                try {
+                    console.log(`Generating quiz for: ${subject} (${difficulty})`);
+                    const result = await generateQuizContentFlow({
+                        subject,
+                        difficulty,
+                        numberOfQuestions: 10
+                    });
+                    quizCache.set(cacheKey, result);
+                    console.log(`Successfully cached quiz for: ${subject} (${difficulty})`);
+                } catch (error) {
+                    console.error(`Failed to generate or cache quiz for ${subject} (${difficulty}):`, error);
+                }
+            })();
+            generationPromises.push(promise);
+        }
+    }
+
+    await Promise.all(generationPromises);
+    console.log('Finished pre-caching all quizzes.');
+}
+
+// Immediately start the pre-caching process when the server starts.
+// This is a self-invoking async function.
+(async () => {
+  await preCacheQuizzes();
+})();

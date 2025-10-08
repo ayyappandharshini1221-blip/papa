@@ -2,24 +2,20 @@
 'use server';
 
 /**
- * @fileOverview This file defines a Genkit flow for generating quiz questions and answers on a given subject, including explanations.
+ * @fileOverview This file defines a function for retrieving statically defined quiz content.
  *
  * - generateQuizContent - A function that returns pre-generated quiz content based on the provided subject and difficulty.
  * - GenerateQuizContentInput - The input type for the generateQuizContent function.
  * - GenerateQuizContentOutput - The return type for the generateQuizContent function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
-import {googleAI} from '@genkit-ai/google-genai';
-
-// In-memory cache for all pre-generated quizzes
-const quizCache = new Map<string, GenerateQuizContentOutput>();
+import { z } from 'genkit';
+import { staticQuizData } from '@/lib/static-quiz-data';
 
 const GenerateQuizContentInputSchema = z.object({
   subject: z.string().describe('The subject of the quiz.'),
   difficulty: z.enum(['easy', 'medium', 'hard']).describe('The difficulty level of the quiz.'),
-  numberOfQuestions: z.number().min(1).max(10).default(10).describe('The number of questions to generate for the quiz.'),
+  numberOfQuestions: z.number().min(1).max(10).default(10).describe('The number of questions for the quiz.'),
 });
 export type GenerateQuizContentInput = z.infer<typeof GenerateQuizContentInputSchema>;
 
@@ -37,84 +33,18 @@ export type GenerateQuizContentOutput = z.infer<typeof GenerateQuizContentOutput
 
 
 export async function generateQuizContent(input: GenerateQuizContentInput): Promise<GenerateQuizContentOutput> {
-  const cacheKey = `${input.subject.toLowerCase()}-${input.difficulty}`;
-  if (quizCache.has(cacheKey)) {
-    console.log('Serving from cache:', cacheKey);
-    return quizCache.get(cacheKey)!;
+  const subjectKey = input.subject.toLowerCase();
+  const difficultyKey = input.difficulty;
+
+  // @ts-ignore
+  const quiz = staticQuizData[subjectKey]?.[difficultyKey];
+
+  if (!quiz) {
+    throw new Error(`Quiz content for ${input.subject} (${input.difficulty}) is not available.`);
   }
-  
-  // If a quiz is not in the cache, it means it wasn't pre-generated successfully.
-  // We'll throw an error to indicate that the content is unavailable.
-  console.error('Quiz not found in cache for key:', cacheKey);
-  throw new Error(`Quiz content for ${input.subject} (${input.difficulty}) is not available.`);
+
+  // Return a slice of the questions based on the requested number
+  const quizContent = quiz.slice(0, input.numberOfQuestions);
+
+  return { quiz: quizContent };
 }
-
-const generateQuizContentPrompt = ai.definePrompt({
-  name: 'generateQuizContentPrompt',
-  input: {schema: GenerateQuizContentInputSchema},
-  output: {schema: GenerateQuizContentOutputSchema},
-  model: googleAI.model('gemini-2.5-flash'),
-  prompt: `You are an expert quiz generator for teachers. Generate a quiz on the following subject: {{{subject}}}. The difficulty level should be {{{difficulty}}}.
-
-The quiz must contain exactly {{{numberOfQuestions}}} questions.
-Each question must have exactly 4 possible answers.
-For each question, you must provide the index of the correct answer (from 0 to 3).
-For each question, you must provide a brief explanation for why the answer is correct.
-
-Return the quiz in the exact JSON format specified.`,
-});
-
-const generateQuizContentFlow = ai.defineFlow(
-  {
-    name: 'generateQuizContentFlow',
-    inputSchema: GenerateQuizContentInputSchema,
-    outputSchema: GenerateQuizContentOutputSchema,
-  },
-  async input => {
-    const {output} = await generateQuizContentPrompt(input);
-    return output!;
-  }
-);
-
-
-// --- Pre-caching logic ---
-
-const allSubjects = ['Maths', 'English', 'Chemistry', 'Biology', 'C', 'C++', 'Java', 'JavaScript', 'Python'];
-const allDifficulties: ('easy' | 'medium' | 'hard')[] = ['easy', 'medium', 'hard'];
-
-async function preCacheQuizzes() {
-    console.log('Starting to pre-cache all quizzes sequentially...');
-
-    for (const subject of allSubjects) {
-        for (const difficulty of allDifficulties) {
-            const cacheKey = `${subject.toLowerCase()}-${difficulty}`;
-            if (quizCache.has(cacheKey)) {
-                console.log(`Quiz for ${subject} (${difficulty}) already cached. Skipping.`);
-                continue;
-            }
-            
-            try {
-                console.log(`Generating quiz for: ${subject} (${difficulty})`);
-                const result = await generateQuizContentFlow({
-                    subject,
-                    difficulty,
-                    numberOfQuestions: 10
-                });
-                quizCache.set(cacheKey, result);
-                console.log(`Successfully cached quiz for: ${subject} (${difficulty})`);
-            } catch (error) {
-                console.error(`Failed to generate or cache quiz for ${subject} (${difficulty}):`, error);
-                // Optional: add a small delay before retrying or moving to the next one
-                await new Promise(resolve => setTimeout(resolve, 2000));
-            }
-        }
-    }
-
-    console.log('Finished pre-caching all quizzes.');
-}
-
-// Immediately start the pre-caching process when the server starts.
-// This is a self-invoking async function.
-(async () => {
-  await preCacheQuizzes();
-})();

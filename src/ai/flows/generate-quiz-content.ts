@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -36,18 +35,28 @@ export async function generateQuizContent(input: GenerateQuizContentInput): Prom
   const subjectKey = input.subject.toLowerCase();
   const difficultyKey = input.difficulty;
 
+  // Filter questions by subject and difficulty
   // @ts-ignore
-  const questionSets = staticQuizData[subjectKey]?.[difficultyKey];
+  const questions = staticQuizData.filter(q => 
+    q.subject.toLowerCase() === subjectKey && 
+    q.level.toLowerCase() === difficultyKey
+  );
 
-  if (!questionSets || questionSets.length === 0) {
+  if (!questions || questions.length === 0) {
     throw new Error(`Quiz content for ${input.subject} (${input.difficulty}) is not available.`);
   }
 
-  // Randomly select one of the 10-question sets
-  const setIndex = Math.floor(Math.random() * questionSets.length);
-  const selectedSet = questionSets[setIndex];
+  // Take only the requested number of questions or 10, whichever is smaller
+  const selectedQuestions = questions.slice(0, Math.min(input.numberOfQuestions, 10));
 
-  // The set is already 10 questions, so we just return it.
-  // The numberOfQuestions input is now implicitly handled by the data structure.
-  return { quiz: selectedSet };
+  // Transform the data to match the expected output format
+  const quiz = selectedQuestions.map(q => ({
+    question: q.question,
+    answers: q.options,
+    correctAnswerIndex: q.correct_index,
+    // Adding a default explanation since the data doesn't include it
+    explanation: "This is the correct answer based on the question."
+  }));
+
+  return { quiz };
 }

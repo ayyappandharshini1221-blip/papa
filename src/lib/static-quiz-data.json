@@ -1,0 +1,836 @@
+{
+  "maths": {
+    "easy": [
+      [
+        {
+          "id": 1,
+          "question": "What is 82 + 15?",
+          "answers": [
+            "87",
+            "95",
+            "96",
+            "97"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 82 and 15, you add the tens place (80 + 10 = 90) and the ones place (2 + 5 = 7), then add them together (90 + 7 = 97)."
+        },
+        {
+          "id": 2,
+          "question": "What is 87 + 70?",
+          "answers": [
+            "159",
+            "157",
+            "167",
+            "152"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 87 and 70, you add the tens place (80 + 70 = 150) and the ones place (7 + 0 = 7), then add them together (150 + 7 = 157)."
+        },
+        {
+          "id": 3,
+          "question": "What is 28 + 30?",
+          "answers": [
+            "48",
+            "63",
+            "68",
+            "58"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 28 and 30, you add the tens place (20 + 30 = 50) and the ones place (8 + 0 = 8), then add them together (50 + 8 = 58)."
+        },
+        {
+          "id": 4,
+          "question": "What is 29 + 58?",
+          "answers": [
+            "97",
+            "87",
+            "86",
+            "77"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 29 and 58, you add the tens place (20 + 50 = 70) and the ones place (9 + 8 = 17), then add them together (70 + 17 = 87)."
+        },
+        {
+          "id": 5,
+          "question": "What is 44 + 36?",
+          "answers": [
+            "77",
+            "81",
+            "78",
+            "80"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 44 and 36, you add the tens place (40 + 30 = 70) and the ones place (4 + 6 = 10), then add them together (70 + 10 = 80)."
+        },
+        {
+          "id": 6,
+          "question": "What is 13 + 46?",
+          "answers": [
+            "69",
+            "59",
+            "60",
+            "58"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 13 and 46, you add the tens place (10 + 40 = 50) and the ones place (3 + 6 = 9), then add them together (50 + 9 = 59)."
+        },
+        {
+          "id": 7,
+          "question": "What is 69 + 16?",
+          "answers": [
+            "80",
+            "90",
+            "87",
+            "85"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 69 and 16, you add the tens place (60 + 10 = 70) and the ones place (9 + 6 = 15), then add them together (70 + 15 = 85)."
+        },
+        {
+          "id": 8,
+          "question": "What is 74 + 25?",
+          "answers": [
+            "99",
+            "97",
+            "89",
+            "94"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 74 and 25, you add the tens place (70 + 20 = 90) and the ones place (4 + 5 = 9), then add them together (90 + 9 = 99)."
+        },
+        {
+          "id": 9,
+          "question": "What is 13 + 49?",
+          "answers": [
+            "65",
+            "62",
+            "63",
+            "61"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 13 and 49, you add the tens place (10 + 40 = 50) and the ones place (3 + 9 = 12), then add them together (50 + 12 = 62)."
+        },
+        {
+          "id": 10,
+          "question": "What is 27 + 86?",
+          "answers": [
+            "108",
+            "112",
+            "123",
+            "113"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 27 and 86, you add the tens place (20 + 80 = 100) and the ones place (7 + 6 = 13), then add them together (100 + 13 = 113)."
+        }
+      ]
+    ],
+    "medium": [
+      [
+        {
+          "question": "What is 76 + 187?",
+          "answers": [
+            "253",
+            "261",
+            "263",
+            "264"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 76 and 187, you add the hundreds place (0 + 100 = 100), the tens place (70 + 80 = 150), and the ones place (6 + 7 = 13). Then you add them together (100 + 150 + 13 = 263)."
+        },
+        {
+          "question": "What is 324 + 337?",
+          "answers": [
+            "656",
+            "661",
+            "646",
+            "660"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 324 and 337, you add the hundreds place (300 + 300 = 600), the tens place (20 + 30 = 50), and the ones place (4 + 7 = 11). Then you add them together (600 + 50 + 11 = 661)."
+        },
+        {
+          "question": "What is 409 + 175?",
+          "answers": [
+            "585",
+            "569",
+            "579",
+            "584"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 409 and 175, you add the hundreds place (400 + 100 = 500), the tens place (0 + 70 = 70), and the ones place (9 + 5 = 14). Then you add them together (500 + 70 + 14 = 584)."
+        },
+        {
+          "question": "What is 85 + 53?",
+          "answers": [
+            "138",
+            "153",
+            "140",
+            "137"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 85 and 53, you add the tens place (80 + 50 = 130) and the ones place (5 + 3 = 8). Then you add them together (130 + 8 = 138)."
+        },
+        {
+          "question": "What is 391 + 122?",
+          "answers": [
+            "513",
+            "498",
+            "508",
+            "511"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 391 and 122, you add the hundreds place (300 + 100 = 400), the tens place (90 + 20 = 110), and the ones place (1 + 2 = 3). Then you add them together (400 + 110 + 3 = 513)."
+        },
+        {
+          "question": "What is 185 + 290?",
+          "answers": [
+            "475",
+            "474",
+            "473",
+            "460"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 185 and 290, you add the hundreds place (100 + 200 = 300), the tens place (80 + 90 = 170), and the ones place (5 + 0 = 5). Then you add them together (300 + 170 + 5 = 475)."
+        },
+        {
+          "question": "What is 56 + 253?",
+          "answers": [
+            "312",
+            "309",
+            "310",
+            "319"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "To add 56 and 253, you add the hundreds place (0 + 200 = 200), the tens place (50 + 50 = 100), and the ones place (6 + 3 = 9). Then you add them together (200 + 100 + 9 = 309)."
+        },
+        {
+          "question": "What is 241 + 311?",
+          "answers": [
+            "547",
+            "562",
+            "537",
+            "552"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "To add 241 and 311, you add the hundreds place (200 + 300 = 500), the tens place (40 + 10 = 50), and the ones place (1 + 1 = 2). Then you add them together (500 + 50 + 2 = 552)."
+        },
+        {
+          "question": "What is 137 + 221?",
+          "answers": [
+            "359",
+            "357",
+            "358",
+            "361"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "To add 137 and 221, you add the hundreds place (100 + 200 = 300), the tens place (30 + 20 = 50), and the ones place (7 + 1 = 8). Then you add them together (300 + 50 + 8 = 358)."
+        },
+        {
+          "question": "What is 248 + 343?",
+          "answers": [
+            "591",
+            "588",
+            "590",
+            "576"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "To add 248 and 343, you add the hundreds place (200 + 300 = 500), the tens place (40 + 40 = 80), and the ones place (8 + 3 = 11). Then you add them together (500 + 80 + 11 = 591)."
+        }
+      ]
+    ],
+    "hard": [
+      [
+        {
+          "question": "What is the derivative of x^3 with respect to x?",
+          "answers": [
+            "3x",
+            "x^2",
+            "3x^2",
+            "3x^3"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Using the power rule, the derivative of x^n is nx^(n-1). So, the derivative of x^3 is 3x^2."
+        },
+        {
+          "question": "What is the integral of 2x dx?",
+          "answers": [
+            "x^2 + C",
+            "2x^2 + C",
+            "x^3 + C",
+            "2 + C"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "The integral of 2x with respect to x is x^2, plus the constant of integration, C."
+        },
+        {
+          "question": "What is the value of log_10(1000)?",
+          "answers": [
+            "2",
+            "3",
+            "4",
+            "10"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "log_10(1000) asks '10 to what power equals 1000?'. 10^3 = 1000, so the answer is 3."
+        },
+        {
+          "question": "In a right-angled triangle, if the two shorter sides are 3cm and 4cm, what is the length of the hypotenuse?",
+          "answers": [
+            "5cm",
+            "6cm",
+            "7cm",
+            "8cm"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "According to the Pythagorean theorem (a^2 + b^2 = c^2), 3^2 + 4^2 = 9 + 16 = 25. The square root of 25 is 5."
+        },
+        {
+          "question": "What is the imaginary unit 'i' squared (i^2)?",
+          "answers": [
+            "1",
+            "-1",
+            "i",
+            "-i"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "The imaginary unit 'i' is defined as the square root of -1. Therefore, i^2 = -1."
+        },
+        {
+          "question": "What is the sum of the angles in a hexagon?",
+          "answers": [
+            "360 degrees",
+            "540 degrees",
+            "720 degrees",
+            "900 degrees"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "The sum of the interior angles of an n-sided polygon is given by the formula (n-2) * 180. For a hexagon (n=6), this is (6-2) * 180 = 720 degrees."
+        },
+        {
+          "question": "Solve the quadratic equation: x^2 - 5x + 6 = 0",
+          "answers": [
+            "x=2, x=3",
+            "x=1, x=6",
+            "x=-2, x=-3",
+            "x=5, x=1"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "The equation can be factored into (x-2)(x-3) = 0, which gives the solutions x=2 and x=3."
+        },
+        {
+          "question": "What is the value of e^(iπ) + 1?",
+          "answers": [
+            "0",
+            "1",
+            "2",
+            "π"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "This is Euler's identity, a famous equation in mathematics. e^(iπ) = -1, so e^(iπ) + 1 = 0."
+        },
+        {
+          "question": "How many permutations are there of the letters in the word 'APPLE'?",
+          "answers": [
+            "24",
+            "60",
+            "120",
+            "25"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "The word has 5 letters, but the letter 'P' is repeated twice. The formula is 5! / 2! = 120 / 2 = 60."
+        },
+        {
+          "question": "What is the limit of (1 + 1/n)^n as n approaches infinity?",
+          "answers": [
+            "1",
+            "0",
+            "e",
+            "infinity"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "This is the definition of the mathematical constant 'e', which is approximately 2.718."
+        }
+      ]
+    ]
+  },
+  "literature": {
+    "easy": [
+      [
+        {
+          "question": "Which word is a synonym for 'happy'?",
+          "answers": [
+            "Sad",
+            "Angry",
+            "Joyful",
+            "Tired"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "'Joyful' means feeling, expressing, or causing great pleasure and happiness."
+        }
+      ]
+    ]
+  },
+  "english": {
+    "easy": [
+      [
+        {
+          "question": "Which word is a synonym for 'happy'?",
+          "answers": [
+            "Sad",
+            "Angry",
+            "Joyful",
+            "Tired"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "'Joyful' means feeling, expressing, or causing great pleasure and happiness."
+        },
+        {
+          "question": "What is the plural of 'mouse'?",
+          "answers": [
+            "Mouses",
+            "Mice",
+            "Mouse",
+            "Mooses"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "The plural form of 'mouse' is an irregular plural, 'mice'."
+        },
+        {
+          "question": "Identify the noun in the sentence: 'The cat sat on the mat.'",
+          "answers": [
+            "The",
+            "sat",
+            "on",
+            "cat"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "A noun is a word that represents a person, place, thing, or idea. 'Cat' is a thing."
+        },
+        {
+          "question": "What is the opposite of 'hot'?",
+          "answers": [
+            "Warm",
+            "Cold",
+            "Spicy",
+            "Sunny"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "'Cold' is the antonym for 'hot'."
+        },
+        {
+          "question": "Which sentence is grammatically correct?",
+          "answers": [
+            "She go to school.",
+            "She goes to school.",
+            "She going to school.",
+            "She goed to school."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "For a third-person singular subject ('She'), the verb 'go' must be in the form 'goes'."
+        },
+        {
+          "question": "What punctuation mark is used at the end of a question?",
+          "answers": [
+            "Period (.)",
+            "Comma (,)",
+            "Exclamation mark (!)",
+            "Question mark (?)"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "A question mark is used to indicate an interrogative clause or phrase in many languages."
+        },
+        {
+          "question": "Choose the correct spelling:",
+          "answers": [
+            " recieve",
+            "receive",
+            "reiceve",
+            "receeve"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "The correct spelling is 'receive'."
+        },
+        {
+          "question": "What is the past tense of the verb 'run'?",
+          "answers": [
+            "Runned",
+            "Ran",
+            "Running",
+            "Runs"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "'Ran' is the simple past tense of 'run'."
+        },
+        {
+          "question": "Which of these is a pronoun?",
+          "answers": [
+            "House",
+            "Jump",
+            "They",
+            "Quickly"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "A pronoun is a word that is used instead of a noun or noun phrase. 'They' is a pronoun."
+        },
+        {
+          "question": "Complete the sentence: 'An apple a day keeps the ______ away.'",
+          "answers": [
+            "teacher",
+            "friend",
+            "doctor",
+            "rain"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "This is a common proverb suggesting that eating fruit maintains good health."
+        }
+      ]
+    ],
+    "medium": [
+      [
+        {
+          "question": "What is a metaphor?",
+          "answers": [
+            "A comparison using 'like' or 'as'",
+            "Giving human qualities to non-human things",
+            "A direct comparison between two unlike things",
+            "An extreme exaggeration"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "A metaphor is a figure of speech that directly equates two unlike things without using 'like' or 'as'."
+        },
+        {
+          "question": "In which point of view is the narrator a character in the story, referring to themselves as 'I'?",
+          "answers": [
+            "First-person",
+            "Second-person",
+            "Third-person limited",
+            "Third-person omniscient"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "First-person narrative is a point of view where the story is narrated by one character at a time."
+        },
+        {
+          "question": "What does the idiom 'bite the bullet' mean?",
+          "answers": [
+            "To eat something very hard",
+            "To get shot",
+            "To endure a difficult situation with courage",
+            "To go to the dentist"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "The idiom means to face a difficult or unpleasant situation with determination and bravery."
+        },
+        {
+          "question": "Identify the adjective in the sentence: 'The beautiful flowers bloomed.'",
+          "answers": [
+            "The",
+            "beautiful",
+            "flowers",
+            "bloomed"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "An adjective is a word that describes a noun. 'Beautiful' describes the 'flowers'."
+        },
+        {
+          "question": "Who wrote the play 'Romeo and Juliet'?",
+          "answers": [
+            "Charles Dickens",
+            "Jane Austen",
+            "William Shakespeare",
+            "Mark Twain"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "'Romeo and Juliet' is a famous tragedy written by William Shakespeare."
+        },
+        {
+          "question": "What is the main difference between 'its' and 'it's'?",
+          "answers": [
+            "They are interchangeable",
+            "'Its' is possessive, 'it's' is a contraction of 'it is'",
+            "'It's' is possessive, 'its' is a contraction of 'it is'",
+            "There is no difference"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "'Its' shows ownership (The dog wagged its tail), while 'it's' is a shortened form of 'it is' or 'it has' (It's a beautiful day)."
+        },
+        {
+          "question": "What is alliteration?",
+          "answers": [
+            "The repetition of vowel sounds",
+            "The repetition of consonant sounds at the beginning of words",
+            "A word that imitates a sound",
+            "A pattern of rhyming words"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Alliteration is the occurrence of the same letter or sound at the beginning of adjacent or closely connected words (e.g., 'sweet birds sang')."
+        },
+        {
+          "question": "What is the theme of a story?",
+          "answers": [
+            "The plot or sequence of events",
+            "The time and place where the story occurs",
+            "The main character",
+            "The underlying message or main idea"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "The theme is the central topic, subject, or message within a narrative."
+        },
+        {
+          "question": "Which of the following is a complex sentence?",
+          "answers": [
+            "The dog barked.",
+            "The dog barked and the cat ran away.",
+            "Because the dog barked, the cat ran away.",
+            "The big, brown dog barked loudly."
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "A complex sentence has an independent clause and at least one dependent clause. 'Because the dog barked' is a dependent clause."
+        },
+        {
+          "question": "What does 'e.g.' stand for?",
+          "answers": [
+            "And so on",
+            "For example",
+            "In other words",
+            "That is"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "e.g. is an abbreviation for the Latin phrase 'exempli gratia', which means 'for example'."
+        }
+      ]
+    ],
+    "hard": [
+      [
+        {
+          "question": "What is a 'soliloquy' in a play?",
+          "answers": [
+            "A conversation between two characters",
+            "A speech given by a character to the audience or themselves, revealing their thoughts",
+            "The final speech in a play",
+            "A short, witty comment"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "A soliloquy is a device often used in drama when a character speaks to themselves, relating thoughts and feelings, thereby also sharing them with the audience."
+        },
+        {
+          "question": "Who is the author of the epic poem 'Paradise Lost'?",
+          "answers": [
+            "Geoffrey Chaucer",
+            "John Donne",
+            "John Milton",
+            "Alexander Pope"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "'Paradise Lost' is an epic poem in blank verse by the 17th-century English poet John Milton."
+        },
+        {
+          "question": "What is the literary term for a story that can be interpreted to reveal a hidden meaning, typically a moral or political one?",
+          "answers": [
+            "Allegory",
+            "Satire",
+            "Parody",
+            "Fable"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "An allegory is a story, poem, or picture that can be interpreted to reveal a hidden meaning. George Orwell's 'Animal Farm' is a famous example."
+        },
+        {
+          "question": "What is iambic pentameter?",
+          "answers": [
+            "A line of verse with five metrical feet, each consisting of one long syllable followed by one short syllable",
+            "A line of verse with ten syllables",
+            "A line of verse with five metrical feet, each consisting of one short syllable followed by one long syllable",
+            "A type of rhyme scheme"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Iambic pentameter is a type of metric line used in traditional English poetry and verse drama. The term describes the rhythm that the words establish in that line, which is measured in small groups of syllables called 'feet'."
+        },
+        {
+          "question": "In literary criticism, what does 'dystopia' refer to?",
+          "answers": [
+            "A perfect, ideal society",
+            "A story set in the future",
+            "An imagined state or society in which there is great suffering or injustice",
+            "A story with a sad ending"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "A dystopia is a community or society that is undesirable or frightening. It is often characterized by dehumanization, totalitarian governments, and environmental disaster. 'Brave New World' and '1984' are classic dystopian novels."
+        },
+        {
+          "question": "Which literary movement, popular in the late 18th and early 19th centuries, emphasized emotion, individualism, and the glorification of nature?",
+          "answers": [
+            "Realism",
+            "Modernism",
+            "Romanticism",
+            "The Enlightenment"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Romanticism was an artistic, literary, musical and intellectual movement that originated in Europe toward the end of the 18th century."
+        },
+        {
+          "question": "What is a 'non sequitur'?",
+          "answers": [
+            "A conclusion or statement that does not logically follow from the previous argument or statement",
+            "A form of foreshadowing",
+            "A character who contrasts with another character",
+            "A type of logical fallacy based on circular reasoning"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "In Latin, 'non sequitur' means 'it does not follow.' It's a statement that is grammatically correct but logically unconnected."
+        },
+        {
+          "question": "What is the difference between a simile and a metaphor?",
+          "answers": [
+            "There is no difference",
+            "A simile uses 'like' or 'as' to make a comparison, and a metaphor does not",
+            "A metaphor uses 'like' or 'as' to make a comparison, and a simile does not",
+            "A simile is an exaggeration"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "This is the key distinction. Simile: 'He is as strong as an ox.' Metaphor: 'He is an ox.'"
+        },
+        {
+          "question": "Who wrote 'One Hundred Years of Solitude'?",
+          "answers": [
+            "Jorge Luis Borges",
+            "Mario Vargas Llosa",
+            "Gabriel García Márquez",
+            "Isabel Allende"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Gabriel García Márquez, a Colombian novelist, won the Nobel Prize in Literature in 1982. 'One Hundred Years of Solitude' is his most famous work and a prime example of magical realism."
+        },
+        {
+          "question": "What is 'stream of consciousness' as a narrative technique?",
+          "answers": [
+            "A narrative that follows a strict chronological order",
+            "A character's thoughts and feelings are presented as they occur, in a continuous flow",
+            "A story told from multiple perspectives",
+            "A story told entirely through dialogue"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Stream of consciousness is a narrative mode that seeks to portray an individual's point of view by giving the written equivalent of the character's thought processes. James Joyce's 'Ulysses' is a famous example."
+        }
+      ]
+    ]
+  },
+  "chemistry": {
+    "easy": [
+      [
+        {
+          "question": "What is the chemical symbol for water?",
+          "answers": [
+            "H2O",
+            "CO2",
+            "O2",
+            "NaCl"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "H2O represents two hydrogen atoms and one oxygen atom, which is the chemical composition of water."
+        }
+      ]
+    ]
+  },
+  "biology": {
+    "easy": [
+      [
+        {
+          "question": "What is the powerhouse of the cell?",
+          "answers": [
+            "Nucleus",
+            "Ribosome",
+            "Mitochondrion",
+            "Cell Wall"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "The mitochondrion generates most of the cell's supply of adenosine triphosphate (ATP), used as a source of chemical energy."
+        }
+      ]
+    ]
+  },
+  "c": {
+    "easy": [
+      [
+        {
+          "question": "What is the correct way to declare an integer variable in C?",
+          "answers": [
+            "int x;",
+            "integer x;",
+            "x = int;",
+            "declare x as int;"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "In C, you declare an integer variable using the 'int' keyword followed by the variable name and a semicolon."
+        }
+      ]
+    ]
+  },
+  "c++": {
+    "easy": [
+      [
+        {
+          "question": "What is the main difference between C and C++?",
+          "answers": [
+            "C++ is a scripting language, C is not.",
+            "C++ supports object-oriented programming (OOP), while C does not.",
+            "C++ uses a different syntax for loops.",
+            "There is no significant difference."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "C++ was built upon C and introduced features like classes, inheritance, and polymorphism, which are core concepts of OOP."
+        }
+      ]
+    ]
+  },
+  "java": {
+    "easy": [
+      [
+        {
+          "question": "Which keyword is used to define a class in Java?",
+          "answers": [
+            "class",
+            "type",
+            "struct",
+            "object"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "The 'class' keyword is used to declare a new class, which serves as a blueprint for creating objects."
+        }
+      ]
+    ]
+  },
+  "javascript": {
+    "easy": [
+      [
+        {
+          "question": "How do you declare a variable in JavaScript that can be reassigned?",
+          "answers": [
+            "const myVar = 10;",
+            "let myVar = 10;",
+            "var myVar = 10;",
+            "Both 'let' and 'var'"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "'var' is the older way, while 'let' (introduced in ES6) has block scope and is generally preferred. Both can be reassigned."
+        }
+      ]
+    ]
+  },
+  "python": {
+    "easy": [
+      [
+        {
+          "question": "What is the correct way to print 'Hello, World!' in Python?",
+          "answers": [
+            "console.log('Hello, World!');",
+            "System.out.println('Hello, World!');",
+            "printf('Hello, World!');",
+            "print('Hello, World!')"
+          ],
+          "correctAnswerIndex": 3,
+          "explanation": "The `print()` function is the standard way to output text to the console in Python."
+        }
+      ]
+    ]
+  }
+}
